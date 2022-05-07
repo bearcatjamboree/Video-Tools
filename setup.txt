@@ -1,9 +1,0 @@
-On Non-M1 system:
-
-pip install spleeter
-
-On M1 system:
-
-Follow these steps:
-
-https://github.com/jeffheaton/t81_558_deep_learning/blob/master/install/tensorflow-install-mac-metal-jul-2021.ipynb
