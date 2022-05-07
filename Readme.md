@@ -1,7 +1,7 @@
 # Video Tools
 Python code and shell scripts to help make video editing faster and easier
 
-<img src="images/screenshot.png" width="900">
+<img src="media/screenshot.png" width="900">
 
 ## Features
 
