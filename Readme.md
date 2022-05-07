@@ -3,6 +3,12 @@ Python code and shell scripts to help make video editing faster and easier
 
 <img src="media/screenshot.png" width="900">
 
+## Demo
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Ep2jBjvIZwI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+If you find these tools useful then consider watching my other content and subscribing to my channel.
+
 ## Features
 
 1. Jump cutting frames based on:
