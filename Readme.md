@@ -5,6 +5,8 @@ Python code and shell scripts to help make video editing faster and easier
 
 ## Demo
 
+[![IMAGE ALT TEXT HERE](media/Thumbnail.png)](https://www.youtube.com/watch?v=Ep2jBjvIZwI)
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Ep2jBjvIZwI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 If you find these tools useful then consider watching my other content and subscribing to my channel.
