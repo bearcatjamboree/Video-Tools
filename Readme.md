@@ -7,27 +7,40 @@ Python code and shell scripts to help make video editing faster and easier
 
 [![IMAGE ALT TEXT HERE](media/Thumbnail.png)](https://www.youtube.com/watch?v=Ep2jBjvIZwI)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Ep2jBjvIZwI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 If you find these tools useful then consider watching my other content and subscribing to my channel.
 
 ## Features
 
-1. Jump cutting frames based on:
-    - Audio levels
-    - Template matching
-    - Facial recognition
-    - A combination of audio level jump cutting combined with either: a) template matching or b) facial recognition.
-
-2. Video background audio removal
-
-3. Clipping video using start time and desired video length
-
-4. Converting video to pencil drawn style frames
-
-5. Generating a rough transcript from the videos audio
-
-6. Plotting video frames for analysis
+ 1. Remove background audio (music)
+ 2. Jump cut videos using volume level  
+ 3. Jump cut videos by matching a template photo
+ 4. Jump cut videos based on facial recognition
+ 5. Jump cut video using volume level and template matching
+ 6. Jump cut video using volume level and facial recognition
+ 7. Change video aspect ratio
+ 8. Change video volume level
+ 9. Compress audio file (using video or audio file)
+10. Convert video format
+11. Create animated GIFs
+12. Create pencil sketch video
+13. Create vintage-style video
+14. Crop video to desired size
+15. Cut video from start time by duration
+16. Cut video from start time to end time
+17. Extract audio from video
+18. Extract images from video (1-per second)
+19. Flip video horizontally
+20. Flip video vertically
+21. Generate speech from text (experimental)
+22. Generate video subtitles
+23. Mirror video horizontally
+24. Mirror video vertically
+25. Plot video frames
+26. Remove audio from video (produces soundless video)
+27. Remove video background  (experimental)
+28. Resize video (aspect ratio retained)
+29. Rotate video clockwise
+30. Rotate video counterclockwise
  
 ## Operating Systems
 
