@@ -1,0 +1,2 @@
+Install the GUI with Wineskin if on Mac/Linux:
+https://drive.google.com/drive/folders/1kZDzGx_RKu3qH_QONSxksR7gfZReevMg
