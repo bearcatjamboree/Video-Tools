@@ -11,7 +11,7 @@ If you find these tools useful then consider watching my other content and subsc
 
 ## Features
 
- 1. Remove background Music (previous rba)
+ 1. Remove background Music (previously rba)
  2. Jump cut videos using volume level  
  3. Jump cut videos by matching a template photo
  4. Jump cut videos based on facial recognition
