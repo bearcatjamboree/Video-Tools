@@ -124,5 +124,5 @@ However, PowerShell (powershell) & Command Prompt (cmd.exe) do not support the s
 
     ```brew install --no-quarantine gcenx/wine/unofficial-wineskin```
 
-If you found these tools helpful then please consider subscribing to my YouTube channel:
+If you found these tools helpful then please consider checking out my other content and subscribing to my YouTube channel:
 https://www.youtube.com/c/Bearcatjamboree?sub_confirmation=1
