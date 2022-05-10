@@ -11,7 +11,7 @@ If you find these tools useful then consider watching my other content and subsc
 
 ## Features
 
- 1. Remove background audio (music)
+ 1. Remove background Music (previous rba)
  2. Jump cut videos using volume level  
  3. Jump cut videos by matching a template photo
  4. Jump cut videos based on facial recognition
@@ -75,7 +75,7 @@ However, PowerShell (powershell) & Command Prompt (cmd.exe) do not support the s
 
 6. Spleeter
 
-## Instalation
+## Installation
 
 1. Install Homebrew
 
@@ -99,15 +99,15 @@ However, PowerShell (powershell) & Command Prompt (cmd.exe) do not support the s
 
     B. Issue the following command from the shell inside the project directory in Step A:
 
-        ```git clone https://github.com/bearcatjamboree/Video-Tools.git```
+   ```git clone https://github.com/bearcatjamboree/Video-Tools.git```
 
     C. Type the following command to install pre-requisite python modules:
 
-        ```pip install -r requirements.txt```
+   ```pip install -r requirements.txt```
         
     D. To setup Spleeter on Non-M1 systems type the following command from the shell:
     
-        ```pip install spleeter```
+   ```pip install spleeter```
 
     On Mac M1 system follow these steps:
 
