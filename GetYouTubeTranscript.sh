@@ -39,5 +39,3 @@ read video_id
 file=$(echo "$output_folder"|tr -d '\\')
 
 python3 GetYouTubeTranscript.py --video_id "$video_id" --output_folder "$output_folder"
-
-ffmpeg -fix_sub_duration -i "$output_folder/$video_id.sbv" "$output_folder/$video_id.srt"

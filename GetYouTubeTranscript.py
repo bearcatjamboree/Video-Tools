@@ -28,20 +28,21 @@ def getDateString(seconds):
     if len(s) == 1:
         s.append('000')
 
-    new_date = "{}.{}".format(s[0], s[1][:3])
+    new_date = "{},{}".format(s[0], s[1][:3])
     return new_date
 
 # Must be a single transcript.
 transcript_list = YouTubeTranscriptApi.get_transcript(args.video_id)
 
 out_txt = args.output_folder + "/" + args.video_id + ".txt"
-out_sbv = args.output_folder + "/" + args.video_id + ".sbv"
+out_srt = args.output_folder + "/" + args.video_id + ".srt"
 
 # Open output file
 ft = open(out_txt, "w+")
-fs = open(out_sbv, "w+")
+fs = open(out_srt, "w+")
 
 header=True
+counter = 1
 
 # Iterate over all available transcripts
 for transcript in transcript_list:
@@ -55,8 +56,11 @@ for transcript in transcript_list:
     start_time = getDateString(transcript['start'])
     end_time = getDateString(transcript['duration'])
 
-    fs.write("{},{}\n".format(start_time, end_time))
+    fs.write("{}\n".format(counter))
+    fs.write("{} --> {}\n".format(start_time, end_time))
     fs.write("{}\n\n".format(transcript['text']))
+
+    counter += 1
 
 ft.close()
 fs.close()
