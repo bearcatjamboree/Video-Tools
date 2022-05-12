@@ -27,7 +27,7 @@ parser = argparse.ArgumentParser(
     description='Search the audio/video/both for frames to retain and remove the rest')
 parser.add_argument('--input_file', type=str, help='The video file you want to jump cut')
 parser.add_argument('--output_file', type=str, help="the output location to write the edit video")
-parser.add_argument('--frame_margin', type=int, default=50,
+parser.add_argument('--frame_margin', type=int, default=75,
                     help="The number of adjacent (not matched) frames to retrain for additional context")
 parser.add_argument('--frame_quality', type=int, default=1,
                     help="The quality of frames to be extracted from input video. 1 is highest, 31 is lowest, 1 is the default.")
