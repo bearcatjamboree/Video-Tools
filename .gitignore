@@ -133,3 +133,5 @@ dmypy.json
 /RBM/pretrained_models/
 /RBM/temp/
 /RBM/output/
+/RBM/file_list.txt
+/transcripts/
