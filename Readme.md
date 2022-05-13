@@ -11,36 +11,39 @@ If you find these tools useful then consider watching my other content and subsc
 
 ## Features
 
- 1. Remove background Music (previously rba)
- 2. Jump cut videos using volume level  
- 3. Jump cut videos by matching a template photo
- 4. Jump cut videos based on facial recognition
- 5. Jump cut video using volume level and template matching
- 6. Jump cut video using volume level and facial recognition
- 7. Change video aspect ratio
- 8. Change video volume level
- 9. Compress audio file (using video or audio file)
-10. Convert video format
-11. Create animated GIFs
-12. Create pencil sketch video
-13. Create vintage-style video
-14. Crop video to desired size
-15. Cut video from start time by duration
-16. Cut video from start time to end time
-17. Extract audio from video
-18. Extract images from video (1-per second)
-19. Flip video horizontally
-20. Flip video vertically
-21. Generate speech from text (experimental)
-22. Generate video subtitles
-23. Mirror video horizontally
-24. Mirror video vertically
-25. Plot video frames
-26. Remove audio from video (produces soundless video)
-27. Remove video background  (experimental)
-28. Resize video (aspect ratio retained)
-29. Rotate video clockwise
-30. Rotate video counterclockwise
+ 1. Remove background music (previously rba)
+ 2. Remove vocals (karoake)
+ 3. Jump cut videos using volume level  
+ 4. Jump cut videos by matching a template photo
+ 5. Jump cut videos based on facial recognition
+ 6. Jump cut video using volume level and template matching
+ 7. Jump cut video using volume level and facial recognition
+ 8. Change video aspect ratio
+ 9. Change video volume level
+ 10. Compress audio file (using video or audio file)
+ 11. Convert video format
+ 12. Create animated GIFs
+ 13. Create pencil sketch video
+ 14. Create vintage-style video
+ 15. Crop video to desired size
+ 16. Cut video from start time by duration
+ 17. Cut video from start time to end time
+ 18. Extract audio from video
+ 19. Extract images from video (1-per second)
+ 20. Flip video horizontally
+ 21. Flip video vertically
+ 22. Generate speech from text (experimental)
+ 23. Generate video subtitles
+ 24. Get YouTube Transcript 
+ 25. Burn Subtitles From SRT
+ 26. Mirror video horizontally
+ 27. Mirror video vertically
+ 28. Plot video frames
+ 29. Remove audio from video (produces soundless video)
+ 30. Remove video background  (experimental)
+ 31. Resize video (aspect ratio retained)
+ 32. Rotate video clockwise
+ 33. Rotate video counterclockwise
  
 ## Operating Systems
 
