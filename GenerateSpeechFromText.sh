@@ -12,6 +12,8 @@ esac
 echo "${machine}"
 input_file="$1"
 
+echo "Enter SRT file to translate"
+
 ##############################################################################
 # Check for file was passed.  Show open file dialog if no argument and on Mac
 ###############################################################################
@@ -45,6 +47,7 @@ name="${file%.*}"
 ############################
 # Get file path information
 ############################
-output_file=$name.mp3
+output_file=$name.wav
 
-python3 GenerateSpeechFromText.py --input_file "$input_file" --output_file "$output_file"
+python3 GenerateSpeechFromText.py --input_file "$input_file" --output_file "$output_file" --voice "ting-ting"
+#python3 GenerateSpeechFromText.py --input_file "$input_file" --output_file "$output_file" --voice "neel"

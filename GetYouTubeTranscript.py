@@ -43,13 +43,10 @@ except:
         transcript.fetch()
         desired_transcript = transcript.translate(args.language).fetch()
 
-
-out_raw = args.output_folder + "/" + args.video_id + "_" + args.language + ".raw"
 out_txt = args.output_folder + "/" + args.video_id + "_" + args.language + ".txt"
 out_srt = args.output_folder + "/" + args.video_id + "_" + args.language + ".srt"
 
 # Open output file
-fr = open(out_raw, "w+")
 ft = open(out_txt, "w+")
 fs = open(out_srt, "w+")
 
@@ -66,7 +63,6 @@ for i in range(len(desired_transcript)):
         header=False
 
     text = transcript['text']
-    fr.write("{}\n".format(text))
 
     ft.write("{}\t{}\n".format(transcript['start'], text))
 
@@ -81,6 +77,5 @@ for i in range(len(desired_transcript)):
     fs.write("{} --> {}\n".format(start_time, end_time))
     fs.write("{}\n\n".format(text))
 
-fr.close()
 ft.close()
 fs.close()

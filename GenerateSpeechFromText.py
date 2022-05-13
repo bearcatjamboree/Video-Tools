@@ -2,10 +2,16 @@
 # importing the necessary libraries
 #################################################################################################
 import argparse
+import threading
 
-# import pyttsx3
-# Import the gTTS module
 import pyttsx3
+import os
+import subprocess
+from shutil import rmtree
+from pydub import AudioSegment
+
+from pathlib import Path
+
 
 # This the os module so we can play the MP3 file generated
 
@@ -60,6 +66,9 @@ import pyttsx3
     yuri
     zosia
     zuzana
+    mei-jia
+    sin-ji.premium
+    ting-ting
 
 https://gtts.readthedocs.io/en/latest/module.html#localized-accents
 '''
@@ -83,23 +92,133 @@ if not args.input_file or not args.output_file:
     quit()
 
 #################################################################################################
+#  Create folder routine
+#################################################################################################
+def createPath(s):
+    try:
+        os.mkdir(s)
+    except OSError:
+        assert False, "Creation of the directory %s failed (The TEMP directory may already exist.)"
+
+
+#################################################################################################
+#  Folder cleanup routine
+#################################################################################################
+def deletePath(s):  # Dangerous! Watch out!
+    try:
+        rmtree(s, ignore_errors=False)
+    except OSError:
+        print("Deletion of the directory %s failed" % s)
+        print(OSError)
+
+#################################################################################################
+#  format time in seconds for calculating diff
+#################################################################################################
+def get_sec(time_str):
+    """Get seconds from time."""
+    (time, ms) = time_str.split(',')
+    h, m, s = time.split(':')
+    return  int(h) * 3600 + int(m) * 60 + int(s) + (int(ms) / 1000)
+
+#################################################################################################
+#  calculate difference between start and end time
+#################################################################################################
+def time_diff(start, end):
+    return get_sec(end) - get_sec(start)
+
+#################################################################################################
+#  Threader function needed to do translation without hangs
+#################################################################################################
+def time_limiter_from_stuck_function(target_func, arg1, max_time=10):
+    e = threading.Event()
+    t = threading.Thread(target=target_func, args=(arg1,))
+    t.start()
+    t.join(max_time)
+    if (t.is_alive()):
+        print("This thread got stuck")
+        e.set()
+    else:
+        pass
+
+#################################################################################################
+#  Funciton to translate each SRT frame of text and track order of audio clip
+#################################################################################################
+def tts_generator(input):
+
+    engine = pyttsx3.init()
+    engine.setProperty('voice', "com.apple.speech.synthesis.voice.{}".format(args.voice))
+    engine.save_to_file(input['text'], "TEMP/tmp{:06d}.wav".format(int(input['counter'].strip())))
+    engine.runAndWait()
+
+    source = AudioSegment.from_file("TEMP/tmp{:06d}.wav".format(int(input['counter'].strip())))
+    audio = AudioSegment.silent(duration=input['diff'] * 1000)
+    output = audio.overlay(source, position=0)
+
+    output.export("TEMP/output{:06d}.wav".format(int(input['counter'].strip())), format="wav")
+
+#################################################################################################
 #  *** Begin main part of Program ***
 #################################################################################################
 def main():
 
-    engine = pyttsx3.init()
-    engine.setProperty('voice', "com.apple.speech.synthesis.voice.{}".format(args.voice))
+    print("Creating temporary directory: TEMP")
 
-    mytext = ''
+    createPath("TEMP")
 
+    print("Reading transcript file {}".format(args.input_file))
+
+    # Read SRT file and use time info to generate translation that match video frames
     with open(args.input_file) as fp:
-        line = fp.readline()
-        while line:
-            mytext += line.strip() + '\n'
-            line = fp.readline()
 
-    engine.save_to_file(mytext, args.output_file)
-    engine.runAndWait()
+        while True:
+
+            counter = fp.readline()
+
+            if not counter:
+                break
+
+            time = fp.readline()
+            text = fp.readline()
+            blank = fp.readline()
+
+            # Separate SRT timestamp to produce start, end, and diff values
+            (start_time, end_time) = time.split(' --> ')
+
+            print(time.strip())
+
+            diff = time_diff(start_time, end_time)
+            print("time_diff = {} ".format(diff))
+
+            print(text.strip())
+
+            d = {}
+            d['counter'] = counter
+            d['diff'] = diff
+            d['text'] = text.strip()
+
+            time_limiter_from_stuck_function(tts_generator, d)
+
+    # iterate over the output files in the TEMP directory
+    files = sorted(Path("TEMP").glob('output*.wav'))
+
+    # Cleanup prior run file list
+    try:
+        os.remove("file_list.txt")
+    except FileNotFoundError:
+        pass
+    # Build list of translation clips
+    for file in files:
+        command = "echo \"file '{}'\" >> file_list.txt".format(file)
+        print(command)
+        subprocess.call(command, shell=True)
+
+    # Combine clips into a full translation audio wave file
+    command = "ffmpeg -f concat -safe 0 -i file_list.txt -c copy '" + format(
+        args.output_file) + "'"
+    print(command)
+    subprocess.call(command, shell=True)
+
+    deletePath("TEMP")
 
 if __name__ == "__main__":
     main()
