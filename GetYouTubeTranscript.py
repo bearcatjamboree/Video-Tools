@@ -44,9 +44,9 @@ except:
         desired_transcript = transcript.translate(args.language).fetch()
 
 
-out_raw = args.output_folder + "/" + args.video_id + ".raw"
-out_txt = args.output_folder + "/" + args.video_id + ".txt"
-out_srt = args.output_folder + "/" + args.video_id + ".srt"
+out_raw = args.output_folder + "/" + args.video_id + "_" + args.language + ".raw"
+out_txt = args.output_folder + "/" + args.video_id + "_" + args.language + ".txt"
+out_srt = args.output_folder + "/" + args.video_id + "_" + args.language + ".srt"
 
 # Open output file
 fr = open(out_raw, "w+")
