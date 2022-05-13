@@ -1,4 +1,5 @@
 |Language Name | Language Code|
+| --------- |:---------|
 |Afrikaans | af|
 |Irish | ga|
 |Albanian | sq|
