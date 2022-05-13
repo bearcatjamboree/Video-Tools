@@ -41,4 +41,4 @@ file=$(echo "$output_folder"|tr -d '\\')
 python3 GetYouTubeTranscript.py --video_id "$video_id" --output_folder "$output_folder" --language "en"
 python3 GetYouTubeTranscript.py --video_id "$video_id" --output_folder "$output_folder" --language "es"
 python3 GetYouTubeTranscript.py --video_id "$video_id" --output_folder "$output_folder" --language "hi"
-python3 GetYouTubeTranscript.py --video_id "$video_id" --output_folder "$output_folder" --language "zh-CN"
+python3 GetYouTubeTranscript.py --video_id "$video_id" --output_folder "$output_folder" --language "zh-Hans"
