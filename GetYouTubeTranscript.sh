@@ -28,7 +28,7 @@ if ! [ -f "output_folder" ]; then
         exit 1
     fi
 fi
-
+# GU9_ED1bE3s
 echo 'Enter Video ID:'
 # shellcheck disable=SC2162
 read video_id
@@ -38,4 +38,4 @@ read video_id
 ####################################
 file=$(echo "$output_folder"|tr -d '\\')
 
-python3 GetYouTubeTranscript.py --video_id "$video_id" --output_folder "$output_folder"
+python3 GetYouTubeTranscript.py --video_id "$video_id" --output_folder "$output_folder" --language "es"
