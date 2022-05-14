@@ -13,7 +13,7 @@ echo "${machine}"
 input_video="$1"
 input_audio="$2"
 
-echo "Input video to merge"
+#echo "Input video to merge"
 
 ##############################################################################
 # Check for file was passed.  Show open file dialog if no argument and on Mac
@@ -21,13 +21,13 @@ echo "Input video to merge"
 if ! [ -f "$input_video" ]; then
     if [[ "$machine" == "Mac" ]]; then
         input_video=$(osascript -e 'tell application (path to frontmost application as text)
-        set input_video to choose file
+        set input_video to choose file with prompt "Please select a video to include:"
         POSIX path of input_video
         end')
     elif [[ "$machine" == "Linux" ]]; then
-        input_video=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
+        input_video=$(dialog --title "Choose a file" --stdout --title "Please select a video to include:" --fselect /tmp/ 14 48)
     elif [[ "$machine" == "Cygwin" ]]; then
-        input_video=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
+        input_video=$(dialog --title "Choose a file" --stdout --title "Please select a video to include:" --fselect /tmp/ 14 48)
     elif [ "$#" -ne 2 ] || ! [ -f "$input_video" ]; then
         echo "Usage: $0 input_video input_audio"
         exit 1
@@ -35,7 +35,7 @@ if ! [ -f "$input_video" ]; then
 fi
 echo "$input_video"
 
-echo "Input audio to merge"
+#echo "Input audio to merge"
 
 ##############################################################################
 # Check for file was passed.  Show open file dialog if no argument and on Mac
@@ -43,13 +43,13 @@ echo "Input audio to merge"
 if ! [ -f "$input_audio" ]; then
     if [[ "$machine" == "Mac" ]]; then
         input_audio=$(osascript -e 'tell application (path to frontmost application as text)
-        set input_audio to choose file
+        set input_audio to choose file with prompt "Please select a audio to include:"
         POSIX path of input_audio
         end')
     elif [[ "$machine" == "Linux" ]]; then
-        input_audio=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
+        input_audio=$(dialog --title "Choose a file" --stdout --title "Please select a audio to include:" --fselect /tmp/ 14 48)
     elif [[ "$machine" == "Cygwin" ]]; then
-        input_audio=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
+        input_audio=$(dialog --title "Choose a file" --stdout --title "Please select a audio to include:" --fselect /tmp/ 14 48)
     elif [ "$#" -ne 2 ] || ! [ -f "$input_audio" ]; then
         echo "Usage: $0 input_video input_audio"
         exit 1
