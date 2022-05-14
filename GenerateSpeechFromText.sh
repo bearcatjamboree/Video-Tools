@@ -33,6 +33,37 @@ if ! [ -f "$input_file" ]; then
     fi
 fi
 
+echo "$input_file"
+
+##############################################################################
+# Check for voice to use
+###############################################################################
+if [[ "$machine" == "Mac" ]]; then
+    language=$(osascript -e 'display dialog "Please select a language: " buttons {"Spanish", "Hindi", "Mandarin"} default button 3')
+elif [[ "$machine" == "Linux" ]]; then
+    language=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
+elif [[ "$machine" == "Cygwin" ]]; then
+    language=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
+else
+    echo "Unknown platform"
+    exit 1
+fi
+
+echo "$language"
+
+if [[ "$language" == "button returned:Spanish" ]]; then
+  voice="carlos"
+elif [[ "$language" == "button returned:Hindi" ]]; then
+  voice="neel"
+elif [[ "$language" == "button returned:Mandarin" ]]; then
+  voice="ting-ting"
+else
+    echo "Invalid selection returned"
+    exit 1
+fi
+
+echo "$voice"
+
 ####################################
 # Remove backlashes from filepaths
 ####################################
@@ -49,5 +80,4 @@ name="${file%.*}"
 ############################
 output_file=$name.wav
 
-python3 GenerateSpeechFromText.py --input_file "$input_file" --output_file "$output_file" --voice "ting-ting"
-#python3 GenerateSpeechFromText.py --input_file "$input_file" --output_file "$output_file" --voice "neel"
+python3 GenerateSpeechFromText.py --input_file "$input_file" --output_file "$output_file" --voice "$voice"

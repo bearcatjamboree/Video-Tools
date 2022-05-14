@@ -191,12 +191,29 @@ def main():
 
             print(text.strip())
 
-            d = {}
-            d['counter'] = counter
-            d['diff'] = diff
-            d['text'] = text.strip()
+            dict = {}
+            dict['counter'] = counter
+            dict['diff'] = diff
+            dict['text'] = text.strip()
 
-            time_limiter_from_stuck_function(tts_generator, d)
+            if int(counter.strip())  == 1:
+                first_frame_start_time = start_time
+
+            time_limiter_from_stuck_function(tts_generator, dict)
+
+    project_first_frame = AudioSegment.from_file("TEMP/tmp{:06d}.wav".format(1))
+    base_frame_rate = project_first_frame.frame_rate
+
+    # Pad the beginning with blank audio so the track matches the video
+    diff = time_diff('00:00:00,000', first_frame_start_time)
+    #print("start:{}, end:{}, diff:{}".format('0', start_time, diff))
+    audio = AudioSegment.silent(duration=diff * 1000)
+    audio = audio.set_frame_rate(base_frame_rate)
+
+    #print(base_frame_rate)
+    #print(audio.frame_rate)
+
+    audio.export("TEMP/output{:06d}.wav".format(0), format="wav")
 
     # iterate over the output files in the TEMP directory
     files = sorted(Path("TEMP").glob('output*.wav'))
