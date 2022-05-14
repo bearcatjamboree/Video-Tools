@@ -585,6 +585,10 @@
       <item itemvalue="Shell Script.Remove Audio From Video" />
       <item itemvalue="Shell Script.Remove Background Music" />
       <item itemvalue="Shell Script.Remove Vocals" />
+      <item itemvalue="Shell Script.Create Animated GIF" />
+      <item itemvalue="Shell Script.Extract Images From Video" />
+      <item itemvalue="Shell Script.Generate Video Subtitles" />
+      <item itemvalue="Shell Script.Plot Video Frames" />
       <item itemvalue="Shell Script.Audio+FaceRecognition" />
       <item itemvalue="Shell Script.Audio+MatchTemplate" />
       <item itemvalue="Shell Script.AudioJumpcut" />
@@ -608,10 +612,6 @@
       <item itemvalue="Shell Script.Rotate Video Clockwise" />
       <item itemvalue="Shell Script.Rotate Video Counterclockwise" />
       <item itemvalue="Shell Script.Get YouTube Transcript" />
-      <item itemvalue="Shell Script.Create Animated GIF" />
-      <item itemvalue="Shell Script.Extract Images From Video" />
-      <item itemvalue="Shell Script.Generate Video Subtitles" />
-      <item itemvalue="Shell Script.Plot Video Frames" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="true" />
