@@ -10,7 +10,12 @@ case "${unameOut}" in
 esac
 
 echo "${machine}"
+
 input_file="$1"
+out_w="$2"
+out_h="$3"
+x="$4"
+y="$5"
 
 ##############################################################################
 # Check for file was passed.  Show open file dialog if no argument and on Mac
@@ -31,17 +36,89 @@ if ! [ -f "$input_file" ]; then
     fi
 fi
 
-echo 'Enter the width of the output rectangle: '
-read out_w
+##############################################################################
+# Prompt for out_w
+###############################################################################
+if [[ "$out_w" == "" ]]; then
+    if [[ "$machine" == "Mac" ]]; then
+        out_w=$(osascript -e 'set T to text returned of (display dialog "Enter the width of the output rectangle: " buttons {"Cancel", "OK"} default button "OK" default answer "")')
+    elif [[ "$machine" == "Linux" ]]; then
+        out_w=$(dialog --title "Enter the width of the output rectangle: " --inputbox "out_w:" 8 60)
+    elif [[ "$machine" == "Cygwin" ]]; then
+        out_w=$(dialog --title "Enter the width of the output rectangle: " --inputbox "out_w:" 8 60)
+    elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
+        echo "Usage: $0 output_folder out_w"
+        exit 1
+    fi
+fi
 
-echo 'Enter the height of the output rectangle:'
-read out_h
+if [[ "$out_w" == "" ]]; then
+    echo "Usage: $0 output_folder out_w"
+    exit 1
+fi
 
-echo 'Enter the top left corner X-position:'
-read x
+##############################################################################
+# Prompt for out_h
+###############################################################################
+if [[ "$out_h" == "" ]]; then
+    if [[ "$machine" == "Mac" ]]; then
+        out_h=$(osascript -e 'set T to text returned of (display dialog "Enter the height of the output rectangle:" buttons {"Cancel", "OK"} default button "OK" default answer "")')
+    elif [[ "$machine" == "Linux" ]]; then
+        out_h=$(dialog --title "Enter the height of the output rectangle:" --inputbox "out_h:" 8 60)
+    elif [[ "$machine" == "Cygwin" ]]; then
+        out_h=$(dialog --title "Enter the height of the output rectangle:" --inputbox "out_h:" 8 60)
+    elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
+        echo "Usage: $0 output_folder out_h"
+        exit 1
+    fi
+fi
 
-echo 'Enter the top left corner Y-position:'
-read y
+if [[ "$out_h" == "" ]]; then
+    echo "Usage: $0 output_folder out_h"
+    exit 1
+fi
+
+##############################################################################
+# Prompt for x
+###############################################################################
+if [[ "$x" == "" ]]; then
+    if [[ "$machine" == "Mac" ]]; then
+        x=$(osascript -e 'set T to text returned of (display dialog "Enter the top left corner X-position:" buttons {"Cancel", "OK"} default button "OK" default answer "")')
+    elif [[ "$machine" == "Linux" ]]; then
+        x=$(dialog --title "Enter the top left corner X-position:" --inputbox "x:" 8 60)
+    elif [[ "$machine" == "Cygwin" ]]; then
+        x=$(dialog --title "Enter the top left corner X-position:" --inputbox "x:" 8 60)
+    elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
+        echo "Usage: $0 output_folder x"
+        exit 1
+    fi
+fi
+
+if [[ "$x" == "" ]]; then
+    echo "Usage: $0 output_folder x"
+    exit 1
+fi
+
+##############################################################################
+# Prompt for y
+###############################################################################
+if [[ "$y" == "" ]]; then
+    if [[ "$machine" == "Mac" ]]; then
+        y=$(osascript -e 'set T to text returned of (display dialog "Enter the top left corner Y-position:" buttons {"Cancel", "OK"} default button "OK" default answer "")')
+    elif [[ "$machine" == "Linux" ]]; then
+        y=$(dialog --title "Enter the top left corner Y-position:" --inputbox "y:" 8 60)
+    elif [[ "$machine" == "Cygwin" ]]; then
+        y=$(dialog --title "Enter the top left corner Y-position:" --inputbox "y:" 8 60)
+    elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
+        echo "Usage: $0 output_folder y"
+        exit 1
+    fi
+fi
+
+if [[ "$y" == "" ]]; then
+    echo "Usage: $0 output_folder y"
+    exit 1
+fi
 
 re='^[0-9]+$'
 input=( "$out_w" "$out_h" "$x" "$y" )

@@ -31,8 +31,21 @@ if ! [ -f "$input_file" ]; then
     fi
 fi
 
-echo "Enter output format (mp3, aac, etc.): "
-read format
+##############################################################################
+# Prompt for format
+###############################################################################
+if [[ "$format" == "" ]]; then
+    if [[ "$machine" == "Mac" ]]; then
+        format=$(osascript -e 'set T to text returned of (display dialog "Enter output format (mp3, aac, etc.):" buttons {"Cancel", "OK"} default button "OK" default answer "")')
+    elif [[ "$machine" == "Linux" ]]; then
+        format=$(dialog --title "Enter output format (mp3, aac, etc.):" --inputbox "format:" 8 60)
+    elif [[ "$machine" == "Cygwin" ]]; then
+        format=$(dialog --title "Enter output format (mp3, aac, etc.):" --inputbox "format:" 8 60)
+    elif [ "$#" -ne 2 ]; then
+        echo "Usage: $0 output_folder format"
+        exit 1
+    fi
+fi
 
 if [[ "$format" == "" ]] ; then
    echo "Output format is required" >&2; exit 1

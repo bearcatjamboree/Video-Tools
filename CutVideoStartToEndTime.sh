@@ -31,17 +31,41 @@ if ! [ -f "$input_file" ]; then
     fi
 fi
 
-echo 'Start Time [hh:mm:ss]: '
-# shellcheck disable=SC2162
-read start
+##############################################################################
+# Prompt for start
+###############################################################################
+if [[ "$start" == "" ]]; then
+    if [[ "$machine" == "Mac" ]]; then
+        start=$(osascript -e 'set T to text returned of (display dialog "Start Time [hh:mm:ss]: " buttons {"Cancel", "OK"} default button "OK" default answer "")')
+    elif [[ "$machine" == "Linux" ]]; then
+        start=$(dialog --title "Start Time [hh:mm:ss]: " --inputbox "start:" 8 60)
+    elif [[ "$machine" == "Cygwin" ]]; then
+        start=$(dialog --title "Start Time [hh:mm:ss]: " --inputbox "start:" 8 60)
+    elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
+        echo "Usage: $0 output_folder start"
+        exit 1
+    fi
+fi
 
 if [[ "$start" == "" ]] ; then
    echo "Error: Start Time is a required input" >&2; exit 1
 fi
 
-echo 'End Time [hh:mm:ss]: '
-# shellcheck disable=SC2162
-read end
+##############################################################################
+# Prompt for end
+###############################################################################
+if [[ "$end" == "" ]]; then
+    if [[ "$machine" == "Mac" ]]; then
+        end=$(osascript -e 'set T to text returned of (display dialog "End Time [hh:mm:ss]: " buttons {"Cancel", "OK"} default button "OK" default answer "")')
+    elif [[ "$machine" == "Linux" ]]; then
+        end=$(dialog --title "End Time [hh:mm:ss]: " --inputbox "end:" 8 60)
+    elif [[ "$machine" == "Cygwin" ]]; then
+        end=$(dialog --title "End Time [hh:mm:ss]: " --inputbox "end:" 8 60)
+    elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
+        echo "Usage: $0 output_folder end"
+        exit 1
+    fi
+fi
 
 if [[ "$end" == "" ]] ; then
    echo "Error: End Time is a required input" >&2; exit 1
