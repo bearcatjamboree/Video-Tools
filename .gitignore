@@ -134,5 +134,6 @@ dmypy.json
 /RBM/temp/
 /RBM/output/
 /RBM/file_list.txt
+file_list.txt
 /transcripts/
 /test/
