@@ -9,11 +9,10 @@ import os
 import subprocess
 from shutil import rmtree
 from pydub import AudioSegment
-
 from pathlib import Path
 
 
-# This the os module so we can play the MP3 file generated
+# This the os module so we can play the file generated
 
 '''
     Voices:
@@ -76,9 +75,9 @@ https://gtts.readthedocs.io/en/latest/module.html#localized-accents
 # Get arguments from command line
 #################################################################################################
 parser = argparse.ArgumentParser(
-    description='Read a text file, convert it to speech, and write to an MP3')
+    description='Read a text file, convert it to speech, and write to a WAV')
 parser.add_argument('--input_file', type=str, help='The text file to read and produce speech from')
-parser.add_argument('--output_file', type=str, help="the output location to write the speech mp3")
+parser.add_argument('--output_file', type=str, help="the output location to write the speech WAV")
 parser.add_argument('--language', type=str, default="en", help="the language to detect and speak")
 parser.add_argument('--voice', type=str, default="jorge", help="the voice to use")
 
@@ -143,18 +142,18 @@ def time_limiter_from_stuck_function(target_func, arg1, max_time=10):
 #################################################################################################
 #  Funciton to translate each SRT frame of text and track order of audio clip
 #################################################################################################
-def tts_generator(input):
+def tts_generator(dict):
 
     engine = pyttsx3.init()
     engine.setProperty('voice', "com.apple.speech.synthesis.voice.{}".format(args.voice))
-    engine.save_to_file(input['text'], "TEMP/tmp{:06d}.wav".format(int(input['counter'].strip())))
+    engine.save_to_file(dict['text'], "{}/TEMP/tmp{:05d}.wav".format(os.getcwd(), int(dict['counter'].strip())))
     engine.runAndWait()
 
-    source = AudioSegment.from_file("TEMP/tmp{:06d}.wav".format(int(input['counter'].strip())))
-    audio = AudioSegment.silent(duration=input['diff'] * 1000)
+    source = AudioSegment.from_file("{}/TEMP/tmp{:05d}.wav".format(os.getcwd(), int(dict['counter'].strip())))
+    audio = AudioSegment.silent(duration=dict['diff'] * 1000)
     output = audio.overlay(source, position=0)
 
-    output.export("TEMP/output{:06d}.wav".format(int(input['counter'].strip())), format="wav")
+    output.export("{}/TEMP/output{:05d}.wav".format(os.getcwd(), int(dict['counter'].strip())), format="wav")
 
 #################################################################################################
 #  *** Begin main part of Program ***
@@ -201,7 +200,7 @@ def main():
 
             time_limiter_from_stuck_function(tts_generator, dict)
 
-    project_first_frame = AudioSegment.from_file("TEMP/tmp{:06d}.wav".format(1))
+    project_first_frame = AudioSegment.from_file("TEMP/tmp{:05d}.wav".format(1))
     base_frame_rate = project_first_frame.frame_rate
 
     # Pad the beginning with blank audio so the track matches the video
@@ -213,7 +212,7 @@ def main():
     #print(base_frame_rate)
     #print(audio.frame_rate)
 
-    audio.export("TEMP/output{:06d}.wav".format(0), format="wav")
+    audio.export("TEMP/output{:05d}.wav".format(0), format="wav")
 
     # iterate over the output files in the TEMP directory
     files = sorted(Path("TEMP").glob('output*.wav'))
