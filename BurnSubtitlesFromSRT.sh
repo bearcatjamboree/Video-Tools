@@ -16,15 +16,13 @@ esac
 echo "${machine}"
 input_file="$1"
 
-echo "Enter video file"
-
 ##############################################################################
 # Check for file was passed.  Show open file dialog if no argument and on Mac
 ###############################################################################
 if ! [ -f "$video_file" ]; then
     if [[ "$machine" == "Mac" ]]; then
         video_file=$(osascript -e 'tell application (path to frontmost application as text)
-        set video_file to choose file
+        set video_file to choose file with prompt "Please select video file:"
         POSIX path of video_file
         end')
     elif [[ "$machine" == "Linux" ]]; then
@@ -37,15 +35,13 @@ if ! [ -f "$video_file" ]; then
     fi
 fi
 
-echo "Enter SRT file"
-
 ##############################################################################
 # Check for file was passed.  Show open file dialog if no argument and on Mac
 ###############################################################################
 if ! [ -f "$srt_file" ]; then
     if [[ "$machine" == "Mac" ]]; then
         srt_file=$(osascript -e 'tell application (path to frontmost application as text)
-        set srt_file to choose file
+        set srt_file to choose file with prompt "Please select SRT file:"
         POSIX path of srt_file
         end')
     elif [[ "$machine" == "Linux" ]]; then

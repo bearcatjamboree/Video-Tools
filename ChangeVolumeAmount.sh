@@ -31,8 +31,21 @@ if ! [ -f "$input_file" ]; then
     fi
 fi
 
-echo 'Enter volume adjustment amount (expressed as a decimal or dB value):'
-read volume
+##############################################################################
+# Prompt for volume
+###############################################################################
+if [[ "$volume" == "" ]]; then
+    if [[ "$machine" == "Mac" ]]; then
+        volume=$(osascript -e 'set T to text returned of (display dialog "Enter volume adjustment amount (expressed as a decimal or dB value):" buttons {"Cancel", "OK"} default button "OK" default answer "")')
+    elif [[ "$machine" == "Linux" ]]; then
+        volume=$(dialog --title "Enter volume adjustment amount (expressed as a decimal or dB value):" --inputbox "volume:" 8 60)
+    elif [[ "$machine" == "Cygwin" ]]; then
+        volume=$(dialog --title "Enter volume adjustment amount (expressed as a decimal or dB value):" --inputbox "volume:" 8 60)
+    elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
+        echo "Usage: $0 output_folder volume"
+        exit 1
+    fi
+fi
 
 if [[ "$volume" == "" ]] ; then
    echo "Volume adjustment is required" >&2; exit 1

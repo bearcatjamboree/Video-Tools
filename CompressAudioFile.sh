@@ -31,11 +31,25 @@ if ! [ -f "$input_file" ]; then
     fi
 fi
 
-echo 'Enter new audio bitrate value (ex: 96, 112, 128, 160, 192, 256, 320) :'
-read bitrate
+##############################################################################
+# Prompt for bitrate
+###############################################################################
+if [[ "$bitrate" == "" ]]; then
+    if [[ "$machine" == "Mac" ]]; then
+        bitrate=$(osascript -e 'set T to text returned of (display dialog "Enter new audio bitrate value (ex: 96, 112, 128, 160, 192, 256, 320) :" buttons {"Cancel", "OK"} default button "OK" default answer "")')
+    elif [[ "$machine" == "Linux" ]]; then
+        bitrate=$(dialog --title "Enter new audio bitrate value (ex: 96, 112, 128, 160, 192, 256, 320) :" --inputbox "bitrate:" 8 60)
+    elif [[ "$machine" == "Cygwin" ]]; then
+        bitrate=$(dialog --title "Enter new audio bitrate value (ex: 96, 112, 128, 160, 192, 256, 320) :" --inputbox "bitrate:" 8 60)
+    elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
+        echo "Usage: $0 output_folder bitrate"
+        exit 1
+    fi
+fi
 
-if [[ "$bitrate" == "" ]] ; then
-   echo "Bitrate is required" >&2; exit 1
+if [[ "$bitrate" == "" ]]; then
+    echo "Usage: $0 output_folder bitrate"
+    exit 1
 fi
 
 ####################################

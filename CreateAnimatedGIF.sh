@@ -31,22 +31,63 @@ if ! [ -f "$input_file" ]; then
     fi
 fi
 
-echo "Start time (HH:MM:SS): "
-read start
+##############################################################################
+# Prompt for start
+###############################################################################
+if [[ "$start" == "" ]]; then
+    if [[ "$machine" == "Mac" ]]; then
+        start=$(osascript -e 'set T to text returned of (display dialog "Start Time [hh:mm:ss]: " buttons {"Cancel", "OK"} default button "OK" default answer "")')
+    elif [[ "$machine" == "Linux" ]]; then
+        start=$(dialog --title "Start Time [hh:mm:ss]: " --inputbox "start:" 8 60)
+    elif [[ "$machine" == "Cygwin" ]]; then
+        start=$(dialog --title "Start Time [hh:mm:ss]: " --inputbox "start:" 8 60)
+    elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
+        echo "Usage: $0 output_folder start"
+        exit 1
+    fi
+fi
 
 if [[ "$start" == "" ]] ; then
-   echo "Start time is required" >&2; exit 1
+   echo "Error: Start Time is a required input" >&2; exit 1
 fi
 
-echo "Duration in seconds: "
-read duration
+echo 'Clip Duration [hh:mm:ss]: '
+
+##############################################################################
+# Prompt for duration
+###############################################################################
+if [[ "$duration" == "" ]]; then
+    if [[ "$machine" == "Mac" ]]; then
+        duration=$(osascript -e 'set T to text returned of (display dialog "Clip Duration [hh:mm:ss]: " buttons {"Cancel", "OK"} default button "OK" default answer "")')
+    elif [[ "$machine" == "Linux" ]]; then
+        duration=$(dialog --title "Clip Duration [hh:mm:ss]: " --inputbox "duration:" 8 60)
+    elif [[ "$machine" == "Cygwin" ]]; then
+        duration=$(dialog --title "Clip Duration [hh:mm:ss]: " --inputbox "duration:" 8 60)
+    elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
+        echo "Usage: $0 output_folder duration"
+        exit 1
+    fi
+fi
 
 if [[ "$duration" == "" ]] ; then
-   echo "Duration is required" >&2; exit 1
+   echo "Error: Duration is a required input" >&2; exit 1
 fi
 
-echo "Clip width: "
-read width
+##############################################################################
+# Prompt for width
+###############################################################################
+if [[ "$width" == "" ]]; then
+    if [[ "$machine" == "Mac" ]]; then
+        width=$(osascript -e 'set T to text returned of (display dialog "Clip width:" buttons {"Cancel", "OK"} default button "OK" default answer "")')
+    elif [[ "$machine" == "Linux" ]]; then
+        width=$(dialog --title "Clip width:" --inputbox "width:" 8 60)
+    elif [[ "$machine" == "Cygwin" ]]; then
+        width=$(dialog --title "Clip width:" --inputbox "width:" 8 60)
+    elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
+        echo "Usage: $0 output_folder width"
+        exit 1
+    fi
+fi
 
 if [[ "$width" == "" ]] ; then
    echo "Width is required" >&2; exit 1

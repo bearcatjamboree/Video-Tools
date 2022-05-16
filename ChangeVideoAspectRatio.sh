@@ -10,7 +10,9 @@ case "${unameOut}" in
 esac
 
 echo "${machine}"
+
 input_file="$1"
+aspect="$2"
 
 ##############################################################################
 # Check for file was passed.  Show open file dialog if no argument and on Mac
@@ -31,8 +33,21 @@ if ! [ -f "$input_file" ]; then
     fi
 fi
 
-echo "Enter new aspect ratio (16:9, 4:3, 16:10, 5:4, 2:21:1, 2:35:1, 2:39:1, etc.): "
-read aspect
+##############################################################################
+# Prompt for aspect
+###############################################################################
+if [[ "$aspect" == "" ]]; then
+    if [[ "$machine" == "Mac" ]]; then
+        aspect=$(osascript -e 'set T to text returned of (display dialog "Enter new aspect ratio (16:9, 4:3, 16:10, 5:4, 2:21:1, 2:35:1, 2:39:1, etc.): " buttons {"Cancel", "OK"} default button "OK" default answer "")')
+    elif [[ "$machine" == "Linux" ]]; then
+        aspect=$(dialog --title "Enter new aspect ratio (16:9, 4:3, 16:10, 5:4, 2:21:1, 2:35:1, 2:39:1, etc.): " --inputbox "aspect:" 8 60)
+    elif [[ "$machine" == "Cygwin" ]]; then
+        aspect=$(dialog --title "Enter new aspect ratio (16:9, 4:3, 16:10, 5:4, 2:21:1, 2:35:1, 2:39:1, etc.): " --inputbox "aspect:" 8 60)
+    elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
+        echo "Usage: $0 output_folder aspect"
+        exit 1
+    fi
+fi
 
 if [[ "$aspect" == "" ]] ; then
    echo "New aspect ratio is required" >&2; exit 1
