@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Added additional language input examples.  No major code changes...">
-      <change afterPath="$PROJECT_DIR$/RBM/file_list.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TEMP/audio.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TEMP/video.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_list.txt" afterDir="false" />
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Updated ignore list">
+      <change afterPath="$PROJECT_DIR$/test/language.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/translate_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GenerateSpeechFromText.py" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateSpeechFromText.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ResizeVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ResizeVideo.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +68,7 @@
       <recent name="$PROJECT_DIR$/_backups" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.Merge Video And Audio">
+  <component name="RunManager" selected="Shell Script.Get YouTube Descriptions">
     <configuration name="AudioJumpcut" type="ShConfigurationType" folderName="Videos">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -382,6 +384,21 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="Get YouTube Descriptions" type="ShConfigurationType" folderName="YouTube">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/GetYouTubeDescriptions.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="Get YouTube Transcript" type="ShConfigurationType" folderName="YouTube">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -611,6 +628,7 @@
       <item itemvalue="Shell Script.Resize Video" />
       <item itemvalue="Shell Script.Rotate Video Clockwise" />
       <item itemvalue="Shell Script.Rotate Video Counterclockwise" />
+      <item itemvalue="Shell Script.Get YouTube Descriptions" />
       <item itemvalue="Shell Script.Get YouTube Transcript" />
     </list>
   </component>
@@ -623,83 +641,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Initial release">
-      <created>1651944580501</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1651944580501</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Initial commit of all files to the repository">
-      <created>1651946517726</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1651946517727</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Initial commit of all files to the repository">
-      <created>1651946610696</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1651946610696</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Initial commit of all files to the repository">
-      <created>1651947058118</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1651947058118</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Initial commit of all files to the repository">
-      <created>1651947161444</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1651947161444</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Initial commit of all files to the repository">
-      <created>1651947336181</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1651947336181</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Initial commit of all files to the repository">
-      <created>1651947682439</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1651947682439</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Initial commit of all files to the repository">
-      <created>1651948223990</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1651948223990</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Initial commit of all files to the repository">
-      <created>1651948270846</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1651948270846</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Initial commit of all files to the repository">
-      <created>1651948899350</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1651948899350</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Initial commit of all files to the repository">
-      <created>1651949327104</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1651949327104</updated>
     </task>
     <task id="LOCAL-00014" summary="Initial commit of all files to the repository">
       <created>1651950924757</created>
@@ -967,7 +908,84 @@
       <option name="project" value="LOCAL" />
       <updated>1652539782205</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Added DownloadYouTubeDescriptions.sh to allow fetching video description text">
+      <created>1652560771546</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1652560771547</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Made updates to handle keeping both video and audio tracks when merging">
+      <created>1652560840990</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1652560840990</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Updated script list and organized into category-based folders">
+      <created>1652560871327</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1652560871327</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Added script to download YouTube video/playlist/channel video descriptions and translate to a list of additional languages once downloaded.">
+      <created>1652717618183</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1652717618183</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Updated prompt text and remove shell msg since it was redundant.">
+      <created>1652717668064</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1652717668064</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Added language list to make processing easier">
+      <created>1652717718880</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1652717718880</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Added threading and other updates to improve performance and correct errors.">
+      <created>1652717757222</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1652717757223</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Added various minor script corrections">
+      <created>1652717788403</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1652717788403</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Added various minor script corrections">
+      <created>1652717834359</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1652717834360</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Updated ignore list">
+      <created>1652717857920</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1652717857920</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Updated ignore list">
+      <created>1652717891517</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1652717891517</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -983,16 +1001,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Initial commit of all files to the repository" />
-    <MESSAGE value="Renamed rba to RBM to indicate remove background music" />
-    <MESSAGE value="added ignore files" />
-    <MESSAGE value="update ignore list" />
-    <MESSAGE value="Adding RenameBackgroundMusic to github" />
-    <MESSAGE value="Updating git ignore list" />
-    <MESSAGE value="Updating Readme file with corrections" />
-    <MESSAGE value="Adding scripts for downloading YouTube transcripts and converting them the SBV and SRT." />
     <MESSAGE value="Removed SBV generation and removed unnecessary ffmpeg call" />
-    <MESSAGE value="Updated ignore list" />
     <MESSAGE value="Adding script just for burning and exist SRT file to a video for subtitling videos." />
     <MESSAGE value="Expaned code to look for selected language, and then translate if it is not located.  Language codes can be found here: https://www.labnol.org/code/19899-google-translate-languages" />
     <MESSAGE value="Minor update to shorten TTS voice value" />
@@ -1008,6 +1017,15 @@
     <MESSAGE value="Added script to merge video and audio, taking into account that the video may also contain audio.  Both channels are retained." />
     <MESSAGE value="Corrected Speech From Text to include padded blank audio on the beginning so audio aligns with video for easy merging." />
     <MESSAGE value="Added additional language input examples.  No major code changes..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added additional language input examples.  No major code changes..." />
+    <MESSAGE value="Added DownloadYouTubeDescriptions.sh to allow fetching video description text" />
+    <MESSAGE value="Made updates to handle keeping both video and audio tracks when merging" />
+    <MESSAGE value="Updated script list and organized into category-based folders" />
+    <MESSAGE value="Added script to download YouTube video/playlist/channel video descriptions and translate to a list of additional languages once downloaded." />
+    <MESSAGE value="Updated prompt text and remove shell msg since it was redundant." />
+    <MESSAGE value="Added language list to make processing easier" />
+    <MESSAGE value="Added threading and other updates to improve performance and correct errors." />
+    <MESSAGE value="Added various minor script corrections" />
+    <MESSAGE value="Updated ignore list" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated ignore list" />
   </component>
 </project>

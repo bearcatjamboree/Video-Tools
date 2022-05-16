@@ -11,6 +11,7 @@ esac
 
 echo "${machine}"
 input_file="$1"
+width="$2"
 
 ##############################################################################
 # Check for file was passed.  Show open file dialog if no argument and on Mac
@@ -31,9 +32,21 @@ if ! [ -f "$input_file" ]; then
     fi
 fi
 
-echo 'Enter new video width (aspect ratio will be retained):'
-# shellcheck disable=SC2162
-read width
+##############################################################################
+# Prompt for width
+###############################################################################
+if [[ "$width" == "" ]]; then
+    if [[ "$machine" == "Mac" ]]; then
+        width=$(osascript -e 'set T to text returned of (display dialog "Enter new video width (aspect ratio will be retained):" buttons {"Cancel", "OK"} default button "OK" default answer "")')
+    elif [[ "$machine" == "Linux" ]]; then
+        width=$(dialog --title "Enter new video width (aspect ratio will be retained)" --inputbox "width:" 8 60)
+    elif [[ "$machine" == "Cygwin" ]]; then
+        width=$(dialog --title "Enter new video width (aspect ratio will be retained)" --inputbox "width:" 8 60)
+    elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
+        echo "Usage: $0 output_folder width"
+        exit 1
+    fi
+fi
 
 re='^[0-9]+$'
 
