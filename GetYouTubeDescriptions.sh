@@ -71,7 +71,7 @@ youtube-dl "$url" --write-description --skip-download --youtube-skip-dash-manife
 # rename the .descripton to .txt in the output file names
 for file in $en/*.description ; do mv "$file" "${file%.*}.txt" ; done
 
-languages=( "es" "hi" "zh" )
+languages=( "ar" "en" "es" "hi" "zh" )
 
 for lang in "${languages[@]}"
 do :
