@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Updated ignore list">
-      <change afterPath="$PROJECT_DIR$/test/language.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/translate_test.py" afterDir="false" />
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Various minor udpates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GenerateSpeechFromText.py" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateSpeechFromText.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ResizeVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ResizeVideo.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GenerateSpeechFromText.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateSpeechFromText.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GetYouTubeDescriptions.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GetYouTubeDescriptions.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GetYouTubeTranscript.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GetYouTubeTranscript.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +54,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/cboxgo/PycharmProjects/Video-Tools&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -68,7 +67,7 @@
       <recent name="$PROJECT_DIR$/_backups" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.Get YouTube Descriptions">
+  <component name="RunManager" selected="Shell Script.Get YouTube Transcript">
     <configuration name="AudioJumpcut" type="ShConfigurationType" folderName="Videos">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -606,9 +605,9 @@
       <item itemvalue="Shell Script.Extract Images From Video" />
       <item itemvalue="Shell Script.Generate Video Subtitles" />
       <item itemvalue="Shell Script.Plot Video Frames" />
+      <item itemvalue="Shell Script.AudioJumpcut" />
       <item itemvalue="Shell Script.Audio+FaceRecognition" />
       <item itemvalue="Shell Script.Audio+MatchTemplate" />
-      <item itemvalue="Shell Script.AudioJumpcut" />
       <item itemvalue="Shell Script.Burn Subtitles From SRT" />
       <item itemvalue="Shell Script.Change Video Aspect Ratio" />
       <item itemvalue="Shell Script.Convert Video Format" />
@@ -641,20 +640,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Initial commit of all files to the repository">
-      <created>1651950924757</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1651950924757</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Initial commit of all files to the repository">
-      <created>1651951538512</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1651951538512</updated>
     </task>
     <task id="LOCAL-00016" summary="Initial commit of all files to the repository">
       <created>1651952550949</created>
@@ -985,7 +970,21 @@
       <option name="project" value="LOCAL" />
       <updated>1652717891517</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Numerous updates to correct errors during translation, including passing absolute path to AudioSegment to prevent high memory usage from causing AudioSegment to have issues locating the file being processed.">
+      <created>1652718101387</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1652718101387</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Various minor udpates">
+      <created>1652718135276</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1652718135276</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1001,8 +1000,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Removed SBV generation and removed unnecessary ffmpeg call" />
-    <MESSAGE value="Adding script just for burning and exist SRT file to a video for subtitling videos." />
     <MESSAGE value="Expaned code to look for selected language, and then translate if it is not located.  Language codes can be found here: https://www.labnol.org/code/19899-google-translate-languages" />
     <MESSAGE value="Minor update to shorten TTS voice value" />
     <MESSAGE value="Code update to automatically translate to selected language if it isn't available or get the selected transcript if the language already exists." />
@@ -1026,6 +1023,8 @@
     <MESSAGE value="Added threading and other updates to improve performance and correct errors." />
     <MESSAGE value="Added various minor script corrections" />
     <MESSAGE value="Updated ignore list" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated ignore list" />
+    <MESSAGE value="Numerous updates to correct errors during translation, including passing absolute path to AudioSegment to prevent high memory usage from causing AudioSegment to have issues locating the file being processed." />
+    <MESSAGE value="Various minor udpates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Various minor udpates" />
   </component>
 </project>
