@@ -37,7 +37,7 @@ echo "$input_file"
 # Check for voice to use
 ###############################################################################
 if [[ "$machine" == "Mac" ]]; then
-    language=$(osascript -e 'display dialog "Please select a language: " buttons {"Spanish", "Hindi", "Mandarin"} default button 3')
+    language=$(osascript -e 'return choose from list {"Arabic", "Spanish", "Hindi", "Mandarin"}')
 elif [[ "$machine" == "Linux" ]]; then
     language=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
 elif [[ "$machine" == "Cygwin" ]]; then
@@ -47,14 +47,14 @@ else
     exit 1
 fi
 
-echo "$language"
-
-if [[ "$language" == "button returned:Spanish" ]]; then
+if [[ "$language" == "Spanish" ]]; then
   voice="carlos"
-elif [[ "$language" == "button returned:Hindi" ]]; then
+elif [[ "$language" == "Hindi" ]]; then
   voice="neel"
-elif [[ "$language" == "button returned:Mandarin" ]]; then
+elif [[ "$language" == "Mandarin" ]]; then
   voice="ting-ting"
+elif [[ "$language" == "Arabic" ]]; then
+  voice="maged"
 else
     echo "Invalid selection returned"
     exit 1
