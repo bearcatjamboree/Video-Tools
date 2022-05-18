@@ -10,7 +10,9 @@ case "${unameOut}" in
 esac
 
 echo ${machine}
+
 output_folder="$1"
+video_provided="$2"
 
 ##############################################################################
 # Check for file was passed.  Show open file dialog if no argument and on Mac
@@ -30,32 +32,37 @@ if ! [ -f "output_folder" ]; then
 fi
 
 ##############################################################################
-# Prompt for video_id
+# Prompt for video_provided
 ###############################################################################
-if [[ "$video_id" == "" ]]; then
+if [[ "$video_provided" == "" ]]; then
     if [[ "$machine" == "Mac" ]]; then
-        video_id=$(osascript -e 'set T to text returned of (display dialog "Enter video ID:" buttons {"Cancel", "OK"} default button "OK" default answer "")')
+        video_provided=$(osascript -e 'set T to text returned of (display dialog "Enter YouTube video url or ID:" buttons {"Cancel", "OK"} default button "OK" default answer "")')
     elif [[ "$machine" == "Linux" ]]; then
-        video_id=$(dialog --title "Enter video ID" --inputbox "video_id:" 8 60)
+        video_provided=$(dialog --title "Enter YouTube video url or ID:" --inputbox "video_provided:" 8 60)
     elif [[ "$machine" == "Cygwin" ]]; then
-        video_id=$(dialog --title "Enter video ID" --inputbox "video_id:" 8 60)
+        video_provided=$(dialog --title "Enter YouTube video url or ID:" --inputbox "video_provided:" 8 60)
     elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
-        echo "Usage: $0 output_folder video_id"
+        echo "Usage: $0 output_folder video_provided"
         exit 1
     fi
 fi
 
-if [[ "$video_id" == "" ]]; then
-    echo "Usage: $0 output_folder video_id"
+if [[ "$video_provided" == "" ]]; then
+    echo "Usage: $0 output_folder video (url or ID)"
     exit 1
 fi
+
+query_string="${video_provided##*v=}"
+video_id="${query_string%&*}"
+
+echo "video_id = $video_id"
 
 ####################################
 # Remove backslashes
 ####################################
 file=$(echo "$output_folder"|tr -d '\\')
 
-languages=( "en" "es" "hi" "zh" )
+languages=( "ar" "en" "es" "hi" "zh" )
 
 for lang in "${languages[@]}"
 do :
