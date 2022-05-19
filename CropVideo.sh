@@ -10,7 +10,6 @@ case "${unameOut}" in
 esac
 
 echo "${machine}"
-
 input_file="$1"
 out_w="$2"
 out_h="$3"
@@ -23,7 +22,7 @@ y="$5"
 if ! [ -f "$input_file" ]; then
     if [[ "$machine" == "Mac" ]]; then
         input_file=$(osascript -e 'tell application (path to frontmost application as text)
-        set input_file to choose file
+        set input_file to choose file with prompt "Please choose a file to process"
         POSIX path of input_file
         end')
     elif [[ "$machine" == "Linux" ]]; then
@@ -31,9 +30,14 @@ if ! [ -f "$input_file" ]; then
     elif [[ "$machine" == "Cygwin" ]]; then
         input_file=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
     elif [ "$#" -ne 1 ] || ! [ -f "$input_file" ]; then
-        echo "Usage: $0 input_file"
+        echo "Usage: $0 input_file out_w out_h x y"
         exit 1
     fi
+fi
+
+if ! [ -f "$input_file" ]; then
+  echo "Usage: $0 input_file out_w out_h x y"
+  exit 1
 fi
 
 ##############################################################################
@@ -47,13 +51,13 @@ if [[ "$out_w" == "" ]]; then
     elif [[ "$machine" == "Cygwin" ]]; then
         out_w=$(dialog --title "Enter the width of the output rectangle: " --inputbox "out_w:" 8 60)
     elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
-        echo "Usage: $0 output_folder out_w"
+        echo "Usage: $0 input_file out_w out_h x y"
         exit 1
     fi
 fi
 
 if [[ "$out_w" == "" ]]; then
-    echo "Usage: $0 output_folder out_w"
+    echo "Usage: $0 input_file out_w out_h x y"
     exit 1
 fi
 
@@ -68,13 +72,13 @@ if [[ "$out_h" == "" ]]; then
     elif [[ "$machine" == "Cygwin" ]]; then
         out_h=$(dialog --title "Enter the height of the output rectangle:" --inputbox "out_h:" 8 60)
     elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
-        echo "Usage: $0 output_folder out_h"
+        echo "Usage: $0 input_file out_w out_h x y"
         exit 1
     fi
 fi
 
 if [[ "$out_h" == "" ]]; then
-    echo "Usage: $0 output_folder out_h"
+    echo "Usage: $0 input_file out_w out_h x y"
     exit 1
 fi
 
@@ -89,13 +93,13 @@ if [[ "$x" == "" ]]; then
     elif [[ "$machine" == "Cygwin" ]]; then
         x=$(dialog --title "Enter the top left corner X-position:" --inputbox "x:" 8 60)
     elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
-        echo "Usage: $0 output_folder x"
+        echo "Usage: $0 input_file out_w out_h x y"
         exit 1
     fi
 fi
 
 if [[ "$x" == "" ]]; then
-    echo "Usage: $0 output_folder x"
+    echo "Usage: $0 input_file out_w out_h x y"
     exit 1
 fi
 
@@ -110,13 +114,13 @@ if [[ "$y" == "" ]]; then
     elif [[ "$machine" == "Cygwin" ]]; then
         y=$(dialog --title "Enter the top left corner Y-position:" --inputbox "y:" 8 60)
     elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
-        echo "Usage: $0 output_folder y"
+        echo "Usage: $0 input_file out_w out_h x y"
         exit 1
     fi
 fi
 
 if [[ "$y" == "" ]]; then
-    echo "Usage: $0 output_folder y"
+    echo "Usage: $0 input_file out_w out_h x y"
     exit 1
 fi
 

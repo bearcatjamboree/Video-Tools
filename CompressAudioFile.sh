@@ -11,6 +11,7 @@ esac
 
 echo "${machine}"
 input_file="$1"
+bitrate="$2"
 
 ##############################################################################
 # Check for file was passed.  Show open file dialog if no argument and on Mac
@@ -18,7 +19,7 @@ input_file="$1"
 if ! [ -f "$input_file" ]; then
     if [[ "$machine" == "Mac" ]]; then
         input_file=$(osascript -e 'tell application (path to frontmost application as text)
-        set input_file to choose file
+        set input_file to choose file with prompt "Please choose a file to process"
         POSIX path of input_file
         end')
     elif [[ "$machine" == "Linux" ]]; then
@@ -26,9 +27,14 @@ if ! [ -f "$input_file" ]; then
     elif [[ "$machine" == "Cygwin" ]]; then
         input_file=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
     elif [ "$#" -ne 1 ] || ! [ -f "$input_file" ]; then
-        echo "Usage: $0 input_file"
+        echo "Usage: $0 input_file bit_rate"
         exit 1
     fi
+fi
+
+if ! [ -f "$input_file" ]; then
+  echo "Usage: $0 input_file bit_rate"
+  exit 1
 fi
 
 ##############################################################################
@@ -42,13 +48,13 @@ if [[ "$bitrate" == "" ]]; then
     elif [[ "$machine" == "Cygwin" ]]; then
         bitrate=$(dialog --title "Enter new audio bitrate value (ex: 96, 112, 128, 160, 192, 256, 320) :" --inputbox "bitrate:" 8 60)
     elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
-        echo "Usage: $0 output_folder bitrate"
+        echo "Usage: $0 input_file bitrate"
         exit 1
     fi
 fi
 
 if [[ "$bitrate" == "" ]]; then
-    echo "Usage: $0 output_folder bitrate"
+    echo "Usage: $0 input_file bitrate"
     exit 1
 fi
 

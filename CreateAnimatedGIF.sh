@@ -10,7 +10,11 @@ case "${unameOut}" in
 esac
 
 echo "${machine}"
+
 input_file="$1"
+start="$2"
+duration="$3"
+width="$4"
 
 ##############################################################################
 # Check for file was passed.  Show open file dialog if no argument and on Mac
@@ -18,7 +22,7 @@ input_file="$1"
 if ! [ -f "$input_file" ]; then
     if [[ "$machine" == "Mac" ]]; then
         input_file=$(osascript -e 'tell application (path to frontmost application as text)
-        set input_file to choose file
+        set input_file to choose file with prompt "Please choose a file to process"
         POSIX path of input_file
         end')
     elif [[ "$machine" == "Linux" ]]; then
@@ -26,9 +30,14 @@ if ! [ -f "$input_file" ]; then
     elif [[ "$machine" == "Cygwin" ]]; then
         input_file=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
     elif [ "$#" -ne 1 ] || ! [ -f "$input_file" ]; then
-        echo "Usage: $0 input_file"
+        echo "Usage: $0 input_file start duration width"
         exit 1
     fi
+fi
+
+if ! [ -f "$input_file" ]; then
+  echo "Usage: $0 input_file start duration width"
+  exit 1
 fi
 
 ##############################################################################
@@ -42,13 +51,14 @@ if [[ "$start" == "" ]]; then
     elif [[ "$machine" == "Cygwin" ]]; then
         start=$(dialog --title "Start Time [hh:mm:ss]: " --inputbox "start:" 8 60)
     elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
-        echo "Usage: $0 output_folder start"
+        echo "Usage: $0 input_file start duration width"
         exit 1
     fi
 fi
 
 if [[ "$start" == "" ]] ; then
-   echo "Error: Start Time is a required input" >&2; exit 1
+  echo "Usage: $0 input_file start duration width"
+  exit 1
 fi
 
 echo 'Clip Duration [hh:mm:ss]: '
@@ -64,13 +74,14 @@ if [[ "$duration" == "" ]]; then
     elif [[ "$machine" == "Cygwin" ]]; then
         duration=$(dialog --title "Clip Duration [hh:mm:ss]: " --inputbox "duration:" 8 60)
     elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
-        echo "Usage: $0 output_folder duration"
+        echo "Usage: $0 input_file start duration width"
         exit 1
     fi
 fi
 
 if [[ "$duration" == "" ]] ; then
-   echo "Error: Duration is a required input" >&2; exit 1
+  echo "Usage: $0 input_file start duration width"
+  exit 1
 fi
 
 ##############################################################################
@@ -84,13 +95,14 @@ if [[ "$width" == "" ]]; then
     elif [[ "$machine" == "Cygwin" ]]; then
         width=$(dialog --title "Clip width:" --inputbox "width:" 8 60)
     elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
-        echo "Usage: $0 output_folder width"
+        echo "Usage: $0 input_file start duration width"
         exit 1
     fi
 fi
 
 if [[ "$width" == "" ]] ; then
-   echo "Width is required" >&2; exit 1
+  echo "Usage: $0 input_file start duration width"
+  exit 1
 fi
 
 ####################################

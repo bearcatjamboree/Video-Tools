@@ -11,6 +11,7 @@ esac
 
 echo "${machine}"
 input_file="$1"
+volume="$2"
 
 ##############################################################################
 # Check for file was passed.  Show open file dialog if no argument and on Mac
@@ -18,7 +19,7 @@ input_file="$1"
 if ! [ -f "$input_file" ]; then
     if [[ "$machine" == "Mac" ]]; then
         input_file=$(osascript -e 'tell application (path to frontmost application as text)
-        set input_file to choose file
+        set input_file to choose file with prompt "Please choose a file to process"
         POSIX path of input_file
         end')
     elif [[ "$machine" == "Linux" ]]; then
@@ -26,9 +27,14 @@ if ! [ -f "$input_file" ]; then
     elif [[ "$machine" == "Cygwin" ]]; then
         input_file=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
     elif [ "$#" -ne 1 ] || ! [ -f "$input_file" ]; then
-        echo "Usage: $0 input_file"
+        echo "Usage: $0 input_file volume"
         exit 1
     fi
+fi
+
+if ! [ -f "$input_file" ]; then
+  echo "Usage: $0 input_file volume"
+  exit 1
 fi
 
 ##############################################################################
@@ -42,13 +48,14 @@ if [[ "$volume" == "" ]]; then
     elif [[ "$machine" == "Cygwin" ]]; then
         volume=$(dialog --title "Enter volume adjustment amount (expressed as a decimal or dB value):" --inputbox "volume:" 8 60)
     elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
-        echo "Usage: $0 output_folder volume"
+        echo "Usage: $0 input_file volume"
         exit 1
     fi
 fi
 
 if [[ "$volume" == "" ]] ; then
-   echo "Volume adjustment is required" >&2; exit 1
+  echo "Usage: $0 input_file volume"
+  exit 1
 fi
 
 ####################################

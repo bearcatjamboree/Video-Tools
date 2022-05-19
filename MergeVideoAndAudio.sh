@@ -13,8 +13,6 @@ echo "${machine}"
 input_video="$1"
 input_audio="$2"
 
-#echo "Input video to merge"
-
 ##############################################################################
 # Check for file was passed.  Show open file dialog if no argument and on Mac
 ###############################################################################
@@ -33,9 +31,11 @@ if ! [ -f "$input_video" ]; then
         exit 1
     fi
 fi
-echo "$input_video"
 
-#echo "Input audio to merge"
+if ! [ -f "$input_file" ]; then
+  echo "Usage: $0 input_video input_audio"
+  exit 1
+fi
 
 ##############################################################################
 # Check for file was passed.  Show open file dialog if no argument and on Mac
@@ -56,7 +56,10 @@ if ! [ -f "$input_audio" ]; then
     fi
 fi
 
-echo "$input_audio"
+if ! [ -f "$input_audio" ]; then
+  echo "Usage: $0 input_video input_audio"
+  exit 1
+fi
 
 ####################################
 # Remove backlashes from filepaths

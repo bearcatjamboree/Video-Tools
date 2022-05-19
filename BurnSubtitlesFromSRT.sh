@@ -14,7 +14,6 @@ case "${unameOut}" in
 esac
 
 echo "${machine}"
-
 video_file="$1"
 srt_file="$2"
 
@@ -24,7 +23,7 @@ srt_file="$2"
 if ! [ -f "$video_file" ]; then
     if [[ "$machine" == "Mac" ]]; then
         video_file=$(osascript -e 'tell application (path to frontmost application as text)
-        set video_file to choose file with prompt "Please select video file:"
+        set video_file to choose file with prompt "Please choose a video file to process"
         POSIX path of video_file
         end')
     elif [[ "$machine" == "Linux" ]]; then
@@ -37,13 +36,18 @@ if ! [ -f "$video_file" ]; then
     fi
 fi
 
+if ! [ -f "$video_file" ]; then
+  echo "Usage: $0 video_file srt_file"
+  exit 1
+fi
+
 ##############################################################################
 # Check for file was passed.  Show open file dialog if no argument and on Mac
 ###############################################################################
 if ! [ -f "$srt_file" ]; then
     if [[ "$machine" == "Mac" ]]; then
         srt_file=$(osascript -e 'tell application (path to frontmost application as text)
-        set srt_file to choose file with prompt "Please select SRT file:"
+        set srt_file to choose file with prompt "Please select SRT file"
         POSIX path of srt_file
         end')
     elif [[ "$machine" == "Linux" ]]; then
@@ -51,9 +55,14 @@ if ! [ -f "$srt_file" ]; then
     elif [[ "$machine" == "Cygwin" ]]; then
         srt_file=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
     elif [ "$#" -ne 1 ] || ! [ -f "$srt_file" ]; then
-        echo "Usage: $0 srt_file srt_file"
+        echo "Usage: $0 video_file srt_file"
         exit 1
     fi
+fi
+
+if ! [ -f "$srt_file" ]; then
+  echo "Usage: $0 video_file srt_file"
+  exit 1
 fi
 
 ####################################

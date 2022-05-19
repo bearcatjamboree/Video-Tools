@@ -1,12 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Various minor udpates">
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Updated usage text and program variable defaults for users that invoke from command-line.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioFaceRecognition.sh" beforeDir="false" afterPath="$PROJECT_DIR$/AudioFaceRecognition.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioJumpcut.sh" beforeDir="false" afterPath="$PROJECT_DIR$/AudioJumpcut.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioMatchTemplate.sh" beforeDir="false" afterPath="$PROJECT_DIR$/AudioMatchTemplate.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BurnSubtitlesFromSRT.sh" beforeDir="false" afterPath="$PROJECT_DIR$/BurnSubtitlesFromSRT.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChangeVideoAspectRatio.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ChangeVideoAspectRatio.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChangeVolumeAmount.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ChangeVolumeAmount.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompressAudioFile.sh" beforeDir="false" afterPath="$PROJECT_DIR$/CompressAudioFile.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConvertVideoFormat.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ConvertVideoFormat.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CreateAnimatedGIF.sh" beforeDir="false" afterPath="$PROJECT_DIR$/CreateAnimatedGIF.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CreatePencilSketchVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/CreatePencilSketchVideo.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CreateVintageVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/CreateVintageVideo.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CropVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/CropVideo.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CutVideoStartToDuration.sh" beforeDir="false" afterPath="$PROJECT_DIR$/CutVideoStartToDuration.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CutVideoStartToEndTime.sh" beforeDir="false" afterPath="$PROJECT_DIR$/CutVideoStartToEndTime.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExtractAudioFromVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ExtractAudioFromVideo.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExtractImagesFromVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ExtractImagesFromVideo.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FaceRecognition.sh" beforeDir="false" afterPath="$PROJECT_DIR$/FaceRecognition.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlipVideoHorizontally.sh" beforeDir="false" afterPath="$PROJECT_DIR$/FlipVideoHorizontally.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlipVideoVertically.sh" beforeDir="false" afterPath="$PROJECT_DIR$/FlipVideoVertically.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GenerateSpeechFromText.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateSpeechFromText.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GenerateVideoSubtitles.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateVideoSubtitles.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GetYouTubeDescriptions.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GetYouTubeDescriptions.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GetYouTubeTranscript.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GetYouTubeTranscript.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MatchTemplate.sh" beforeDir="false" afterPath="$PROJECT_DIR$/MatchTemplate.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MergeVideoAndAudio.sh" beforeDir="false" afterPath="$PROJECT_DIR$/MergeVideoAndAudio.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MirrorVideoHorizontally.sh" beforeDir="false" afterPath="$PROJECT_DIR$/MirrorVideoHorizontally.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MirrorVideoVertically.sh" beforeDir="false" afterPath="$PROJECT_DIR$/MirrorVideoVertically.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PlotVideoFrames.sh" beforeDir="false" afterPath="$PROJECT_DIR$/PlotVideoFrames.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RBM/RemoveBackgroundMusic.sh" beforeDir="false" afterPath="$PROJECT_DIR$/RBM/RemoveBackgroundMusic.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RBM/RemoveVocals.sh" beforeDir="false" afterPath="$PROJECT_DIR$/RBM/RemoveVocals.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemoveAudioFromVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/RemoveAudioFromVideo.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemoveVideoBackground.sh" beforeDir="false" afterPath="$PROJECT_DIR$/RemoveVideoBackground.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ResizeVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ResizeVideo.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RotateVideoClockwise.sh" beforeDir="false" afterPath="$PROJECT_DIR$/RotateVideoClockwise.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RotateVideoCounterclockwise.sh" beforeDir="false" afterPath="$PROJECT_DIR$/RotateVideoCounterclockwise.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +98,7 @@
       <recent name="$PROJECT_DIR$/_backups" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.Get YouTube Transcript">
+  <component name="RunManager" selected="Shell Script.Merge Video And Audio">
     <configuration name="AudioJumpcut" type="ShConfigurationType" folderName="Videos">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -641,55 +672,6 @@
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
     </task>
-    <task id="LOCAL-00016" summary="Initial commit of all files to the repository">
-      <created>1651952550949</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1651952550949</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Initial commit of all files to the repository">
-      <created>1651954009948</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1651954009948</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Initial commit of all files to the repository">
-      <created>1651954074212</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1651954074212</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Initial commit of all files to the repository">
-      <created>1652133501491</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1652133501491</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Renamed rba to RBM to indicate remove background music">
-      <created>1652133809133</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1652133809133</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Renamed rba to RBM to indicate remove background music">
-      <created>1652134187456</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1652134187457</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Renamed rba to RBM to indicate remove background music">
-      <created>1652134640027</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1652134640027</updated>
-    </task>
     <task id="LOCAL-00023" summary="added ignore files">
       <created>1652135287279</created>
       <option name="number" value="00023" />
@@ -984,7 +966,56 @@
       <option name="project" value="LOCAL" />
       <updated>1652718135276</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Add drop-down list for language selection">
+      <created>1652842070305</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1652842070305</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Modified to allow URL or video ID for video input">
+      <created>1652842100004</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1652842100004</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Modified to allow URL or video ID for video input">
+      <created>1652842110086</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1652842110086</updated>
+    </task>
+    <task id="LOCAL-00068" summary="Updated requirements list">
+      <created>1652842139070</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1652842139070</updated>
+    </task>
+    <task id="LOCAL-00069" summary="Added folder structure to organize functions">
+      <created>1652842155420</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1652842155420</updated>
+    </task>
+    <task id="LOCAL-00070" summary="Added Arabic as an option">
+      <created>1652842188990</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1652842188990</updated>
+    </task>
+    <task id="LOCAL-00071" summary="Updated usage text and program variable defaults for users that invoke from command-line.">
+      <created>1652963984422</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1652963984422</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1000,12 +1031,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Expaned code to look for selected language, and then translate if it is not located.  Language codes can be found here: https://www.labnol.org/code/19899-google-translate-languages" />
-    <MESSAGE value="Minor update to shorten TTS voice value" />
-    <MESSAGE value="Code update to automatically translate to selected language if it isn't available or get the selected transcript if the language already exists." />
-    <MESSAGE value="Add new scripts to features list" />
-    <MESSAGE value="Adding Google Translate 2-byte language codes for available transcript translation languages" />
-    <MESSAGE value="Update the table format" />
     <MESSAGE value="Sort language alphabetically" />
     <MESSAGE value="Added selected language to output files to allow translating more than one language with an execution of the shell script" />
     <MESSAGE value="Correct invalid codes for Chinese simplified and traditional" />
@@ -1025,6 +1050,12 @@
     <MESSAGE value="Updated ignore list" />
     <MESSAGE value="Numerous updates to correct errors during translation, including passing absolute path to AudioSegment to prevent high memory usage from causing AudioSegment to have issues locating the file being processed." />
     <MESSAGE value="Various minor udpates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Various minor udpates" />
+    <MESSAGE value="Add drop-down list for language selection" />
+    <MESSAGE value="Modified to allow URL or video ID for video input" />
+    <MESSAGE value="Updated requirements list" />
+    <MESSAGE value="Added folder structure to organize functions" />
+    <MESSAGE value="Added Arabic as an option" />
+    <MESSAGE value="Updated usage text and program variable defaults for users that invoke from command-line." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated usage text and program variable defaults for users that invoke from command-line." />
   </component>
 </project>

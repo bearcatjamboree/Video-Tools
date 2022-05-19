@@ -11,6 +11,8 @@ esac
 
 echo "${machine}"
 input_file="$1"
+output_folder="$2"
+format="$3"
 
 ##############################################################################
 # Check for file was passed.  Show open file dialog if no argument and on Mac
@@ -18,7 +20,7 @@ input_file="$1"
 if ! [ -f "$input_file" ]; then
     if [[ "$machine" == "Mac" ]]; then
         input_file=$(osascript -e 'tell application (path to frontmost application as text)
-        set input_file to choose file
+        set input_file to choose file with prompt "Please choose a file to process"
         POSIX path of input_file
         end')
     elif [[ "$machine" == "Linux" ]]; then
@@ -26,9 +28,14 @@ if ! [ -f "$input_file" ]; then
     elif [[ "$machine" == "Cygwin" ]]; then
         input_file=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
     elif [ "$#" -ne 1 ] || ! [ -f "$input_file" ]; then
-        echo "Usage: $0 input_file"
+        echo "Usage: $0 input_file output_folder format"
         exit 1
     fi
+fi
+
+if ! [ -f "$input_file" ]; then
+  echo "Usage: $0 input_file output_folder format"
+  exit 1
 fi
 
 ##############################################################################
@@ -37,7 +44,7 @@ fi
 if ! [ -f "$output_folder" ]; then
     if [[ "$machine" == "Mac" ]]; then
         output_folder=$(osascript -e 'tell application (path to frontmost application as text)
-        set output_folder to choose folder
+        set output_folder to choose folder with prompt "Please choose an output folder"
         POSIX path of output_folder
         end')
     elif [[ "$machine" == "Linux" ]]; then
@@ -45,7 +52,7 @@ if ! [ -f "$output_folder" ]; then
     elif [[ "$machine" == "Cygwin" ]]; then
         output_folder=$(dialog --title "Choose a folder" --stdout --title "Please choose a folder to process" --fselect /tmp/ 14 48)
     elif [ "$#" -ne 1 ] || ! [ -f "$output_folder" ]; then
-        echo "Usage: $0 output_folder"
+        echo "Usage: $0 input_file output_folder format"
         exit 1
     fi
 fi
@@ -61,7 +68,7 @@ if [[ "$format" == "" ]]; then
     elif [[ "$machine" == "Cygwin" ]]; then
         format=$(dialog --title "Enter output format (jpg, png, etc.):" --inputbox "format:" 8 60)
     elif [ "$#" -ne 2 ]; then
-        echo "Usage: $0 output_folder format"
+        echo "Usage: $0 input_file output_folder format"
         exit 1
     fi
 fi

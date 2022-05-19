@@ -10,25 +10,29 @@ case "${unameOut}" in
 esac
 
 echo ${machine}
-
 output_folder="$1"
 video_provided="$2"
 
 ##############################################################################
 # Check for file was passed.  Show open file dialog if no argument and on Mac
 ###############################################################################
-if ! [ -f "output_folder" ]; then
+if ! [ -f "$output_folder" ]; then
     if [[ "$machine" == "Mac" ]]; then
         output_folder=$(osascript -e 'tell application (path to frontmost application as text)
-        set output_folder to choose folder
+        set output_folder to choose folder with prompt "Please choose an output folder"
         POSIX path of output_folder
         end')
     elif [[ "$machine" == "Linux" ]]; then
         output_folder=$(dialog --title "Choose a folder" --stdout --title "Please choose an output folder" --fselect /tmp/ 14 48)
     elif [ "$#" -ne 1 ] || ! [ -f "$output_folder" ]; then
-        echo "Usage: $0 output_folder"
+        echo "Usage: $0 output_folder [video URL or ID] "
         exit 1
     fi
+fi
+
+if ! [ -f "$output_folder" ]; then
+  echo "Usage: $0 output_folder [video URL or ID] "
+  exit 1
 fi
 
 ##############################################################################
@@ -42,18 +46,19 @@ if [[ "$video_provided" == "" ]]; then
     elif [[ "$machine" == "Cygwin" ]]; then
         video_provided=$(dialog --title "Enter YouTube video url or ID:" --inputbox "video_provided:" 8 60)
     elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
-        echo "Usage: $0 output_folder video_provided"
+        echo "Usage: $0 output_folder [video URL or ID]"
         exit 1
     fi
 fi
 
 if [[ "$video_provided" == "" ]]; then
-    echo "Usage: $0 output_folder video (url or ID)"
+    echo "Usage: $0 output_folder [video URL or ID]"
     exit 1
 fi
 
-query_string="${video_provided##*v=}"
-video_id="${query_string%&*}"
+video_provided="${video_provided##*v=}"
+video_provided="${video_provided##*/}"
+video_id="${video_provided%&*}"
 
 echo "video_id = $video_id"
 
@@ -62,7 +67,7 @@ echo "video_id = $video_id"
 ####################################
 file=$(echo "$output_folder"|tr -d '\\')
 
-languages=( "ar" "en" "es" "hi" "zh" )
+languages=( "ar" "en" "es" "hi" "zh-Hans" )
 
 for lang in "${languages[@]}"
 do :

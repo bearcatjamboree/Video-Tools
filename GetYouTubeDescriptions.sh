@@ -13,8 +13,6 @@ echo "${machine}"
 output_folder="$1"
 url="$2"
 
-#echo "Input video to merge"
-
 ##############################################################################
 # Check for file was passed.  Show open file dialog if no argument and on Mac
 ###############################################################################
@@ -32,6 +30,11 @@ if ! [ -f "$output_folder" ]; then
         echo "Usage: $0 output_folder url"
         exit 1
     fi
+fi
+
+if ! [ -f "$output_folder" ]; then
+  echo "Usage: $0 output_folder url"
+  exit 1
 fi
 
 ##############################################################################
