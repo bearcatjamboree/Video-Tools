@@ -1,7 +1,7 @@
 #!/bin/sh
 
 subtitle_font="Bangers"
-subtitle_fontsize=48
+subtitle_fontsize=48 #48
 subtitle_fontcolor="ffffff"
 
 unameOut="$(uname -s)"
@@ -14,7 +14,9 @@ case "${unameOut}" in
 esac
 
 echo "${machine}"
-input_file="$1"
+
+video_file="$1"
+srt_file="$2"
 
 ##############################################################################
 # Check for file was passed.  Show open file dialog if no argument and on Mac
@@ -30,7 +32,7 @@ if ! [ -f "$video_file" ]; then
     elif [[ "$machine" == "Cygwin" ]]; then
         video_file=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
     elif [ "$#" -ne 1 ] || ! [ -f "$video_file" ]; then
-        echo "Usage: $0 video_file"
+        echo "Usage: $0 video_file srt_file"
         exit 1
     fi
 fi
@@ -49,7 +51,7 @@ if ! [ -f "$srt_file" ]; then
     elif [[ "$machine" == "Cygwin" ]]; then
         srt_file=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
     elif [ "$#" -ne 1 ] || ! [ -f "$srt_file" ]; then
-        echo "Usage: $0 srt_file"
+        echo "Usage: $0 srt_file srt_file"
         exit 1
     fi
 fi
