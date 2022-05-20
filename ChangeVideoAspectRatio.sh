@@ -47,7 +47,7 @@ if [[ "$aspect" == "" ]]; then
         aspect=$(dialog --title "Enter new aspect ratio (16:9, 4:3, 16:10, 5:4, 2:21:1, 2:35:1, 2:39:1, etc.): " --inputbox "aspect:" 8 60)
     elif [[ "$machine" == "Cygwin" ]]; then
         aspect=$(dialog --title "Enter new aspect ratio (16:9, 4:3, 16:10, 5:4, 2:21:1, 2:35:1, 2:39:1, etc.): " --inputbox "aspect:" 8 60)
-    elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
+    elif [ "$#" -ne 2 ] || ! [ -f "$input_file" ]; then
         echo "Usage: $0 input_file aspect"
         exit 1
     fi

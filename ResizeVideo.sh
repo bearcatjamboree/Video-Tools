@@ -47,7 +47,7 @@ if [[ "$width" == "" ]]; then
         width=$(dialog --title "Enter new video width (aspect ratio will be retained)" --inputbox "width:" 8 60)
     elif [[ "$machine" == "Cygwin" ]]; then
         width=$(dialog --title "Enter new video width (aspect ratio will be retained)" --inputbox "width:" 8 60)
-    elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
+    elif [ "$#" -ne 2 ] || ! [ -f "$input_file" ]; then
         echo "Usage: $0 input_file width"
         exit 1
     fi

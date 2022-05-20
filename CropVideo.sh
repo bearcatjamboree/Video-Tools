@@ -50,7 +50,7 @@ if [[ "$out_w" == "" ]]; then
         out_w=$(dialog --title "Enter the width of the output rectangle: " --inputbox "out_w:" 8 60)
     elif [[ "$machine" == "Cygwin" ]]; then
         out_w=$(dialog --title "Enter the width of the output rectangle: " --inputbox "out_w:" 8 60)
-    elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
+    elif [ "$#" -ne 2 ] || ! [ -f "$input_file" ]; then
         echo "Usage: $0 input_file out_w out_h x y"
         exit 1
     fi
@@ -71,7 +71,7 @@ if [[ "$out_h" == "" ]]; then
         out_h=$(dialog --title "Enter the height of the output rectangle:" --inputbox "out_h:" 8 60)
     elif [[ "$machine" == "Cygwin" ]]; then
         out_h=$(dialog --title "Enter the height of the output rectangle:" --inputbox "out_h:" 8 60)
-    elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
+    elif [ "$#" -ne 2 ] || ! [ -d "$output_folder" ]; then
         echo "Usage: $0 input_file out_w out_h x y"
         exit 1
     fi
@@ -92,7 +92,7 @@ if [[ "$x" == "" ]]; then
         x=$(dialog --title "Enter the top left corner X-position:" --inputbox "x:" 8 60)
     elif [[ "$machine" == "Cygwin" ]]; then
         x=$(dialog --title "Enter the top left corner X-position:" --inputbox "x:" 8 60)
-    elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
+    elif [ "$#" -ne 2 ] || ! [ -d "$output_folder" ]; then
         echo "Usage: $0 input_file out_w out_h x y"
         exit 1
     fi
@@ -113,7 +113,7 @@ if [[ "$y" == "" ]]; then
         y=$(dialog --title "Enter the top left corner Y-position:" --inputbox "y:" 8 60)
     elif [[ "$machine" == "Cygwin" ]]; then
         y=$(dialog --title "Enter the top left corner Y-position:" --inputbox "y:" 8 60)
-    elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
+    elif [ "$#" -ne 2 ] || ! [ -d "$output_folder" ]; then
         echo "Usage: $0 input_file out_w out_h x y"
         exit 1
     fi

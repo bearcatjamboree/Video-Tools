@@ -27,7 +27,7 @@ if ! [ -f "$input_file" ]; then
         input_file=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
     elif [[ "$machine" == "Cygwin" ]]; then
         input_file=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
-    elif [ "$#" -ne 1 ] || ! [ -f "$input_file" ]; then
+    else
         echo "Usage: $0 input_file output_folder format"
         exit 1
     fi
@@ -41,7 +41,7 @@ fi
 ##############################################################################
 # Check for folder was passed.  Show open folder dialog if no argument and on Mac
 ###############################################################################
-if ! [ -f "$output_folder" ]; then
+if ! [ -d "$output_folder" ]; then
     if [[ "$machine" == "Mac" ]]; then
         output_folder=$(osascript -e 'tell application (path to frontmost application as text)
         set output_folder to choose folder with prompt "Please choose an output folder"
@@ -51,7 +51,7 @@ if ! [ -f "$output_folder" ]; then
         output_folder=$(dialog --title "Choose a folder" --stdout --title "Please choose a folder to process" --fselect /tmp/ 14 48)
     elif [[ "$machine" == "Cygwin" ]]; then
         output_folder=$(dialog --title "Choose a folder" --stdout --title "Please choose a folder to process" --fselect /tmp/ 14 48)
-    elif [ "$#" -ne 1 ] || ! [ -f "$output_folder" ]; then
+    elif [ "$#" -ne 1 ] || ! [ -f "$input_file" ]; then
         echo "Usage: $0 input_file output_folder format"
         exit 1
     fi

@@ -47,7 +47,7 @@ if [[ "$bitrate" == "" ]]; then
         bitrate=$(dialog --title "Enter new audio bitrate value (ex: 96, 112, 128, 160, 192, 256, 320) :" --inputbox "bitrate:" 8 60)
     elif [[ "$machine" == "Cygwin" ]]; then
         bitrate=$(dialog --title "Enter new audio bitrate value (ex: 96, 112, 128, 160, 192, 256, 320) :" --inputbox "bitrate:" 8 60)
-    elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
+    elif [ "$#" -ne 2 ] || ! [ -f "$input_file" ]; then
         echo "Usage: $0 input_file bitrate"
         exit 1
     fi

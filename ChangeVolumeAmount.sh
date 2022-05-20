@@ -47,7 +47,7 @@ if [[ "$volume" == "" ]]; then
         volume=$(dialog --title "Enter volume adjustment amount (expressed as a decimal or dB value):" --inputbox "volume:" 8 60)
     elif [[ "$machine" == "Cygwin" ]]; then
         volume=$(dialog --title "Enter volume adjustment amount (expressed as a decimal or dB value):" --inputbox "volume:" 8 60)
-    elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
+    elif [ "$#" -ne 2 ] || ! [ -f "$input_file" ]; then
         echo "Usage: $0 input_file volume"
         exit 1
     fi

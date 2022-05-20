@@ -16,7 +16,7 @@ url="$2"
 ##############################################################################
 # Check for file was passed.  Show open file dialog if no argument and on Mac
 ###############################################################################
-if ! [ -f "$output_folder" ]; then
+if ! [ -d "$output_folder" ]; then
     if [[ "$machine" == "Mac" ]]; then
         output_folder=$(osascript -e 'tell application (path to frontmost application as text)
         set output_folder to choose folder with prompt "Please select output folder:"
@@ -26,13 +26,13 @@ if ! [ -f "$output_folder" ]; then
         output_folder=$(dialog --title "Choose a folder" --stdout --title "Please select output folder:" --fselect /tmp/ 14 48)
     elif [[ "$machine" == "Cygwin" ]]; then
         output_folder=$(dialog --title "Choose a folder" --stdout --title "Please select output folder:" --fselect /tmp/ 14 48)
-    elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
+    else
         echo "Usage: $0 output_folder url"
         exit 1
     fi
 fi
 
-if ! [ -f "$output_folder" ]; then
+if ! [ -d "$output_folder" ]; then
   echo "Usage: $0 output_folder url"
   exit 1
 fi
@@ -47,7 +47,7 @@ if [[ "$url" == "" ]]; then
         url=$(dialog --title "Enter playlist location" --inputbox "URL:" 8 60)
     elif [[ "$machine" == "Cygwin" ]]; then
         url=$(dialog --title "Enter playlist location" --inputbox "URL:" 8 60)
-    elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
+    elif [ "$#" -ne 2 ] || ! [ -d "$output_folder" ]; then
         echo "Usage: $0 output_folder url"
         exit 1
     fi

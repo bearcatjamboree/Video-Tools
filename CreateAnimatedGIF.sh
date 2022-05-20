@@ -50,7 +50,7 @@ if [[ "$start" == "" ]]; then
         start=$(dialog --title "Start Time [hh:mm:ss]: " --inputbox "start:" 8 60)
     elif [[ "$machine" == "Cygwin" ]]; then
         start=$(dialog --title "Start Time [hh:mm:ss]: " --inputbox "start:" 8 60)
-    elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
+    elif [ "$#" -ne 2 ] || ! [ -f "$input_file" ]; then
         echo "Usage: $0 input_file start duration width"
         exit 1
     fi
@@ -73,7 +73,7 @@ if [[ "$duration" == "" ]]; then
         duration=$(dialog --title "Clip Duration [hh:mm:ss]: " --inputbox "duration:" 8 60)
     elif [[ "$machine" == "Cygwin" ]]; then
         duration=$(dialog --title "Clip Duration [hh:mm:ss]: " --inputbox "duration:" 8 60)
-    elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
+    elif [ "$#" -ne 2 ] || ! [ -d "$output_folder" ]; then
         echo "Usage: $0 input_file start duration width"
         exit 1
     fi
@@ -94,7 +94,7 @@ if [[ "$width" == "" ]]; then
         width=$(dialog --title "Clip width:" --inputbox "width:" 8 60)
     elif [[ "$machine" == "Cygwin" ]]; then
         width=$(dialog --title "Clip width:" --inputbox "width:" 8 60)
-    elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
+    elif [ "$#" -ne 2 ] || ! [ -d "$output_folder" ]; then
         echo "Usage: $0 input_file start duration width"
         exit 1
     fi
