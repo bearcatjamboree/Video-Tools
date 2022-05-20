@@ -42,7 +42,7 @@ fi
 ###############################################################################
 if [[ "$url" == "" ]]; then
     if [[ "$machine" == "Mac" ]]; then
-        url=$(osascript -e 'set T to text returned of (display dialog "Enter playlist URL:" buttons {"Cancel", "OK"} default button "OK" default answer "")')
+        url=$(osascript -e 'set T to text returned of (display dialog "Enter video or playlist URL" buttons {"Cancel", "OK"} default button "OK" default answer "")')
     elif [[ "$machine" == "Linux" ]]; then
         url=$(dialog --title "Enter playlist location" --inputbox "URL:" 8 60)
     elif [[ "$machine" == "Cygwin" ]]; then
@@ -59,31 +59,32 @@ if [[ "$url" == "" ]]; then
 fi
 
 output_folder=${output_folder%/}
-en="$output_folder/en"
-
-########################################
-# Create directories if they don't exit
-##################################### ###
-if ! [ -d "$en" ]; then
-  mkdir $en
-fi
 
 # download descriptions from all videos in playlist
-youtube-dl "$url" --write-description --skip-download --youtube-skip-dash-manifest -o "$en/%(title)s"
+youtube-dl "$url" --write-description --skip-download --youtube-skip-dash-manifest -o "$output_folder/%(title)s_descripton"
 
 # rename the .descripton to .txt in the output file names
-for file in $en/*.description ; do mv "$file" "${file%.*}.txt" ; done
+for file in $output_folder/*.description ; do mv "$file" "${file%.*}.txt" ; done
 
 languages=( "ar" "en" "es" "hi" "zh" )
 
+declare -A lang_trans=(
+	["zh"]="zh-Hans"
+)
+
 for lang in "${languages[@]}"
 do :
-  new_output=$output_folder/$lang
+  # look for translation table
+  if [[ "${lang_trans[$lang]}" == "" ]]; then
+    new_output=$output_folder/$lang
+  else
+    new_output=$output_folder/${lang_trans[$lang]}
+  fi
   if ! [ -d "$new_output" ]; then
     mkdir $new_output
   fi
   # translate each file
-  for file in $en/*.txt ;
+  for file in $output_folder/*_descripton.txt ;
     do
       name="${file##*/}"
       echo "cat \"$file\" | trans -s \"en\" -b :$lang > \"$new_output/$name\""
