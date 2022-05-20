@@ -32,7 +32,7 @@ if ! [ -f "$input_video" ]; then
     fi
 fi
 
-if ! [ -f "$input_file" ]; then
+if ! [ -f "$input_video" ]; then
   echo "Usage: $0 input_video input_audio"
   exit 1
 fi
