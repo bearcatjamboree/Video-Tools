@@ -16,21 +16,25 @@ video_provided="$2"
 ##############################################################################
 # Check for file was passed.  Show open file dialog if no argument and on Mac
 ###############################################################################
-if ! [ -f "$output_folder" ]; then
+if ! [ -d "$output_folder" ]; then
     if [[ "$machine" == "Mac" ]]; then
         output_folder=$(osascript -e 'tell application (path to frontmost application as text)
         set output_folder to choose folder with prompt "Please choose an output folder"
         POSIX path of output_folder
         end')
     elif [[ "$machine" == "Linux" ]]; then
-        output_folder=$(dialog --title "Choose a folder" --stdout --title "Please choose an output folder" --fselect /tmp/ 14 48)
-    elif [ "$#" -ne 1 ] || ! [ -f "$output_folder" ]; then
+        output_folder=$(dialog --title "Choose a folder" --stdout --title "Please select output folder:" --fselect /tmp/ 14 48)
+    elif [[ "$machine" == "Cygwin" ]]; then
+        output_folder=$(dialog --title "Choose a folder" --stdout --title "Please select output folder:" --fselect /tmp/ 14 48)
+    else
         echo "Usage: $0 output_folder [video URL or ID] "
         exit 1
     fi
 fi
 
-if ! [ -f "$output_folder" ]; then
+echo "$output_folder"
+
+if ! [ -d "$output_folder" ]; then
   echo "Usage: $0 output_folder [video URL or ID] "
   exit 1
 fi
@@ -45,7 +49,7 @@ if [[ "$video_provided" == "" ]]; then
         video_provided=$(dialog --title "Enter YouTube video url or ID:" --inputbox "video_provided:" 8 60)
     elif [[ "$machine" == "Cygwin" ]]; then
         video_provided=$(dialog --title "Enter YouTube video url or ID:" --inputbox "video_provided:" 8 60)
-    elif [ "$#" -ne 2 ] || ! [ -f "$output_folder" ]; then
+    elif [ "$#" -ne 2 ] || ! [ -d "$output_folder" ]; then
         echo "Usage: $0 output_folder [video URL or ID]"
         exit 1
     fi
@@ -71,5 +75,9 @@ languages=( "ar" "en" "es" "hi" "zh-Hans" )
 
 for lang in "${languages[@]}"
 do :
-  python3 GetYouTubeTranscript.py --video_id "$video_id" --output_folder "$output_folder" --language "$lang"
+  new_output=$output_folder/$lang
+  if ! [ -d "$new_output" ]; then
+    mkdir $new_output
+  fi
+  python3 GetYouTubeTranscript.py --video_id "$video_id" --output_folder "$new_output" --language "$lang"
 done
