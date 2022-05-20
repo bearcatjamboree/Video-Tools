@@ -66,22 +66,11 @@ youtube-dl "$url" --write-description --skip-download --youtube-skip-dash-manife
 # rename the .descripton to .txt in the output file names
 for file in $output_folder/*.description ; do mv "$file" "${file%.*}.txt" ; done
 
-languages=( "ar" "en" "es" "hi" "zh" )
-
-declare -A lang_trans=(
-	["zh-cn"]="zh-Hans"
-  ["zh-tw"]="zh-Hant"
-  ["tl"]="fil"
-)
+languages=( "ar" "en" "es" "hi" "zh-Hans" )
 
 for lang in "${languages[@]}"
 do :
-  # look for translation table
-  if [[ "${lang_trans[$lang]}" == "" ]]; then
-    new_output=$output_folder/$lang
-  else
-    new_output=$output_folder/${lang_trans[$lang]}
-  fi
+  new_output=$output_folder/$lang
   if ! [ -d "$new_output" ]; then
     mkdir $new_output
   fi
