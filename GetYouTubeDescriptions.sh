@@ -68,8 +68,12 @@ for file in $output_folder/*.description ; do mv "$file" "${file%.*}.txt" ; done
 
 languages=( "ar" "en" "es" "hi" "zh" )
 
+'zh-Hans': 'zh-cn', 'zh-Hant': 'zh-tw', 'fil': 'tl'
+
 declare -A lang_trans=(
-	["zh"]="zh-Hans"
+	["zh-cn"]="zh-Hans"
+  ["zh-tw"]="zh-Hant"
+  ["tl"]="fil"
 )
 
 for lang in "${languages[@]}"
