@@ -79,17 +79,12 @@ outfile="$name"_merged
 output_video=$outfile.$ext
 
 ####################################
-# Create temp directory
+# Make temp directory
 ####################################
-if [[ ! -e "TEMP" ]]; then
-    mkdir TEMP
-else
-    echo "TEMP already exists but is not a directory" 1>&2
-    exit 1
-fi
+tmp_dir=$(mktemp -d -t ci-$(date +%Y-%m-%d-%H-%M-%S)-XXXXXXXXXX)
 
-ffmpeg -i "$input_video" -c:a copy -c:v libx264 -an "TEMP/video.mp4" -vn "TEMP/audio.mp3"
-ffmpeg -i "TEMP/audio.mp3" -i "$input_audio" -filter_complex amerge -c:a libmp3lame -q:a 4 "TEMP/audiofinal.mp3"
-ffmpeg -i "TEMP/video.mp4" -i "TEMP/audiofinal.mp3" "$output_video"
+ffmpeg -i "$input_video" -c:a copy -c:v libx264 -an "$tmp_dir/video.mp4" -vn "$tmp_dir/audio.mp3"
+ffmpeg -i "$tmp_dir/audio.mp3" -i "$input_audio" -filter_complex amerge -c:a libmp3lame -q:a 4 "$tmp_dir/audiofinal.mp3"
+ffmpeg -i "$tmp_dir/video.mp4" -i "$tmp_dir/audiofinal.mp3" "$output_video"
 
-rm -Rf TEMP
+rm -rf $tmp_dir

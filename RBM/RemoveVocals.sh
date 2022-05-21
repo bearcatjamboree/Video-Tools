@@ -50,9 +50,9 @@ newoutfile=$outfile.$ext
 input_file="$file"
 
 ####################################
-# Empty temp directory
+# Make temp directory
 ####################################
-rm -Rf temp/*
+tmp_dir=$(mktemp -d -t ci-$(date +%Y-%m-%d-%H-%M-%S)-XXXXXXXXXX)
 
 ####################################
 # Extract Video
@@ -67,26 +67,26 @@ ffmpeg -i "$input_file" -vn -acodec copy "$tmpfile.aac"
 ####################################
 # Create separate 10 minute files
 ####################################
-ffmpeg -i "$tmpfile.aac"  -c:a flac -f segment -segment_time 600 temp/input.%03d.flac
+ffmpeg -i "$tmpfile.aac"  -c:a flac -f segment -segment_time 600 $tmp_dir/input.%03d.flac
 
 ##################################
 # Process each 10 minute file
 ##################################
-for filename in temp/*.flac; do
-    spleeter separate -p spleeter:2stems -d 600 -o temp "$filename"
+for filename in $tmp_dir/*.flac; do
+    spleeter separate -p spleeter:2stems -d 600 -o $tmp_dir "$filename"
 done
-
-rm file_list.txt
 
 ##################################
 # Merges files back together
 ##################################
-for filename in temp/input.*/accompaniment.wav; do
-    echo "file '$filename'" >> file_list.txt;
+for filename in $tmp_dir/input.*/accompaniment.wav; do
+    echo "file '$filename'" >> $tmp_dir/file_list.txt;
 done
 
-ffmpeg -f concat -safe 0 -i file_list.txt -c copy "$tmpfile.wav"
+ffmpeg -f concat -safe 0 -i $tmp_dir/file_list.txt -c copy "$tmpfile.wav"
 
 ffmpeg -i "$tmpfile.$ext" -i "$tmpfile.wav" -c:v copy -c:a aac "$newoutfile"
 
 rm "$tmpfile.$ext" "$tmpfile.wav" "$tmpfile.aac"
+
+rm -rf $tmp_dir

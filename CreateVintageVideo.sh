@@ -54,21 +54,17 @@ outfile="$name"_vintage
 newoutfile=$outfile.$ext
 
 ####################################
-# Empty temp directory
+# Make temp directory
 ####################################
-if ! [ -d "./temp" ]; then
-  mkdir temp
-else
-  rm -Rf temp/*
-fi
+tmp_dir=$(mktemp -d -t ci-$(date +%Y-%m-%d-%H-%M-%S)-XXXXXXXXXX)
 
-ffmpeg -i "$input_file" -filter:v fps=fps=10 "temp/step1.$ext"
-ffmpeg -i "temp/step1.$ext" -vf curves=vintage,format=yuv420p "temp/step2.$ext"
+ffmpeg -i "$input_file" -filter:v fps=fps=10 "$tmp_dir/step1.$ext"
+ffmpeg -i "$tmp_dir/step1.$ext" -vf curves=vintage,format=yuv420p "$tmp_dir/step2.$ext"
 
 # Get base video width for adjusting overlay to exact size
-width=$(ffprobe -v error -select_streams v -show_entries stream=width -of csv=p=0:s=x "temp/step2.$ext")
+width=$(ffprobe -v error -select_streams v -show_entries stream=width -of csv=p=0:s=x "$tmp_dir/step2.$ext")
 
-ffmpeg -i "media/overlay.mp4" -vf scale=$width:-1,setsar=1:1 "temp/overlay.$ext"
-ffmpeg -i "temp/step2.$ext" -i "temp/overlay.$ext" -filter_complex '[1:v]colorkey=0x000000:0.3:0.2[ckout];[0:v][ckout]overlay[out]' -map '[out]' -map 0:a -c:a copy "$newoutfile"
+ffmpeg -i "media/overlay.mp4" -vf scale=$width:-1,setsar=1:1 "$tmp_dir/overlay.$ext"
+ffmpeg -i "$tmp_dir/step2.$ext" -i "$tmp_dir/overlay.$ext" -filter_complex '[1:v]colorkey=0x000000:0.3:0.2[ckout];[0:v][ckout]overlay[out]' -map '[out]' -map 0:a -c:a copy "$newoutfile"
 
-rm -Rf temp
+rm -rf $tmp_dir
