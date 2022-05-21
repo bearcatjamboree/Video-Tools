@@ -14,8 +14,8 @@
 |Burmese | my|
 |Catalan | ca|
 |Cebuano | ceb|
-|Chinese (Simplified) | zh-Hans|
-|Chinese (Traditional) | zh-Hant|
+|Chinese(Simplified) | zh-Hans|
+|Chinese(Traditional) | zh-Hant|
 |Corsican | co|
 |Croatian | hr|
 |Czech | cs|

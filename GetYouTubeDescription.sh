@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
 unameOut="$(uname -s)"
 case "${unameOut}" in
@@ -9,10 +9,10 @@ case "${unameOut}" in
     *)          machine="UNKNOWN:${unameOut}"
 esac
 
-echo ${machine}
+echo "${machine}"
 
 language="$1"
-video_provided="$2"
+url="$2"
 output_folder="$3"
 
 declare -A languages
@@ -43,7 +43,7 @@ if [[ "$language" == "" ]]; then
   elif [[ "$machine" == "Cygwin" ]]; then
       language=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
   else
-      echo "Usage: $0 language [video URL or ID] output_folder"
+      echo "Unknown platform"
       exit 1
   fi
 fi
@@ -51,39 +51,33 @@ fi
 lang_code="${languages[$language]}"
 
 ##############################################################################
-# Prompt for video_provided
+# Prompt for URL
 ###############################################################################
-if [[ "$video_provided" == "" ]]; then
+if [[ "$url" == "" ]]; then
     if [[ "$machine" == "Mac" ]]; then
-        video_provided=$(osascript -e 'set T to text returned of (display dialog "Enter YouTube video url or ID:" buttons {"Cancel", "OK"} default button "OK" default answer "")')
+        url=$(osascript -e 'set T to text returned of (display dialog "Enter video or playlist URL" buttons {"Cancel", "OK"} default button "OK" default answer "")')
     elif [[ "$machine" == "Linux" ]]; then
-        video_provided=$(dialog --title "Enter YouTube video url or ID:" --inputbox "video_provided:" 8 60)
+        url=$(dialog --title "Enter playlist location" --inputbox "URL:" 8 60)
     elif [[ "$machine" == "Cygwin" ]]; then
-        video_provided=$(dialog --title "Enter YouTube video url or ID:" --inputbox "video_provided:" 8 60)
+        url=$(dialog --title "Enter playlist location" --inputbox "URL:" 8 60)
     else
-        echo "Usage: $0 language [video URL or ID] output_folder"
+        echo "Usage: $0 language url output_folder"
         exit 1
     fi
 fi
 
-if [[ "$video_provided" == "" ]]; then
-    echo "Usage: $0 output_folder [video URL or ID]"
+if [[ "$url" == "" ]]; then
+    echo "Usage: $0 output_folder url"
     exit 1
 fi
 
-video_provided="${video_provided##*v=}"
-video_provided="${video_provided##*/}"
-video_id="${video_provided%&*}"
-
-echo "video_id = $video_id"
-
 ##############################################################################
-# Check for file was passed.  Show open file dialog if no argument and on Mac
+# Prompt for output folder
 ###############################################################################
 if ! [ -d "$output_folder" ]; then
     if [[ "$machine" == "Mac" ]]; then
         output_folder=$(osascript -e 'tell application (path to frontmost application as text)
-        set output_folder to choose folder with prompt "Please choose an output folder"
+        set output_folder to choose folder with prompt "Please select output folder:"
         POSIX path of output_folder
         end')
     elif [[ "$machine" == "Linux" ]]; then
@@ -91,22 +85,32 @@ if ! [ -d "$output_folder" ]; then
     elif [[ "$machine" == "Cygwin" ]]; then
         output_folder=$(dialog --title "Choose a folder" --stdout --title "Please select output folder:" --fselect /tmp/ 14 48)
     else
-        echo "Usage: $0 language [video URL or ID] output_folder"
+        echo "Usage: $0 language url output_folder"
         exit 1
     fi
 fi
 
-echo "$output_folder"
-
 if ! [ -d "$output_folder" ]; then
-  echo "Usage: $0 output_folder [video URL or ID] "
+  echo "Usage: $0 language url output_folder"
   exit 1
 fi
 
-new_output=$output_folder/$lang_code
+output_folder=${output_folder%/}
 
+# download descriptions from all videos in playlist
+youtube-dl "$url" --write-description --skip-download --youtube-skip-dash-manifest -o "$output_folder/%(title)s_descripton"
+
+# rename the .descripton to .txt in the output file names
+for file in $output_folder/*.description ; do mv "$file" "${file%.*}.txt" ; done
+
+new_output=$output_folder/$lang_code
 if ! [ -d "$new_output" ]; then
   mkdir $new_output
 fi
-
-python3 GetYouTubeTranscript.py --video_id "$video_id" --output_folder "$new_output" --language "$lang_code"
+# translate each file
+for file in $output_folder/*_descripton.txt ;
+  do
+    name="${file##*/}"
+    echo "cat \"$file\" | trans -s \"en\" -b :$lang_code > \"$new_output/$name\""
+    cat "$file" | trans -s "en" -b :$lang_code > "$new_output/$name"
+  done
