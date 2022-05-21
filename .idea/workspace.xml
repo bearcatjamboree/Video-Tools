@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Implemented shell temp directory generation to allow multiple instances to run without file conflicts.">
-      <change afterPath="$PROJECT_DIR$/ZoompanCutVideo.sh" afterDir="false" />
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Added zoompan script to features list">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GetYouTubeDescriptions.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GetYouTubeDescription.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GetYouTubeTranscript.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GetYouTubeTranscript.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanguageCodes.md" beforeDir="false" afterPath="$PROJECT_DIR$/LanguageCodes.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +66,7 @@
       <recent name="$PROJECT_DIR$/_backups" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.Zoompan Cut Video">
+  <component name="RunManager" selected="Shell Script.Get YouTube Description">
     <configuration name="AudioJumpcut" type="ShConfigurationType" folderName="Videos">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -380,10 +382,10 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="Get YouTube Descriptions" type="ShConfigurationType" folderName="YouTube">
+    <configuration name="Get YouTube Description" type="ShConfigurationType" folderName="YouTube">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
-      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/GetYouTubeDescriptions.sh" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/GetYouTubeDescription.sh" />
       <option name="SCRIPT_OPTIONS" value="" />
       <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
       <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -640,7 +642,7 @@
       <item itemvalue="Shell Script.Rotate Video Clockwise" />
       <item itemvalue="Shell Script.Rotate Video Counterclockwise" />
       <item itemvalue="Shell Script.Zoompan Cut Video" />
-      <item itemvalue="Shell Script.Get YouTube Descriptions" />
+      <item itemvalue="Shell Script.Get YouTube Description" />
       <item itemvalue="Shell Script.Get YouTube Transcript" />
     </list>
   </component>
@@ -653,20 +655,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Adding script just for burning and exist SRT file to a video for subtitling videos.">
-      <created>1652395400828</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1652395400828</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Expaned code to look for selected language, and then translate if it is not located.  Language codes can be found here: https://www.labnol.org/code/19899-google-translate-languages">
-      <created>1652416253043</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1652416253043</updated>
     </task>
     <task id="LOCAL-00037" summary="Minor update to shorten TTS voice value">
       <created>1652445394340</created>
@@ -997,7 +985,21 @@
       <option name="project" value="LOCAL" />
       <updated>1653136112334</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="Added zoompan cut script for fixed interval zoom-in and zoom-normal effect for videos.  This feature can only zoom-in and back to preview zoom... not out and then in.">
+      <created>1653153417138</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1653153417139</updated>
+    </task>
+    <task id="LOCAL-00085" summary="Added zoompan script to features list">
+      <created>1653153459636</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1653153459636</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1013,8 +1015,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added script to download YouTube video/playlist/channel video descriptions and translate to a list of additional languages once downloaded." />
-    <MESSAGE value="Updated prompt text and remove shell msg since it was redundant." />
     <MESSAGE value="Added language list to make processing easier" />
     <MESSAGE value="Added threading and other updates to improve performance and correct errors." />
     <MESSAGE value="Added various minor script corrections" />
@@ -1038,6 +1038,8 @@
     <MESSAGE value="Minor updates including adding alphabet sort to the language list." />
     <MESSAGE value="Updated the list of functions" />
     <MESSAGE value="Implemented shell temp directory generation to allow multiple instances to run without file conflicts." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented shell temp directory generation to allow multiple instances to run without file conflicts." />
+    <MESSAGE value="Added zoompan cut script for fixed interval zoom-in and zoom-normal effect for videos.  This feature can only zoom-in and back to preview zoom... not out and then in." />
+    <MESSAGE value="Added zoompan script to features list" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added zoompan script to features list" />
   </component>
 </project>
