@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Added zoompan script to features list">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GetYouTubeDescriptions.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GetYouTubeDescription.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GetYouTubeTranscript.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GetYouTubeTranscript.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanguageCodes.md" beforeDir="false" afterPath="$PROJECT_DIR$/LanguageCodes.md" afterDir="false" />
-    </list>
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Updated YouTube description and transcript code to include all available languages through a selection box rather than having to hardcode language codes." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -656,20 +651,6 @@
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
     </task>
-    <task id="LOCAL-00037" summary="Minor update to shorten TTS voice value">
-      <created>1652445394340</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1652445394340</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Code update to automatically translate to selected language if it isn't available or get the selected transcript if the language already exists.">
-      <created>1652445461015</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1652445461015</updated>
-    </task>
     <task id="LOCAL-00039" summary="Add new scripts to features list">
       <created>1652445937740</created>
       <option name="number" value="00039" />
@@ -999,7 +980,21 @@
       <option name="project" value="LOCAL" />
       <updated>1653153459636</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="Updated YouTube description and transcript code to include all available languages through a selection box rather than having to hardcode language codes.">
+      <created>1653162882456</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1653162882456</updated>
+    </task>
+    <task id="LOCAL-00087" summary="Updated YouTube description and transcript code to include all available languages through a selection box rather than having to hardcode language codes.">
+      <created>1653162892066</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1653162892066</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1015,7 +1010,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added language list to make processing easier" />
     <MESSAGE value="Added threading and other updates to improve performance and correct errors." />
     <MESSAGE value="Added various minor script corrections" />
     <MESSAGE value="Updated ignore list" />
@@ -1040,6 +1034,7 @@
     <MESSAGE value="Implemented shell temp directory generation to allow multiple instances to run without file conflicts." />
     <MESSAGE value="Added zoompan cut script for fixed interval zoom-in and zoom-normal effect for videos.  This feature can only zoom-in and back to preview zoom... not out and then in." />
     <MESSAGE value="Added zoompan script to features list" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added zoompan script to features list" />
+    <MESSAGE value="Updated YouTube description and transcript code to include all available languages through a selection box rather than having to hardcode language codes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated YouTube description and transcript code to include all available languages through a selection box rather than having to hardcode language codes." />
   </component>
 </project>
