@@ -14,14 +14,16 @@ input_file="$1"
 language="$2"
 
 declare -A voices=(
-	["Spanish"]="carlos"
-	["Hindi"]="neel"
-	["Mandarin"]="tingting"
 	["Arabic"]="maged"
 	["English"]="alex"
+	["Hindi"]="neel"
+	["Indonesian"]="damayanti"
+	["Mandarin"]="tingting"
+	["Spanish"]="carlos"
 )
 
-joined=$(printf ", \"%s\"" "${(@k)voices}")
+# Sort languages to alphabetical order
+joined=$(printf ", \"%s\"" $(echo "${(@k)voices}" | tr " " "\n" | sort | tr "\n" " "))
 echo "${joined:2}"
 
 ##############################################################################

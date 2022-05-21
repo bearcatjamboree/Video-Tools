@@ -71,7 +71,7 @@ echo "video_id = $video_id"
 ####################################
 file=$(echo "$output_folder"|tr -d '\\')
 
-languages=( "ar" "en" "es" "hi" "zh-Hans" )
+languages=( "ar" "en" "es" "hi" "id" "zh-Hans" )
 
 for lang in "${languages[@]}"
 do :
