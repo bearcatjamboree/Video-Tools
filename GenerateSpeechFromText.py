@@ -9,6 +9,8 @@ import os
 import subprocess
 from shutil import rmtree
 from pydub import AudioSegment
+from pydub.effects import speedup
+
 from pathlib import Path
 
 
@@ -80,6 +82,7 @@ parser.add_argument('--input_file', type=str, help='The text file to read and pr
 parser.add_argument('--output_file', type=str, help="the output location to write the speech WAV")
 parser.add_argument('--language', type=str, default="en", help="the language to detect and speak")
 parser.add_argument('--voice', type=str, default="jorge", help="the voice to use")
+parser.add_argument('--speed_up', type=bool, default=True, help="Speed up audio to match subtitle duration")
 
 args = parser.parse_args()
 
@@ -146,10 +149,18 @@ def tts_generator(dict):
 
     engine = pyttsx3.init()
     engine.setProperty('voice', "com.apple.speech.synthesis.voice.{}".format(args.voice))
+    engine.setProperty("rate", 200)
     engine.save_to_file(dict['text'], "{}/TEMP/tmp{:05d}.wav".format(os.getcwd(), int(dict['counter'].strip())))
     engine.runAndWait()
 
     source = AudioSegment.from_file("{}/TEMP/tmp{:05d}.wav".format(os.getcwd(), int(dict['counter'].strip())))
+
+    # adjust audio speed if flag is True
+    if args.speed_up:
+        if source.duration_seconds > dict['diff']:
+            speed = (source.duration_seconds / dict['diff'])
+            source = speedup(source, speed, 150)
+
     audio = AudioSegment.silent(duration=dict['diff'] * 1000)
     output = audio.overlay(source, position=0)
 
