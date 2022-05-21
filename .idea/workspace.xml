@@ -1,43 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Updated usage text and program variable defaults for users that invoke from command-line.">
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Implemented shell temp directory generation to allow multiple instances to run without file conflicts.">
+      <change afterPath="$PROJECT_DIR$/ZoompanCutVideo.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AudioFaceRecognition.sh" beforeDir="false" afterPath="$PROJECT_DIR$/AudioFaceRecognition.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AudioJumpcut.sh" beforeDir="false" afterPath="$PROJECT_DIR$/AudioJumpcut.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AudioMatchTemplate.sh" beforeDir="false" afterPath="$PROJECT_DIR$/AudioMatchTemplate.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BurnSubtitlesFromSRT.sh" beforeDir="false" afterPath="$PROJECT_DIR$/BurnSubtitlesFromSRT.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChangeVideoAspectRatio.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ChangeVideoAspectRatio.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChangeVolumeAmount.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ChangeVolumeAmount.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompressAudioFile.sh" beforeDir="false" afterPath="$PROJECT_DIR$/CompressAudioFile.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConvertVideoFormat.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ConvertVideoFormat.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CreateAnimatedGIF.sh" beforeDir="false" afterPath="$PROJECT_DIR$/CreateAnimatedGIF.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CreatePencilSketchVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/CreatePencilSketchVideo.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CreateVintageVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/CreateVintageVideo.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CropVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/CropVideo.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CutVideoStartToDuration.sh" beforeDir="false" afterPath="$PROJECT_DIR$/CutVideoStartToDuration.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CutVideoStartToEndTime.sh" beforeDir="false" afterPath="$PROJECT_DIR$/CutVideoStartToEndTime.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExtractAudioFromVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ExtractAudioFromVideo.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExtractImagesFromVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ExtractImagesFromVideo.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FaceRecognition.sh" beforeDir="false" afterPath="$PROJECT_DIR$/FaceRecognition.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlipVideoHorizontally.sh" beforeDir="false" afterPath="$PROJECT_DIR$/FlipVideoHorizontally.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlipVideoVertically.sh" beforeDir="false" afterPath="$PROJECT_DIR$/FlipVideoVertically.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GenerateSpeechFromText.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateSpeechFromText.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GenerateVideoSubtitles.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateVideoSubtitles.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GetYouTubeDescriptions.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GetYouTubeDescriptions.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GetYouTubeTranscript.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GetYouTubeTranscript.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MatchTemplate.sh" beforeDir="false" afterPath="$PROJECT_DIR$/MatchTemplate.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MergeVideoAndAudio.sh" beforeDir="false" afterPath="$PROJECT_DIR$/MergeVideoAndAudio.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MirrorVideoHorizontally.sh" beforeDir="false" afterPath="$PROJECT_DIR$/MirrorVideoHorizontally.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MirrorVideoVertically.sh" beforeDir="false" afterPath="$PROJECT_DIR$/MirrorVideoVertically.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlotVideoFrames.sh" beforeDir="false" afterPath="$PROJECT_DIR$/PlotVideoFrames.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RBM/RemoveBackgroundMusic.sh" beforeDir="false" afterPath="$PROJECT_DIR$/RBM/RemoveBackgroundMusic.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RBM/RemoveVocals.sh" beforeDir="false" afterPath="$PROJECT_DIR$/RBM/RemoveVocals.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RemoveAudioFromVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/RemoveAudioFromVideo.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RemoveVideoBackground.sh" beforeDir="false" afterPath="$PROJECT_DIR$/RemoveVideoBackground.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ResizeVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ResizeVideo.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RotateVideoClockwise.sh" beforeDir="false" afterPath="$PROJECT_DIR$/RotateVideoClockwise.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RotateVideoCounterclockwise.sh" beforeDir="false" afterPath="$PROJECT_DIR$/RotateVideoCounterclockwise.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +64,7 @@
       <recent name="$PROJECT_DIR$/_backups" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.Merge Video And Audio">
+  <component name="RunManager" selected="Shell Script.Zoompan Cut Video">
     <configuration name="AudioJumpcut" type="ShConfigurationType" folderName="Videos">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -624,6 +590,21 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="Zoompan Cut Video" type="ShConfigurationType" folderName="Videos">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/ZoompanCutVideo.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Shell Script.Change Volume Amount" />
       <item itemvalue="Shell Script.Compress Audio File" />
@@ -636,9 +617,9 @@
       <item itemvalue="Shell Script.Extract Images From Video" />
       <item itemvalue="Shell Script.Generate Video Subtitles" />
       <item itemvalue="Shell Script.Plot Video Frames" />
-      <item itemvalue="Shell Script.AudioJumpcut" />
       <item itemvalue="Shell Script.Audio+FaceRecognition" />
       <item itemvalue="Shell Script.Audio+MatchTemplate" />
+      <item itemvalue="Shell Script.AudioJumpcut" />
       <item itemvalue="Shell Script.Burn Subtitles From SRT" />
       <item itemvalue="Shell Script.Change Video Aspect Ratio" />
       <item itemvalue="Shell Script.Convert Video Format" />
@@ -658,6 +639,7 @@
       <item itemvalue="Shell Script.Resize Video" />
       <item itemvalue="Shell Script.Rotate Video Clockwise" />
       <item itemvalue="Shell Script.Rotate Video Counterclockwise" />
+      <item itemvalue="Shell Script.Zoompan Cut Video" />
       <item itemvalue="Shell Script.Get YouTube Descriptions" />
       <item itemvalue="Shell Script.Get YouTube Transcript" />
     </list>
@@ -671,90 +653,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
-    </task>
-    <task id="LOCAL-00023" summary="added ignore files">
-      <created>1652135287279</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1652135287279</updated>
-    </task>
-    <task id="LOCAL-00024" summary="added ignore files">
-      <created>1652185600351</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1652185600351</updated>
-    </task>
-    <task id="LOCAL-00025" summary="update ignore list">
-      <created>1652185750491</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1652185750491</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Adding RenameBackgroundMusic to github">
-      <created>1652188581621</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1652188581621</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Updating git ignore list">
-      <created>1652188637441</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1652188637441</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Updating Readme file with corrections">
-      <created>1652188901494</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1652188901494</updated>
-    </task>
-    <task id="LOCAL-00029" summary="Updating Readme file with corrections">
-      <created>1652195159329</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1652195159330</updated>
-    </task>
-    <task id="LOCAL-00030" summary="Updating Readme file with corrections">
-      <created>1652195197767</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1652195197767</updated>
-    </task>
-    <task id="LOCAL-00031" summary="Updating Readme file with corrections">
-      <created>1652384724147</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1652384724147</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Adding scripts for downloading YouTube transcripts and converting them the SBV and SRT.">
-      <created>1652392393212</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1652392393212</updated>
-    </task>
-    <task id="LOCAL-00033" summary="Removed SBV generation and removed unnecessary ffmpeg call">
-      <created>1652392699139</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1652392699139</updated>
-    </task>
-    <task id="LOCAL-00034" summary="Updated ignore list">
-      <created>1652392786359</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1652392786359</updated>
     </task>
     <task id="LOCAL-00035" summary="Adding script just for burning and exist SRT file to a video for subtitling videos.">
       <created>1652395400828</created>
@@ -1015,7 +913,91 @@
       <option name="project" value="LOCAL" />
       <updated>1652963984422</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="Numerous updates to handle input from dialogs or the command-line, including adding conditions that were missing and additional usage information">
+      <created>1652966764481</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1652966764481</updated>
+    </task>
+    <task id="LOCAL-00073" summary="Added step to create subfolder for language and put the transcript info in the subfolder.">
+      <created>1653050176772</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1653050176773</updated>
+    </task>
+    <task id="LOCAL-00074" summary="Made numerous corrections to input validation steps for requesting for input and checking for missing values.  Should correct any issues with scripts not continuing past input requests.">
+      <created>1653050224182</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1653050224182</updated>
+    </task>
+    <task id="LOCAL-00075" summary="Correct input video check preventing script for starting">
+      <created>1653058394405</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1653058394405</updated>
+    </task>
+    <task id="LOCAL-00076" summary="Added lang_trans array for cases where transcript translation language code and translate-shell language codes are different">
+      <created>1653061085226</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1653061085226</updated>
+    </task>
+    <task id="LOCAL-00077" summary="updated lang_trans with zh-tw and filipino">
+      <created>1653061367198</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1653061367198</updated>
+    </task>
+    <task id="LOCAL-00078" summary="updated lang_trans with zh-tw and filipino">
+      <created>1653061392993</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1653061392993</updated>
+    </task>
+    <task id="LOCAL-00079" summary="Removed translation table when it was determined to not be needed for this script...">
+      <created>1653061915633</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1653061915633</updated>
+    </task>
+    <task id="LOCAL-00080" summary="Added update to allow auto-speedup when the tts exceeds the length of the SRT frame.">
+      <created>1653101370191</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1653101370191</updated>
+    </task>
+    <task id="LOCAL-00081" summary="Minor updates including adding alphabet sort to the language list.">
+      <created>1653101461858</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1653101461858</updated>
+    </task>
+    <task id="LOCAL-00082" summary="Updated the list of functions">
+      <created>1653102681069</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1653102681069</updated>
+    </task>
+    <task id="LOCAL-00083" summary="Implemented shell temp directory generation to allow multiple instances to run without file conflicts.">
+      <created>1653136112333</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1653136112334</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1031,17 +1013,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Sort language alphabetically" />
-    <MESSAGE value="Added selected language to output files to allow translating more than one language with an execution of the shell script" />
-    <MESSAGE value="Correct invalid codes for Chinese simplified and traditional" />
-    <MESSAGE value="Tested multiple language transcript generation" />
-    <MESSAGE value="Update TTS to padding audio to match SRT timestamps." />
-    <MESSAGE value="Added script to merge video and audio, taking into account that the video may also contain audio.  Both channels are retained." />
-    <MESSAGE value="Corrected Speech From Text to include padded blank audio on the beginning so audio aligns with video for easy merging." />
-    <MESSAGE value="Added additional language input examples.  No major code changes..." />
-    <MESSAGE value="Added DownloadYouTubeDescriptions.sh to allow fetching video description text" />
-    <MESSAGE value="Made updates to handle keeping both video and audio tracks when merging" />
-    <MESSAGE value="Updated script list and organized into category-based folders" />
     <MESSAGE value="Added script to download YouTube video/playlist/channel video descriptions and translate to a list of additional languages once downloaded." />
     <MESSAGE value="Updated prompt text and remove shell msg since it was redundant." />
     <MESSAGE value="Added language list to make processing easier" />
@@ -1056,6 +1027,17 @@
     <MESSAGE value="Added folder structure to organize functions" />
     <MESSAGE value="Added Arabic as an option" />
     <MESSAGE value="Updated usage text and program variable defaults for users that invoke from command-line." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated usage text and program variable defaults for users that invoke from command-line." />
+    <MESSAGE value="Numerous updates to handle input from dialogs or the command-line, including adding conditions that were missing and additional usage information" />
+    <MESSAGE value="Added step to create subfolder for language and put the transcript info in the subfolder." />
+    <MESSAGE value="Made numerous corrections to input validation steps for requesting for input and checking for missing values.  Should correct any issues with scripts not continuing past input requests." />
+    <MESSAGE value="Correct input video check preventing script for starting" />
+    <MESSAGE value="Added lang_trans array for cases where transcript translation language code and translate-shell language codes are different" />
+    <MESSAGE value="updated lang_trans with zh-tw and filipino" />
+    <MESSAGE value="Removed translation table when it was determined to not be needed for this script..." />
+    <MESSAGE value="Added update to allow auto-speedup when the tts exceeds the length of the SRT frame." />
+    <MESSAGE value="Minor updates including adding alphabet sort to the language list." />
+    <MESSAGE value="Updated the list of functions" />
+    <MESSAGE value="Implemented shell temp directory generation to allow multiple instances to run without file conflicts." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented shell temp directory generation to allow multiple instances to run without file conflicts." />
   </component>
 </project>
