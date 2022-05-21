@@ -46,6 +46,7 @@ If you find these tools useful then consider watching my other content and subsc
  33. Resize video (aspect ratio retained)
  34. Rotate video clockwise
  35. Rotate video counterclockwise
+ 36. Zoompan Cut Video
  
 ## Operating Systems
 
