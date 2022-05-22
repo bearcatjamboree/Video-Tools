@@ -42,7 +42,7 @@ fi
 ###############################################################################
 if [[ "$format" == "" ]]; then
     if [[ "$machine" == "Mac" ]]; then
-        format=$(osascript -e 'set T to text returned of (display dialog "Enter output format (mp3, aac, etc.):" buttons {"Cancel", "OK"} default button "OK" default answer "")')
+        format=$(osascript -e 'set T to text returned of (display dialog "Enter _output format (mp3, aac, etc.):" buttons {"Cancel", "OK"} default button "OK" default answer "")')
     elif [[ "$machine" == "Linux" ]]; then
         format=$(dialog --title "Enter output format (mp3, aac, etc.):" --inputbox "format:" 8 60)
     elif [[ "$machine" == "Cygwin" ]]; then

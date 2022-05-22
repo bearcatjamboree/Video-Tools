@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Updated YouTube description and transcript code to include all available languages through a selection box rather than having to hardcode language codes." />
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Updated script reference in workspace.xml">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConvertVideoFormat.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ConvertVideoFormat.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CreatePencilSketchVideo.py" beforeDir="false" afterPath="$PROJECT_DIR$/CreatePencilSketchVideo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CropVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/CropVideo.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExtractAudioFromVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ExtractAudioFromVideo.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExtractImagesFromVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ExtractImagesFromVideo.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GenerateSpeechFromText.py" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateSpeechFromText.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GenerateSpeechFromText.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateSpeechFromText.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GenerateVideoSubtitles.py" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateVideoSubtitles.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GetYouTubeDescription.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GetYouTubeDescription.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GetYouTubeTranscript.py" beforeDir="false" afterPath="$PROJECT_DIR$/GetYouTubeTranscript.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GetYouTubeTranscript.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GetYouTubeTranscript.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemoveVideoBackground.py" beforeDir="false" afterPath="$PROJECT_DIR$/RemoveVideoBackground.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoJumpcutter.py" beforeDir="false" afterPath="$PROJECT_DIR$/VideoJumpcutter.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,7 +77,7 @@
       <recent name="$PROJECT_DIR$/_backups" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.Get YouTube Description">
+  <component name="RunManager" selected="Shell Script.Remove Vocals">
     <configuration name="AudioJumpcut" type="ShConfigurationType" folderName="Videos">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -651,13 +667,6 @@
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
     </task>
-    <task id="LOCAL-00039" summary="Add new scripts to features list">
-      <created>1652445937740</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1652445937740</updated>
-    </task>
     <task id="LOCAL-00040" summary="Add new scripts to features list">
       <created>1652446049355</created>
       <option name="number" value="00040" />
@@ -994,7 +1003,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653162892066</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="Updated script reference in workspace.xml">
+      <created>1653162995386</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1653162995386</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1010,7 +1026,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added threading and other updates to improve performance and correct errors." />
     <MESSAGE value="Added various minor script corrections" />
     <MESSAGE value="Updated ignore list" />
     <MESSAGE value="Numerous updates to correct errors during translation, including passing absolute path to AudioSegment to prevent high memory usage from causing AudioSegment to have issues locating the file being processed." />
@@ -1035,6 +1050,7 @@
     <MESSAGE value="Added zoompan cut script for fixed interval zoom-in and zoom-normal effect for videos.  This feature can only zoom-in and back to preview zoom... not out and then in." />
     <MESSAGE value="Added zoompan script to features list" />
     <MESSAGE value="Updated YouTube description and transcript code to include all available languages through a selection box rather than having to hardcode language codes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated YouTube description and transcript code to include all available languages through a selection box rather than having to hardcode language codes." />
+    <MESSAGE value="Updated script reference in workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated script reference in workspace.xml" />
   </component>
 </project>

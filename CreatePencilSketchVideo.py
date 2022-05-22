@@ -17,7 +17,7 @@ import cv2 as cv
 parser = argparse.ArgumentParser(
     description='Convert a video file to a pencil sketch style video')
 parser.add_argument('--input_file', type=str, help='The video file you want to convert')
-parser.add_argument('--output_file', type=str, help="the output location to write the pencil sketch style video")
+parser.add_argument('--output_file', type=str, help="the _output location to write the pencil sketch style video")
 
 args = parser.parse_args()
 

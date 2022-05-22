@@ -45,7 +45,7 @@ fi
 ###############################################################################
 if [[ "$out_w" == "" ]]; then
     if [[ "$machine" == "Mac" ]]; then
-        out_w=$(osascript -e 'set T to text returned of (display dialog "Enter the width of the output rectangle: " buttons {"Cancel", "OK"} default button "OK" default answer "")')
+        out_w=$(osascript -e 'set T to text returned of (display dialog "Enter the width of the _output rectangle: " buttons {"Cancel", "OK"} default button "OK" default answer "")')
     elif [[ "$machine" == "Linux" ]]; then
         out_w=$(dialog --title "Enter the width of the output rectangle: " --inputbox "out_w:" 8 60)
     elif [[ "$machine" == "Cygwin" ]]; then
@@ -66,7 +66,7 @@ fi
 ###############################################################################
 if [[ "$out_h" == "" ]]; then
     if [[ "$machine" == "Mac" ]]; then
-        out_h=$(osascript -e 'set T to text returned of (display dialog "Enter the height of the output rectangle:" buttons {"Cancel", "OK"} default button "OK" default answer "")')
+        out_h=$(osascript -e 'set T to text returned of (display dialog "Enter the height of the _output rectangle:" buttons {"Cancel", "OK"} default button "OK" default answer "")')
     elif [[ "$machine" == "Linux" ]]; then
         out_h=$(dialog --title "Enter the height of the output rectangle:" --inputbox "out_h:" 8 60)
     elif [[ "$machine" == "Cygwin" ]]; then

@@ -12,7 +12,7 @@ from youtube_transcript_api import YouTubeTranscriptApi
 parser = argparse.ArgumentParser(
     description='Download a transcript from a YouTube video')
 parser.add_argument('--video_id', type=str, help='The YouTube video_id value for the video being transcribed')
-parser.add_argument('--output_folder', type=str, help="the output location to write the transcript txt")
+parser.add_argument('--output_folder', type=str, help="the _output location to write the transcript txt")
 parser.add_argument('--language', type=str, default='en', help="The language to convert the transcript to")
 
 args = parser.parse_args()
@@ -46,7 +46,7 @@ except:
 out_txt = args.output_folder + "/" + args.video_id + "_" + args.language + ".txt"
 out_srt = args.output_folder + "/" + args.video_id + "_" + args.language + ".srt"
 
-# Open output file
+# Open _output file
 ft = open(out_txt, "w+")
 fs = open(out_srt, "w+")
 

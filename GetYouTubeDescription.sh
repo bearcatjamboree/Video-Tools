@@ -72,12 +72,12 @@ if [[ "$url" == "" ]]; then
 fi
 
 ##############################################################################
-# Prompt for output folder
+# Prompt for _output folder
 ###############################################################################
 if ! [ -d "$output_folder" ]; then
     if [[ "$machine" == "Mac" ]]; then
         output_folder=$(osascript -e 'tell application (path to frontmost application as text)
-        set output_folder to choose folder with prompt "Please select output folder:"
+        set output_folder to choose folder with prompt "Please select _output folder:"
         POSIX path of output_folder
         end')
     elif [[ "$machine" == "Linux" ]]; then
@@ -100,7 +100,7 @@ output_folder=${output_folder%/}
 # download descriptions from all videos in playlist
 youtube-dl "$url" --write-description --skip-download --youtube-skip-dash-manifest -o "$output_folder/%(title)s_descripton"
 
-# rename the .descripton to .txt in the output file names
+# rename the .descripton to .txt in the _output file names
 for file in $output_folder/*.description ; do mv "$file" "${file%.*}.txt" ; done
 
 new_output=$output_folder/$lang_code

@@ -20,6 +20,7 @@ declare -A voices=(
 	["Indonesian"]="damayanti"
 	["Mandarin"]="tingting"
 	["Spanish"]="carlos"
+	["German"]="markus"
 )
 
 # Sort languages to alphabetical order

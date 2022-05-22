@@ -83,7 +83,7 @@ echo "video_id = $video_id"
 if ! [ -d "$output_folder" ]; then
     if [[ "$machine" == "Mac" ]]; then
         output_folder=$(osascript -e 'tell application (path to frontmost application as text)
-        set output_folder to choose folder with prompt "Please choose an output folder"
+        set output_folder to choose folder with prompt "Please choose an _output folder"
         POSIX path of output_folder
         end')
     elif [[ "$machine" == "Linux" ]]; then

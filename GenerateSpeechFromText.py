@@ -79,7 +79,7 @@ https://gtts.readthedocs.io/en/latest/module.html#localized-accents
 parser = argparse.ArgumentParser(
     description='Read a text file, convert it to speech, and write to a WAV')
 parser.add_argument('--input_file', type=str, help='The text file to read and produce speech from')
-parser.add_argument('--output_file', type=str, help="the output location to write the speech WAV")
+parser.add_argument('--output_file', type=str, help="the _output location to write the speech WAV")
 parser.add_argument('--language', type=str, default="en", help="the language to detect and speak")
 parser.add_argument('--voice', type=str, default="jorge", help="the voice to use")
 parser.add_argument('--speed_up', type=bool, default=True, help="Speed up audio to match subtitle duration")
@@ -164,7 +164,7 @@ def tts_generator(dict):
     audio = AudioSegment.silent(duration=dict['diff'] * 1000)
     output = audio.overlay(source, position=0)
 
-    output.export("{}/TEMP/output{:05d}.wav".format(os.getcwd(), int(dict['counter'].strip())), format="wav")
+    output.export("{}/TEMP/_output{:05d}.wav".format(os.getcwd(), int(dict['counter'].strip())), format="wav")
 
 #################################################################################################
 #  *** Begin main part of Program ***
@@ -223,10 +223,10 @@ def main():
     #print(base_frame_rate)
     #print(audio.frame_rate)
 
-    audio.export("TEMP/output{:05d}.wav".format(0), format="wav")
+    audio.export("TEMP/_output{:05d}.wav".format(0), format="wav")
 
-    # iterate over the output files in the TEMP directory
-    files = sorted(Path("TEMP").glob('output*.wav'))
+    # iterate over the _output files in the TEMP directory
+    files = sorted(Path("TEMP").glob('_output*.wav'))
 
     # Cleanup prior run file list
     try:

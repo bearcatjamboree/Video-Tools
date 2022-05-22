@@ -58,13 +58,13 @@ def printProgressBar(iteration, total, prefix='', suffix='', decimals=1, length=
 parser = argparse.ArgumentParser(
     description='Translate audio from video file, generate subtitles, and burn them into a new video file')
 parser.add_argument('--input_file', type=str, help='The video file you want to generate subtitles for')
-parser.add_argument('--output_srt', type=str, help="the output location to write the subtitle file")
-parser.add_argument('--output_video', type=str, help="the output location to write video with the subtitles added")
+parser.add_argument('--output_srt', type=str, help="the _output location to write the subtitle file")
+parser.add_argument('--output_video', type=str, help="the _output location to write video with the subtitles added")
 parser.add_argument('--subtitle_seconds', type=int, default=2, help="the number of seconds of audio to transcribe and display at a time")
 parser.add_argument('--subtitle_font', type=str, default="Bangers", help="Default font name to use in generated subtitles")
 parser.add_argument('--subtitle_fontsize', type=int, default=48, help="Default font size to use in generated subtitles")
 parser.add_argument('--subtitle_fontcolor', type=str, default="ffffff", help="Default color for generated subtitles")
-parser.add_argument('--language', type=str, default="en-US", help="the output location to write the subtitled video")
+parser.add_argument('--language', type=str, default="en-US", help="the _output location to write the subtitled video")
 
 args = parser.parse_args()
 

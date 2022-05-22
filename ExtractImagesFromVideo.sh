@@ -44,7 +44,7 @@ fi
 if ! [ -d "$output_folder" ]; then
     if [[ "$machine" == "Mac" ]]; then
         output_folder=$(osascript -e 'tell application (path to frontmost application as text)
-        set output_folder to choose folder with prompt "Please choose an output folder"
+        set output_folder to choose folder with prompt "Please choose an _output folder"
         POSIX path of output_folder
         end')
     elif [[ "$machine" == "Linux" ]]; then
@@ -62,7 +62,7 @@ fi
 ###############################################################################
 if [[ "$format" == "" ]]; then
     if [[ "$machine" == "Mac" ]]; then
-        format=$(osascript -e 'set T to text returned of (display dialog "Enter output format (jpg, png, etc.):" buttons {"Cancel", "OK"} default button "OK" default answer "")')
+        format=$(osascript -e 'set T to text returned of (display dialog "Enter _output format (jpg, png, etc.):" buttons {"Cancel", "OK"} default button "OK" default answer "")')
     elif [[ "$machine" == "Linux" ]]; then
         format=$(dialog --title "Enter output format (jpg, png, etc.):" --inputbox "format:" 8 60)
     elif [[ "$machine" == "Cygwin" ]]; then
