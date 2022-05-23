@@ -16,8 +16,8 @@ If you find these tools useful then consider watching my other content and subsc
  3. Jump cut videos using audio level  
  4. Jump cut videos by matching a template photo
  5. Jump cut videos based on facial recognition
- 6. Jump cut video using volume level and template matching
- 7. Jump cut video using volume level and facial recognition
+ 6. Jump cut video using audio level and template matching
+ 7. Jump cut video using audio level and facial recognition
  8. Burn Subtitles From SRT
  9. Change video aspect ratio
  10. Change video volume level
@@ -47,6 +47,7 @@ If you find these tools useful then consider watching my other content and subsc
  34. Rotate video clockwise
  35. Rotate video counterclockwise
  36. Zoompan Cut Video
+ 37. Create Mobile Crossclip
  
 ## Operating Systems
 
