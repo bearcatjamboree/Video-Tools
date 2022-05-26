@@ -76,7 +76,7 @@ for filename in $tmp_dir/*.flac; do
     spleeter separate -p spleeter:2stems -d 600 -o $tmp_dir "$filename"
 done
 
-rm file_list.txt
+rm $tmp_dir/file_list.txt
 
 ##################################
 # Merges files back together
