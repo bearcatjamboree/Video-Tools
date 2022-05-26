@@ -1,36 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Updated Features list">
-      <change afterPath="$PROJECT_DIR$/GenerateGameHighlights.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/list.txt" afterDir="false" />
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Added GenerateGameHighlights.sh as a way to automate trimming and merging multiple videos located in a specified folder.">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AudioJumpcut.sh" beforeDir="false" afterPath="$PROJECT_DIR$/AudioJumpcut.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChangeVideoAspectRatio.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ChangeVideoAspectRatio.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChangeVolumeAmount.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ChangeVolumeAmount.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompressAudioFile.sh" beforeDir="false" afterPath="$PROJECT_DIR$/CompressAudioFile.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConvertVideoFormat.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ConvertVideoFormat.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CreateAnimatedGIF.sh" beforeDir="false" afterPath="$PROJECT_DIR$/CreateAnimatedGIF.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CreatePencilSketchVideo.py" beforeDir="false" afterPath="$PROJECT_DIR$/CreatePencilSketchVideo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CreateVintageVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/CreateVintageVideo.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExtractAudioFromVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ExtractAudioFromVideo.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExtractImagesFromVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ExtractImagesFromVideo.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlipVideoHorizontally.sh" beforeDir="false" afterPath="$PROJECT_DIR$/FlipVideoHorizontally.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlipVideoVertically.sh" beforeDir="false" afterPath="$PROJECT_DIR$/FlipVideoVertically.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GenerateSpeechFromText.py" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateSpeechFromText.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GenerateSpeechFromText.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateSpeechFromText.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GenerateVideoSubtitles.py" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateVideoSubtitles.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GetYouTubeDescription.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GetYouTubeDescription.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MergeVideoAndAudio.sh" beforeDir="false" afterPath="$PROJECT_DIR$/MergeVideoAndAudio.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MirrorVideoHorizontally.sh" beforeDir="false" afterPath="$PROJECT_DIR$/MirrorVideoHorizontally.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MirrorVideoVertically.sh" beforeDir="false" afterPath="$PROJECT_DIR$/MirrorVideoVertically.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RemoveAudioFromVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/RemoveAudioFromVideo.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RemoveVideoBackground.py" beforeDir="false" afterPath="$PROJECT_DIR$/RemoveVideoBackground.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RemoveVideoBackground.sh" beforeDir="false" afterPath="$PROJECT_DIR$/RemoveVideoBackground.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RotateVideoClockwise.sh" beforeDir="false" afterPath="$PROJECT_DIR$/RotateVideoClockwise.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RotateVideoCounterclockwise.sh" beforeDir="false" afterPath="$PROJECT_DIR$/RotateVideoCounterclockwise.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VideoJumpcutter.py" beforeDir="false" afterPath="$PROJECT_DIR$/VideoJumpcutter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RBM/RemoveBackgroundMusic.sh" beforeDir="false" afterPath="$PROJECT_DIR$/RBM/RemoveBackgroundMusic.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -713,27 +688,6 @@
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
     </task>
-    <task id="LOCAL-00044" summary="Sort language alphabetically">
-      <created>1652454443838</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1652454443838</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Added selected language to output files to allow translating more than one language with an execution of the shell script">
-      <created>1652454927807</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1652454927807</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Correct invalid codes for Chinese simplified and traditional">
-      <created>1652455614302</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1652455614302</updated>
-    </task>
     <task id="LOCAL-00047" summary="Tested multiple language transcript generation">
       <created>1652455653319</created>
       <option name="number" value="00047" />
@@ -1056,7 +1010,28 @@
       <option name="project" value="LOCAL" />
       <updated>1653276217434</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="Various minor shell script update">
+      <created>1653576730343</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1653576730344</updated>
+    </task>
+    <task id="LOCAL-00094" summary="Replaced all reference to a hardcoded &quot;TEMP&quot; directory with automatically generated, unique temporary directories managed by tempfile.TemporaryDirectory().  These directories are also automatically cleaned after execution.  This will allow for multiple scripts to run concurrently without risk of overlaying files.">
+      <created>1653576886004</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1653576886004</updated>
+    </task>
+    <task id="LOCAL-00095" summary="Added GenerateGameHighlights.sh as a way to automate trimming and merging multiple videos located in a specified folder.">
+      <created>1653576991169</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1653576991169</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1072,9 +1047,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add drop-down list for language selection" />
-    <MESSAGE value="Modified to allow URL or video ID for video input" />
-    <MESSAGE value="Updated requirements list" />
     <MESSAGE value="Added folder structure to organize functions" />
     <MESSAGE value="Added Arabic as an option" />
     <MESSAGE value="Updated usage text and program variable defaults for users that invoke from command-line." />
@@ -1097,6 +1069,9 @@
     <MESSAGE value="Added CreateMobileCrossclip.sh to allow producing portrait oriented clip with webcam on top in two styles: Basic or Bubble." />
     <MESSAGE value="Updated workspace.xml to include Create Mobile Crosslip" />
     <MESSAGE value="Updated Features list" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Features list" />
+    <MESSAGE value="Various minor shell script update" />
+    <MESSAGE value="Replaced all reference to a hardcoded &quot;TEMP&quot; directory with automatically generated, unique temporary directories managed by tempfile.TemporaryDirectory().  These directories are also automatically cleaned after execution.  This will allow for multiple scripts to run concurrently without risk of overlaying files." />
+    <MESSAGE value="Added GenerateGameHighlights.sh as a way to automate trimming and merging multiple videos located in a specified folder." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added GenerateGameHighlights.sh as a way to automate trimming and merging multiple videos located in a specified folder." />
   </component>
 </project>
