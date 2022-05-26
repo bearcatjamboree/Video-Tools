@@ -1,10 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Numerous spell corrections and minor changes">
-      <change afterPath="$PROJECT_DIR$/CreateMobileCrossclip.sh" afterDir="false" />
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Updated Features list">
+      <change afterPath="$PROJECT_DIR$/GenerateGameHighlights.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AudioJumpcut.sh" beforeDir="false" afterPath="$PROJECT_DIR$/AudioJumpcut.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChangeVideoAspectRatio.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ChangeVideoAspectRatio.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChangeVolumeAmount.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ChangeVolumeAmount.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompressAudioFile.sh" beforeDir="false" afterPath="$PROJECT_DIR$/CompressAudioFile.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConvertVideoFormat.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ConvertVideoFormat.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CreateAnimatedGIF.sh" beforeDir="false" afterPath="$PROJECT_DIR$/CreateAnimatedGIF.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CreatePencilSketchVideo.py" beforeDir="false" afterPath="$PROJECT_DIR$/CreatePencilSketchVideo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CreateVintageVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/CreateVintageVideo.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExtractAudioFromVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ExtractAudioFromVideo.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExtractImagesFromVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ExtractImagesFromVideo.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlipVideoHorizontally.sh" beforeDir="false" afterPath="$PROJECT_DIR$/FlipVideoHorizontally.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlipVideoVertically.sh" beforeDir="false" afterPath="$PROJECT_DIR$/FlipVideoVertically.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GenerateSpeechFromText.py" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateSpeechFromText.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GenerateSpeechFromText.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateSpeechFromText.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GenerateVideoSubtitles.py" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateVideoSubtitles.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GetYouTubeDescription.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GetYouTubeDescription.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MergeVideoAndAudio.sh" beforeDir="false" afterPath="$PROJECT_DIR$/MergeVideoAndAudio.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MirrorVideoHorizontally.sh" beforeDir="false" afterPath="$PROJECT_DIR$/MirrorVideoHorizontally.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MirrorVideoVertically.sh" beforeDir="false" afterPath="$PROJECT_DIR$/MirrorVideoVertically.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemoveAudioFromVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/RemoveAudioFromVideo.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemoveVideoBackground.py" beforeDir="false" afterPath="$PROJECT_DIR$/RemoveVideoBackground.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemoveVideoBackground.sh" beforeDir="false" afterPath="$PROJECT_DIR$/RemoveVideoBackground.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RotateVideoClockwise.sh" beforeDir="false" afterPath="$PROJECT_DIR$/RotateVideoClockwise.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RotateVideoCounterclockwise.sh" beforeDir="false" afterPath="$PROJECT_DIR$/RotateVideoCounterclockwise.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoJumpcutter.py" beforeDir="false" afterPath="$PROJECT_DIR$/VideoJumpcutter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +91,7 @@
       <recent name="$PROJECT_DIR$/_backups" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.Create Mobile Crossclip">
+  <component name="RunManager" selected="Shell Script.Create Vintage Video">
     <configuration name="AudioJumpcut" type="ShConfigurationType" folderName="Videos">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -366,6 +392,21 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="Generate Game Highlights" type="ShConfigurationType" folderName="Videos">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/GenerateGameHighlights.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="Generate Speech From Text" type="ShConfigurationType" folderName="Audio">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -636,6 +677,7 @@
       <item itemvalue="Shell Script.Audio+FaceRecognition" />
       <item itemvalue="Shell Script.Audio+MatchTemplate" />
       <item itemvalue="Shell Script.AudioJumpcut" />
+      <item itemvalue="Shell Script.Generate Game Highlights" />
       <item itemvalue="Shell Script.Burn Subtitles From SRT" />
       <item itemvalue="Shell Script.Change Video Aspect Ratio" />
       <item itemvalue="Shell Script.Convert Video Format" />
@@ -670,27 +712,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Adding Google Translate 2-byte language codes for available transcript translation languages">
-      <created>1652453663085</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1652453663085</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Update the table format">
-      <created>1652454207931</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1652454207931</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Update the table format">
-      <created>1652454305376</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1652454305376</updated>
     </task>
     <task id="LOCAL-00044" summary="Sort language alphabetically">
       <created>1652454443838</created>
@@ -1014,7 +1035,28 @@
       <option name="project" value="LOCAL" />
       <updated>1653229295547</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="Added CreateMobileCrossclip.sh to allow producing portrait oriented clip with webcam on top in two styles: Basic or Bubble.">
+      <created>1653274858576</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1653274858577</updated>
+    </task>
+    <task id="LOCAL-00091" summary="Updated workspace.xml to include Create Mobile Crosslip">
+      <created>1653274892226</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1653274892226</updated>
+    </task>
+    <task id="LOCAL-00092" summary="Updated Features list">
+      <created>1653276217434</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1653276217434</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1030,9 +1072,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Updated ignore list" />
-    <MESSAGE value="Numerous updates to correct errors during translation, including passing absolute path to AudioSegment to prevent high memory usage from causing AudioSegment to have issues locating the file being processed." />
-    <MESSAGE value="Various minor udpates" />
     <MESSAGE value="Add drop-down list for language selection" />
     <MESSAGE value="Modified to allow URL or video ID for video input" />
     <MESSAGE value="Updated requirements list" />
@@ -1055,6 +1094,9 @@
     <MESSAGE value="Updated YouTube description and transcript code to include all available languages through a selection box rather than having to hardcode language codes." />
     <MESSAGE value="Updated script reference in workspace.xml" />
     <MESSAGE value="Numerous spell corrections and minor changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Numerous spell corrections and minor changes" />
+    <MESSAGE value="Added CreateMobileCrossclip.sh to allow producing portrait oriented clip with webcam on top in two styles: Basic or Bubble." />
+    <MESSAGE value="Updated workspace.xml to include Create Mobile Crosslip" />
+    <MESSAGE value="Updated Features list" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated Features list" />
   </component>
 </project>
