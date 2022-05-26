@@ -215,8 +215,7 @@ def main():
             subprocess.call(command, shell=True)
 
         # Combine clips into a full translation audio wave file
-        command = "ffmpeg -f concat -safe 0 -i file_list.txt -c copy '" + format(
-            args.output_file) + "'"
+        command = "ffmpeg -f concat -safe 0 -i {}/file_list.txt -c copy '{}'".format(tmpdirname, args.output_file)
         print(command)
         subprocess.call(command, shell=True)
 
