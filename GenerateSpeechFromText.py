@@ -5,14 +5,12 @@ import argparse
 import threading
 
 import pyttsx3
-import os
 import subprocess
-from shutil import rmtree
 from pydub import AudioSegment
 from pydub.effects import speedup
 
 from pathlib import Path
-
+import tempfile
 
 # This the os module so we can play the file generated
 
@@ -94,26 +92,6 @@ if not args.input_file or not args.output_file:
     quit()
 
 #################################################################################################
-#  Create folder routine
-#################################################################################################
-def createPath(s):
-    try:
-        os.mkdir(s)
-    except OSError:
-        assert False, "Creation of the directory %s failed (The TEMP directory may already exist.)"
-
-
-#################################################################################################
-#  Folder cleanup routine
-#################################################################################################
-def deletePath(s):  # Dangerous! Watch out!
-    try:
-        rmtree(s, ignore_errors=False)
-    except OSError:
-        print("Deletion of the directory %s failed" % s)
-        print(OSError)
-
-#################################################################################################
 #  format time in seconds for calculating diff
 #################################################################################################
 def get_sec(time_str):
@@ -150,10 +128,10 @@ def tts_generator(dict):
     engine = pyttsx3.init()
     engine.setProperty('voice', "com.apple.speech.synthesis.voice.{}".format(args.voice))
     engine.setProperty("rate", 200)
-    engine.save_to_file(dict['text'], "{}/TEMP/tmp{:05d}.wav".format(os.getcwd(), int(dict['counter'].strip())))
+    engine.save_to_file(dict['text'], "{}/tmp{:05d}.wav".format(tmpdirname, int(dict['counter'].strip())))
     engine.runAndWait()
 
-    source = AudioSegment.from_file("{}/TEMP/tmp{:05d}.wav".format(os.getcwd(), int(dict['counter'].strip())))
+    source = AudioSegment.from_file("{}/tmp{:05d}.wav".format(tmpdirname, int(dict['counter'].strip())))
 
     # adjust audio speed if flag is True
     if args.speed_up:
@@ -164,88 +142,83 @@ def tts_generator(dict):
     audio = AudioSegment.silent(duration=dict['diff'] * 1000)
     output = audio.overlay(source, position=0)
 
-    output.export("{}/TEMP/_output{:05d}.wav".format(os.getcwd(), int(dict['counter'].strip())), format="wav")
+    output.export("{}/_output{:05d}.wav".format(tmpdirname, int(dict['counter'].strip())), format="wav")
 
 #################################################################################################
 #  *** Begin main part of Program ***
 #################################################################################################
 def main():
 
-    print("Creating temporary directory: TEMP")
+    global tmpdirname
 
-    createPath("TEMP")
+    with tempfile.TemporaryDirectory() as tmpdirname:
 
-    print("Reading transcript file {}".format(args.input_file))
+        print('Created temporary directory', tmpdirname)
 
-    # Read SRT file and use time info to generate translation that match video frames
-    with open(args.input_file) as fp:
+        print("Reading transcript file {}".format(args.input_file))
 
-        while True:
+        # Read SRT file and use time info to generate translation that match video frames
+        with open(args.input_file) as fp:
 
-            counter = fp.readline()
+            while True:
 
-            if not counter:
-                break
+                counter = fp.readline()
 
-            time = fp.readline()
-            text = fp.readline()
-            blank = fp.readline()
+                if not counter:
+                    break
 
-            # Separate SRT timestamp to produce start, end, and diff values
-            (start_time, end_time) = time.split(' --> ')
+                time = fp.readline()
+                text = fp.readline()
+                blank = fp.readline()
 
-            print(time.strip())
+                # Separate SRT timestamp to produce start, end, and diff values
+                (start_time, end_time) = time.split(' --> ')
 
-            diff = time_diff(start_time, end_time)
-            print("time_diff = {} ".format(diff))
+                print(time.strip())
 
-            print(text.strip())
+                diff = time_diff(start_time, end_time)
+                print("time_diff = {} ".format(diff))
 
-            dict = {}
-            dict['counter'] = counter
-            dict['diff'] = diff
-            dict['text'] = text.strip()
+                print(text.strip())
 
-            if int(counter.strip())  == 1:
-                first_frame_start_time = start_time
+                dict = {}
+                dict['counter'] = counter
+                dict['diff'] = diff
+                dict['text'] = text.strip()
 
-            time_limiter_from_stuck_function(tts_generator, dict)
+                if int(counter.strip())  == 1:
+                    first_frame_start_time = start_time
 
-    project_first_frame = AudioSegment.from_file("TEMP/tmp{:05d}.wav".format(1))
-    base_frame_rate = project_first_frame.frame_rate
+                time_limiter_from_stuck_function(tts_generator, dict)
 
-    # Pad the beginning with blank audio so the track matches the video
-    diff = time_diff('00:00:00,000', first_frame_start_time)
-    #print("start:{}, end:{}, diff:{}".format('0', start_time, diff))
-    audio = AudioSegment.silent(duration=diff * 1000)
-    audio = audio.set_frame_rate(base_frame_rate)
+        project_first_frame = AudioSegment.from_file("{}/tmp{:05d}.wav".format(tmpdirname, 1))
+        base_frame_rate = project_first_frame.frame_rate
 
-    #print(base_frame_rate)
-    #print(audio.frame_rate)
+        # Pad the beginning with blank audio so the track matches the video
+        diff = time_diff('00:00:00,000', first_frame_start_time)
+        #print("start:{}, end:{}, diff:{}".format('0', start_time, diff))
+        audio = AudioSegment.silent(duration=diff * 1000)
+        audio = audio.set_frame_rate(base_frame_rate)
 
-    audio.export("TEMP/_output{:05d}.wav".format(0), format="wav")
+        #print(base_frame_rate)
+        #print(audio.frame_rate)
 
-    # iterate over the _output files in the TEMP directory
-    files = sorted(Path("TEMP").glob('_output*.wav'))
+        audio.export("{}/_output{:05d}.wav".format(tmpdirname, 0), format="wav")
 
-    # Cleanup prior run file list
-    try:
-        os.remove("file_list.txt")
-    except FileNotFoundError:
-        pass
-    # Build list of translation clips
-    for file in files:
-        command = "echo \"file '{}'\" >> file_list.txt".format(file)
+        # iterate over the _output files in the TEMP directory
+        files = sorted(Path(tmpdirname).glob('_output*.wav'))
+
+        # Build list of translation clips
+        for file in files:
+            command = "echo \"file '{}'\" >> {}/file_list.txt".format(file, tmpdirname)
+            print(command)
+            subprocess.call(command, shell=True)
+
+        # Combine clips into a full translation audio wave file
+        command = "ffmpeg -f concat -safe 0 -i file_list.txt -c copy '" + format(
+            args.output_file) + "'"
         print(command)
         subprocess.call(command, shell=True)
-
-    # Combine clips into a full translation audio wave file
-    command = "ffmpeg -f concat -safe 0 -i file_list.txt -c copy '" + format(
-        args.output_file) + "'"
-    print(command)
-    subprocess.call(command, shell=True)
-
-    deletePath("TEMP")
 
 if __name__ == "__main__":
     main()

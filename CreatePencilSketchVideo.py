@@ -10,6 +10,7 @@ from shutil import rmtree
 from threading import Thread
 
 import cv2 as cv
+import tempfile
 
 #################################################################################################
 # Get arguments from command line
@@ -196,84 +197,84 @@ def deletePath(s):  # Dangerous! Watch out!
 #  *** Begin main part of Program ***
 #################################################################################################                    
 def main():
-    # Creating a VideoCapture object to read the video
-    fvs = FileVideoStream(args.input_file).start()
 
-    # Start time
-    start = time.time()
+    global tmpdirname
 
-    print("OpenCV major version: {0}".format(fvs.major_ver))
-    print("Frames per second: {0}".format(fvs.fps))
-    print("Frames to process: {0}".format(fvs.frames))
+    with tempfile.TemporaryDirectory() as tmpdirname:
+    
+        print('Created temporary directory', tmpdirname)
 
-    print("Creating temporary directory: TEMP")
+        # Creating a VideoCapture object to read the video
+        fvs = FileVideoStream(args.input_file).start()
 
-    createPath("TEMP")
+        # Start time
+        start = time.time()
 
-    print("Creating audio only file: TEMP/audio.wav")
+        print("OpenCV major version: {0}".format(fvs.major_ver))
+        print("Frames per second: {0}".format(fvs.fps))
+        print("Frames to process: {0}".format(fvs.frames))
 
-    # using only no video (-vn) flag to keep the original sample and bit rate
-    command = "ffmpeg -i '" + args.input_file + "' -vn TEMP/audio.wav"
-    subprocess.call(command, shell=True)
+        print("Creating audio only file: {}/audio.wav".format(tmpdirname))
 
-    current_iteration = 0
-    out = None
+        # using only no video (-vn) flag to keep the original sample and bit rate
+        command = "ffmpeg -i '{}' -vn {}/audio.wav".format(args.input_file, tmpdirname)
+        subprocess.call(command, shell=True)
 
-    # loop over the frames from the video
-    while fvs.more():
+        current_iteration = 0
+        out = None
 
-        printProgressBar(current_iteration, fvs.frames, prefix='Frame Conversion Progress:', suffix='Complete', length=50)
+        # loop over the frames from the video
+        while fvs.more():
 
-        img_rgb = fvs.read()
+            printProgressBar(current_iteration, fvs.frames, prefix='Frame Conversion Progress:', suffix='Complete', length=50)
 
-        if img_rgb is None:
-            break
+            img_rgb = fvs.read()
 
-        # Read the frame from the video
-        current_frame = pencil_it(img_rgb)
-        keep_frame = cv.cvtColor(current_frame, cv.COLOR_GRAY2BGR)
+            if img_rgb is None:
+                break
 
-        if not out:
-            (height, width) = keep_frame.shape[:2]
-            print("height = {}, width = {}".format(height, width))
-            fourcc = cv.VideoWriter_fourcc(*'mp4v')
-            out = cv.VideoWriter("TEMP/videoNew.mp4", fourcc, fvs.fps, (width, height))
+            # Read the frame from the video
+            current_frame = pencil_it(img_rgb)
+            keep_frame = cv.cvtColor(current_frame, cv.COLOR_GRAY2BGR)
 
-        try:
-            out.write(keep_frame)
+            if not out:
+                (height, width) = keep_frame.shape[:2]
+                print("height = {}, width = {}".format(height, width))
+                fourcc = cv.VideoWriter_fourcc(*'mp4v')
+                out = cv.VideoWriter("{}/videoNew.mp4".format(tmpdirname), fourcc, fvs.fps, (width, height))
 
-        except cv.error as error:
-            print("[Error]: {}".format(error))
-            out and out.release()
+            try:
+                out.write(keep_frame)
 
+            except cv.error as error:
+                print("[Error]: {}".format(error))
+                out and out.release()
+
+            end = time.time()
+            it_time = end - start
+
+            print("Frame Read Time : {0} seconds".format(it_time))
+
+            current_iteration += 1
+
+        out.release()
+
+        print("Merging edited video back to audio to produce final file")
+        command = "ffmpeg -r {} -i {}/videoNew.mp4 -i {}/audio.wav -strict -2 '{}'".format(str(fvs.fps), tmpdirname, tmpdirname, args.output_file)
+        print(command)
+        subprocess.call(command, shell=True)
+
+        # End time
         end = time.time()
-        it_time = end - start
 
-        print("Frame Read Time : {0} seconds".format(it_time))
+        # Time elapsed
+        seconds = end - start
 
-        current_iteration += 1
+        print('Execution time:', time.strftime("%H:%M:%S", time.gmtime(seconds)))
 
-    out.release()
-
-    print("Merging edited video back to audio to produce final file")
-    command = "ffmpeg -r " + str(fvs.fps) + " -i TEMP/videoNew.mp4 -i TEMP/audio.wav -strict -2 '" + format(args.output_file) + "'"
-    print(command)
-    subprocess.call(command, shell=True)
-
-    deletePath("TEMP")
-
-    # End time
-    end = time.time()
-
-    # Time elapsed
-    seconds = end - start
-
-    print('Execution time:', time.strftime("%H:%M:%S", time.gmtime(seconds)))
-
-    # release the video capture object
-    # do a bit of cleanup
-    cv.destroyAllWindows()
-    fvs.stop()
+        # release the video capture object and do a bit of cleanup
+        cv.destroyAllWindows()
+        fvs.stop()
 
 if __name__ == "__main__":
     main()

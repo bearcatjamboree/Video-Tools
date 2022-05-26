@@ -8,6 +8,7 @@ import speech_recognition as sr
 
 import subprocess
 import time
+import tempfile
 
 #################################################################################################
 #  Create folder routine
@@ -75,72 +76,70 @@ if not args.input_file or not args.output_srt or not args.output_video:
     parser.print_usage()
     quit()
 
-print("Creating temporary directory: TEMP")
+with tempfile.TemporaryDirectory() as tmpdirname:
 
-createPath("TEMP")
+    print('Created temporary directory', tmpdirname)
 
-print("Creating audio only file: TEMP/audio.wav")
+    print("Creating audio only file: {}/audio.wav".format(tmpdirname))
 
-# using only no video (-vn) flag to keep the original sample and bit rate
-command = "ffmpeg -i '" + args.input_file + "' -vn TEMP/audio.wav"
-subprocess.call(command, shell=True)
+    # using only no video (-vn) flag to keep the original sample and bit rate
+    command = "ffmpeg -i '{}' -vn {}/audio.wav".format(args.input_file, tmpdirname)
+    subprocess.call(command, shell=True)
 
-print("Generating transcript from: TEMP/audio.wav")
+    print("Generating transcript from: {}/audio.wav".format(tmpdirname))
 
-# create recognizer instance
-r = sr.Recognizer()
-#r.energy_threshold = 4000
+    # create recognizer instance
+    r = sr.Recognizer()
+    #r.energy_threshold = 4000
 
-fh = open(args.output_srt, "w+")
+    fh = open(args.output_srt, "w+")
 
-# subtitle count
-subtitle_number = 0
+    # subtitle count
+    subtitle_number = 0
 
-# Read Audio File
-with sr.WavFile("TEMP/audio.wav") as source:        # use "test.wav" as the audio source
+    # Read Audio File
+    with sr.WavFile("{}/audio.wav".format(tmpdirname)) as source:        # use "test.wav" as the audio source
 
-    audio_length = source.DURATION  # get length of audio file
+        audio_length = source.DURATION  # get length of audio file
 
-    # Calculate the number of 1-second iterations
-    iterations = int(audio_length / args.subtitle_seconds)
+        # Calculate the number of 1-second iterations
+        iterations = int(audio_length / args.subtitle_seconds)
 
-    for i in range(iterations):
+        for i in range(iterations):
 
-        # Display current progress
-        printProgressBar(i, iterations, prefix='Generate Transcript Progress:', suffix='Complete', length=50)
+            # Display current progress
+            printProgressBar(i, iterations, prefix='Generate Transcript Progress:', suffix='Complete', length=50)
 
-        # Access 2-seconds each iteration
-        audio = r.record(source, duration=args.subtitle_seconds)
+            # Access 2-seconds each iteration
+            audio = r.record(source, duration=args.subtitle_seconds)
 
-        # Recognize speech using Google
-        try:
-            subtitle_number += 1
-            rec = r.recognize_google(audio, language=args.language)
-            #fh.write(rec + ".\n")
-            fh.write("{}\n".format(subtitle_number))
-            start_time = time.strftime('%H:%M:%S', time.gmtime(i*args.subtitle_seconds))
-            end_time = time.strftime('%H:%M:%S', time.gmtime(args.subtitle_seconds*(i+1)))
-            fh.write("{},000 --> {},000\n".format(start_time, end_time))
-            fh.write(rec + "\n\n")
+            # Recognize speech using Google
+            try:
+                subtitle_number += 1
+                rec = r.recognize_google(audio, language=args.language)
+                #fh.write(rec + ".\n")
+                fh.write("{}\n".format(subtitle_number))
+                start_time = time.strftime('%H:%M:%S', time.gmtime(i*args.subtitle_seconds))
+                end_time = time.strftime('%H:%M:%S', time.gmtime(args.subtitle_seconds*(i+1)))
+                fh.write("{},000 --> {},000\n".format(start_time, end_time))
+                fh.write(rec + "\n\n")
 
-        except sr.UnknownValueError:
-            pass
-            #fh.write("*** Could not understand audio ***\n")
-        except sr.RequestError as e:
-            print("RequestError {0}".format(e))
+            except sr.UnknownValueError:
+                pass
+                #fh.write("*** Could not understand audio ***\n")
+            except sr.RequestError as e:
+                print("RequestError {0}".format(e))
 
-    printProgressBar(1, 1, prefix='Generate Subtitles Progress:', suffix='Complete', length=50)
+        printProgressBar(1, 1, prefix='Generate Subtitles Progress:', suffix='Complete', length=50)
 
-fh.close()
+    fh.close()
 
-print("Subtitles written to: {}".format(args.output_srt))
+    print("Subtitles written to: {}".format(args.output_srt))
 
-# Wait for the user input to terminate the program
-input("Please review SRT file for inaccuracies before continuing...")
+    # Wait for the user input to terminate the program
+    input("Please review SRT file for inaccuracies before continuing...")
 
-# using only no video (-vn) flag to keep the original sample and bit rate
-command = "ffmpeg -i '" + args.input_file + "' -vf subtitles=\"'" + args.output_srt + "':force_style='FontName="+args.subtitle_font+",Fontsize={}".format(args.subtitle_fontsize)+",PrimaryColour=&H"+args.subtitle_fontcolor+"&'\" '" + args.output_video + "'"
-print(command)
-subprocess.call(command, shell=True)
-
-deletePath("TEMP")
+    # using only no video (-vn) flag to keep the original sample and bit rate
+    command = "ffmpeg -i '" + args.input_file + "' -vf subtitles=\"'" + args.output_srt + "':force_style='FontName="+args.subtitle_font+",Fontsize={}".format(args.subtitle_fontsize)+",PrimaryColour=&H"+args.subtitle_fontcolor+"&'\" '" + args.output_video + "'"
+    print(command)
+    subprocess.call(command, shell=True)

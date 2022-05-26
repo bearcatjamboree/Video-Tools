@@ -18,6 +18,8 @@ from threading import Thread
 import cv2 as cv
 import numpy as np
 import imutils
+import tempfile
+
 from os.path import exists
 
 #################################################################################################
@@ -240,7 +242,7 @@ def AddMarginFrames(frames):
 #################################################################################################        
 def write_video_frames(output_frames, fps):
     out = None
-    fvs = FileVideoStream("TEMP/video.mp4").start()
+    fvs = FileVideoStream("{}/video.mp4".format(tmpdirname)).start()
 
     highlight_frame = 0
 
@@ -255,7 +257,7 @@ def write_video_frames(output_frames, fps):
             if not out:
                 (height, width) = frame.shape[:2]
                 fourcc = cv.VideoWriter_fourcc(*'mp4v')
-                out = cv.VideoWriter("TEMP/videoNew.mp4", fourcc, fps, (width, height))
+                out = cv.VideoWriter("{}/videoNew.mp4".format(tmpdirname), fourcc, fps, (width, height))
 
             try:
                 out.write(frame)
@@ -273,7 +275,7 @@ def write_video_frames(output_frames, fps):
 #################################################################################################
 def write_audio_frames(output_frames, fps):
 
-    wave_r = wave.open("TEMP/audio.wav", 'rb')
+    wave_r = wave.open("{}/audio.wav".format(tmpdirname), 'rb')
 
     # Get basic information.
     n_channels = wave_r.getnchannels()  # Number of channels. (1=Mono, 2=Stereo).
@@ -300,7 +302,7 @@ def write_audio_frames(output_frames, fps):
     # Resets the pointer to beginning of the stream
     wave_r.rewind()
 
-    wave_w = wave.open("TEMP/audioNew.wav", 'wb')
+    wave_w = wave.open("{}/audioNew.wav".format(tmpdirname), 'wb')
 
     # Write audio data.
     params = (n_channels, sample_width, framerate, n_frames, comp_type, comp_name)
@@ -324,7 +326,7 @@ def write_audio_frames(output_frames, fps):
             wave_w.writeframes(chunk_read)
 
         except wave.Error:
-            print("Error writing TEMP/audioNew.wav")
+            print("Error writing {}/audioNew.wav".format(tmpdirname))
             print(wave.Error)
 
         current_iteration += 1
@@ -468,182 +470,177 @@ def getMaxVolume(s):
 #################################################################################################                    
 def main():
 
-    print("Creating temporary directory: TEMP")
+    global tmpdirname
 
-    createPath("TEMP")
+    with tempfile.TemporaryDirectory() as tmpdirname:
+    
+        print('Created temporary directory', tmpdirname)
+        print("Creating temporary audio and video files: {}/video.mp4 + {}/audio.wav".format(tmpdirname, tmpdirname))
 
-    print("Creating temporary audio and video files: TEMP/video.mp4 + TEMP/audio.wav")
-
-    ##########################################################
-    # Copy the video and audio to separate temporary files.
-    # Re-encode the video in case there are any frame issues.
-    # This can help prevent keyframe video/audio sync issues.
-    ##########################################################
-    command = "ffmpeg -i '" + args.input_file + "' -c:a copy -c:v libx264 -an TEMP/video.mp4 -vn TEMP/audio.wav"
-    #print(command)
-    subprocess.call(command, shell=True)
-
-    # Creating a VideoCapture object to read the video
-    fvs = FileVideoStream("TEMP/video.mp4").start()
-
-    # Start time
-    start = time.time()
-
-    print("OpenCV major version: {0}".format(fvs.major_ver))
-    print("Frames per second: {0}".format(fvs.fps))
-    print("Frames to process: {0}".format(fvs.frames))
-    print("Scanning frames for things to highlight...")
-
-    # where retained frame numbers are stored
-    keep_frames = []
-
-    ################################################################
-    #  Process using audio_method (or skip if args.audio_method==0)
-    ################################################################    
-    if args.audio_method == 1:
-
-        wave_r = wave.open("TEMP/audio.wav", 'rb')
-
-        # Get basic information.
-        framerate = wave_r.getframerate()  # Frame rate.
-        n_frames = wave_r.getnframes()  # Number of frames.
-
-        print("Frame rate: {}".format(framerate))
-        print("Frame count: {}".format(n_frames))
-
-        chunk_size = int(framerate / fvs.fps)
-
-        # Read entire file and calculate file max volume
-        audioData = wave_r.readframes(n_frames * chunk_size)
-        (min_minmax, max_minmax) = audioop.minmax(audioData, 2)
-        max_volume = getMaxVolume((min_minmax, max_minmax))
-
-        # Release memory
-        del audioData
-        gc.collect()
-
-        # Resets pointer to beginning of audio stream
-        wave_r.rewind()
-
-        max_loops = int(n_frames / chunk_size)
-
-        print("n_frames {}".format(n_frames))
-        print("chunk_size {}".format(chunk_size))
-        print("max_loops {}".format(max_loops))
-
-        # Loop through all video frames
-        for audio_scan in range(fvs.frames):
-
-            if audio_scan > max_loops:
-                break
-
-            wave_r.setpos(audio_scan * chunk_size)
-
-            try:
-                # Read the number of bytes in each video/audio frame
-                chunk_read = wave_r.readframes(chunk_size)
-
-                (min_minmax, max_minmax) = audioop.minmax(chunk_read, 2)
-                frame_volume = getMaxVolume((min_minmax, max_minmax))
-                volume = frame_volume / max_volume
-
-                # Add if volume above threshold
-                if volume > args.audio_threshold:
-                    keep_frames.append(audio_scan)
-
-            except wave.Error:
-                print("Error reading TEMP/audio.wav")
-                print(wave.Error)
-
-            printProgressBar(audio_scan, fvs.frames, prefix='Scanning Audio Frames: ', suffix='Complete', length=50)
-
-        wave_r.close()
-
-    ################################################################
-    #  Process using video_method (or skip if args.video_method==0)
-    ################################################################
-    if args.video_method > 0:
-
-        needles = []
-        # Only load with images if doing template match
-        if args.video_method == 1:
-            needles = [cv.imread(file, cv.IMREAD_GRAYSCALE) for file in glob.glob("templates/*.png")]
-
-        current_frame = -1
-
-        # loop over the video frames
-        while fvs.more():
-
-            current_frame += 1
-
-            printProgressBar(current_frame, fvs.frames, prefix='Scanning Video Frames: ', suffix='Complete', length=50)
-
-            # Capture frame-by-frame
-            img_rgb = fvs.read()
-
-            if img_rgb is None:
-                break
-
-            # Skip any frames already selected using Audio jump
-            if current_frame in keep_frames:
-                continue
-
-            haystack = cv.cvtColor(img_rgb, cv.COLOR_BGR2GRAY)
-
-            t1 = time.time()
-
-            if args.video_method == 1:
-                needle_scan(needles, haystack, current_frame, keep_frames)
-            elif args.video_method == 2:
-                face_scan(haystack, current_frame, keep_frames)
-            else:
-                raise Exception("An error occurred in main()")
-
-            t2 = time.time()
-            it_time = t2 - t1
-
-            print("Frame Scan Time : {0} seconds".format(it_time))
-
-    if keep_frames:
-
-        #print("keep {}".format(keep_frames))
-        keep_frames = AddMarginFrames(keep_frames)
-
-        print("Writing edited video (only) file: TEMP/videoNew.mp4")
-
-        write_video_frames(keep_frames, fvs.fps)
-
-        print("Creating edited audio (only) file: TEMP/audioNew.wav")
-
-        write_audio_frames(keep_frames, fvs.fps)
-
-        print("Producing Final Edited Video...")
-
-        command = "ffmpeg -r " + str(fvs.fps) + " -i TEMP/videoNew.mp4 -i TEMP/audioNew.wav -strict -2 '" + format(
-            args.output_file) + "'"
-        print(command)
+        #################################################################################################################
+        # Copy the video and audio to separate temporary files.  Re-encode the video in case there are any frame issues.
+        # This can help prevent keyframe video/audio sync issues.
+        #################################################################################################################
+        command = "ffmpeg -i '{}' -c:a copy -c:v libx264 -an {}/video.mp4 -vn {}/audio.wav".format(args.input_file, tmpdirname, tmpdirname)
+        #print(command)
         subprocess.call(command, shell=True)
 
-    else:
+        # Creating a VideoCapture object to read the video
+        fvs = FileVideoStream("{}/video.mp4".format(tmpdirname)).start()
 
-        print("**** No highlights were found ****")
+        # Start time
+        start = time.time()
 
-    deletePath("TEMP")
+        print("OpenCV major version: {0}".format(fvs.major_ver))
+        print("Frames per second: {0}".format(fvs.fps))
+        print("Frames to process: {0}".format(fvs.frames))
+        print("Scanning frames for things to highlight...")
 
-    # End time
-    end = time.time()
+        # where retained frame numbers are stored
+        keep_frames = []
 
-    # Time elapsed
-    seconds = end - start
+        ################################################################
+        #  Process using audio_method (or skip if args.audio_method==0)
+        ################################################################
+        if args.audio_method == 1:
 
-    print('Execution time:', time.strftime("%H:%M:%S", time.gmtime(seconds)))
+            wave_r = wave.open("{}/audio.wav".format(tmpdirname), 'rb')
 
-    # print ("My frames: = ", keep_frames)
+            # Get basic information.
+            framerate = wave_r.getframerate()  # Frame rate.
+            n_frames = wave_r.getnframes()  # Number of frames.
 
-    # release the video capture object
-    # do a bit of cleanup
-    cv.destroyAllWindows()
-    fvs.stop()
+            print("Frame rate: {}".format(framerate))
+            print("Frame count: {}".format(n_frames))
+
+            chunk_size = int(framerate / fvs.fps)
+
+            # Read entire file and calculate file max volume
+            audioData = wave_r.readframes(n_frames * chunk_size)
+            (min_minmax, max_minmax) = audioop.minmax(audioData, 2)
+            max_volume = getMaxVolume((min_minmax, max_minmax))
+
+            # Release memory
+            del audioData
+            gc.collect()
+
+            # Resets pointer to beginning of audio stream
+            wave_r.rewind()
+
+            max_loops = int(n_frames / chunk_size)
+
+            print("n_frames {}".format(n_frames))
+            print("chunk_size {}".format(chunk_size))
+            print("max_loops {}".format(max_loops))
+
+            # Loop through all video frames
+            for audio_scan in range(fvs.frames):
+
+                if audio_scan > max_loops:
+                    break
+
+                wave_r.setpos(audio_scan * chunk_size)
+
+                try:
+                    # Read the number of bytes in each video/audio frame
+                    chunk_read = wave_r.readframes(chunk_size)
+
+                    (min_minmax, max_minmax) = audioop.minmax(chunk_read, 2)
+                    frame_volume = getMaxVolume((min_minmax, max_minmax))
+                    volume = frame_volume / max_volume
+
+                    # Add if volume above threshold
+                    if volume > args.audio_threshold:
+                        keep_frames.append(audio_scan)
+
+                except wave.Error:
+                    print("Error reading {}/audio.wav".format(tmpdirname))
+                    print(wave.Error)
+
+                printProgressBar(audio_scan, fvs.frames, prefix='Scanning Audio Frames: ', suffix='Complete', length=50)
+
+            wave_r.close()
+
+        ################################################################
+        #  Process using video_method (or skip if args.video_method==0)
+        ################################################################
+        if args.video_method > 0:
+
+            needles = []
+            # Only load with images if doing template match
+            if args.video_method == 1:
+                needles = [cv.imread(file, cv.IMREAD_GRAYSCALE) for file in glob.glob("templates/*.png")]
+
+            current_frame = -1
+
+            # loop over the video frames
+            while fvs.more():
+
+                current_frame += 1
+
+                printProgressBar(current_frame, fvs.frames, prefix='Scanning Video Frames: ', suffix='Complete', length=50)
+
+                # Capture frame-by-frame
+                img_rgb = fvs.read()
+
+                if img_rgb is None:
+                    break
+
+                # Skip any frames already selected using Audio jump
+                if current_frame in keep_frames:
+                    continue
+
+                haystack = cv.cvtColor(img_rgb, cv.COLOR_BGR2GRAY)
+
+                t1 = time.time()
+
+                if args.video_method == 1:
+                    needle_scan(needles, haystack, current_frame, keep_frames)
+                elif args.video_method == 2:
+                    face_scan(haystack, current_frame, keep_frames)
+                else:
+                    raise Exception("An error occurred in main()")
+
+                t2 = time.time()
+                it_time = t2 - t1
+
+                print("Frame Scan Time : {0} seconds".format(it_time))
+
+        if keep_frames:
+
+            #print("keep {}".format(keep_frames))
+            keep_frames = AddMarginFrames(keep_frames)
+
+            print("Writing edited video (only) file: {}/videoNew.mp4".format(tmpdirname))
+
+            write_video_frames(keep_frames, fvs.fps)
+
+            print("Creating edited audio (only) file: {}/audioNew.wav".format(tmpdirname))
+
+            write_audio_frames(keep_frames, fvs.fps)
+
+            print("Producing Final Edited Video...")
+
+            command = "ffmpeg -r {} -i {}/videoNew.mp4 -i {}/audioNew.wav -strict -2 '{}'".format(str(fvs.fps), tmpdirname, tmpdirname, args.output_file)
+            print(command)
+            subprocess.call(command, shell=True)
+
+        else:
+
+            print("**** No highlights were found ****")
+
+        # End time
+        end = time.time()
+
+        # Time elapsed
+        seconds = end - start
+
+        print('Execution time:', time.strftime("%H:%M:%S", time.gmtime(seconds)))
+
+        # release the video capture object
+        # do a bit of cleanup
+        cv.destroyAllWindows()
+        fvs.stop()
 
 if __name__ == "__main__":
     main()

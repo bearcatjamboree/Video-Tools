@@ -12,6 +12,7 @@ from threading import Thread
 import cv2 as cv
 import mediapipe as mp
 import numpy as np
+import tempfile
 
 #################################################################################################
 # Get arguments from command line
@@ -161,88 +162,82 @@ def deletePath(s):  # Dangerous! Watch out!
 #################################################################################################
 def main():
 
-    print("Creating temporary directory: TEMP")
+    with tempfile.TemporaryDirectory() as tmpdirname:
+        print('Created temporary directory: ', tmpdirname)
 
-    createPath("TEMP")
+        print("Separating audio and video: {}/video.mp4 + {}/audio.wav".format(tmpdirname, tmpdirname))
 
-    print("Separating audio and video: TEMP/video.mp4 + TEMP/audio.wav")
+        #################################################################################################################
+        # Copy the video and audio to separate temporary files.  Re-encode the video in case there are any frame issues.
+        # This can help prevent keyframe video/audio sync issues.
+        #################################################################################################################
+        command = "ffmpeg -i '{}' -c:a copy -c:v libx264 -an {}/video.mp4 -vn {}/audio.wav".format(args.input_file, tmpdirname, tmpdirname)
+        subprocess.call(command, shell=True)
 
-    ##########################################################
-    # Copy the video and audio to separate temporary files.
-    # Re-encode the video in case there are any frame issues.
-    # This can help prevent keyframe video/audio sync issues.
-    ##########################################################
-    command = "ffmpeg -i '" + args.input_file + "' -c:a copy -c:v libx264 -an TEMP/video.mp4 -vn TEMP/audio.wav"
-    #print(command)
-    subprocess.call(command, shell=True)
+        # Creating a VideoCapture object to read the video
+        fvs = FileVideoStream("{}/video.mp4".format(tmpdirname)).start()
 
-    # Creating a VideoCapture object to read the video
-    fvs = FileVideoStream("TEMP/video.mp4").start()
+        # Start time
+        start = time.time()
 
-    # Start time
-    start = time.time()
+        print("OpenCV major version: {0}".format(fvs.major_ver))
+        print("Frames per second: {0}".format(fvs.fps))
+        print("Frames to process: {0}".format(fvs.frames))
+        print("Scanning frames for things to highlight...")
 
-    print("OpenCV major version: {0}".format(fvs.major_ver))
-    print("Frames per second: {0}".format(fvs.fps))
-    print("Frames to process: {0}".format(fvs.frames))
-    print("Scanning frames for things to highlight...")
+        bg_image = cv.imread('media/green_sceen.png')
+        out = None
 
-    bg_image = cv.imread('media/green_sceen.png')
-    out = None
+        # initialize mediapipe
+        mp_selfie_segmentation = mp.solutions.selfie_segmentation
+        selfie_segmentation = mp_selfie_segmentation.SelfieSegmentation(model_selection=1)
 
-    # initialize mediapipe
-    mp_selfie_segmentation = mp.solutions.selfie_segmentation
-    selfie_segmentation = mp_selfie_segmentation.SelfieSegmentation(model_selection=1)
+        # loop over the video frames
+        while fvs.more():
 
-    # loop over the video frames
-    while fvs.more():
+            # Capture frame-by-frame
+            frame = fvs.read()
 
-        # Capture frame-by-frame
-        frame = fvs.read()
+            if frame is None:
+                break
 
-        if frame is None:
-            break
+            height, width, channel = frame.shape
+            RGB = cv.cvtColor(frame, cv.COLOR_BGR2RGB)
 
-        height, width, channel = frame.shape
-        RGB = cv.cvtColor(frame, cv.COLOR_BGR2RGB)
+            # get the result
+            results = selfie_segmentation.process(RGB)
 
-        # get the result
-        results = selfie_segmentation.process(RGB)
+            # extract segmented mask
+            mask = results.segmentation_mask
 
-        # extract segmented mask
-        mask = results.segmentation_mask
+            # it returns true or false where the condition applies in the mask
+            condition = np.stack(
+                (results.segmentation_mask,) * 3, axis=-1) > 0.6
 
-        # it returns true or false where the condition applies in the mask
-        condition = np.stack(
-            (results.segmentation_mask,) * 3, axis=-1) > 0.6
+            # resize the background image to the same size of the original frame
+            bg_image = cv.resize(bg_image, (width, height))
 
-        # resize the background image to the same size of the original frame
-        bg_image = cv.resize(bg_image, (width, height))
+            # combine frame and background image using the condition
+            output_image = np.where(condition, frame, bg_image)
 
-        # combine frame and background image using the condition
-        output_image = np.where(condition, frame, bg_image)
+            # Write new video out
+            if not out:
+                fourcc = cv.VideoWriter_fourcc(*'mp4v')
+                out = cv.VideoWriter("{}/videoNew.mp4".format(tmpdirname), fourcc, fvs.fps, (width, height))
 
-        # Write new video out
-        if not out:
-            fourcc = cv.VideoWriter_fourcc(*'mp4v')
-            out = cv.VideoWriter("TEMP/videoNew.mp4", fourcc, fvs.fps, (width, height))
+            try:
+                out.write(frame)
 
-        try:
-            out.write(frame)
+            except cv.error as error:
+                print("[Error]: {}".format(error))
+                out and out.release()
 
-        except cv.error as error:
-            print("[Error]: {}".format(error))
-            out and out.release()
+        out.release()
 
-    out.release()
-
-    # Combine new video back with original audio and produce new file
-    command = "ffmpeg -r " + str(fvs.fps) + " -i TEMP/videoNew.mp4 -i TEMP/audio.wav -strict -2 '" + format(
-        args.output_file) + "'"
-    print(command)
-    subprocess.call(command, shell=True)
-
-    deletePath("TEMP")
+        # Combine new video back with original audio and produce new file
+        command = "ffmpeg -r {} -i {}/videoNew.mp4 -i {}/audio.wav -strict -2 '{}'".format(str(fvs.fps), tmpdirname, tmpdirname, args.output_file)
+        print(command)
+        subprocess.call(command, shell=True)
 
     # End time
     end = time.time()
