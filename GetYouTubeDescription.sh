@@ -98,7 +98,7 @@ fi
 output_folder=${output_folder%/}
 
 # download descriptions from all videos in playlist
-youtube-dl "$url" --write-description --skip-download --youtube-skip-dash-manifest -o "$output_folder/%(title)s_descripton"
+yt-dlp "ytsearch:$url" --write-description --skip-download --youtube-skip-dash-manifest -o "$output_folder/%(title)s_descripton"
 
 # rename the .descripton to .txt in the _output file names
 for file in $output_folder/*.description ; do mv "$file" "${file%.*}.txt" ; done
