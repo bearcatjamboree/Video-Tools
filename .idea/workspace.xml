@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Added GenerateGameHighlights.sh as a way to automate trimming and merging multiple videos located in a specified folder.">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Updated workspace.xml and .gitignore file references">
+      <change afterPath="$PROJECT_DIR$/DownloadYouTubeVideo.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReverseVideo.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GenerateSpeechFromText.py" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateSpeechFromText.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RBM/RemoveBackgroundMusic.sh" beforeDir="false" afterPath="$PROJECT_DIR$/RBM/RemoveBackgroundMusic.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioJumpcut.sh" beforeDir="false" afterPath="$PROJECT_DIR$/AudioJumpcut.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GenerateGameHighlights.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateGameHighlights.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GetYouTubeDescription.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GetYouTubeDescription.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +68,7 @@
       <recent name="$PROJECT_DIR$/_backups" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.Create Vintage Video">
+  <component name="RunManager" selected="Shell Script.Get YouTube Description">
     <configuration name="AudioJumpcut" type="ShConfigurationType" folderName="Videos">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -281,6 +283,21 @@
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
       <option name="SCRIPT_PATH" value="$PROJECT_DIR$/CutVideoStartToEndTime.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="Download YouTube Video" type="ShConfigurationType" folderName="YouTube">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/DownloadYouTubeVideo.sh" />
       <option name="SCRIPT_OPTIONS" value="" />
       <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
       <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -592,6 +609,21 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="Reverse Video" type="ShConfigurationType" folderName="Videos">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/ReverseVideo.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="Rotate Video Clockwise" type="ShConfigurationType" folderName="Videos">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -652,28 +684,30 @@
       <item itemvalue="Shell Script.Audio+FaceRecognition" />
       <item itemvalue="Shell Script.Audio+MatchTemplate" />
       <item itemvalue="Shell Script.AudioJumpcut" />
-      <item itemvalue="Shell Script.Generate Game Highlights" />
       <item itemvalue="Shell Script.Burn Subtitles From SRT" />
       <item itemvalue="Shell Script.Change Video Aspect Ratio" />
       <item itemvalue="Shell Script.Convert Video Format" />
+      <item itemvalue="Shell Script.Create Mobile Crossclip" />
       <item itemvalue="Shell Script.Create Pencil Sketch Video" />
       <item itemvalue="Shell Script.Create Vintage Video" />
       <item itemvalue="Shell Script.Crop Video" />
-      <item itemvalue="Shell Script.Create Mobile Crossclip" />
       <item itemvalue="Shell Script.Cut Video Start To Duration" />
       <item itemvalue="Shell Script.Cut Video Start To End Time" />
       <item itemvalue="Shell Script.FaceRecognition" />
       <item itemvalue="Shell Script.Flip Video Horizontally" />
       <item itemvalue="Shell Script.Flip Video Vertically" />
+      <item itemvalue="Shell Script.Generate Game Highlights" />
       <item itemvalue="Shell Script.MatchTemplate" />
       <item itemvalue="Shell Script.Merge Video And Audio" />
       <item itemvalue="Shell Script.Mirror Video Horizontally" />
       <item itemvalue="Shell Script.Mirror Video Vertically" />
       <item itemvalue="Shell Script.Remove Video Background" />
       <item itemvalue="Shell Script.Resize Video" />
+      <item itemvalue="Shell Script.Reverse Video" />
       <item itemvalue="Shell Script.Rotate Video Clockwise" />
       <item itemvalue="Shell Script.Rotate Video Counterclockwise" />
       <item itemvalue="Shell Script.Zoompan Cut Video" />
+      <item itemvalue="Shell Script.Download YouTube Video" />
       <item itemvalue="Shell Script.Get YouTube Description" />
       <item itemvalue="Shell Script.Get YouTube Transcript" />
     </list>
@@ -687,27 +721,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
-    </task>
-    <task id="LOCAL-00047" summary="Tested multiple language transcript generation">
-      <created>1652455653319</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1652455653319</updated>
-    </task>
-    <task id="LOCAL-00048" summary="Update TTS to padding audio to match SRT timestamps.">
-      <created>1652482216237</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1652482216237</updated>
-    </task>
-    <task id="LOCAL-00049" summary="Added script to merge video and audio, taking into account that the video may also contain audio.  Both channels are retained.">
-      <created>1652539645705</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1652539645705</updated>
     </task>
     <task id="LOCAL-00050" summary="Corrected Speech From Text to include padded blank audio on the beginning so audio aligns with video for easy merging.">
       <created>1652539721981</created>
@@ -1031,7 +1044,28 @@
       <option name="project" value="LOCAL" />
       <updated>1653576991169</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="Corrected temporary directory reference that was incorrect">
+      <created>1653577338382</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1653577338382</updated>
+    </task>
+    <task id="LOCAL-00097" summary="Corrected temporary directory reference that was incorrect">
+      <created>1653577362166</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1653577362166</updated>
+    </task>
+    <task id="LOCAL-00098" summary="Updated workspace.xml and .gitignore file references">
+      <created>1653577387729</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1653577387729</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1047,8 +1081,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added folder structure to organize functions" />
-    <MESSAGE value="Added Arabic as an option" />
     <MESSAGE value="Updated usage text and program variable defaults for users that invoke from command-line." />
     <MESSAGE value="Numerous updates to handle input from dialogs or the command-line, including adding conditions that were missing and additional usage information" />
     <MESSAGE value="Added step to create subfolder for language and put the transcript info in the subfolder." />
@@ -1072,6 +1104,8 @@
     <MESSAGE value="Various minor shell script update" />
     <MESSAGE value="Replaced all reference to a hardcoded &quot;TEMP&quot; directory with automatically generated, unique temporary directories managed by tempfile.TemporaryDirectory().  These directories are also automatically cleaned after execution.  This will allow for multiple scripts to run concurrently without risk of overlaying files." />
     <MESSAGE value="Added GenerateGameHighlights.sh as a way to automate trimming and merging multiple videos located in a specified folder." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added GenerateGameHighlights.sh as a way to automate trimming and merging multiple videos located in a specified folder." />
+    <MESSAGE value="Corrected temporary directory reference that was incorrect" />
+    <MESSAGE value="Updated workspace.xml and .gitignore file references" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated workspace.xml and .gitignore file references" />
   </component>
 </project>
