@@ -151,8 +151,8 @@ do
   srt_file="$new_output/${video_id}_$language.srt"
 
   # perform all transformations
-  /bin/zsh ~/PycharmProjects/Video-Tools/GetYouTubeDescription.sh "$language" "$url" "$output_folder"
-  /bin/zsh ~/PycharmProjects/Video-Tools/GetYouTubeTranscript.sh "$language" "$url" "$output_folder"
+  /bin/zsh ~/PycharmProjects/Video-Tools/TranslateYouTubeDescription.sh "$language" "$url" "$output_folder"
+  /bin/zsh ~/PycharmProjects/Video-Tools/TranslateYouTubeTranscript.sh "$language" "$url" "$output_folder"
   /bin/zsh ~/PycharmProjects/Video-Tools/GenerateSpeechFromText.sh "$srt_file" "$language_names[$language]"
   /bin/zsh ~/PycharmProjects/Video-Tools/BurnSubtitlesFromSRT.sh "$new_novocals_file" "$srt_file"
   /bin/zsh ~/PycharmProjects/Video-Tools/MergeVideoAndAudio.sh "$subtitled_file" "$wav_file"
