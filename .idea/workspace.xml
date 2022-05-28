@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Minor updates">
-      <change afterPath="$PROJECT_DIR$/ConvertYouTubeVideos.sh" afterDir="false" />
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Updated function list">
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/._checkpoint" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/.probe" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/checkpoint" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.data-00000-of-00001" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.index" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GetYouTubeDescription.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GetYouTubeDescription.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GetYouTubeTranscript.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GetYouTubeTranscript.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RBM/RemoveBackgroundMusic.sh" beforeDir="false" afterPath="$PROJECT_DIR$/RBM/RemoveBackgroundMusic.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RBM/RemoveVocals.sh" beforeDir="false" afterPath="$PROJECT_DIR$/RBM/RemoveVocals.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -744,27 +739,6 @@
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
     </task>
-    <task id="LOCAL-00055" summary="Added script to download YouTube video/playlist/channel video descriptions and translate to a list of additional languages once downloaded.">
-      <created>1652717618183</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1652717618183</updated>
-    </task>
-    <task id="LOCAL-00056" summary="Updated prompt text and remove shell msg since it was redundant.">
-      <created>1652717668064</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1652717668064</updated>
-    </task>
-    <task id="LOCAL-00057" summary="Added language list to make processing easier">
-      <created>1652717718880</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1652717718880</updated>
-    </task>
     <task id="LOCAL-00058" summary="Added threading and other updates to improve performance and correct errors.">
       <created>1652717757222</created>
       <option name="number" value="00058" />
@@ -1087,7 +1061,28 @@
       <option name="project" value="LOCAL" />
       <updated>1653688627085</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="Add comments">
+      <created>1653704941837</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1653704941837</updated>
+    </task>
+    <task id="LOCAL-00105" summary="Add comments">
+      <created>1653704960322</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1653704960322</updated>
+    </task>
+    <task id="LOCAL-00106" summary="Updated function list">
+      <created>1653704975324</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1653704975324</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1103,8 +1098,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added lang_trans array for cases where transcript translation language code and translate-shell language codes are different" />
-    <MESSAGE value="updated lang_trans with zh-tw and filipino" />
     <MESSAGE value="Removed translation table when it was determined to not be needed for this script..." />
     <MESSAGE value="Added update to allow auto-speedup when the tts exceeds the length of the SRT frame." />
     <MESSAGE value="Minor updates including adding alphabet sort to the language list." />
@@ -1128,6 +1121,8 @@
     <MESSAGE value="Updated workspace.xml to include new scripts" />
     <MESSAGE value="Replaced youtube-dl with yt-dlp" />
     <MESSAGE value="Minor updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor updates" />
+    <MESSAGE value="Add comments" />
+    <MESSAGE value="Updated function list" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated function list" />
   </component>
 </project>
