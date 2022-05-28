@@ -67,4 +67,5 @@ if ! [ -d "$output_folder" ]; then
   exit 1
 fi
 
-yt-dlp "ytsearch:$url" -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4] / bv*+ba/b" -o "$output_folder%(title)s.%(ext)s"
+#yt-dlp "ytsearch:$url" -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4] / bv*+ba/b" -o "$output_folder%(title)s.%(ext)s"
+yt-dlp "$url" -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4] / bv*+ba/b" -o "$output_folder%(title)s.%(ext)s"

@@ -108,4 +108,4 @@ if ! [ -d "$new_output" ]; then
   mkdir $new_output
 fi
 
-python3 TranslateYouTubeTranscript.py --video_id "$video_id" --output_folder "$new_output" --language "$lang_code"
+python3 TranslateYouTubeTranscript.py --video_id="$video_id" --output_folder "$new_output" --language "$lang_code"

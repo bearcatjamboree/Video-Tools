@@ -111,14 +111,18 @@ if ! [ -d "$output_folder" ]; then
 fi
 
 # get title
-title=$( yt-dlp --flat-playlist --print "%(title)s" "ytsearch:$url")
+#title=$( yt-dlp --flat-playlist --print "%(title)s" "ytsearch:$url")
+title=$( yt-dlp --flat-playlist --print "%(title)s" "$url")
+title=$(echo $title | sed 's/\"//g')
+title=$(echo $title | sed 's/\#/\_/g')
 echo "Title: $title"
 
 # download the video in best mp4 format
-video=$(yt-dlp "ytsearch:$url" -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4] / bv*+ba/b" -o "$output_folder%(title)s.%(ext)s")
-
+#video=$(yt-dlp "ytsearch:$url" -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4] / bv*+ba/b" -o "$output_folder$title.%(ext)s")
+video=$(yt-dlp "$url" -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4] / bv*+ba/b" -o "$output_folder$title.%(ext)s")
 video="$output_folder$title.mp4"
 
+echo /bin/zsh ~/PycharmProjects/Video-Tools/RBM/RemoveVocals.sh "$video"
 /bin/zsh ~/PycharmProjects/Video-Tools/RBM/RemoveVocals.sh "$video"
 
 ext="${video##*.}"
@@ -150,11 +154,20 @@ do
   wav_file="$new_output/${video_id}_$language.wav"
   srt_file="$new_output/${video_id}_$language.srt"
 
-  # perform all transformations
+  # Perform all transformations
+  echo /bin/zsh ~/PycharmProjects/Video-Tools/TranslateYouTubeDescription.sh "$language" "$url" "$output_folder"
   /bin/zsh ~/PycharmProjects/Video-Tools/TranslateYouTubeDescription.sh "$language" "$url" "$output_folder"
+
+  echo /bin/zsh ~/PycharmProjects/Video-Tools/TranslateYouTubeTranscript.sh "$language" "$url" "$output_folder"
   /bin/zsh ~/PycharmProjects/Video-Tools/TranslateYouTubeTranscript.sh "$language" "$url" "$output_folder"
+
+  echo /bin/zsh ~/PycharmProjects/Video-Tools/GenerateSpeechFromText.sh "$srt_file" "$language_names[$language]"
   /bin/zsh ~/PycharmProjects/Video-Tools/GenerateSpeechFromText.sh "$srt_file" "$language_names[$language]"
+
+  echo /bin/zsh ~/PycharmProjects/Video-Tools/BurnSubtitlesFromSRT.sh "$new_novocals_file" "$srt_file"
   /bin/zsh ~/PycharmProjects/Video-Tools/BurnSubtitlesFromSRT.sh "$new_novocals_file" "$srt_file"
+
+  echo /bin/zsh ~/PycharmProjects/Video-Tools/MergeVideoAndAudio.sh "$subtitled_file" "$wav_file"
   /bin/zsh ~/PycharmProjects/Video-Tools/MergeVideoAndAudio.sh "$subtitled_file" "$wav_file"
 
 done

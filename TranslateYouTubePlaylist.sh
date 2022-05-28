@@ -36,13 +36,13 @@ if [[ "$playlist_url" == "" ]]; then
     elif [[ "$machine" == "Cygwin" ]]; then
         playlist_url=$(dialog --title "Enter playlist location" --inputbox "URL:" 8 60)
     else
-        echo "Usage: $0 language playlist_url output_folder"
+        echo "Usage: $0 playlist_url output_folder"
         exit 1
     fi
 fi
 
 if [[ "$playlist_url" == "" ]]; then
-    echo "Usage: $0 output_folder playlist_url"
+    echo "Usage: $0 playlist_url output_folder"
     exit 1
 fi
 
@@ -73,24 +73,34 @@ fi
 output_folder=${output_folder%/}
 
 # download playlist info
+
 youtube_data=$(yt-dlp --dump-json "$playlist_url" | jq -r '[.title,.id]|@csv')
 
-while IFS= read -r line ;
+# Read playlist info to array (lines)
+i=0; lines=()
+while IFS='' read -r value; do
+    lines+=("$value")
+done <<< "$youtube_data"
+
+for line in "${lines[@]}"
 do
   IFS="," read -r title id <<< "$line"
 
   title=$(echo $title | sed 's/\"//g')
+  title=$(echo $title | sed 's/\#/\_/g')
   id=$(echo $id | sed 's/\"//g')
 
   url="https://www.youtube.com/watch?v=$id"
 
-  output_folder="$output_folder/$title"
-  output_folder=$(echo $output_folder | sed 's/ /\ /g')
+  new_output_folder="$output_folder/$title"
+  new_output_folder=$(echo $new_output_folder | sed 's/ /\ /g')
 
-  if ! [ -d "$output_folder" ]; then
-    mkdir $output_folder
+  if ! [ -d "$new_output_folder" ]; then
+    mkdir $new_output_folder
+    echo /bin/zsh ~/PycharmProjects/Video-Tools/TranslateYouTubeVideo.sh "$url" "$new_output_folder/"
+    /bin/zsh ~/PycharmProjects/Video-Tools/TranslateYouTubeVideo.sh "$url" "$new_output_folder/"
+  else
+    echo "Skipping $new_output_folder"
   fi
-
-  /bin/zsh ~/PycharmProjects/Video-Tools/TranslateYouTubeVideo.sh "$url" "$output_folder"
   
-done <<< "$youtube_data"
+done

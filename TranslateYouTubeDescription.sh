@@ -96,18 +96,26 @@ fi
 
 output_folder=${output_folder%/}
 
+# get title
+#title=$( yt-dlp --flat-playlist --print "%(title)s" "ytsearch:$url")
+title=$( yt-dlp --flat-playlist --print "%(title)s" "$url")
+title=$(echo $title | sed 's/\"//g')
+title=$(echo $title | sed 's/\#/\_/g')
+echo "Title: $title"
+
 # download descriptions from all videos in playlist
-yt-dlp "ytsearch:$url" --write-description --skip-download --youtube-skip-dash-manifest -o "$output_folder/%(title)s_descripton"
+#yt-dlp "ytsearch:$url" --write-description --skip-download --youtube-skip-dash-manifest -o "$output_folder/$title"
+yt-dlp "$url" --write-description --skip-download --youtube-skip-dash-manifest -o "$output_folder/$title"
 
 # rename the .descripton to .txt in the _output file names
-for file in $output_folder/*.description ; do mv "$file" "${file%.*}.txt" ; done
+for file in $output_folder/*.description ; do mv "$file" "${file%.*}_description.txt" ; done
 
 new_output=$output_folder/$lang_code
 if ! [ -d "$new_output" ]; then
   mkdir $new_output
 fi
 # translate each file
-for file in $output_folder/*_descripton.txt ;
+for file in $output_folder/*_description.txt ;
   do
     name="${file##*/}"
     echo "cat \"$file\" | trans -s \"en\" -b :$lang_code > \"$new_output/$name\""

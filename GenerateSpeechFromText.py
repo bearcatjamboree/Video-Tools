@@ -125,6 +125,7 @@ def time_limiter_from_stuck_function(target_func, arg1, max_time=10):
 #################################################################################################
 def tts_generator(dict):
 
+    print("Voice: {}".format(args.voice))
     engine = pyttsx3.init()
     engine.setProperty('voice', "com.apple.speech.synthesis.voice.{}".format(args.voice))
     engine.setProperty("rate", 200)
