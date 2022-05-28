@@ -1,5 +1,11 @@
 #!/bin/sh
 
+#
+# this script requires spleeter environment be active before starting
+# to start spleeter simply type:
+#
+#   conda activate spleeter
+#
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;
