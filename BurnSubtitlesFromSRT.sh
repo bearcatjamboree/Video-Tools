@@ -27,9 +27,9 @@ if ! [ -f "$video_file" ]; then
         POSIX path of video_file
         end')
     elif [[ "$machine" == "Linux" ]]; then
-        video_file=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
+        video_file=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect ~/ 14 48)
     elif [[ "$machine" == "Cygwin" ]]; then
-        video_file=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
+        video_file=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect ~/ 14 48)
     elif [ "$#" -ne 1 ] || ! [ -f "$video_file" ]; then
         echo "Usage: $0 video_file srt_file"
         exit 1
@@ -51,9 +51,9 @@ if ! [ -f "$srt_file" ]; then
         POSIX path of srt_file
         end')
     elif [[ "$machine" == "Linux" ]]; then
-        srt_file=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
+        srt_file=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect ~/ 14 48)
     elif [[ "$machine" == "Cygwin" ]]; then
-        srt_file=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
+        srt_file=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect ~/ 14 48)
     elif [ "$#" -ne 1 ] || ! [ -f "$srt_file" ]; then
         echo "Usage: $0 video_file srt_file"
         exit 1

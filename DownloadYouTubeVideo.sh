@@ -51,9 +51,9 @@ if ! [ -d "$output_folder" ]; then
         POSIX path of output_folder
         end')
     elif [[ "$machine" == "Linux" ]]; then
-        output_folder=$(dialog --title "Choose a folder" --stdout --title "Please select output folder:" --fselect /tmp/ 14 48)
+        output_folder=$(dialog --title "Choose a folder" --stdout --title "Please select output folder:" --fselect ~/ 14 48)
     elif [[ "$machine" == "Cygwin" ]]; then
-        output_folder=$(dialog --title "Choose a folder" --stdout --title "Please select output folder:" --fselect /tmp/ 14 48)
+        output_folder=$(dialog --title "Choose a folder" --stdout --title "Please select output folder:" --fselect ~/ 14 48)
     else
         echo "Usage: $0 language [video URL or ID] output_folder"
         exit 1

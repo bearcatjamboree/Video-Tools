@@ -37,9 +37,9 @@ if ! [ -f "$input_file" ]; then
         POSIX path of input_file
         end')
     elif [[ "$machine" == "Linux" ]]; then
-        input_file=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
+        input_file=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect ~/ 14 48)
     elif [[ "$machine" == "Cygwin" ]]; then
-        input_file=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
+        input_file=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect ~/ 14 48)
     elif [ "$#" -ne 1 ] || ! [ -f "$input_file" ]; then
         echo "Usage: $0 input_file language"
         exit 1
@@ -58,9 +58,9 @@ if [[ "$language" == "" ]]; then
   if [[ "$machine" == "Mac" ]]; then
       language=$(osascript -e 'return choose from list { '${joined:2}' }')
   elif [[ "$machine" == "Linux" ]]; then
-      language=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
+      language=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect ~/ 14 48)
   elif [[ "$machine" == "Cygwin" ]]; then
-      language=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
+      language=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect ~/ 14 48)
   else
       echo "Unknown platform"
       exit 1

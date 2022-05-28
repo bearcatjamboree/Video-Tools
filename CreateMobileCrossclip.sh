@@ -26,9 +26,9 @@ if ! [ -f "$input_file" ]; then
         POSIX path of input_file
         end')
     elif [[ "$machine" == "Linux" ]]; then
-        input_file=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
+        input_file=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect ~/ 14 48)
     elif [[ "$machine" == "Cygwin" ]]; then
-        input_file=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
+        input_file=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect ~/ 14 48)
     else
         echo "Usage: $0 input_file out_w out_h x y"
         exit 1
@@ -170,9 +170,9 @@ if [[ "$style" == "" ]]; then
   if [[ "$machine" == "Mac" ]]; then
       style=$(osascript -e 'return choose from list { "Basic", "Bubble" }')
   elif [[ "$machine" == "Linux" ]]; then
-      style=$(dialog --title "Select video style" --stdout --title "Please choose a file to process" --menubox /tmp/ 14 48)
+      style=$(dialog --title "Select video style" --stdout --title "Please choose a file to process" --menubox ~/ 14 48)
   elif [[ "$machine" == "Cygwin" ]]; then
-      style=$(dialog --title "Select video style" --stdout --title "Please choose a file to process" --menubox /tmp/ 14 48)
+      style=$(dialog --title "Select video style" --stdout --title "Please choose a file to process" --menubox ~/ 14 48)
   else
       echo "Unknown platform"
       exit 1

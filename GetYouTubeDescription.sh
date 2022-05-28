@@ -39,9 +39,9 @@ if [[ "$lang_code" == "" ]]; then
   if [[ "$machine" == "Mac" ]]; then
       language=$(osascript -e 'return choose from list { '${joined:2}' }')
   elif [[ "$machine" == "Linux" ]]; then
-      language=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
+      language=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect ~/ 14 48)
   elif [[ "$machine" == "Cygwin" ]]; then
-      language=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
+      language=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect ~/ 14 48)
   else
       echo "Unknown platform"
       exit 1
@@ -80,9 +80,9 @@ if ! [ -d "$output_folder" ]; then
         POSIX path of output_folder
         end')
     elif [[ "$machine" == "Linux" ]]; then
-        output_folder=$(dialog --title "Choose a folder" --stdout --title "Please select output folder:" --fselect /tmp/ 14 48)
+        output_folder=$(dialog --title "Choose a folder" --stdout --title "Please select output folder:" --fselect ~/ 14 48)
     elif [[ "$machine" == "Cygwin" ]]; then
-        output_folder=$(dialog --title "Choose a folder" --stdout --title "Please select output folder:" --fselect /tmp/ 14 48)
+        output_folder=$(dialog --title "Choose a folder" --stdout --title "Please select output folder:" --fselect ~/ 14 48)
     else
         echo "Usage: $0 language url output_folder"
         exit 1

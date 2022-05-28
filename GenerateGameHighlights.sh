@@ -23,9 +23,9 @@ if ! [ -d "$input_folder" ]; then
         POSIX path of input_folder
         end')
     elif [[ "$machine" == "Linux" ]]; then
-        input_folder=$(dialog --title "Choose a folder" --stdout --title "Please choose an input folder" --fselect /tmp/ 14 48)
+        input_folder=$(dialog --title "Choose a folder" --stdout --title "Please choose an input folder" --fselect ~/ 14 48)
     elif [[ "$machine" == "Cygwin" ]]; then
-        input_folder=$(dialog --title "Choose a folder" --stdout --title "Please choose an input folder" --fselect /tmp/ 14 48)
+        input_folder=$(dialog --title "Choose a folder" --stdout --title "Please choose an input folder" --fselect ~/ 14 48)
     else
         echo "Usage: $0 input_file input_folder format"
         exit 1
@@ -50,9 +50,9 @@ if ! [ -d "$output_folder" ]; then
         POSIX path of output_folder
         end')
     elif [[ "$machine" == "Linux" ]]; then
-        output_folder=$(dialog --title "Choose a folder" --stdout --title "Please choose an output folder" --fselect /tmp/ 14 48)
+        output_folder=$(dialog --title "Choose a folder" --stdout --title "Please choose an output folder" --fselect ~/ 14 48)
     elif [[ "$machine" == "Cygwin" ]]; then
-        output_folder=$(dialog --title "Choose a folder" --stdout --title "Please choose an output folder" --fselect /tmp/ 14 48)
+        output_folder=$(dialog --title "Choose a folder" --stdout --title "Please choose an output folder" --fselect ~/ 14 48)
     else
         echo "Usage: $0 input_file output_folder format"
         exit 1

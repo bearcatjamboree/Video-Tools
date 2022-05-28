@@ -94,9 +94,9 @@ if ! [ -d "$output_folder" ]; then
         POSIX path of output_folder
         end')
     elif [[ "$machine" == "Linux" ]]; then
-        output_folder=$(dialog --title "Choose a folder" --stdout --title "Please select output folder:" --fselect /tmp/ 14 48)
+        output_folder=$(dialog --title "Choose a folder" --stdout --title "Please select output folder:" --fselect ~/ 14 48)
     elif [[ "$machine" == "Cygwin" ]]; then
-        output_folder=$(dialog --title "Choose a folder" --stdout --title "Please select output folder:" --fselect /tmp/ 14 48)
+        output_folder=$(dialog --title "Choose a folder" --stdout --title "Please select output folder:" --fselect ~/ 14 48)
     else
         echo "Usage: $0 language [video URL or ID] output_folder"
         exit 1
@@ -119,7 +119,7 @@ video=$(yt-dlp "ytsearch:$url" -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4] / bv*+ba/
 
 video="$output_folder$title.mp4"
 
-/bin/zsh /Users/cboxgo/PycharmProjects/Video-Tools/RBM/RemoveVocals.sh "$video"
+/bin/zsh ~/PycharmProjects/Video-Tools/RBM/RemoveVocals.sh "$video"
 
 ext="${video##*.}"
 name="${video%.*}"
@@ -151,11 +151,11 @@ do
   srt_file="$new_output/${video_id}_$language.srt"
 
   # perform all transformations
-  /bin/zsh /Users/cboxgo/PycharmProjects/Video-Tools/GetYouTubeDescription.sh "$language" "$url" "$output_folder"
-  /bin/zsh /Users/cboxgo/PycharmProjects/Video-Tools/GetYouTubeTranscript.sh "$language" "$url" "$output_folder"
-  /bin/zsh /Users/cboxgo/PycharmProjects/Video-Tools/GenerateSpeechFromText.sh "$srt_file" "$language_names[$language]"
-  /bin/zsh /Users/cboxgo/PycharmProjects/Video-Tools/BurnSubtitlesFromSRT.sh "$new_novocals_file" "$srt_file"
-  /bin/zsh /Users/cboxgo/PycharmProjects/Video-Tools/MergeVideoAndAudio.sh "$subtitled_file" "$wav_file"
+  /bin/zsh ~/PycharmProjects/Video-Tools/GetYouTubeDescription.sh "$language" "$url" "$output_folder"
+  /bin/zsh ~/PycharmProjects/Video-Tools/GetYouTubeTranscript.sh "$language" "$url" "$output_folder"
+  /bin/zsh ~/PycharmProjects/Video-Tools/GenerateSpeechFromText.sh "$srt_file" "$language_names[$language]"
+  /bin/zsh ~/PycharmProjects/Video-Tools/BurnSubtitlesFromSRT.sh "$new_novocals_file" "$srt_file"
+  /bin/zsh ~/PycharmProjects/Video-Tools/MergeVideoAndAudio.sh "$subtitled_file" "$wav_file"
 
 done
 

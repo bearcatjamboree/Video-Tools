@@ -22,9 +22,9 @@ if ! [ -f "$input_file" ]; then
         POSIX path of input_file
         end')
     elif [[ "$machine" == "Linux" ]]; then
-        input_file=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
+        input_file=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect ~/ 14 48)
     elif [[ "$machine" == "Cygwin" ]]; then
-        input_file=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
+        input_file=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect ~/ 14 48)
     elif [ "$#" -ne 1 ] || ! [ -f "$input_file" ]; then
         echo "Usage: $0 $input_file"
         exit 1
