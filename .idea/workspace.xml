@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Updated function list">
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="updated ignore list">
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/._checkpoint" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/.probe" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/checkpoint" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.data-00000-of-00001" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.index" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +69,7 @@
       <recent name="$PROJECT_DIR$/_backups" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.Convert YouTube Video">
+  <component name="RunManager" selected="Shell Script.Convert YouTube Videos">
     <configuration name="AudioJumpcut" type="ShConfigurationType" folderName="Videos">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -190,7 +190,7 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="Convert YouTube Video" type="ShConfigurationType" folderName="YouTube">
+    <configuration name="Convert YouTube Videos" type="ShConfigurationType" folderName="YouTube">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
       <option name="SCRIPT_PATH" value="$PROJECT_DIR$/ConvertYouTubeVideos.sh" />
@@ -723,7 +723,7 @@
       <item itemvalue="Shell Script.Rotate Video Clockwise" />
       <item itemvalue="Shell Script.Rotate Video Counterclockwise" />
       <item itemvalue="Shell Script.Zoompan Cut Video" />
-      <item itemvalue="Shell Script.Convert YouTube Video" />
+      <item itemvalue="Shell Script.Convert YouTube Videos" />
       <item itemvalue="Shell Script.Download YouTube Video" />
       <item itemvalue="Shell Script.Get YouTube Description" />
       <item itemvalue="Shell Script.Get YouTube Transcript" />
@@ -738,20 +738,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
-    </task>
-    <task id="LOCAL-00058" summary="Added threading and other updates to improve performance and correct errors.">
-      <created>1652717757222</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1652717757223</updated>
-    </task>
-    <task id="LOCAL-00059" summary="Added various minor script corrections">
-      <created>1652717788403</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1652717788403</updated>
     </task>
     <task id="LOCAL-00060" summary="Added various minor script corrections">
       <created>1652717834359</created>
@@ -1082,7 +1068,21 @@
       <option name="project" value="LOCAL" />
       <updated>1653704975324</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="Updated function list">
+      <created>1653705016766</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1653705016766</updated>
+    </task>
+    <task id="LOCAL-00108" summary="updated ignore list">
+      <created>1653705034600</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1653705034600</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1098,7 +1098,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Removed translation table when it was determined to not be needed for this script..." />
     <MESSAGE value="Added update to allow auto-speedup when the tts exceeds the length of the SRT frame." />
     <MESSAGE value="Minor updates including adding alphabet sort to the language list." />
     <MESSAGE value="Updated the list of functions" />
@@ -1123,6 +1122,7 @@
     <MESSAGE value="Minor updates" />
     <MESSAGE value="Add comments" />
     <MESSAGE value="Updated function list" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated function list" />
+    <MESSAGE value="updated ignore list" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated ignore list" />
   </component>
 </project>
