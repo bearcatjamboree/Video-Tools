@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Updated workspace.xml and .gitignore file references">
-      <change afterPath="$PROJECT_DIR$/DownloadYouTubeVideo.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ReverseVideo.sh" afterDir="false" />
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Minor updates">
+      <change afterPath="$PROJECT_DIR$/ConvertYouTubeVideos.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/._checkpoint" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/.probe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/checkpoint" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AudioJumpcut.sh" beforeDir="false" afterPath="$PROJECT_DIR$/AudioJumpcut.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GenerateGameHighlights.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateGameHighlights.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GetYouTubeDescription.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GetYouTubeDescription.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GetYouTubeTranscript.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GetYouTubeTranscript.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RBM/RemoveBackgroundMusic.sh" beforeDir="false" afterPath="$PROJECT_DIR$/RBM/RemoveBackgroundMusic.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RBM/RemoveVocals.sh" beforeDir="false" afterPath="$PROJECT_DIR$/RBM/RemoveVocals.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +74,7 @@
       <recent name="$PROJECT_DIR$/_backups" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.Get YouTube Description">
+  <component name="RunManager" selected="Shell Script.Convert YouTube Video">
     <configuration name="AudioJumpcut" type="ShConfigurationType" folderName="Videos">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -178,6 +184,21 @@
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
       <option name="SCRIPT_PATH" value="$PROJECT_DIR$/ConvertVideoFormat.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="Convert YouTube Video" type="ShConfigurationType" folderName="YouTube">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/ConvertYouTubeVideos.sh" />
       <option name="SCRIPT_OPTIONS" value="" />
       <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
       <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -707,6 +728,7 @@
       <item itemvalue="Shell Script.Rotate Video Clockwise" />
       <item itemvalue="Shell Script.Rotate Video Counterclockwise" />
       <item itemvalue="Shell Script.Zoompan Cut Video" />
+      <item itemvalue="Shell Script.Convert YouTube Video" />
       <item itemvalue="Shell Script.Download YouTube Video" />
       <item itemvalue="Shell Script.Get YouTube Description" />
       <item itemvalue="Shell Script.Get YouTube Transcript" />
@@ -721,41 +743,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
-    </task>
-    <task id="LOCAL-00050" summary="Corrected Speech From Text to include padded blank audio on the beginning so audio aligns with video for easy merging.">
-      <created>1652539721981</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1652539721982</updated>
-    </task>
-    <task id="LOCAL-00051" summary="Added additional language input examples.  No major code changes...">
-      <created>1652539782205</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1652539782205</updated>
-    </task>
-    <task id="LOCAL-00052" summary="Added DownloadYouTubeDescriptions.sh to allow fetching video description text">
-      <created>1652560771546</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1652560771547</updated>
-    </task>
-    <task id="LOCAL-00053" summary="Made updates to handle keeping both video and audio tracks when merging">
-      <created>1652560840990</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1652560840990</updated>
-    </task>
-    <task id="LOCAL-00054" summary="Updated script list and organized into category-based folders">
-      <created>1652560871327</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1652560871327</updated>
     </task>
     <task id="LOCAL-00055" summary="Added script to download YouTube video/playlist/channel video descriptions and translate to a list of additional languages once downloaded.">
       <created>1652717618183</created>
@@ -1065,7 +1052,42 @@
       <option name="project" value="LOCAL" />
       <updated>1653577387729</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="Added ReverseVideo.sh to create reversed video/audio">
+      <created>1653688514488</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1653688514489</updated>
+    </task>
+    <task id="LOCAL-00100" summary="Added DownloadYouTubeVideo.sh script to automate downloading videos using yt-dlp">
+      <created>1653688572050</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1653688572050</updated>
+    </task>
+    <task id="LOCAL-00101" summary="Updated workspace.xml to include new scripts">
+      <created>1653688591200</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1653688591200</updated>
+    </task>
+    <task id="LOCAL-00102" summary="Replaced youtube-dl with yt-dlp">
+      <created>1653688614087</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1653688614087</updated>
+    </task>
+    <task id="LOCAL-00103" summary="Minor updates">
+      <created>1653688627085</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1653688627085</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1081,11 +1103,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Updated usage text and program variable defaults for users that invoke from command-line." />
-    <MESSAGE value="Numerous updates to handle input from dialogs or the command-line, including adding conditions that were missing and additional usage information" />
-    <MESSAGE value="Added step to create subfolder for language and put the transcript info in the subfolder." />
-    <MESSAGE value="Made numerous corrections to input validation steps for requesting for input and checking for missing values.  Should correct any issues with scripts not continuing past input requests." />
-    <MESSAGE value="Correct input video check preventing script for starting" />
     <MESSAGE value="Added lang_trans array for cases where transcript translation language code and translate-shell language codes are different" />
     <MESSAGE value="updated lang_trans with zh-tw and filipino" />
     <MESSAGE value="Removed translation table when it was determined to not be needed for this script..." />
@@ -1106,6 +1123,11 @@
     <MESSAGE value="Added GenerateGameHighlights.sh as a way to automate trimming and merging multiple videos located in a specified folder." />
     <MESSAGE value="Corrected temporary directory reference that was incorrect" />
     <MESSAGE value="Updated workspace.xml and .gitignore file references" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated workspace.xml and .gitignore file references" />
+    <MESSAGE value="Added ReverseVideo.sh to create reversed video/audio" />
+    <MESSAGE value="Added DownloadYouTubeVideo.sh script to automate downloading videos using yt-dlp" />
+    <MESSAGE value="Updated workspace.xml to include new scripts" />
+    <MESSAGE value="Replaced youtube-dl with yt-dlp" />
+    <MESSAGE value="Minor updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor updates" />
   </component>
 </project>
