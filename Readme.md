@@ -48,6 +48,11 @@ If you find these tools useful then consider watching my other content and subsc
  35. Rotate video counterclockwise
  36. Zoompan Cut Video
  37. Create Mobile Crossclip
+ 38. Download YouTube videos in the best MP4 format
+ 39. Translate YouTube descriptions to other languages
+ 40. Translate YouTube transcripts to other languages
+ 41. Translate YouTube video to other languages
+ 42. Translate YouTube playlist to other languages
  
 ## Operating Systems
 
