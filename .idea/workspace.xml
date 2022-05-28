@@ -1,20 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Change default path to user home directory for non-Mac dialogs">
-      <change afterPath="$PROJECT_DIR$/TranslateYouTubePlaylist.sh" afterDir="false" />
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Updated function list">
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/._checkpoint" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/.probe" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/checkpoint" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.data-00000-of-00001" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.index" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GetYouTubeDescription.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TranslateYouTubeDescription.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GetYouTubeTranscript.py" beforeDir="false" afterPath="$PROJECT_DIR$/TranslateYouTubeTranscript.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GetYouTubeTranscript.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TranslateYouTubeTranscript.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TranslateYouTubeVideos.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TranslateYouTubeVideos.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +69,7 @@
       <recent name="$PROJECT_DIR$/_backups" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.Translate YouTube Video">
+  <component name="RunManager" selected="Shell Script.Download YouTube Video">
     <configuration name="AudioJumpcut" type="ShConfigurationType" folderName="Videos">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -679,7 +673,7 @@
     <configuration name="Translate YouTube Video" type="ShConfigurationType" folderName="YouTube">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
-      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/TranslateYouTubeVideos.sh" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/TranslateYouTubeVideo.sh" />
       <option name="SCRIPT_OPTIONS" value="" />
       <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
       <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -760,27 +754,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
-    </task>
-    <task id="LOCAL-00062" summary="Updated ignore list">
-      <created>1652717891517</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1652717891517</updated>
-    </task>
-    <task id="LOCAL-00063" summary="Numerous updates to correct errors during translation, including passing absolute path to AudioSegment to prevent high memory usage from causing AudioSegment to have issues locating the file being processed.">
-      <created>1652718101387</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1652718101387</updated>
-    </task>
-    <task id="LOCAL-00064" summary="Various minor udpates">
-      <created>1652718135276</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1652718135276</updated>
     </task>
     <task id="LOCAL-00065" summary="Add drop-down list for language selection">
       <created>1652842070305</created>
@@ -1104,7 +1077,28 @@
       <option name="project" value="LOCAL" />
       <updated>1653750945012</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="Renamed translation scripts to have similiar naming to make them easier to identify">
+      <created>1653751459125</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1653751459125</updated>
+    </task>
+    <task id="LOCAL-00112" summary="Updated workspace.xml to include correct script references and uncheck &quot;execute in terminal&quot; so dialog command displays correctly for non-Mac systems.">
+      <created>1653751533960</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1653751533960</updated>
+    </task>
+    <task id="LOCAL-00113" summary="Updated function list">
+      <created>1653751557413</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1653751557413</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1120,8 +1114,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Updated the list of functions" />
-    <MESSAGE value="Implemented shell temp directory generation to allow multiple instances to run without file conflicts." />
     <MESSAGE value="Added zoompan cut script for fixed interval zoom-in and zoom-normal effect for videos.  This feature can only zoom-in and back to preview zoom... not out and then in." />
     <MESSAGE value="Added zoompan script to features list" />
     <MESSAGE value="Updated YouTube description and transcript code to include all available languages through a selection box rather than having to hardcode language codes." />
@@ -1141,10 +1133,12 @@
     <MESSAGE value="Replaced youtube-dl with yt-dlp" />
     <MESSAGE value="Minor updates" />
     <MESSAGE value="Add comments" />
-    <MESSAGE value="Updated function list" />
     <MESSAGE value="updated ignore list" />
     <MESSAGE value="minor spelling changes" />
     <MESSAGE value="Change default path to user home directory for non-Mac dialogs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change default path to user home directory for non-Mac dialogs" />
+    <MESSAGE value="Renamed translation scripts to have similiar naming to make them easier to identify" />
+    <MESSAGE value="Updated workspace.xml to include correct script references and uncheck &quot;execute in terminal&quot; so dialog command displays correctly for non-Mac systems." />
+    <MESSAGE value="Updated function list" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated function list" />
   </component>
 </project>
