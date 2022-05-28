@@ -11,7 +11,7 @@ esac
 
 echo ${machine}
 
-language="$1"
+lang_code="$1"
 video_provided="$2"
 output_folder="$3"
 
@@ -35,7 +35,7 @@ joined=$(printf ", \"%s\"" $(echo "${(@k)languages}" | tr " " "\n" | sort | tr "
 ##############################################################################
 # Check for voice to use
 ###############################################################################
-if [[ "$language" == "" ]]; then
+if [[ "$lang_code" == "" ]]; then
   if [[ "$machine" == "Mac" ]]; then
       language=$(osascript -e 'return choose from list { '${joined:2}' }')
   elif [[ "$machine" == "Linux" ]]; then
@@ -46,9 +46,8 @@ if [[ "$language" == "" ]]; then
       echo "Usage: $0 language [video URL or ID] output_folder"
       exit 1
   fi
+  lang_code="${languages[$language]}"
 fi
-
-lang_code="${languages[$language]}"
 
 ##############################################################################
 # Prompt for video_provided
