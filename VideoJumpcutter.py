@@ -458,14 +458,6 @@ def deletePath(s):  # Dangerous! Watch out!
         print(OSError)
 
 #################################################################################################
-#  Get the max absolute value for the two values provided
-#################################################################################################                    
-def getMaxVolume(s):
-    maxv = float(np.max(s))
-    minv = float(np.min(s))
-    return max(maxv, -minv)
-
-#################################################################################################
 #  *** Begin main part of Program ***
 #################################################################################################                    
 def main():
@@ -514,17 +506,35 @@ def main():
             print("Frame count: {}".format(n_frames))
 
             chunk_size = int(framerate / fvs.fps)
+            max_loops = int(n_frames / chunk_size)
 
-            # Read entire file and calculate file max volume
-            audioData = wave_r.readframes(n_frames * chunk_size)
-            (min_minmax, max_minmax) = audioop.minmax(audioData, 2)
-            max_volume = getMaxVolume((min_minmax, max_minmax))
+            rms_list = []
+
+            # Read entire file and calculate highest rms volume
+            for audio_scan in range(fvs.frames):
+
+                if audio_scan > max_loops:
+                    break
+
+                wave_r.setpos(audio_scan * chunk_size)
+
+                try:
+                    # Read the number of bytes in each video/audio frame
+                    audioData = wave_r.readframes(chunk_size)
+                    frame_rms = audioop.rms(audioData, 2)
+                    rms_list.append(frame_rms)
+
+                except wave.Error:
+                    print("Error reading {}/audio.wav".format(tmpdirname))
+                    print(wave.Error)
+
+            max_rms = max(rms_list)
 
             # Release memory
             del audioData
             gc.collect()
 
-            # Resets pointer to beginning of audio stream
+            # Resets pointer to beginning of audio file
             wave_r.rewind()
 
             max_loops = int(n_frames / chunk_size)
@@ -545,9 +555,9 @@ def main():
                     # Read the number of bytes in each video/audio frame
                     chunk_read = wave_r.readframes(chunk_size)
 
-                    (min_minmax, max_minmax) = audioop.minmax(chunk_read, 2)
-                    frame_volume = getMaxVolume((min_minmax, max_minmax))
-                    volume = frame_volume / max_volume
+                    # Calculate volume as frame_rms / max_rms
+                    frame_rms = audioop.rms(chunk_read, 2)
+                    volume = frame_rms / max_rms
 
                     # Add if volume above threshold
                     if volume > args.audio_threshold:
