@@ -1,7 +1,7 @@
 #!/bin/sh
 
 subtitle_font="Bangers"
-subtitle_fontsize=30 #48
+subtitle_fontsize=48 #48
 subtitle_fontcolor="ffffff"
 
 unameOut="$(uname -s)"
