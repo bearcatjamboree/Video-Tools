@@ -126,11 +126,14 @@ def time_limiter_from_stuck_function(target_func, arg1, max_time=10):
 def tts_generator(dict):
 
     print("Voice: {}".format(args.voice))
+
     engine = pyttsx3.init()
     engine.setProperty('voice', "com.apple.speech.synthesis.voice.{}".format(args.voice))
     engine.setProperty("rate", 200)
     engine.save_to_file(dict['text'], "{}/tmp{:05d}.wav".format(tmpdirname, int(dict['counter'].strip())))
     engine.runAndWait()
+
+    del(engine)
 
     source = AudioSegment.from_file("{}/tmp{:05d}.wav".format(tmpdirname, int(dict['counter'].strip())))
 
