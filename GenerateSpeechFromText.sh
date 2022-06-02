@@ -92,3 +92,6 @@ name="${file%.*}"
 output_file=$name.wav
 
 python3 GenerateSpeechFromText.py --input_file "$input_file" --output_file "$output_file" --voice "$voice"
+
+# Kill to prevent hangs from mullitple calls
+killall com.apple.speech.speechsynthesisd

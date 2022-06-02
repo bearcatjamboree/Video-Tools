@@ -115,6 +115,7 @@ fi
 title=$( yt-dlp --flat-playlist --print "%(title)s" "$url")
 title=$(echo $title | sed 's/\"//g')
 title=$(echo $title | sed 's/\#/\_/g')
+title=$(echo $title | sed 's/\!//g')
 echo "Title: $title"
 
 # download the video in best mp4 format
@@ -171,4 +172,3 @@ do
   /bin/zsh ~/PycharmProjects/Video-Tools/MergeVideoAndAudio.sh "$subtitled_file" "$wav_file"
 
 done
-

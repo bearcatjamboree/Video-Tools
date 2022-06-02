@@ -88,6 +88,7 @@ do
 
   title=$(echo $title | sed 's/\"//g')
   title=$(echo $title | sed 's/\#/\_/g')
+  title=$(echo $title | sed 's/\!//g')
   id=$(echo $id | sed 's/\"//g')
 
   url="https://www.youtube.com/watch?v=$id"

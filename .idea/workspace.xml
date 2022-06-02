@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Numerous corrections to prevent filenames that might cause scripts to break and an update to allow hypen to be passed to TranslateYouTubeTranscript.py from TranslateYouTubeTranscript.sh, since some video IDs have hyphens.">
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Changes to engine init so it's only initialized once and global engine references are maintained for all later calls">
+      <change afterPath="$PROJECT_DIR$/BatchBurnSubtitlesFromSRT.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BatchGenerateSpeechFromText.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BatchMergeVideoAndAudio.sh" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/._checkpoint" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/.probe" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/checkpoint" afterDir="false" />
@@ -9,9 +15,11 @@
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.index" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BurnSubtitlesFromSRT.sh" beforeDir="false" afterPath="$PROJECT_DIR$/BurnSubtitlesFromSRT.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GenerateGameHighlights.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateGameHighlights.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VideoJumpcutter.py" beforeDir="false" afterPath="$PROJECT_DIR$/VideoJumpcutter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GenerateSpeechFromText.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateSpeechFromText.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TranslateYouTubePlaylist.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TranslateYouTubePlaylist.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TranslateYouTubeVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TranslateYouTubeVideo.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +70,14 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="Video-Tools" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="Video-Tools" />
+      </console-settings>
+    </option>
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -72,7 +88,7 @@
       <recent name="$PROJECT_DIR$/_backups" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.AudioJumpcut">
+  <component name="RunManager" selected="Shell Script.Translate YouTube Video">
     <configuration name="AudioJumpcut" type="ShConfigurationType" folderName="Videos">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -107,6 +123,51 @@
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
       <option name="SCRIPT_PATH" value="$PROJECT_DIR$/AudioMatchTemplate.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="Batch Burn Subtitles From SRT" type="ShConfigurationType" folderName="Batch">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/BatchBurnSubtitlesFromSRT.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="Batch Generate Speech From Text" type="ShConfigurationType" folderName="Batch">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/BatchGenerateSpeechFromText.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="Batch Merge Video And Audio" type="ShConfigurationType" folderName="Batch">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/BatchMergeVideoAndAudio.sh" />
       <option name="SCRIPT_OPTIONS" value="" />
       <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
       <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -711,13 +772,16 @@
       <item itemvalue="Shell Script.Remove Audio From Video" />
       <item itemvalue="Shell Script.Remove Background Music" />
       <item itemvalue="Shell Script.Remove Vocals" />
+      <item itemvalue="Shell Script.Batch Burn Subtitles From SRT" />
+      <item itemvalue="Shell Script.Batch Generate Speech From Text" />
+      <item itemvalue="Shell Script.Batch Merge Video And Audio" />
       <item itemvalue="Shell Script.Create Animated GIF" />
       <item itemvalue="Shell Script.Extract Images From Video" />
       <item itemvalue="Shell Script.Generate Video Subtitles" />
       <item itemvalue="Shell Script.Plot Video Frames" />
+      <item itemvalue="Shell Script.AudioJumpcut" />
       <item itemvalue="Shell Script.Audio+FaceRecognition" />
       <item itemvalue="Shell Script.Audio+MatchTemplate" />
-      <item itemvalue="Shell Script.AudioJumpcut" />
       <item itemvalue="Shell Script.Burn Subtitles From SRT" />
       <item itemvalue="Shell Script.Change Video Aspect Ratio" />
       <item itemvalue="Shell Script.Convert Video Format" />
@@ -757,41 +821,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
-    </task>
-    <task id="LOCAL-00068" summary="Updated requirements list">
-      <created>1652842139070</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1652842139070</updated>
-    </task>
-    <task id="LOCAL-00069" summary="Added folder structure to organize functions">
-      <created>1652842155420</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1652842155420</updated>
-    </task>
-    <task id="LOCAL-00070" summary="Added Arabic as an option">
-      <created>1652842188990</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1652842188990</updated>
-    </task>
-    <task id="LOCAL-00071" summary="Updated usage text and program variable defaults for users that invoke from command-line.">
-      <created>1652963984422</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1652963984422</updated>
-    </task>
-    <task id="LOCAL-00072" summary="Numerous updates to handle input from dialogs or the command-line, including adding conditions that were missing and additional usage information">
-      <created>1652966764481</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1652966764481</updated>
     </task>
     <task id="LOCAL-00073" summary="Added step to create subfolder for language and put the transcript info in the subfolder.">
       <created>1653050176772</created>
@@ -1101,7 +1130,42 @@
       <option name="project" value="LOCAL" />
       <updated>1653777134024</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <task id="LOCAL-00117" summary="Minor script changes">
+      <created>1653832230525</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1653832230526</updated>
+    </task>
+    <task id="LOCAL-00118" summary="Updated audio volume selection to calculate max RMS for audio then compare to frame RMS, rather than use audioop.max since RMS is more like the ear hears audio.">
+      <created>1653832275605</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1653832275605</updated>
+    </task>
+    <task id="LOCAL-00119" summary="Added del(engine) after runAndWait() to help cleanup after the execution.  This appears to have fixed the issue with longer (30+ minute) speech to text conversions failing.">
+      <created>1653850037433</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1653850037434</updated>
+    </task>
+    <task id="LOCAL-00120" summary="Updated Readme.md to indicate issue with spleeter on M1 causing issues with TTS if the spleeter environment is active when attempting to generate speech from text.">
+      <created>1654189222310</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1654189222311</updated>
+    </task>
+    <task id="LOCAL-00121" summary="Changes to engine init so it's only initialized once and global engine references are maintained for all later calls">
+      <created>1654189369319</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1654189369319</updated>
+    </task>
+    <option name="localTasksCounter" value="122" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1117,11 +1181,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Updated script reference in workspace.xml" />
-    <MESSAGE value="Numerous spell corrections and minor changes" />
-    <MESSAGE value="Added CreateMobileCrossclip.sh to allow producing portrait oriented clip with webcam on top in two styles: Basic or Bubble." />
-    <MESSAGE value="Updated workspace.xml to include Create Mobile Crosslip" />
-    <MESSAGE value="Updated Features list" />
     <MESSAGE value="Various minor shell script update" />
     <MESSAGE value="Replaced all reference to a hardcoded &quot;TEMP&quot; directory with automatically generated, unique temporary directories managed by tempfile.TemporaryDirectory().  These directories are also automatically cleaned after execution.  This will allow for multiple scripts to run concurrently without risk of overlaying files." />
     <MESSAGE value="Added GenerateGameHighlights.sh as a way to automate trimming and merging multiple videos located in a specified folder." />
@@ -1142,6 +1201,11 @@
     <MESSAGE value="Updated ignore list" />
     <MESSAGE value="Updated workspace.xml" />
     <MESSAGE value="Numerous corrections to prevent filenames that might cause scripts to break and an update to allow hypen to be passed to TranslateYouTubeTranscript.py from TranslateYouTubeTranscript.sh, since some video IDs have hyphens." />
-    <option name="LAST_COMMIT_MESSAGE" value="Numerous corrections to prevent filenames that might cause scripts to break and an update to allow hypen to be passed to TranslateYouTubeTranscript.py from TranslateYouTubeTranscript.sh, since some video IDs have hyphens." />
+    <MESSAGE value="Minor script changes" />
+    <MESSAGE value="Updated audio volume selection to calculate max RMS for audio then compare to frame RMS, rather than use audioop.max since RMS is more like the ear hears audio." />
+    <MESSAGE value="Added del(engine) after runAndWait() to help cleanup after the execution.  This appears to have fixed the issue with longer (30+ minute) speech to text conversions failing." />
+    <MESSAGE value="Updated Readme.md to indicate issue with spleeter on M1 causing issues with TTS if the spleeter environment is active when attempting to generate speech from text." />
+    <MESSAGE value="Changes to engine init so it's only initialized once and global engine references are maintained for all later calls" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes to engine init so it's only initialized once and global engine references are maintained for all later calls" />
   </component>
 </project>
