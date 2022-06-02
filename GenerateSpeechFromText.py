@@ -12,6 +12,12 @@ from pydub.effects import speedup
 from pathlib import Path
 import tempfile
 
+#import logging
+
+#l = logging.getLogger("pydub.converter")
+#l.setLevel(logging.DEBUG)
+#l.addHandler(logging.StreamHandler())
+
 # This the os module so we can play the file generated
 
 '''
@@ -125,17 +131,16 @@ def time_limiter_from_stuck_function(target_func, arg1, max_time=10):
 #################################################################################################
 def tts_generator(dict):
 
-    print("Voice: {}".format(args.voice))
+    global engine
 
-    engine = pyttsx3.init()
-    engine.setProperty('voice', "com.apple.speech.synthesis.voice.{}".format(args.voice))
-    engine.setProperty("rate", 200)
-    engine.save_to_file(dict['text'], "{}/tmp{:05d}.wav".format(tmpdirname, int(dict['counter'].strip())))
+    # call nsss and write AIFF to file
+    engine.save_to_file(dict['text'], "{}/tmp{:05d}.aiff".format(tmpdirname, int(dict['counter'].strip())))
     engine.runAndWait()
 
-    del(engine)
-
-    source = AudioSegment.from_file("{}/tmp{:05d}.wav".format(tmpdirname, int(dict['counter'].strip())))
+    try:
+        source = AudioSegment.from_wav("{}/tmp{:05d}.aiff".format(tmpdirname, int(dict['counter'].strip())))
+    except:
+        source = AudioSegment.from_file("{}/tmp{:05d}.aiff".format(tmpdirname, int(dict['counter'].strip())), format="wav")
 
     # adjust audio speed if flag is True
     if args.speed_up:
@@ -146,7 +151,7 @@ def tts_generator(dict):
     audio = AudioSegment.silent(duration=dict['diff'] * 1000)
     output = audio.overlay(source, position=0)
 
-    output.export("{}/_output{:05d}.wav".format(tmpdirname, int(dict['counter'].strip())), format="wav")
+    output.export("{}/_output{:05d}.aiff".format(tmpdirname, int(dict['counter'].strip())), format="wav")
 
 #################################################################################################
 #  *** Begin main part of Program ***
@@ -195,7 +200,7 @@ def main():
 
                 time_limiter_from_stuck_function(tts_generator, dict)
 
-        project_first_frame = AudioSegment.from_file("{}/tmp{:05d}.wav".format(tmpdirname, 1))
+        project_first_frame = AudioSegment.from_wav("{}/tmp{:05d}.aiff".format(tmpdirname, 1))
         base_frame_rate = project_first_frame.frame_rate
 
         # Pad the beginning with blank audio so the track matches the video
@@ -207,10 +212,10 @@ def main():
         #print(base_frame_rate)
         #print(audio.frame_rate)
 
-        audio.export("{}/_output{:05d}.wav".format(tmpdirname, 0), format="wav")
+        audio.export("{}/_output{:05d}.aiff".format(tmpdirname, 0), format="wav")
 
         # iterate over the _output files in the TEMP directory
-        files = sorted(Path(tmpdirname).glob('_output*.wav'))
+        files = sorted(Path(tmpdirname).glob('_output*.aiff'))
 
         # Build list of translation clips
         for file in files:
@@ -224,4 +229,14 @@ def main():
         subprocess.call(command, shell=True)
 
 if __name__ == "__main__":
+
+    engine = pyttsx3.init()
+    engine.setProperty('voice', "com.apple.speech.synthesis.voice.{}".format(args.voice))
+    engine.setProperty("rate", 200)
+
+    print("Voice: {}".format(args.voice))
+
     main()
+
+    engine.stop()
+    del(engine)
