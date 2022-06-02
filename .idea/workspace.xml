@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Changes to engine init so it's only initialized once and global engine references are maintained for all later calls">
-      <change afterPath="$PROJECT_DIR$/BatchBurnSubtitlesFromSRT.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BatchGenerateSpeechFromText.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BatchMergeVideoAndAudio.sh" afterDir="false" />
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Miscellaneous script changes and addition of a few batch scripts to demonstrate recursively scanning to: burn subittiles, generate TTS, and merge video and audio files.  these files can be modified to suite use needs and help in cases where another conversion might have been unsuccessful">
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/._checkpoint" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/.probe" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/checkpoint" afterDir="false" />
@@ -15,11 +12,6 @@
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.index" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GenerateGameHighlights.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateGameHighlights.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GenerateSpeechFromText.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateSpeechFromText.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TranslateYouTubePlaylist.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TranslateYouTubePlaylist.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TranslateYouTubeVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TranslateYouTubeVideo.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -822,13 +814,6 @@
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
     </task>
-    <task id="LOCAL-00073" summary="Added step to create subfolder for language and put the transcript info in the subfolder.">
-      <created>1653050176772</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1653050176773</updated>
-    </task>
     <task id="LOCAL-00074" summary="Made numerous corrections to input validation steps for requesting for input and checking for missing values.  Should correct any issues with scripts not continuing past input requests.">
       <created>1653050224182</created>
       <option name="number" value="00074" />
@@ -1165,7 +1150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654189369319</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <task id="LOCAL-00122" summary="Miscellaneous script changes and addition of a few batch scripts to demonstrate recursively scanning to: burn subittiles, generate TTS, and merge video and audio files.  these files can be modified to suite use needs and help in cases where another conversion might have been unsuccessful">
+      <created>1654189563387</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1654189563387</updated>
+    </task>
+    <option name="localTasksCounter" value="123" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1181,7 +1173,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Various minor shell script update" />
     <MESSAGE value="Replaced all reference to a hardcoded &quot;TEMP&quot; directory with automatically generated, unique temporary directories managed by tempfile.TemporaryDirectory().  These directories are also automatically cleaned after execution.  This will allow for multiple scripts to run concurrently without risk of overlaying files." />
     <MESSAGE value="Added GenerateGameHighlights.sh as a way to automate trimming and merging multiple videos located in a specified folder." />
     <MESSAGE value="Corrected temporary directory reference that was incorrect" />
@@ -1206,6 +1197,7 @@
     <MESSAGE value="Added del(engine) after runAndWait() to help cleanup after the execution.  This appears to have fixed the issue with longer (30+ minute) speech to text conversions failing." />
     <MESSAGE value="Updated Readme.md to indicate issue with spleeter on M1 causing issues with TTS if the spleeter environment is active when attempting to generate speech from text." />
     <MESSAGE value="Changes to engine init so it's only initialized once and global engine references are maintained for all later calls" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes to engine init so it's only initialized once and global engine references are maintained for all later calls" />
+    <MESSAGE value="Miscellaneous script changes and addition of a few batch scripts to demonstrate recursively scanning to: burn subittiles, generate TTS, and merge video and audio files.  these files can be modified to suite use needs and help in cases where another conversion might have been unsuccessful" />
+    <option name="LAST_COMMIT_MESSAGE" value="Miscellaneous script changes and addition of a few batch scripts to demonstrate recursively scanning to: burn subittiles, generate TTS, and merge video and audio files.  these files can be modified to suite use needs and help in cases where another conversion might have been unsuccessful" />
   </component>
 </project>
