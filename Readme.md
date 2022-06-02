@@ -125,7 +125,7 @@ However, PowerShell (powershell) & Command Prompt (cmd.exe) do not support the s
 
     https://github.com/jeffheaton/t81_558_deep_learning/blob/master/install/tensorflow-install-mac-metal-jul-2021.ipynb
     
-    NOTE: the Run->Edit Configurations menu can now be used to create refereshes to the shell scripts to make them easily accessible through the pyCharm client.
+    NOTE: the Run->Edit Configurations menu can now be used to create references to the shell scripts to make them easily accessible through the pyCharm client.
     
 6. Cascade Trainer GUI (Version 3.3.1 or better):
 
@@ -135,6 +135,15 @@ However, PowerShell (powershell) & Command Prompt (cmd.exe) do not support the s
     Install the GUI with Wineskin if on Mac/Linux.  Wineskin can be downloaded and installed through HomeBrew using the following command:
 
     ```brew install --no-quarantine gcenx/wine/unofficial-wineskin```
+
+Known Issues:
+For M1 installations, to use the RemoveVocals.sh or RemoveBackgroundMusic.sh you must enter:
+
+   ```conda activate spleeter```
+
+Note, this is only if you called the separate environment "spleeter."
+
+If you attempt to use PyTTSx3 while the spleeter environment is active then you will have issues with translating text to speech through Mac OS NSS.
 
 If you found these tools helpful then please consider checking out my other content and subscribing to my YouTube channel:
 https://www.youtube.com/c/Bearcatjamboree?sub_confirmation=1
