@@ -136,7 +136,8 @@ However, PowerShell (powershell) & Command Prompt (cmd.exe) do not support the s
 
     ```brew install --no-quarantine gcenx/wine/unofficial-wineskin```
 
-Known Issues:
+## Known Issues
+
 For M1 installations, to use the RemoveVocals.sh or RemoveBackgroundMusic.sh you must enter:
 
    ```conda activate spleeter```
