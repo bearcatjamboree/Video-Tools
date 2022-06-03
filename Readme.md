@@ -148,9 +148,20 @@ If you attempt to use PyTTSx3 while the spleeter environment is active then you 
 
 If you found these tools helpful then please consider subscribing to one of my YouTube channels:
 
+English:
 https://www.youtube.com/c/Bearcatjamboree?sub_confirmation=1
+
+Spanish:
 https://www.youtube.com/channel/UCnRVM0LLt-XgBeO3U-b1qbA?sub_confirmation=1
+
+Chinese:
 https://www.youtube.com/channel/UCnXDKHYWebD065Ed-FlvhwQ?sub_confirmation=1
+
+Hindi:
 https://www.youtube.com/channel/UCE1zO3HLk8DIc2zTsl7eH5Q?sub_confirmation=1
+
+Arabic:
 https://www.youtube.com/channel/UCkESzVVlDDB69-XJOWlDn8g?sub_confirmation=1
+
+Indonesian:
 https://www.youtube.com/channel/UCy5k3dtLtjn8FVmo8tNWeBQ?sub_confirmation=1
