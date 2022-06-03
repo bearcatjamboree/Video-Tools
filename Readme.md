@@ -146,5 +146,11 @@ Note, this is only if you called the separate environment "spleeter."
 
 If you attempt to use PyTTSx3 while the spleeter environment is active then you will have issues with translating text to speech through Mac OS NSS.
 
-If you found these tools helpful then please consider checking out my other content and subscribing to my YouTube channel:
+If you found these tools helpful then please consider subscribing to one of my YouTube channels:
+
 https://www.youtube.com/c/Bearcatjamboree?sub_confirmation=1
+https://www.youtube.com/channel/UCnRVM0LLt-XgBeO3U-b1qbA?sub_confirmation=1
+https://www.youtube.com/channel/UCnXDKHYWebD065Ed-FlvhwQ?sub_confirmation=1
+https://www.youtube.com/channel/UCE1zO3HLk8DIc2zTsl7eH5Q?sub_confirmation=1
+https://www.youtube.com/channel/UCkESzVVlDDB69-XJOWlDn8g?sub_confirmation=1
+https://www.youtube.com/channel/UCy5k3dtLtjn8FVmo8tNWeBQ?sub_confirmation=1
