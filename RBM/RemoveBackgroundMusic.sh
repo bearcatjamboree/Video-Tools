@@ -37,6 +37,11 @@ if ! [ -f "$input_file" ]; then
     fi
 fi
 
+if ! [ -f "$input_file" ]; then
+  echo "Usage: $0 input_file"
+  exit 1
+fi
+
 ####################################
 # Remove backlashes from filepaths
 ####################################
