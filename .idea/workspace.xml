@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Miscellaneous script changes and addition of a few batch scripts to demonstrate recursively scanning to: burn subittiles, generate TTS, and merge video and audio files.  these files can be modified to suite use needs and help in cases where another conversion might have been unsuccessful">
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Updated readme">
+      <change afterPath="$PROJECT_DIR$/BatchConvertVideoFormat.sh" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/._checkpoint" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/.probe" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/checkpoint" afterDir="false" />
@@ -80,7 +81,7 @@
       <recent name="$PROJECT_DIR$/_backups" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.Translate YouTube Video">
+  <component name="RunManager" selected="Shell Script.Remove Vocals">
     <configuration name="AudioJumpcut" type="ShConfigurationType" folderName="Videos">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -130,6 +131,21 @@
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
       <option name="SCRIPT_PATH" value="$PROJECT_DIR$/BatchBurnSubtitlesFromSRT.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="Batch Convert Video Format" type="ShConfigurationType" folderName="Batch">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/BatchConvertVideoFormat.sh" />
       <option name="SCRIPT_OPTIONS" value="" />
       <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
       <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -765,6 +781,7 @@
       <item itemvalue="Shell Script.Remove Background Music" />
       <item itemvalue="Shell Script.Remove Vocals" />
       <item itemvalue="Shell Script.Batch Burn Subtitles From SRT" />
+      <item itemvalue="Shell Script.Batch Convert Video Format" />
       <item itemvalue="Shell Script.Batch Generate Speech From Text" />
       <item itemvalue="Shell Script.Batch Merge Video And Audio" />
       <item itemvalue="Shell Script.Create Animated GIF" />
@@ -813,48 +830,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
-    </task>
-    <task id="LOCAL-00074" summary="Made numerous corrections to input validation steps for requesting for input and checking for missing values.  Should correct any issues with scripts not continuing past input requests.">
-      <created>1653050224182</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1653050224182</updated>
-    </task>
-    <task id="LOCAL-00075" summary="Correct input video check preventing script for starting">
-      <created>1653058394405</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1653058394405</updated>
-    </task>
-    <task id="LOCAL-00076" summary="Added lang_trans array for cases where transcript translation language code and translate-shell language codes are different">
-      <created>1653061085226</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1653061085226</updated>
-    </task>
-    <task id="LOCAL-00077" summary="updated lang_trans with zh-tw and filipino">
-      <created>1653061367198</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1653061367198</updated>
-    </task>
-    <task id="LOCAL-00078" summary="updated lang_trans with zh-tw and filipino">
-      <created>1653061392993</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1653061392993</updated>
-    </task>
-    <task id="LOCAL-00079" summary="Removed translation table when it was determined to not be needed for this script...">
-      <created>1653061915633</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1653061915633</updated>
     </task>
     <task id="LOCAL-00080" summary="Added update to allow auto-speedup when the tts exceeds the length of the SRT frame.">
       <created>1653101370191</created>
@@ -1157,7 +1132,49 @@
       <option name="project" value="LOCAL" />
       <updated>1654189563387</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="Updated script references in configuration">
+      <created>1654189634436</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1654189634436</updated>
+    </task>
+    <task id="LOCAL-00124" summary="Added condition to cancel if user input is canceled.">
+      <created>1654230803750</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1654230803750</updated>
+    </task>
+    <task id="LOCAL-00125" summary="Added more extensive comments to each script to make easier for end-users to understand script usage.">
+      <created>1654230875083</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1654230875083</updated>
+    </task>
+    <task id="LOCAL-00126" summary="Updated readme">
+      <created>1654287416561</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1654287416561</updated>
+    </task>
+    <task id="LOCAL-00127" summary="Updated readme">
+      <created>1654287589114</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1654287589114</updated>
+    </task>
+    <task id="LOCAL-00128" summary="Updated readme">
+      <created>1654287698156</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1654287698156</updated>
+    </task>
+    <option name="localTasksCounter" value="129" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1173,10 +1190,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Replaced all reference to a hardcoded &quot;TEMP&quot; directory with automatically generated, unique temporary directories managed by tempfile.TemporaryDirectory().  These directories are also automatically cleaned after execution.  This will allow for multiple scripts to run concurrently without risk of overlaying files." />
-    <MESSAGE value="Added GenerateGameHighlights.sh as a way to automate trimming and merging multiple videos located in a specified folder." />
-    <MESSAGE value="Corrected temporary directory reference that was incorrect" />
-    <MESSAGE value="Updated workspace.xml and .gitignore file references" />
     <MESSAGE value="Added ReverseVideo.sh to create reversed video/audio" />
     <MESSAGE value="Added DownloadYouTubeVideo.sh script to automate downloading videos using yt-dlp" />
     <MESSAGE value="Updated workspace.xml to include new scripts" />
@@ -1198,6 +1211,10 @@
     <MESSAGE value="Updated Readme.md to indicate issue with spleeter on M1 causing issues with TTS if the spleeter environment is active when attempting to generate speech from text." />
     <MESSAGE value="Changes to engine init so it's only initialized once and global engine references are maintained for all later calls" />
     <MESSAGE value="Miscellaneous script changes and addition of a few batch scripts to demonstrate recursively scanning to: burn subittiles, generate TTS, and merge video and audio files.  these files can be modified to suite use needs and help in cases where another conversion might have been unsuccessful" />
-    <option name="LAST_COMMIT_MESSAGE" value="Miscellaneous script changes and addition of a few batch scripts to demonstrate recursively scanning to: burn subittiles, generate TTS, and merge video and audio files.  these files can be modified to suite use needs and help in cases where another conversion might have been unsuccessful" />
+    <MESSAGE value="Updated script references in configuration" />
+    <MESSAGE value="Added condition to cancel if user input is canceled." />
+    <MESSAGE value="Added more extensive comments to each script to make easier for end-users to understand script usage." />
+    <MESSAGE value="Updated readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated readme" />
   </component>
 </project>
