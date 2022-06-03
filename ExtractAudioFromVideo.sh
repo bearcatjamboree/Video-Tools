@@ -1,5 +1,19 @@
 #!/bin/sh
-
+#================================================================================
+#  AUTHOR
+#    Clint Box
+#    https://www.youtube.com/bearcatjamboree
+#
+#   FUNCTION
+#     Extract audio channel from video
+#
+#   DETAILS
+#     This script will invoke ffmpeg with parameters required to take an input
+#     video and produce an audio file in a specified audio format
+#
+#   USAGE
+#     ${SCRIPT_NAME} "<video file>" "<output format>"
+#================================================================================
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;

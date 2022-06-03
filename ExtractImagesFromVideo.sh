@@ -1,5 +1,20 @@
 #!/bin/sh
-
+#================================================================================
+#  AUTHOR
+#    Clint Box
+#    https://www.youtube.com/bearcatjamboree
+#
+#   FUNCTION
+#     Extract images from video file
+#
+#   DETAILS
+#     This script will invoke ffmpeg with parameters required to take an input
+#     video and produce an image for every second of video frames and store
+#     the images in a specified output folder
+#
+#   USAGE
+#     ${SCRIPT_NAME} "<video file>" "<output folder>" "<image format>"
+#================================================================================
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;

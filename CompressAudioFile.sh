@@ -1,5 +1,19 @@
 #!/bin/sh
-
+#================================================================================
+#  AUTHOR
+#    Clint Box
+#    https://www.youtube.com/bearcatjamboree
+#
+#   FUNCTION
+#     Create video with compressed audio
+#
+#   DETAILS
+#     This script will invoke ffmpeg with parameters required to take an input
+#     video and produce a new video with compressed audo.
+#
+#   USAGE
+#     ${SCRIPT_NAME} "video_path" "new bitrate"
+#================================================================================
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;

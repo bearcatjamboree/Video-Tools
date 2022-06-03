@@ -1,5 +1,26 @@
 #!/bin/zsh
-
+#================================================================================
+#  AUTHOR
+#    Clint Box
+#    https://www.youtube.com/bearcatjamboree
+#
+#   FUNCTION
+#     Burn subtitles from SRT files to videos found in a specified path
+#
+#   DETAILS
+#     This script will scan recursively for .SRT files and try
+#     to match them with a _novocals.mp4 file located in the same
+#     directory.  If not video with the _novocals.mp4 mask can
+#     be located then the script goes onto the next .SRT file.
+#     If a video is located but there is already a subtitled video
+#     Then the script to skip this file and go on to the next .SRT file.
+#
+#   USAGE
+#     ${SCRIPT_NAME} [path to *.srt and *_novocals.mp4 files]"
+#
+#   NOTE
+#     change strings below to your default: font, font size, and font color
+#================================================================================
 subtitle_font="Bangers"
 subtitle_fontsize=48 #48
 subtitle_fontcolor="ffffff"

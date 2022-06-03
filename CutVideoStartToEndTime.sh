@@ -1,5 +1,19 @@
 #!/bin/sh
-
+#================================================================================
+#  AUTHOR
+#    Clint Box
+#    https://www.youtube.com/bearcatjamboree
+#
+#   FUNCTION
+#     Cut video from start point to end point
+#
+#   DETAILS
+#     This script will invoke ffmpeg with parameters required to take an input
+#     video and create a clip at the starting point to a specific end point
+#
+#   USAGE
+#     ${SCRIPT_NAME} "video_path" "start" "end"
+#================================================================================
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;

@@ -1,5 +1,19 @@
 #!/bin/sh
-
+#================================================================================
+#  AUTHOR
+#    Clint Box
+#    https://www.youtube.com/bearcatjamboree
+#
+#   FUNCTION
+#     Create a video that looks like a pencil sketch
+#
+#   DETAILS
+#     This script will invoke CreatePencilSketchVideo using a specific file and
+#     produce an output video that looks like a pencil sketch
+#
+#   USAGE
+#     ${SCRIPT_NAME} "video_path"
+#================================================================================
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;

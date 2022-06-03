@@ -1,5 +1,19 @@
 #!/bin/sh
-
+#================================================================================
+#  AUTHOR
+#    Clint Box
+#    https://www.youtube.com/bearcatjamboree
+#
+#   FUNCTION
+#     Create a vintage style video
+#
+#   DETAILS
+#     This script will invoke ffmpeg with parameters required to take an input
+#     video and produce vintage style video
+#
+#   USAGE
+#     ${SCRIPT_NAME} "video_path"
+#================================================================================
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;

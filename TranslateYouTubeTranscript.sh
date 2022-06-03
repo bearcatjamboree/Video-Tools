@@ -1,5 +1,20 @@
 #!/bin/zsh
-
+#================================================================================
+#  AUTHOR
+#    Clint Box
+#    https://www.youtube.com/bearcatjamboree
+#
+#   FUNCTION
+#     Translate a YouTube video transcript to another language
+#
+#   DETAILS
+#     This script will download a translated transcript from a video on YouTube,
+#     as long as subtitles are enable for the video.  The transcript and an SRT
+#     version will both be produced.
+#
+#   USAGE
+#     ${SCRIPT_NAME} "<language code>" "<video URL or YouTube ID>" "<output folder>"
+#================================================================================
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;
@@ -39,9 +54,9 @@ if [[ "$lang_code" == "" ]]; then
   if [[ "$machine" == "Mac" ]]; then
       language=$(osascript -e 'return choose from list { '${joined:2}' }')
   elif [[ "$machine" == "Linux" ]]; then
-      language=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect ~/ 14 48)
+      language=$(dialog --title "Choose a file" --stdout --title "Please choose a language to process" --fselect ~/ 14 48)
   elif [[ "$machine" == "Cygwin" ]]; then
-      language=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect ~/ 14 48)
+      language=$(dialog --title "Choose a file" --stdout --title "Please choose a language to process" --fselect ~/ 14 48)
   else
       echo "Usage: $0 language [video URL or ID] output_folder"
       exit 1

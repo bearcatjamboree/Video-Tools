@@ -1,5 +1,20 @@
 #!/bin/sh
-
+#================================================================================
+#  AUTHOR
+#    Clint Box
+#    https://www.youtube.com/bearcatjamboree
+#
+#   FUNCTION
+#     Remove video background
+#
+#   DETAILS
+#     This script is an untested implementation of mediapipe.  The intention of
+#     the code is to take an input video, and through selfie-segmentation try
+#     to remove the background surrounding a person located in the video.
+#
+#   USAGE
+#     ${SCRIPT_NAME} "<input video>"
+#================================================================================
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;

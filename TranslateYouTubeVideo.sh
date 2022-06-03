@@ -1,22 +1,39 @@
 #!/bin/zsh
-#####################################################################################
+#================================================================================
+#  AUTHOR
+#    Clint Box
+#    https://www.youtube.com/bearcatjamboree
 #
-# This script will go through a list of languages and perform the following tasks:
+#   FUNCTION
+#     Translate a YouTube video transcript to another language
 #
-#   1. Download highest quality video from YouTube for a provided URL
-#   2. Remove vocals from the video but retaining accompany audio
-#   3. Get the YouTube video description in each language
-#   4. Get the YouTube transcript (and subtitles file) in each language
-#   5. Generate speech (wav file) from the translated transcript
-#   6. Burn the subtitles from the translated SRT file to the video
-#   7. Merge the subtitled video and translated audio together
+#   DETAILS
+#     This script will go through a list of languages and perform the following tasks:
 #
-# This script requires spleeter environment be active before starting.
-# to start spleeter simply type:
+#     1. Download highest quality video from YouTube for a provided URL
+#     2. Remove vocals from the video but retaining accompany audio
+#     3. Get the YouTube video description in each language
+#     4. Get the YouTube transcript (and subtitles file) in each language
+#     5. Generate speech (wav file) from the translated transcript
+#     6. Burn the subtitles from the translated SRT file to the video
+#     7. Merge the subtitled video and translated audio together
 #
-#   conda activate spleeter
+#   USAGE
+#     ${SCRIPT_NAME} "<language code>" "<video URL or YouTube ID>" "<output folder>"
 #
-#####################################################################################
+#   NOTE
+#     Spleeter is required for removing the vocals from the video.  On M1, the
+#     following command is required to activate that environment:
+#
+#       conda activate spleeter
+#
+#     Also, its worth noting that there is currently an issue with the TTS breaking
+#     when this environment is activate, so it might be necessary to download
+#     and then remove the audio before doing other processing.
+#
+#     More research is being done to try to get this fully functional
+#
+# ================================================================================
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;

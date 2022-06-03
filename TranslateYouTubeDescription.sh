@@ -1,5 +1,20 @@
 #!/bin/zsh
-
+#================================================================================
+#  AUTHOR
+#    Clint Box
+#    https://www.youtube.com/bearcatjamboree
+#
+#   FUNCTION
+#     Translate YouTube description
+#
+#   DETAILS
+#     This script will invoke yt-dlp with parameters required to download a video
+#     description from YouTube and translate it using the trans command.  The output
+#     is then written to the specified output location.
+#
+#   USAGE
+#     ${SCRIPT_NAME} "<language code>" "<url to video>" "<output folder>"
+#================================================================================
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;

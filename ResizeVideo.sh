@@ -1,5 +1,19 @@
 #!/bin/sh
-
+#================================================================================
+#  AUTHOR
+#    Clint Box
+#    https://www.youtube.com/bearcatjamboree
+#
+#   FUNCTION
+#     Resize video
+#
+#   DETAILS
+#     This script will invoke ffmpeg with parameters required to take an input
+#     video file and resize it based solely on width (aspect retained)
+#
+#   USAGE
+#     ${SCRIPT_NAME} "<input video>" "width"
+#================================================================================
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;

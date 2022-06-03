@@ -1,5 +1,19 @@
 #!/bin/sh
-
+#================================================================================
+#  AUTHOR
+#    Clint Box
+#    https://www.youtube.com/bearcatjamboree
+#
+#   FUNCTION
+#     Reverse video
+#
+#   DETAILS
+#     This script will invoke ffmpeg with parameters required to take an input
+#     video file and reverse it along with its audio
+#
+#   USAGE
+#     ${SCRIPT_NAME} "<input video>"
+#================================================================================
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;

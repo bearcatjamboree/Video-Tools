@@ -1,5 +1,19 @@
 #!/bin/sh
-
+#================================================================================
+#  AUTHOR
+#    Clint Box
+#    https://www.youtube.com/bearcatjamboree
+#
+#   FUNCTION
+#     Rotate video clockwise
+#
+#   DETAILS
+#     This script will invoke ffmpeg with parameters required to take an input
+#     video and rotate it clockwise
+#
+#   USAGE
+#     ${SCRIPT_NAME} "video_path"
+#================================================================================
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;

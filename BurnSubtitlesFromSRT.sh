@@ -1,5 +1,22 @@
 #!/bin/sh
-
+#================================================================================
+#  AUTHOR
+#    Clint Box
+#    https://www.youtube.com/bearcatjamboree
+#
+#   FUNCTION
+#     Burn subtitles from SRT file to a specified video
+#
+#   DETAILS
+#     This script will invoke ffmpeg with parameters required to take an input
+#     video and burn subtitles to a video from a specific .SRT file
+#
+#   USAGE
+#     ${SCRIPT_NAME} "video_path" "srt_path"
+#
+#   NOTE
+#     change strings below to your default: font, font size, and font color
+#================================================================================
 subtitle_font="Bangers"
 subtitle_fontsize=48 #48
 subtitle_fontcolor="ffffff"

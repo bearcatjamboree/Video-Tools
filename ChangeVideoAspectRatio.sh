@@ -1,5 +1,19 @@
 #!/bin/sh
-
+#================================================================================
+#  AUTHOR
+#    Clint Box
+#    https://www.youtube.com/bearcatjamboree
+#
+#   FUNCTION
+#     Create video with a new aspect ratio
+#
+#   DETAILS
+#     This script will invoke ffmpeg with parameters required to take an input
+#     video and produce a new video with a new aspect ratio
+#
+#   USAGE
+#     ${SCRIPT_NAME} "video_path" "aspect ratio"
+#================================================================================
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;

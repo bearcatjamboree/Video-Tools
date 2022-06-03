@@ -1,5 +1,24 @@
 #!/bin/zsh
-
+#================================================================================
+#  AUTHOR
+#    Clint Box
+#    https://www.youtube.com/bearcatjamboree
+#
+#   FUNCTION
+#     Generate speech from text using subtitle file
+#
+#   DETAILS
+#     This script will scan recursively for .SRT files and generate a .wav
+#     file in the same directory, containing the .SRT content converted to
+#     speech.  If a .wav file already exist then the script will skip the file
+#     and go on to the next .SRT file.
+#
+#   USAGE
+#     ${SCRIPT_NAME} "srt_path"
+#
+#   NOTE
+#     change the voices array to the language codes and voices you will be using
+#================================================================================
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;

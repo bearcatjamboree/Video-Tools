@@ -1,5 +1,19 @@
 #!/bin/sh
-
+#================================================================================
+#  AUTHOR
+#    Clint Box
+#    https://www.youtube.com/bearcatjamboree
+#
+#   FUNCTION
+#     Jump cut video using audio level and template matching
+#
+#   DETAILS
+#     This script will invoke VideoJumpcutter using a specific file and will
+#     perform audio jump cut and template matching.
+#
+#   USAGE
+#     ${SCRIPT_NAME} "video_path"
+#================================================================================
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;

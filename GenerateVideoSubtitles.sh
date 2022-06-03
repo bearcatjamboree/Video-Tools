@@ -1,5 +1,21 @@
 #!/bin/sh
-
+#================================================================================
+#  AUTHOR
+#    Clint Box
+#    https://www.youtube.com/bearcatjamboree
+#
+#   FUNCTION
+#     Produce subtitles from video (not recommended for use)
+#
+#   DETAILS
+#     This script separates audio and video from an input video, and attempts
+#     to produce a subtitle file using speech recognition.  At the current time,
+#     there are no reliable means to convert audio to text.  So, this was an
+#     EXPERIMENTAL approach to producing subtitles.
+#
+#   USAGE
+#     ${SCRIPT_NAME} "<input file>"
+#================================================================================
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;

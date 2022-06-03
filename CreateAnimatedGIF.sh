@@ -1,5 +1,20 @@
 #!/bin/sh
-
+#================================================================================
+#  AUTHOR
+#    Clint Box
+#    https://www.youtube.com/bearcatjamboree
+#
+#   FUNCTION
+#     Create animated GIF
+#
+#   DETAILS
+#     This script will invoke ffmpeg with parameters required to take an input
+#     video and produce an animated GIF for a specific start time, duration,
+#     and specific output width
+#
+#   USAGE
+#     ${SCRIPT_NAME} "video_path" "start" "duration" "width"
+#================================================================================
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;

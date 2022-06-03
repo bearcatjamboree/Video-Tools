@@ -1,5 +1,21 @@
 #!/bin/sh
-
+#================================================================================
+#  AUTHOR
+#    Clint Box
+#    https://www.youtube.com/bearcatjamboree
+#
+#   FUNCTION
+#     Implement audio jump cut against a folder of mp4 files to generate a single
+#     game highlights video
+#
+#   DETAILS
+#     This script loop through a folder of mp4 files and execute Jumpcutter using
+#     the audio jump cut method.  After execution of loop, all outputs will be
+#     merged into a single highlights video.
+#
+#   USAGE
+#     ${SCRIPT_NAME} "<path to input *.mp4>" "<output folder>"
+#================================================================================
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;

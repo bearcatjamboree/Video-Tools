@@ -1,5 +1,25 @@
 #!/bin/sh
-
+#================================================================================
+#  AUTHOR
+#    Clint Box
+#    https://www.youtube.com/bearcatjamboree
+#
+#   FUNCTION
+#     Crop a video
+#
+#   DETAILS
+#     This script will invoke ffmpeg with parameters required to take an input
+#     video and a cropped version
+#
+#   USAGE
+#     ${SCRIPT_NAME} "video_path" "out_width" "out_height" "cropped_X" "cropped_Y"
+#
+#   PARAMETER MEANING
+#     out_width  = width of new video
+#     out_height = height of new video
+#     cropped_X  = X-value of top left corner to start crop
+#     cropped_Y  = Y-value of top left corner to start crop
+#================================================================================
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;

@@ -1,5 +1,20 @@
 #!/bin/zsh
-
+#================================================================================
+#  AUTHOR
+#    Clint Box
+#    https://www.youtube.com/bearcatjamboree
+#
+#   FUNCTION
+#     Download a YouTube video in highest quality
+#
+#   DETAILS
+#     This script will invoke yt-dlp with parameters required to take an input
+#     video (or video ID) and download it to a specified folder in the highest
+#     quality available on YouTube
+#
+#   USAGE
+#     ${SCRIPT_NAME} "<url>" "<output folder>"
+#================================================================================
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;

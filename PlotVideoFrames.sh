@@ -1,5 +1,20 @@
 #!/bin/sh
-
+#================================================================================
+#  AUTHOR
+#    Clint Box
+#    https://www.youtube.com/bearcatjamboree
+#
+#   FUNCTION
+#     Plot video framess
+#
+#   DETAILS
+#     This script will invoke plotframes with parameters required to take an input
+#     video file to produce and display a PNG graph showing the types of frames
+#     and frequency of occurence in the provided video file.
+#
+#   USAGE
+#     ${SCRIPT_NAME} "<input video>"
+#================================================================================
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;

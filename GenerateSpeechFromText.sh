@@ -1,5 +1,22 @@
 #!/bin/zsh
-
+#================================================================================
+#  AUTHOR
+#    Clint Box
+#    https://www.youtube.com/bearcatjamboree
+#
+#   FUNCTION
+#     Produce synthesized speech file (WAV) for subtitle file
+#
+#   DETAILS
+#     This script will take a subtitle (SRT) file as input and produce a WAV
+#     file containing speech synthesized into another language
+#
+#   USAGE
+#     ${SCRIPT_NAME} "<input file>" "<language>"
+#
+#   NOTE
+#     change the voices array to the language codes and voices you will be using
+#================================================================================
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;
@@ -92,6 +109,3 @@ name="${file%.*}"
 output_file=$name.wav
 
 python3 GenerateSpeechFromText.py --input_file "$input_file" --output_file "$output_file" --voice "$voice"
-
-# Kill to prevent hangs from mullitple calls
-killall com.apple.speech.speechsynthesisd

@@ -1,5 +1,21 @@
 #!/bin/zsh
-
+#================================================================================
+#  AUTHOR
+#    Clint Box
+#    https://www.youtube.com/bearcatjamboree
+#
+#   FUNCTION
+#     Merge subtitled video files with translated wav files
+#
+#   DETAILS
+#     This script will scan recursively for *_novocals_subtitled.mp4 files
+#     and attempt to locate a .wav file in the same directory.  If a _merged.mp4
+#     file already exist then the script will skip the file and go on to the next
+#     *_novocals_subtitled.mp4 file.
+#
+#   USAGE
+#     ${SCRIPT_NAME} "[path to *_novocals_subtitled.mp4]"
+#================================================================================
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;

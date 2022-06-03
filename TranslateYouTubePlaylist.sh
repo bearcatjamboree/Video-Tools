@@ -1,16 +1,32 @@
 #!/bin/zsh
-#####################################################################################
+#================================================================================
+#  AUTHOR
+#    Clint Box
+#    https://www.youtube.com/bearcatjamboree
 #
-#  This script will download a playlist and use the id and title to construct calls
-#  to TranslateYouTubeVideo.sh in order to facilitate migrating an entire playlist
-#  from one language to several other languages.
+#   FUNCTION
+#     Translate an entire YouTube video playlist
 #
-#  This script requires spleeter environment be active before starting.
-#  to start spleeter simply type:
+#   DETAILS
+#     This script will download a playlist and use the id and title to construct
+#     calls to TranslateYouTubeVideo.sh in order to facilitate migrating an entire
+#     playlist from one language to several other languages.
 #
-#   conda activate spleeter
+#   USAGE
+#     ${SCRIPT_NAME} "<playlist URL>" "<output folder>"
 #
-#####################################################################################
+#   NOTE
+#     Spleeter is required for removing the vocals from the video.  On M1, the
+#     following command is required to activate that environment:
+#
+#       conda activate spleeter
+#
+#     Also, its worth noting that there is currently an issue with the TTS breaking
+#     when this environment is activate, so it might be necessary to download
+#     and then remove the audio before doing other processing.
+#
+#     More research is being done to try to get this fully functional
+#================================================================================
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;

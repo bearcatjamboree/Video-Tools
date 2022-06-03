@@ -1,5 +1,24 @@
 #!/bin/sh
-
+#================================================================================
+#  AUTHOR
+#    Clint Box
+#    https://www.youtube.com/bearcatjamboree
+#
+#   FUNCTION
+#     Zoom-pan cut a video
+#
+#   DETAILS
+#     This script will invoke ffmpeg with parameters required to take an input
+#     video and create a video containing continuous zoom-pan cut a video
+#
+#   USAGE
+#     ${SCRIPT_NAME} "input_video" "block_time" "zoom_time" "zoom_scale"
+#
+#   PARAMETER MEANING
+#     block_time = time length between zooms
+#     zoom_time  = time length of zoom
+#     zoom_scale = the scale of zoom (between 1 and 10)
+#================================================================================
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;

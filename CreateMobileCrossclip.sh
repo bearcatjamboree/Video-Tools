@@ -1,5 +1,26 @@
 #!/bin/sh
-
+#================================================================================
+#  AUTHOR
+#    Clint Box
+#    https://www.youtube.com/bearcatjamboree
+#
+#   FUNCTION
+#     Create a crossclip style video for mobile devices
+#
+#   DETAILS
+#     This script will invoke ffmpeg with parameters required to take an input
+#     video and produce a crossclip style video
+#
+#   USAGE
+#     ${SCRIPT_NAME} "video_path" "out_width" "out_height" "cropped_X" "cropped_Y" "style"
+#
+#   PARAMETER MEANING
+#     out_width  = width of new video
+#     out_height = height of new video
+#     cropped_X  = X-value of top left corner to start crop
+#     cropped_Y  = Y-value of top left corner to start crop
+#     style      = "Basic" or "Bubble"
+#================================================================================
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;
@@ -15,6 +36,7 @@ out_w="$2"
 out_h="$3"
 x="$4"
 y="$5"
+style="$6"
 
 ##############################################################################
 # Check for file was passed.  Show open file dialog if no argument and on Mac

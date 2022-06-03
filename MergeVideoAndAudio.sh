@@ -1,5 +1,20 @@
 #!/bin/sh
-
+#================================================================================
+#  AUTHOR
+#    Clint Box
+#    https://www.youtube.com/bearcatjamboree
+#
+#   FUNCTION
+#     Merge video and audio
+#
+#   DETAILS
+#     This script will invoke ffmpeg with parameters required to take an input
+#     video file and input audio file, and merge them together, retaining audio
+#     channels from both the video and audio files.
+#
+#   USAGE
+#     ${SCRIPT_NAME} "<input video>" "<input audio>"
+#================================================================================
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;
