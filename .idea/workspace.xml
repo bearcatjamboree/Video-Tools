@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Updated readme">
-      <change afterPath="$PROJECT_DIR$/BatchConvertVideoFormat.sh" afterDir="false" />
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Added script to convert folder of audio or video files to a specific new format, and output the translated files to a user specified output folder.">
+      <change afterPath="$PROJECT_DIR$/PlotSoundFrames.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PlotSoundFrames.sh" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/._checkpoint" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/.probe" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/checkpoint" afterDir="false" />
@@ -13,6 +14,7 @@
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.index" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoJumpcutter.py" beforeDir="false" afterPath="$PROJECT_DIR$/VideoJumpcutter.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +83,7 @@
       <recent name="$PROJECT_DIR$/_backups" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.Remove Vocals">
+  <component name="RunManager" selected="Shell Script.Generate Game Highlights">
     <configuration name="AudioJumpcut" type="ShConfigurationType" folderName="Videos">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -562,6 +564,21 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="Plot Sound Frames" type="ShConfigurationType" folderName="Audio">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/PlotSoundFrames.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="Plot Video Frames" type="ShConfigurationType" folderName="Miscellaneous">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -777,6 +794,7 @@
       <item itemvalue="Shell Script.Compress Audio File" />
       <item itemvalue="Shell Script.Extract Audio From Video" />
       <item itemvalue="Shell Script.Generate Speech From Text" />
+      <item itemvalue="Shell Script.Plot Sound Frames" />
       <item itemvalue="Shell Script.Remove Audio From Video" />
       <item itemvalue="Shell Script.Remove Background Music" />
       <item itemvalue="Shell Script.Remove Vocals" />
@@ -830,20 +848,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
-    </task>
-    <task id="LOCAL-00080" summary="Added update to allow auto-speedup when the tts exceeds the length of the SRT frame.">
-      <created>1653101370191</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1653101370191</updated>
-    </task>
-    <task id="LOCAL-00081" summary="Minor updates including adding alphabet sort to the language list.">
-      <created>1653101461858</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1653101461858</updated>
     </task>
     <task id="LOCAL-00082" summary="Updated the list of functions">
       <created>1653102681069</created>
@@ -1174,7 +1178,21 @@
       <option name="project" value="LOCAL" />
       <updated>1654287698156</updated>
     </task>
-    <option name="localTasksCounter" value="129" />
+    <task id="LOCAL-00129" summary="Added script to convert folder of audio or video files to a specific new format, and output the translated files to a user specified output folder.">
+      <created>1654287988959</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1654287988959</updated>
+    </task>
+    <task id="LOCAL-00130" summary="Added script to convert folder of audio or video files to a specific new format, and output the translated files to a user specified output folder.">
+      <created>1654288179854</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1654288179854</updated>
+    </task>
+    <option name="localTasksCounter" value="131" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1190,7 +1208,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added ReverseVideo.sh to create reversed video/audio" />
     <MESSAGE value="Added DownloadYouTubeVideo.sh script to automate downloading videos using yt-dlp" />
     <MESSAGE value="Updated workspace.xml to include new scripts" />
     <MESSAGE value="Replaced youtube-dl with yt-dlp" />
@@ -1215,6 +1232,7 @@
     <MESSAGE value="Added condition to cancel if user input is canceled." />
     <MESSAGE value="Added more extensive comments to each script to make easier for end-users to understand script usage." />
     <MESSAGE value="Updated readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated readme" />
+    <MESSAGE value="Added script to convert folder of audio or video files to a specific new format, and output the translated files to a user specified output folder." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added script to convert folder of audio or video files to a specific new format, and output the translated files to a user specified output folder." />
   </component>
 </project>
