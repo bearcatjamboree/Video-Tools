@@ -4,7 +4,6 @@
 import argparse
 import audioop
 import concurrent.futures
-import gc
 import glob
 import os
 import subprocess
@@ -36,7 +35,9 @@ parser.add_argument('--frame_quality', type=int, default=1,
 parser.add_argument('--video_method', type=int, default=0,
                     help="The video selection method: 0=don't use video, 1=use matchTemplate and thumbnail matching, 2=use face recognition.")
 parser.add_argument('--audio_method', type=int, default=0,
-                    help="The audio selection method: 0=don't use video, 1=use audio high points to add frames to the highlights video.  The default value is 0.")
+                    help="Whether to use audio selection: 0=don't use video, 1=use audio high points to add frames to the highlights video.  The default value is 0.")
+parser.add_argument('--volume_selection', type=str, default="max",
+                    help="The audio selection method to use: max=uses audioop.max to determine volume and max volume, rms=uses audioop.rms to determine volume and max volume.  The default value is max.")
 parser.add_argument('--audio_threshold', type=float, default=0.1,
                     help="the minimum volume level for audio frames to be selected. It ranges from 0 (silence) to 1 (max volume)")
 parser.add_argument('--minimum_faces', type=int, default=1,
@@ -499,49 +500,54 @@ def main():
             wave_r = wave.open("{}/audio.wav".format(tmpdirname), 'rb')
 
             # Get basic information.
-            framerate = wave_r.getframerate()  # Frame rate.
-            n_frames = wave_r.getnframes()  # Number of frames.
+            framerate = wave_r.getframerate()       # Frame rate of audio
+            n_frames = wave_r.getnframes()          # Number of audio frames
+            s_width = wave_r.getsampwidth()         # Audio sample width
+            chunk_size = int(framerate / fvs.fps)   # Audio chunks to read
+            max_loops = int(n_frames / chunk_size)  # Max loops possible
 
             print("Frame rate: {}".format(framerate))
             print("Frame count: {}".format(n_frames))
+            print("Sample width: {}".format(s_width))
+            print("Chunk size: {}".format(chunk_size))
+            print("Max loops {}".format(max_loops))
 
-            chunk_size = int(framerate / fvs.fps)
-            max_loops = int(n_frames / chunk_size)
+            # Get max volume using audioop.max
+            if args.volume_selection == "max":
+                max_volume = audioop.max(wave_r.readframes(-1), s_width)
 
-            rms_list = []
+            # Get max volume using audioop.rms
+            elif args.volume_selection == "rms":
+                rms_list = []
 
-            # Read entire file and calculate highest rms volume
-            for audio_scan in range(fvs.frames):
+                # Read entire file and calculate highest rms volume
+                for audio_scan in range(fvs.frames):
 
-                if audio_scan > max_loops:
-                    break
+                    if audio_scan > max_loops:
+                        break
 
-                wave_r.setpos(audio_scan * chunk_size)
+                    wave_r.setpos(audio_scan * chunk_size)
 
-                try:
-                    # Read the number of bytes in each video/audio frame
-                    audioData = wave_r.readframes(chunk_size)
-                    frame_rms = audioop.rms(audioData, 2)
-                    rms_list.append(frame_rms)
+                    try:
+                        # Read the number of bytes in each video/audio frame
+                        audioData = wave_r.readframes(chunk_size)
+                        frame_rms = audioop.rms(audioData, s_width)
+                        rms_list.append(frame_rms)
 
-                except wave.Error:
-                    print("Error reading {}/audio.wav".format(tmpdirname))
-                    print(wave.Error)
+                    except wave.Error:
+                        print("Error reading {}/audio.wav".format(tmpdirname))
+                        print(wave.Error)
 
-            max_rms = max(rms_list)
+                max_volume = max(rms_list)
 
-            # Release memory
-            del audioData
-            gc.collect()
+            else:
+                print("Invalid audio selection method")
+                quit()
+
+            print("max_volume = {}".format(max_volume))
 
             # Resets pointer to beginning of audio file
             wave_r.rewind()
-
-            max_loops = int(n_frames / chunk_size)
-
-            print("n_frames {}".format(n_frames))
-            print("chunk_size {}".format(chunk_size))
-            print("max_loops {}".format(max_loops))
 
             # Loop through all video frames
             for audio_scan in range(fvs.frames):
@@ -555,11 +561,22 @@ def main():
                     # Read the number of bytes in each video/audio frame
                     chunk_read = wave_r.readframes(chunk_size)
 
-                    # Calculate volume as frame_rms / max_rms
-                    frame_rms = audioop.rms(chunk_read, 2)
-                    volume = frame_rms / max_rms
+                    # Get frame volume using audioop.max
+                    if args.volume_selection == "max":
+                        frame_volume = audioop.max(chunk_read, s_width)
 
-                    # Add if volume above threshold
+                    # Get frame volume using audioop.rms
+                    elif args.volume_selection == "rms":
+                        frame_volume = audioop.rms(chunk_read, s_width)
+
+                    else:
+                        print("Invalid audio selection method")
+                        quit()
+
+                    volume = frame_volume / max_volume
+                    #print("frame_volume = {} / max_volume = {} / volume = {}".format(frame_volume, max_volume, volume))
+
+                    # Include frames with volume at or above the threshold
                     if volume > args.audio_threshold:
                         keep_frames.append(audio_scan)
 
