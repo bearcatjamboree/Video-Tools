@@ -11,48 +11,53 @@ If you find these tools useful then consider watching my other content and subsc
 
 ## Features
 
- 1. Remove background music (previously rba)
- 2. Remove vocals (karaoke)
- 3. Jump cut videos using audio level  
- 4. Jump cut videos by matching a template photo
- 5. Jump cut videos based on facial recognition
- 6. Jump cut video using audio level and template matching
- 7. Jump cut video using audio level and facial recognition
- 8. Burn Subtitles From SRT
- 9. Change video aspect ratio
- 10. Change video volume level
- 11. Compress audio file (using video or audio file)
- 12. Convert video format
- 13. Create animated GIFs
- 14. Create pencil sketch video
- 15. Create vintage-style video
- 16. Crop video to desired size
- 17. Cut video from start time by duration
- 18. Cut video from start time to end time
- 19. Extract audio from video
- 20. Extract images from video (1-per second)
- 21. Flip video horizontally
- 22. Flip video vertically
- 23. Generate speech from text (experimental)
- 24. Generate video subtitles
- 25. Get YouTube descriptions
- 26. Get YouTube transcript
- 27. Merge video and audio
- 28. Mirror video horizontally
- 29. Mirror video vertically
- 30. Plot video frames
- 31. Remove audio from video (produces soundless video)
- 32. Remove video background  (experimental)
- 33. Resize video (aspect ratio retained)
- 34. Rotate video clockwise
- 35. Rotate video counterclockwise
- 36. Zoompan Cut Video
- 37. Create Mobile Crossclip
- 38. Download YouTube videos in the best MP4 format
- 39. Translate YouTube descriptions to other languages
- 40. Translate YouTube transcripts to other languages
- 41. Translate YouTube video to other languages
- 42. Translate YouTube playlist to other languages
+1. Audio-level and facial recognition based jump-cutting
+2. Audio-level based jump-cutting
+3. Audio-level and template match based jump-cutting
+4. Burn subtitles from SRT file
+5. Batch convert video format
+6. Batch generate speech from text
+7. Batch merge video and audio
+8. Burn subtitles from SRT
+9. Change video aspect ratio
+10. Change volume amount
+11. Compress audio file
+12. Convert video format
+13. Create animated GIF
+14. Create mobile crossclip
+15. Create pencil sketch video
+16. Create vintage video
+17. Crop video
+18. Cut video start to duration
+19. Cut video start to endTime
+20. Download YouTube video
+21. Extract audio from video
+22. Extract images from video
+23. Facial recognition base jump-cutting
+24. Flip video horizontally
+25. Flip video vertically
+26. Generate game highlights
+27. Generate speech from text
+28. Generate video subtitles
+29. Jump-cutting based on template matching
+30. Merge video and audio
+31. Mirror video horizontally
+32. Mirror video vertically
+33. Plot sound frames
+34. Plot video frames
+35. Remove audio from video
+36. Remove background music
+37. Remove video background
+38. Remove vocals
+39. Resize video
+40. Reverse video
+41. Rotate video clockwise
+42. Rotate video counterclockwise
+43. Translate YouTube description
+44. Translate YouTube playlist
+45. Translate YouTube transcript
+46. Translate YouTube cideo
+47. Zoom-pan cut video
  
 ## Operating Systems
 
