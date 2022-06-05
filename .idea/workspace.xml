@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Updated Readme.md features list">
-      <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/.probe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/checkpoint" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.data-00000-of-00001" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.index" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.meta" afterDir="false" />
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Updated gitignore">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -845,27 +841,6 @@
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
     </task>
-    <task id="LOCAL-00085" summary="Added zoompan script to features list">
-      <created>1653153459636</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1653153459636</updated>
-    </task>
-    <task id="LOCAL-00086" summary="Updated YouTube description and transcript code to include all available languages through a selection box rather than having to hardcode language codes.">
-      <created>1653162882456</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1653162882456</updated>
-    </task>
-    <task id="LOCAL-00087" summary="Updated YouTube description and transcript code to include all available languages through a selection box rather than having to hardcode language codes.">
-      <created>1653162892066</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1653162892066</updated>
-    </task>
     <task id="LOCAL-00088" summary="Updated script reference in workspace.xml">
       <created>1653162995386</created>
       <option name="number" value="00088" />
@@ -1188,7 +1163,28 @@
       <option name="project" value="LOCAL" />
       <updated>1654440300984</updated>
     </task>
-    <option name="localTasksCounter" value="134" />
+    <task id="LOCAL-00134" summary="Updated scripts list in workspace.xml">
+      <created>1654442699446</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1654442699447</updated>
+    </task>
+    <task id="LOCAL-00135" summary="Updated gitignore">
+      <created>1654442793274</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1654442793274</updated>
+    </task>
+    <task id="LOCAL-00136" summary="Updated gitignore">
+      <created>1654442847875</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1654442847875</updated>
+    </task>
+    <option name="localTasksCounter" value="137" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1204,8 +1200,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Minor updates" />
-    <MESSAGE value="Add comments" />
     <MESSAGE value="updated ignore list" />
     <MESSAGE value="minor spelling changes" />
     <MESSAGE value="Change default path to user home directory for non-Mac dialogs" />
@@ -1229,6 +1223,8 @@
     <MESSAGE value="Added script to plot audio frames" />
     <MESSAGE value="Updated VideoJumpcutter.py to include option for volume selection.  The supported options are max (default) and rms, which will allow one method or the other for determining what the max and frame volume values are based on.  For some videos, it might be desirable to use rms where high pitches like gun sounds might be better detected using max value instead." />
     <MESSAGE value="Updated Readme.md features list" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Readme.md features list" />
+    <MESSAGE value="Updated scripts list in workspace.xml" />
+    <MESSAGE value="Updated gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated gitignore" />
   </component>
 </project>

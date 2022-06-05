@@ -132,11 +132,3 @@ dmypy.json
 .pyre/
 /RBM/pretrained_models/
 /transcripts/
-/test/
-/pretrained_models/
-/pretrained_models/2stems/
-/pretrained_models/2stems/.probe
-/pretrained_models/2stems/model.data-00000-of-00001
-/pretrained_models/2stems/model.index
-/pretrained_models/2stems/model.meta
-/pretrained_models/2stems/checkpoint
