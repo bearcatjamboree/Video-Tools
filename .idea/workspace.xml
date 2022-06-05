@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Added script to convert folder of audio or video files to a specific new format, and output the translated files to a user specified output folder.">
-      <change afterPath="$PROJECT_DIR$/PlotSoundFrames.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlotSoundFrames.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/._checkpoint" afterDir="false" />
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Updated Readme.md features list">
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/.probe" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/checkpoint" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.data-00000-of-00001" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.index" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VideoJumpcutter.py" beforeDir="false" afterPath="$PROJECT_DIR$/VideoJumpcutter.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +79,7 @@
       <recent name="$PROJECT_DIR$/_backups" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.Generate Game Highlights">
+  <component name="RunManager" selected="Shell Script.Remove Background Music">
     <configuration name="AudioJumpcut" type="ShConfigurationType" folderName="Videos">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -849,27 +845,6 @@
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
     </task>
-    <task id="LOCAL-00082" summary="Updated the list of functions">
-      <created>1653102681069</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1653102681069</updated>
-    </task>
-    <task id="LOCAL-00083" summary="Implemented shell temp directory generation to allow multiple instances to run without file conflicts.">
-      <created>1653136112333</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1653136112334</updated>
-    </task>
-    <task id="LOCAL-00084" summary="Added zoompan cut script for fixed interval zoom-in and zoom-normal effect for videos.  This feature can only zoom-in and back to preview zoom... not out and then in.">
-      <created>1653153417138</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1653153417139</updated>
-    </task>
     <task id="LOCAL-00085" summary="Added zoompan script to features list">
       <created>1653153459636</created>
       <option name="number" value="00085" />
@@ -1192,7 +1167,28 @@
       <option name="project" value="LOCAL" />
       <updated>1654288179854</updated>
     </task>
-    <option name="localTasksCounter" value="131" />
+    <task id="LOCAL-00131" summary="Added script to plot audio frames">
+      <created>1654366687071</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1654366687072</updated>
+    </task>
+    <task id="LOCAL-00132" summary="Updated VideoJumpcutter.py to include option for volume selection.  The supported options are max (default) and rms, which will allow one method or the other for determining what the max and frame volume values are based on.  For some videos, it might be desirable to use rms where high pitches like gun sounds might be better detected using max value instead.">
+      <created>1654366805617</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1654366805617</updated>
+    </task>
+    <task id="LOCAL-00133" summary="Updated Readme.md features list">
+      <created>1654440300984</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1654440300984</updated>
+    </task>
+    <option name="localTasksCounter" value="134" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1208,9 +1204,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added DownloadYouTubeVideo.sh script to automate downloading videos using yt-dlp" />
-    <MESSAGE value="Updated workspace.xml to include new scripts" />
-    <MESSAGE value="Replaced youtube-dl with yt-dlp" />
     <MESSAGE value="Minor updates" />
     <MESSAGE value="Add comments" />
     <MESSAGE value="updated ignore list" />
@@ -1233,6 +1226,9 @@
     <MESSAGE value="Added more extensive comments to each script to make easier for end-users to understand script usage." />
     <MESSAGE value="Updated readme" />
     <MESSAGE value="Added script to convert folder of audio or video files to a specific new format, and output the translated files to a user specified output folder." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added script to convert folder of audio or video files to a specific new format, and output the translated files to a user specified output folder." />
+    <MESSAGE value="Added script to plot audio frames" />
+    <MESSAGE value="Updated VideoJumpcutter.py to include option for volume selection.  The supported options are max (default) and rms, which will allow one method or the other for determining what the max and frame volume values are based on.  For some videos, it might be desirable to use rms where high pitches like gun sounds might be better detected using max value instead." />
+    <MESSAGE value="Updated Readme.md features list" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated Readme.md features list" />
   </component>
 </project>
