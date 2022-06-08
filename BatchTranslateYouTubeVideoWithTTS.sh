@@ -140,8 +140,8 @@ echo "Title: $title"
 video=$(yt-dlp "$url" -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4] / bv*+ba/b" -o "$output_folder$title.%(ext)s")
 video="$output_folder$title.mp4"
 
-echo /bin/zsh ~/PycharmProjects/Video-Tools/RBM/RemoveVocals.sh "$video"
-/bin/zsh ~/PycharmProjects/Video-Tools/RBM/RemoveVocals.sh "$video"
+#echo /bin/zsh ~/PycharmProjects/Video-Tools/RBM/RemoveVocals.sh "$video"
+#/bin/zsh ~/PycharmProjects/Video-Tools/RBM/RemoveVocals.sh "$video"
 
 ext="${video##*.}"
 name="${video%.*}"
@@ -159,33 +159,36 @@ for language in "${languages[@]}"
 do
   new_output=$output_folder$language
 
+  # Don't reprocess the language if rerun
   if ! [ -d "$new_output" ]; then
+
     mkdir $new_output
+
+    # copy vocal only file to language specific folder
+    cp "$output_folder$novocals_file" "$new_output"
+
+    new_novocals_file="$new_output/${name}_novocals.${ext}"
+    subtitled_file="$new_output/${name}_novocals_subtitled.${ext}"
+
+    wav_file="$new_output/${video_id}_$language.wav"
+    srt_file="$new_output/${video_id}_$language.srt"
+
+    # Perform all transformations
+    echo /bin/zsh ~/PycharmProjects/Video-Tools/TranslateYouTubeDescription.sh "$language" "$url" "$output_folder"
+    /bin/zsh ~/PycharmProjects/Video-Tools/TranslateYouTubeDescription.sh "$language" "$url" "$output_folder"
+
+    echo /bin/zsh ~/PycharmProjects/Video-Tools/TranslateYouTubeTranscript.sh "$language" "$url" "$output_folder"
+    /bin/zsh ~/PycharmProjects/Video-Tools/TranslateYouTubeTranscript.sh "$language" "$url" "$output_folder"
+
+    echo /bin/zsh ~/PycharmProjects/Video-Tools/GenerateSpeechFromText.sh "$srt_file" "$language_names[$language]"
+    /bin/zsh ~/PycharmProjects/Video-Tools/GenerateSpeechFromText.sh "$srt_file" "$language_names[$language]"
+
+    echo /bin/zsh ~/PycharmProjects/Video-Tools/BurnSubtitlesFromSRT.sh "$new_novocals_file" "$srt_file"
+    /bin/zsh ~/PycharmProjects/Video-Tools/BurnSubtitlesFromSRT.sh "$new_novocals_file" "$srt_file"
+
+    echo /bin/zsh ~/PycharmProjects/Video-Tools/MergeVideoAndAudio.sh "$subtitled_file" "$wav_file"
+    /bin/zsh ~/PycharmProjects/Video-Tools/MergeVideoAndAudio.sh "$subtitled_file" "$wav_file"
+
   fi
-
-  # copy vocal only file to language specific folder
-  cp "$output_folder$novocals_file" "$new_output"
-
-  new_novocals_file="$new_output/${name}_novocals.${ext}"
-  subtitled_file="$new_output/${name}_novocals_subtitled.${ext}"
-
-  wav_file="$new_output/${video_id}_$language.wav"
-  srt_file="$new_output/${video_id}_$language.srt"
-
-  # Perform all transformations
-  echo /bin/zsh ~/PycharmProjects/Video-Tools/TranslateYouTubeDescription.sh "$language" "$url" "$output_folder"
-  /bin/zsh ~/PycharmProjects/Video-Tools/TranslateYouTubeDescription.sh "$language" "$url" "$output_folder"
-
-  echo /bin/zsh ~/PycharmProjects/Video-Tools/TranslateYouTubeTranscript.sh "$language" "$url" "$output_folder"
-  /bin/zsh ~/PycharmProjects/Video-Tools/TranslateYouTubeTranscript.sh "$language" "$url" "$output_folder"
-
-  echo /bin/zsh ~/PycharmProjects/Video-Tools/GenerateSpeechFromText.sh "$srt_file" "$language_names[$language]"
-  /bin/zsh ~/PycharmProjects/Video-Tools/GenerateSpeechFromText.sh "$srt_file" "$language_names[$language]"
-
-  echo /bin/zsh ~/PycharmProjects/Video-Tools/BurnSubtitlesFromSRT.sh "$new_novocals_file" "$srt_file"
-  /bin/zsh ~/PycharmProjects/Video-Tools/BurnSubtitlesFromSRT.sh "$new_novocals_file" "$srt_file"
-
-  echo /bin/zsh ~/PycharmProjects/Video-Tools/MergeVideoAndAudio.sh "$subtitled_file" "$wav_file"
-  /bin/zsh ~/PycharmProjects/Video-Tools/MergeVideoAndAudio.sh "$subtitled_file" "$wav_file"
 
 done

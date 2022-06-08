@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Updated gitignore">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BatchTranslateYouTubeVideo.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BatchBurnSubtitlesFromSRT.sh" beforeDir="false" afterPath="$PROJECT_DIR$/BatchBurnSubtitlesFromSRT.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BurnSubtitlesFromSRT.sh" beforeDir="false" afterPath="$PROJECT_DIR$/BurnSubtitlesFromSRT.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TranslateYouTubePlaylist.sh" beforeDir="false" afterPath="$PROJECT_DIR$/BatchTranslateYouTubePlaylist.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TranslateYouTubeVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/BatchTranslateYouTubeVideoWithTTS.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +79,7 @@
       <recent name="$PROJECT_DIR$/_backups" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.Remove Background Music">
+  <component name="RunManager" selected="Shell Script.Batch Burn Subtitles From SRT">
     <configuration name="AudioJumpcut" type="ShConfigurationType" folderName="Videos">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -170,6 +174,51 @@
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
       <option name="SCRIPT_PATH" value="$PROJECT_DIR$/BatchMergeVideoAndAudio.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="Batch Translate YouTube Playlist " type="ShConfigurationType" folderName="Batch">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/BatchTranslateYouTubePlaylist.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="Batch Translate YouTube Video With TTS" type="ShConfigurationType" folderName="Batch">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/BatchTranslateYouTubeVideoWithTTS.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="Batch Translate YouTube Video" type="ShConfigurationType" folderName="Batch">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/BatchTranslateYouTubeVideo.sh" />
       <option name="SCRIPT_OPTIONS" value="" />
       <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
       <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -721,40 +770,10 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="Translate YouTube Playlist " type="ShConfigurationType" folderName="YouTube">
-      <option name="SCRIPT_TEXT" value="" />
-      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
-      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/TranslateYouTubePlaylist.sh" />
-      <option name="SCRIPT_OPTIONS" value="" />
-      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
-      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
-      <option name="INTERPRETER_PATH" value="/bin/zsh" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="EXECUTE_IN_TERMINAL" value="true" />
-      <option name="EXECUTE_SCRIPT_FILE" value="true" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <configuration name="Translate YouTube Transcript" type="ShConfigurationType" folderName="YouTube">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
       <option name="SCRIPT_PATH" value="$PROJECT_DIR$/TranslateYouTubeTranscript.sh" />
-      <option name="SCRIPT_OPTIONS" value="" />
-      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
-      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
-      <option name="INTERPRETER_PATH" value="/bin/zsh" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="EXECUTE_IN_TERMINAL" value="true" />
-      <option name="EXECUTE_SCRIPT_FILE" value="true" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="Translate YouTube Video" type="ShConfigurationType" folderName="YouTube">
-      <option name="SCRIPT_TEXT" value="" />
-      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
-      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/TranslateYouTubeVideo.sh" />
       <option name="SCRIPT_OPTIONS" value="" />
       <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
       <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -794,6 +813,9 @@
       <item itemvalue="Shell Script.Batch Convert Video Format" />
       <item itemvalue="Shell Script.Batch Generate Speech From Text" />
       <item itemvalue="Shell Script.Batch Merge Video And Audio" />
+      <item itemvalue="Shell Script.Batch Translate YouTube Playlist " />
+      <item itemvalue="Shell Script.Batch Translate YouTube Video With TTS" />
+      <item itemvalue="Shell Script.Batch Translate YouTube Video" />
       <item itemvalue="Shell Script.Create Animated GIF" />
       <item itemvalue="Shell Script.Extract Images From Video" />
       <item itemvalue="Shell Script.Generate Video Subtitles" />
@@ -826,9 +848,7 @@
       <item itemvalue="Shell Script.Zoompan Cut Video" />
       <item itemvalue="Shell Script.Download YouTube Video" />
       <item itemvalue="Shell Script.Translate YouTube Description" />
-      <item itemvalue="Shell Script.Translate YouTube Playlist " />
       <item itemvalue="Shell Script.Translate YouTube Transcript" />
-      <item itemvalue="Shell Script.Translate YouTube Video" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="true" />
@@ -840,13 +860,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
-    </task>
-    <task id="LOCAL-00088" summary="Updated script reference in workspace.xml">
-      <created>1653162995386</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1653162995386</updated>
     </task>
     <task id="LOCAL-00089" summary="Numerous spell corrections and minor changes">
       <created>1653229295547</created>
@@ -1184,7 +1197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654442847875</updated>
     </task>
-    <option name="localTasksCounter" value="137" />
+    <task id="LOCAL-00137" summary="Updated gitignore">
+      <created>1654442997391</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1654442997391</updated>
+    </task>
+    <option name="localTasksCounter" value="138" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

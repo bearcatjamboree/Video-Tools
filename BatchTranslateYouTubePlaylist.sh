@@ -9,7 +9,7 @@
 #
 #   DETAILS
 #     This script will download a playlist and use the id and title to construct
-#     calls to TranslateYouTubeVideo.sh in order to facilitate migrating an entire
+#     calls to BatchTranslateYouTubeVideo.sh in order to facilitate migrating an entire
 #     playlist from one language to several other languages.
 #
 #   USAGE
@@ -114,8 +114,8 @@ do
 
   if ! [ -d "$new_output_folder" ]; then
     mkdir $new_output_folder
-    echo /bin/zsh ~/PycharmProjects/Video-Tools/TranslateYouTubeVideo.sh "$url" "$new_output_folder/"
-    /bin/zsh ~/PycharmProjects/Video-Tools/TranslateYouTubeVideo.sh "$url" "$new_output_folder/"
+    echo /bin/zsh ~/PycharmProjects/Video-Tools/BatchTranslateYouTubeVideo.sh "$url" "$new_output_folder/"
+    /bin/zsh ~/PycharmProjects/Video-Tools/BatchTranslateYouTubeVideo.sh "$url" "$new_output_folder/"
   else
     echo "Skipping $new_output_folder"
   fi

@@ -9,20 +9,20 @@
 #
 #   DETAILS
 #     This script will scan recursively for .SRT files and try
-#     to match them with a _novocals.mp4 file located in the same
-#     directory.  If not video with the _novocals.mp4 mask can
+#     to match them with an mp4 file located in the same
+#     directory.  If no video with the *.mp4 mask can
 #     be located then the script goes onto the next .SRT file.
 #     If a video is located but there is already a subtitled video
 #     Then the script to skip this file and go on to the next .SRT file.
 #
 #   USAGE
-#     ${SCRIPT_NAME} [path to *.srt and *_novocals.mp4 files]"
+#     ${SCRIPT_NAME} [path to *.srt and *.mp4 files]"
 #
 #   NOTE
 #     change strings below to your default: font, font size, and font color
 #================================================================================
 subtitle_font="Bangers"
-subtitle_fontsize=48 #48
+subtitle_fontsize=48 #24 or 48
 subtitle_fontcolor="ffffff"
 
 unameOut="$(uname -s)"
@@ -76,16 +76,19 @@ for srt_file in $(find $input_folder -name '*.srt'); do
     srt_test_path="${srt_file%/*}"
     echo "srt path: $srt_test_path"
 
-    video_file=$(find "${srt_test_path}" -name '*_novocals.mp4')
-    echo "video file: ${video_file}"
+    video_file=$(find "${srt_test_path}" -name '*.mp4' ! -name '.*')
+    echo "in file: ${video_file}"
 
     if ! [[ $video_file == "" ]]; then
 
-        echo "$video_file"
+        #echo "$video_file"
+
+        filename=$(echo "$video_file" | sed 's/\(.*\)\..*/\1/g')
+        #echo "file: $filename"
 
         # Construct output file name
-        output_video="${video_file%.*}_subtitled.mp4"
-        echo "$output_video"
+        output_video="${filename}_subtitled.mp4"
+        echo "out file: $output_video"
 
         if ! [ -f "$output_video" ]; then
             echo ffmpeg -i "$video_file" -vf "subtitles=\'$srt_file\':force_style='FontName=$subtitle_font,Fontsize=$subtitle_fontsize,PrimaryColour=&H$subtitle_fontcolor&'" "$output_video"
