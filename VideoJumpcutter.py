@@ -189,7 +189,7 @@ def printProgressBar(iteration, total, prefix='', suffix='', decimals=1, length=
 #################################################################################################
 #  Insert frames before and after match frames to add "context"
 #################################################################################################
-def AddMarginFrames(frames):
+def AddMarginFrames(frames, max_frames):
     """
     Call in a loop to create terminal progress bar
     @params:
@@ -200,7 +200,6 @@ def AddMarginFrames(frames):
     # print("frames length {}".format(len(frames)))
     # Create copy
     t_frames = set(frames)
-    max_frames = len(frames)
 
     current_iteration = 0
 
@@ -636,7 +635,7 @@ def main():
         if keep_frames:
 
             #print("keep {}".format(keep_frames))
-            keep_frames = AddMarginFrames(keep_frames)
+            keep_frames = AddMarginFrames(keep_frames, fvs.frames)
 
             print("Writing edited video (only) file: {}/videoNew.mp4".format(tmpdirname))
 

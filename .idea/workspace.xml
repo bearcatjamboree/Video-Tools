@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Updated gitignore">
-      <change afterPath="$PROJECT_DIR$/BatchTranslateYouTubeVideo.sh" afterDir="false" />
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Organized a few scripts into the &quot;Batch&quot; category.  Also, separated TranslateYouTubeVideo.sh into two scripts, making one that does TTS and one that does not.">
+      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BatchBurnSubtitlesFromSRT.sh" beforeDir="false" afterPath="$PROJECT_DIR$/BatchBurnSubtitlesFromSRT.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BurnSubtitlesFromSRT.sh" beforeDir="false" afterPath="$PROJECT_DIR$/BurnSubtitlesFromSRT.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TranslateYouTubePlaylist.sh" beforeDir="false" afterPath="$PROJECT_DIR$/BatchTranslateYouTubePlaylist.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TranslateYouTubeVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/BatchTranslateYouTubeVideoWithTTS.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioJumpcut.sh" beforeDir="false" afterPath="$PROJECT_DIR$/AudioJumpcut.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GenerateGameHighlights.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateGameHighlights.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoJumpcutter.py" beforeDir="false" afterPath="$PROJECT_DIR$/VideoJumpcutter.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +79,7 @@
       <recent name="$PROJECT_DIR$/_backups" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.Batch Burn Subtitles From SRT">
+  <component name="RunManager" selected="Shell Script.Generate Game Highlights">
     <configuration name="AudioJumpcut" type="ShConfigurationType" folderName="Videos">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -605,7 +605,7 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="Plot Sound Frames" type="ShConfigurationType" folderName="Audio">
+    <configuration name="Plot Sound Frames" type="ShConfigurationType" folderName="Miscellaneous">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
       <option name="SCRIPT_PATH" value="$PROJECT_DIR$/PlotSoundFrames.sh" />
@@ -805,7 +805,6 @@
       <item itemvalue="Shell Script.Compress Audio File" />
       <item itemvalue="Shell Script.Extract Audio From Video" />
       <item itemvalue="Shell Script.Generate Speech From Text" />
-      <item itemvalue="Shell Script.Plot Sound Frames" />
       <item itemvalue="Shell Script.Remove Audio From Video" />
       <item itemvalue="Shell Script.Remove Background Music" />
       <item itemvalue="Shell Script.Remove Vocals" />
@@ -819,10 +818,11 @@
       <item itemvalue="Shell Script.Create Animated GIF" />
       <item itemvalue="Shell Script.Extract Images From Video" />
       <item itemvalue="Shell Script.Generate Video Subtitles" />
+      <item itemvalue="Shell Script.Plot Sound Frames" />
       <item itemvalue="Shell Script.Plot Video Frames" />
-      <item itemvalue="Shell Script.AudioJumpcut" />
       <item itemvalue="Shell Script.Audio+FaceRecognition" />
       <item itemvalue="Shell Script.Audio+MatchTemplate" />
+      <item itemvalue="Shell Script.AudioJumpcut" />
       <item itemvalue="Shell Script.Burn Subtitles From SRT" />
       <item itemvalue="Shell Script.Change Video Aspect Ratio" />
       <item itemvalue="Shell Script.Convert Video Format" />
@@ -860,13 +860,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
-    </task>
-    <task id="LOCAL-00089" summary="Numerous spell corrections and minor changes">
-      <created>1653229295547</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1653229295547</updated>
     </task>
     <task id="LOCAL-00090" summary="Added CreateMobileCrossclip.sh to allow producing portrait oriented clip with webcam on top in two styles: Basic or Bubble.">
       <created>1653274858576</created>
@@ -1204,7 +1197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654442997391</updated>
     </task>
-    <option name="localTasksCounter" value="138" />
+    <task id="LOCAL-00138" summary="Organized a few scripts into the &quot;Batch&quot; category.  Also, separated TranslateYouTubeVideo.sh into two scripts, making one that does TTS and one that does not.">
+      <created>1654726844251</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1654726844251</updated>
+    </task>
+    <option name="localTasksCounter" value="139" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1220,7 +1220,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="updated ignore list" />
     <MESSAGE value="minor spelling changes" />
     <MESSAGE value="Change default path to user home directory for non-Mac dialogs" />
     <MESSAGE value="Renamed translation scripts to have similiar naming to make them easier to identify" />
@@ -1245,6 +1244,7 @@
     <MESSAGE value="Updated Readme.md features list" />
     <MESSAGE value="Updated scripts list in workspace.xml" />
     <MESSAGE value="Updated gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated gitignore" />
+    <MESSAGE value="Organized a few scripts into the &quot;Batch&quot; category.  Also, separated TranslateYouTubeVideo.sh into two scripts, making one that does TTS and one that does not." />
+    <option name="LAST_COMMIT_MESSAGE" value="Organized a few scripts into the &quot;Batch&quot; category.  Also, separated TranslateYouTubeVideo.sh into two scripts, making one that does TTS and one that does not." />
   </component>
 </project>
