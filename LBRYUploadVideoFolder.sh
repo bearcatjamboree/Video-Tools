@@ -28,34 +28,12 @@ esac
 
 echo "${machine}"
 
-video_url="$1"
-output_folder="$2"
+output_folder="$1"
 
 channel="BearcatJamboree"
 language="en"
 license="Copyrighted (All rights reserved)"
 tags=("Minecraft" "Gaming")  # 5 max
-
-##############################################################################
-# Prompt for URL
-###############################################################################
-if [[ "$video_url" == "" ]]; then
-    if [[ "$machine" == "Mac" ]]; then
-        video_url=$(osascript -e 'set T to text returned of (display dialog "Enter video or playlist URL" buttons {"Cancel", "OK"} default button "OK" default answer "")')
-    elif [[ "$machine" == "Linux" ]]; then
-        video_url=$(dialog --title "Enter playlist location" --inputbox "URL:" 8 60)
-    elif [[ "$machine" == "Cygwin" ]]; then
-        video_url=$(dialog --title "Enter playlist location" --inputbox "URL:" 8 60)
-    else
-        echo "Usage: $0 video_url output_folder"
-        exit 1
-    fi
-fi
-
-if [[ "$video_url" == "" ]]; then
-    echo "Usage: $0 video_url output_folder"
-    exit 1
-fi
 
 ##############################################################################
 #  Prompt for output folder
