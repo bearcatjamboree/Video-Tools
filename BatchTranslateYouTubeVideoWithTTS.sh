@@ -140,8 +140,8 @@ echo "Title: $title"
 video=$(yt-dlp "$url" -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4] / bv*+ba/b" -o "$output_folder$title.%(ext)s")
 video="$output_folder$title.mp4"
 
-#echo /bin/zsh ~/PycharmProjects/Video-Tools/RBM/RemoveVocals.sh "$video"
-#/bin/zsh ~/PycharmProjects/Video-Tools/RBM/RemoveVocals.sh "$video"
+echo /bin/zsh ~/PycharmProjects/Video-Tools/RBM/RemoveVocals.sh "$video"
+/bin/zsh ~/PycharmProjects/Video-Tools/RBM/RemoveVocals.sh "$video"
 
 ext="${video##*.}"
 name="${video%.*}"

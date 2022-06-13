@@ -83,10 +83,10 @@ https://gtts.readthedocs.io/en/latest/module.html#localized-accents
 parser = argparse.ArgumentParser(
     description='Read a text file, convert it to speech, and write to a WAV')
 parser.add_argument('--input_file', type=str, help='The text file to read and produce speech from')
-parser.add_argument('--output_file', type=str, help="the _output location to write the speech WAV")
-parser.add_argument('--language', type=str, default="en", help="the language to detect and speak")
-parser.add_argument('--voice', type=str, default="jorge", help="the voice to use")
-parser.add_argument('--speed_up', type=bool, default=True, help="Speed up audio to match subtitle duration")
+parser.add_argument('--output_file', type=str, help="The _output location to write the speech WAV")
+parser.add_argument('--language', type=str, default="en", help="The language to detect and speak")
+parser.add_argument('--voice', type=str, default="jorge", help="The voice to use")
+parser.add_argument('--handle_length', type=int, default=0, help="If TTS runs long: 0=truncate, 1=speed up, 2=skip. Default=0")
 
 args = parser.parse_args()
 
@@ -142,13 +142,20 @@ def tts_generator(dict):
     except:
         source = AudioSegment.from_file("{}/tmp{:05d}.aiff".format(tmpdirname, int(dict['counter'].strip())), format="wav")
 
-    # adjust audio speed if flag is True
-    if args.speed_up:
+    audio = AudioSegment.silent(duration=dict['diff'] * 1000)
+
+    # How to handle TTS running past frame length
+    #   Options:    0=Truncate TTS to frame length
+    #               1=Speed up TTS to frame length
+    #               2=Leave frame TTS-less (Skip)
+    if args.handle_length == 1:
         if source.duration_seconds > dict['diff']:
             speed = (source.duration_seconds / dict['diff'])
             source = speedup(source, speed, 150)
+    elif args.handle_length == 2:
+        if source.duration_seconds > dict['diff']:
+            source = audio
 
-    audio = AudioSegment.silent(duration=dict['diff'] * 1000)
     output = audio.overlay(source, position=0)
 
     output.export("{}/_output{:05d}.aiff".format(tmpdirname, int(dict['counter'].strip())), format="wav")

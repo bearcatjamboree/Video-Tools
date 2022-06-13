@@ -4,13 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Organized a few scripts into the &quot;Batch&quot; category.  Also, separated TranslateYouTubeVideo.sh into two scripts, making one that does TTS and one that does not.">
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.txt" afterDir="false" />
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Fixed but in VideoJumpcutter.py preventing margin frames from being added after the highlighted frame.  This was due to AddMarginFrames not knowing the video max frames value.">
+      <change afterPath="$PROJECT_DIR$/LBRYUploadVideo.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NormalizeAudio.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/checkpoint" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.data-00000-of-00001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AudioJumpcut.sh" beforeDir="false" afterPath="$PROJECT_DIR$/AudioJumpcut.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GenerateGameHighlights.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateGameHighlights.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VideoJumpcutter.py" beforeDir="false" afterPath="$PROJECT_DIR$/VideoJumpcutter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BatchTranslateYouTubeVideoWithTTS.sh" beforeDir="false" afterPath="$PROJECT_DIR$/BatchTranslateYouTubeVideoWithTTS.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GenerateSpeechFromText.py" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateSpeechFromText.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GenerateSpeechFromText.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateSpeechFromText.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +63,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/cboxgo/PycharmProjects/Video-Tools&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors&quot;
   }
 }</component>
   <component name="PyConsoleOptionsProvider">
@@ -79,7 +84,7 @@
       <recent name="$PROJECT_DIR$/_backups" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.Generate Game Highlights">
+  <component name="RunManager" selected="Shell Script.Batch Translate YouTube Video With TTS">
     <configuration name="AudioJumpcut" type="ShConfigurationType" folderName="Videos">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -545,6 +550,21 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="LBRY Upload Video" type="ShConfigurationType" folderName="YouTube">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/LBRYUploadVideo.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="MatchTemplate" type="ShConfigurationType" folderName="Videos">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -594,6 +614,21 @@
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
       <option name="SCRIPT_PATH" value="$PROJECT_DIR$/MirrorVideoVertically.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="Normalize Audio" type="ShConfigurationType" folderName="Audio">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/NormalizeAudio.sh" />
       <option name="SCRIPT_OPTIONS" value="" />
       <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
       <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -805,6 +840,7 @@
       <item itemvalue="Shell Script.Compress Audio File" />
       <item itemvalue="Shell Script.Extract Audio From Video" />
       <item itemvalue="Shell Script.Generate Speech From Text" />
+      <item itemvalue="Shell Script.Normalize Audio" />
       <item itemvalue="Shell Script.Remove Audio From Video" />
       <item itemvalue="Shell Script.Remove Background Music" />
       <item itemvalue="Shell Script.Remove Vocals" />
@@ -813,8 +849,8 @@
       <item itemvalue="Shell Script.Batch Generate Speech From Text" />
       <item itemvalue="Shell Script.Batch Merge Video And Audio" />
       <item itemvalue="Shell Script.Batch Translate YouTube Playlist " />
-      <item itemvalue="Shell Script.Batch Translate YouTube Video With TTS" />
       <item itemvalue="Shell Script.Batch Translate YouTube Video" />
+      <item itemvalue="Shell Script.Batch Translate YouTube Video With TTS" />
       <item itemvalue="Shell Script.Create Animated GIF" />
       <item itemvalue="Shell Script.Extract Images From Video" />
       <item itemvalue="Shell Script.Generate Video Subtitles" />
@@ -847,6 +883,7 @@
       <item itemvalue="Shell Script.Rotate Video Counterclockwise" />
       <item itemvalue="Shell Script.Zoompan Cut Video" />
       <item itemvalue="Shell Script.Download YouTube Video" />
+      <item itemvalue="Shell Script.LBRY Upload Video" />
       <item itemvalue="Shell Script.Translate YouTube Description" />
       <item itemvalue="Shell Script.Translate YouTube Transcript" />
     </list>
@@ -860,13 +897,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
-    </task>
-    <task id="LOCAL-00090" summary="Added CreateMobileCrossclip.sh to allow producing portrait oriented clip with webcam on top in two styles: Basic or Bubble.">
-      <created>1653274858576</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1653274858577</updated>
     </task>
     <task id="LOCAL-00091" summary="Updated workspace.xml to include Create Mobile Crosslip">
       <created>1653274892226</created>
@@ -1204,7 +1234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654726844251</updated>
     </task>
-    <option name="localTasksCounter" value="139" />
+    <task id="LOCAL-00139" summary="Fixed but in VideoJumpcutter.py preventing margin frames from being added after the highlighted frame.  This was due to AddMarginFrames not knowing the video max frames value.">
+      <created>1654958211839</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1654958211840</updated>
+    </task>
+    <option name="localTasksCounter" value="140" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1220,7 +1257,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="minor spelling changes" />
     <MESSAGE value="Change default path to user home directory for non-Mac dialogs" />
     <MESSAGE value="Renamed translation scripts to have similiar naming to make them easier to identify" />
     <MESSAGE value="Updated workspace.xml to include correct script references and uncheck &quot;execute in terminal&quot; so dialog command displays correctly for non-Mac systems." />
@@ -1245,6 +1281,7 @@
     <MESSAGE value="Updated scripts list in workspace.xml" />
     <MESSAGE value="Updated gitignore" />
     <MESSAGE value="Organized a few scripts into the &quot;Batch&quot; category.  Also, separated TranslateYouTubeVideo.sh into two scripts, making one that does TTS and one that does not." />
-    <option name="LAST_COMMIT_MESSAGE" value="Organized a few scripts into the &quot;Batch&quot; category.  Also, separated TranslateYouTubeVideo.sh into two scripts, making one that does TTS and one that does not." />
+    <MESSAGE value="Fixed but in VideoJumpcutter.py preventing margin frames from being added after the highlighted frame.  This was due to AddMarginFrames not knowing the video max frames value." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed but in VideoJumpcutter.py preventing margin frames from being added after the highlighted frame.  This was due to AddMarginFrames not knowing the video max frames value." />
   </component>
 </project>
