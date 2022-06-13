@@ -34,7 +34,7 @@ output_folder="$2"
 channel="BearcatJamboree"
 language="en"
 license="Copyrighted (All rights reserved)"
-tags=("Random")  # 5 max
+tags=("Minecraft" "Gaming")  # 5 max
 
 ##############################################################################
 # Prompt for URL
@@ -80,6 +80,15 @@ if ! [ -d "$output_folder" ]; then
   echo "Usage: $0 video_url output_folder"
   exit 1
 fi
+
+python3 -m lbry_batch_uploader \
+    "$output_folder" \
+    "@${channel}" \
+    --tags ${tags} \
+    --languages "${language}" \
+    --license "${license}"
+
+exit 1
 
 # Download video URL metadata
 youtube_data=$(yt-dlp --dump-json "$video_url" | jq -r '[.title,.id]|@csv')
