@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Added script to download YouTube data for Odysee import, and made minor script updates.">
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="remove unreferenced variables">
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/checkpoint" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.data-00000-of-00001" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.index" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LBRYMigrateYouTubePlaylist.sh" beforeDir="false" afterPath="$PROJECT_DIR$/LBRYMigrateYouTubePlaylist.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LBRYUploadVideoFolder.sh" beforeDir="false" afterPath="$PROJECT_DIR$/LBRYUploadVideoFolder.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +80,7 @@
       <recent name="$PROJECT_DIR$/_backups" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.Download YouTube Playlist for Odysee Import">
+  <component name="RunManager" selected="Shell Script.Upload Video Folder to Odysee">
     <configuration name="AudioJumpcut" type="ShConfigurationType" folderName="Videos">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -926,20 +926,6 @@
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
     </task>
-    <task id="LOCAL-00097" summary="Corrected temporary directory reference that was incorrect">
-      <created>1653577362166</created>
-      <option name="number" value="00097" />
-      <option name="presentableId" value="LOCAL-00097" />
-      <option name="project" value="LOCAL" />
-      <updated>1653577362166</updated>
-    </task>
-    <task id="LOCAL-00098" summary="Updated workspace.xml and .gitignore file references">
-      <created>1653577387729</created>
-      <option name="number" value="00098" />
-      <option name="presentableId" value="LOCAL-00098" />
-      <option name="project" value="LOCAL" />
-      <updated>1653577387729</updated>
-    </task>
     <task id="LOCAL-00099" summary="Added ReverseVideo.sh to create reversed video/audio">
       <created>1653688514488</created>
       <option name="number" value="00099" />
@@ -1269,7 +1255,21 @@
       <option name="project" value="LOCAL" />
       <updated>1655300701117</updated>
     </task>
-    <option name="localTasksCounter" value="146" />
+    <task id="LOCAL-00146" summary="Added comments to LBRY scripts">
+      <created>1655328142729</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1655328142729</updated>
+    </task>
+    <task id="LOCAL-00147" summary="remove unreferenced variables">
+      <created>1655328558748</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
+      <option name="project" value="LOCAL" />
+      <updated>1655328558748</updated>
+    </task>
+    <option name="localTasksCounter" value="148" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1285,8 +1285,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Updated workspace.xml" />
-    <MESSAGE value="Numerous corrections to prevent filenames that might cause scripts to break and an update to allow hypen to be passed to TranslateYouTubeTranscript.py from TranslateYouTubeTranscript.sh, since some video IDs have hyphens." />
     <MESSAGE value="Minor script changes" />
     <MESSAGE value="Updated audio volume selection to calculate max RMS for audio then compare to frame RMS, rather than use audioop.max since RMS is more like the ear hears audio." />
     <MESSAGE value="Added del(engine) after runAndWait() to help cleanup after the execution.  This appears to have fixed the issue with longer (30+ minute) speech to text conversions failing." />
@@ -1310,6 +1308,8 @@
     <MESSAGE value="Added script to upload a folder for videos, thumbnails, and descriptions to LBRY" />
     <MESSAGE value="Minor updates" />
     <MESSAGE value="Added script to download YouTube data for Odysee import, and made minor script updates." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added script to download YouTube data for Odysee import, and made minor script updates." />
+    <MESSAGE value="Added comments to LBRY scripts" />
+    <MESSAGE value="remove unreferenced variables" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove unreferenced variables" />
   </component>
 </project>

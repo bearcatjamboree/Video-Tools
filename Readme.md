@@ -56,8 +56,11 @@ If you find these tools useful then consider watching my other content and subsc
 43. Translate YouTube description
 44. Translate YouTube playlist
 45. Translate YouTube transcript
-46. Translate YouTube cideo
+46. Translate YouTube video
 47. Zoom-pan cut video
+48. Download YouTube Playlist for Odysee Import
+49. Migrate YouTube Playlist to Odysee
+50. Upload Video Folder to Odysee
  
 ## Operating Systems
 
