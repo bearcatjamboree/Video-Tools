@@ -81,15 +81,6 @@ if ! [ -d "$output_folder" ]; then
   exit 1
 fi
 
-python3 -m lbry_batch_uploader \
-    "$output_folder" \
-    "@${channel}" \
-    --tags ${tags} \
-    --languages "${language}" \
-    --license "${license}"
-
-exit 1
-
 # Download video URL metadata
 youtube_data=$(yt-dlp --dump-json "$video_url" | jq -r '[.title,.id]|@csv')
 

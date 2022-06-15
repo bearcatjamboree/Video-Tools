@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Added minimum version for lbry-batch-uploader">
-      <change afterPath="$PROJECT_DIR$/LBRYUploadVideoFolder.sh" afterDir="false" />
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Minor updates">
+      <change afterPath="$PROJECT_DIR$/LBRYDownloadYouTubePlaylist.sh" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/checkpoint" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.data-00000-of-00001" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.index" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LBRYUploadVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/LBRYMigrateYouTubePlaylist.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioJumpcut.sh" beforeDir="false" afterPath="$PROJECT_DIR$/AudioJumpcut.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LBRYMigrateYouTubePlaylist.sh" beforeDir="false" afterPath="$PROJECT_DIR$/LBRYMigrateYouTubePlaylist.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LBRYUploadVideoFolder.sh" beforeDir="false" afterPath="$PROJECT_DIR$/LBRYUploadVideoFolder.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +82,7 @@
       <recent name="$PROJECT_DIR$/_backups" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.LBRY Migrate YouTube Playlist">
+  <component name="RunManager" selected="Shell Script.Download YouTube Playlist for Odysee Import">
     <configuration name="AudioJumpcut" type="ShConfigurationType" folderName="Videos">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -411,6 +413,21 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="Download YouTube Playlist for Odysee Import" type="ShConfigurationType" folderName="Odysee">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/LBRYDownloadYouTubePlaylist.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="Download YouTube Video" type="ShConfigurationType" folderName="YouTube">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -546,36 +563,6 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="LBRY Migrate YouTube Playlist" type="ShConfigurationType" folderName="YouTube">
-      <option name="SCRIPT_TEXT" value="" />
-      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
-      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/LBRYMigrateYouTubePlaylist.sh" />
-      <option name="SCRIPT_OPTIONS" value="" />
-      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
-      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
-      <option name="INTERPRETER_PATH" value="/bin/zsh" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="EXECUTE_IN_TERMINAL" value="true" />
-      <option name="EXECUTE_SCRIPT_FILE" value="true" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="LBRY Upload Video Folder" type="ShConfigurationType" folderName="YouTube">
-      <option name="SCRIPT_TEXT" value="" />
-      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
-      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/LBRYUploadVideoFolder.sh" />
-      <option name="SCRIPT_OPTIONS" value="" />
-      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
-      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
-      <option name="INTERPRETER_PATH" value="/bin/zsh" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="EXECUTE_IN_TERMINAL" value="true" />
-      <option name="EXECUTE_SCRIPT_FILE" value="true" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <configuration name="MatchTemplate" type="ShConfigurationType" folderName="Videos">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -595,6 +582,21 @@
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
       <option name="SCRIPT_PATH" value="$PROJECT_DIR$/MergeVideoAndAudio.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="Migrate YouTube Playlist to Odysee" type="ShConfigurationType" folderName="Odysee">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/LBRYMigrateYouTubePlaylist.sh" />
       <option name="SCRIPT_OPTIONS" value="" />
       <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
       <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -831,6 +833,21 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="Upload Video Folder to Odysee" type="ShConfigurationType" folderName="Odysee">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/LBRYUploadVideoFolder.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="Zoompan Cut Video" type="ShConfigurationType" folderName="Videos">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -894,10 +911,11 @@
       <item itemvalue="Shell Script.Rotate Video Counterclockwise" />
       <item itemvalue="Shell Script.Zoompan Cut Video" />
       <item itemvalue="Shell Script.Download YouTube Video" />
-      <item itemvalue="Shell Script.LBRY Migrate YouTube Playlist" />
-      <item itemvalue="Shell Script.LBRY Upload Video Folder" />
       <item itemvalue="Shell Script.Translate YouTube Description" />
       <item itemvalue="Shell Script.Translate YouTube Transcript" />
+      <item itemvalue="Shell Script.Download YouTube Playlist for Odysee Import" />
+      <item itemvalue="Shell Script.Migrate YouTube Playlist to Odysee" />
+      <item itemvalue="Shell Script.Upload Video Folder to Odysee" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="true" />
@@ -909,27 +927,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
-    </task>
-    <task id="LOCAL-00093" summary="Various minor shell script update">
-      <created>1653576730343</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1653576730344</updated>
-    </task>
-    <task id="LOCAL-00094" summary="Replaced all reference to a hardcoded &quot;TEMP&quot; directory with automatically generated, unique temporary directories managed by tempfile.TemporaryDirectory().  These directories are also automatically cleaned after execution.  This will allow for multiple scripts to run concurrently without risk of overlaying files.">
-      <created>1653576886004</created>
-      <option name="number" value="00094" />
-      <option name="presentableId" value="LOCAL-00094" />
-      <option name="project" value="LOCAL" />
-      <updated>1653576886004</updated>
-    </task>
-    <task id="LOCAL-00095" summary="Added GenerateGameHighlights.sh as a way to automate trimming and merging multiple videos located in a specified folder.">
-      <created>1653576991169</created>
-      <option name="number" value="00095" />
-      <option name="presentableId" value="LOCAL-00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1653576991169</updated>
     </task>
     <task id="LOCAL-00096" summary="Corrected temporary directory reference that was incorrect">
       <created>1653577338382</created>
@@ -1253,7 +1250,28 @@
       <option name="project" value="LOCAL" />
       <updated>1655156294959</updated>
     </task>
-    <option name="localTasksCounter" value="142" />
+    <task id="LOCAL-00142" summary="Added script to upload a folder for videos, thumbnails, and descriptions to LBRY">
+      <created>1655156871272</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1655156871272</updated>
+    </task>
+    <task id="LOCAL-00143" summary="Minor updates">
+      <created>1655156885001</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1655156885001</updated>
+    </task>
+    <task id="LOCAL-00144" summary="Minor updates">
+      <created>1655156946448</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1655156946448</updated>
+    </task>
+    <option name="localTasksCounter" value="145" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1269,8 +1287,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Updated workspace.xml to include correct script references and uncheck &quot;execute in terminal&quot; so dialog command displays correctly for non-Mac systems." />
-    <MESSAGE value="Updated function list" />
     <MESSAGE value="Updated ignore list" />
     <MESSAGE value="Updated workspace.xml" />
     <MESSAGE value="Numerous corrections to prevent filenames that might cause scripts to break and an update to allow hypen to be passed to TranslateYouTubeTranscript.py from TranslateYouTubeTranscript.sh, since some video IDs have hyphens." />
@@ -1294,6 +1310,8 @@
     <MESSAGE value="Fixed but in VideoJumpcutter.py preventing margin frames from being added after the highlighted frame.  This was due to AddMarginFrames not knowing the video max frames value." />
     <MESSAGE value="Added LBRYUploadVideo.sh to extract videos, descriptions, and thumbnails from YouTube (yt-dlp requied), and use the lbry_batch_uploader Python module to load into LBRY for populating Odysee with videos that aren't loaded with the YouTubeSync on Odysee.  Also, added NormalizeAudio.sh, and updated GenerateSpeechFromText.py to allow three methods for handling long-spoken TTS (0=truncate, 1=speed up, or 2=skip TTS for that subtitle)" />
     <MESSAGE value="Added minimum version for lbry-batch-uploader" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added minimum version for lbry-batch-uploader" />
+    <MESSAGE value="Added script to upload a folder for videos, thumbnails, and descriptions to LBRY" />
+    <MESSAGE value="Minor updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor updates" />
   </component>
 </project>
