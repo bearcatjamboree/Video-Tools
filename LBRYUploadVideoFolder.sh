@@ -27,13 +27,30 @@ case "${unameOut}" in
 esac
 
 echo "${machine}"
-
 output_folder="$1"
 
+# --- Start updating here
+
 channel="BearcatJamboree"
+
+# Supported languages:  af, en, da, zh, zh, hr, nl, no, fi, fr, de, gu, hi, id,
+#                       ja, jv, it, ms, ml, mr, pa, pl, pt, pt, ro, ru, sr, sk,
+#                       th, ur, ca, es, sv, tl, tr, cs, kn, uk, vi, ar
 language="en"
+
+# Supported Licenses: 'Public Domain', 'Creative Commons Attribution 4.0 International',
+#                     'Creative Commons Attribution-ShareAlike 4.0 International',
+#                     'Creative Commons Attribution-NoDerivatives 4.0 International',
+#                     'Creative Commons Attribution-NonCommercial 4.0 International',
+#                     'Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International',
+#                     'Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International',
+#                     'Copyrighted (All rights reserved)', 'Other'
 license="Copyrighted (All rights reserved)"
-tags=("Minecraft" "Gaming" "Survival" "BedWars" "PVP")  # 5 max
+
+# Up to 5 total tags, quoted, and space separated
+tags=("Minecraft" "Gaming" "Survival" "BedWars" "PVP")
+
+# --- Stop updating here
 
 ##############################################################################
 #  Prompt for output folder
@@ -59,6 +76,14 @@ if ! [ -d "$output_folder" ]; then
   exit 1
 fi
 
+#
+# Batch to load the exported videos and descriptions
+# full option list:
+# python3 -m lbry_batch_uploader file_directory channel_name
+#     [--optimize-file] [--port PORT] [--bid BID] [--fee-amount FEE_AMOUNT]
+#     [--tags TAGS [TAGS ...]] [--languages L [L ...]] [--license LICENSE]
+#     [--license-url LICENSE_URL]
+#
 python3 -m lbry_batch_uploader \
     "$output_folder" \
     "@${channel}" \

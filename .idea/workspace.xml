@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Minor updates">
-      <change afterPath="$PROJECT_DIR$/LBRYDownloadYouTubePlaylist.sh" afterDir="false" />
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Added script to download YouTube data for Odysee import, and made minor script updates.">
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/checkpoint" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.data-00000-of-00001" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.index" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AudioJumpcut.sh" beforeDir="false" afterPath="$PROJECT_DIR$/AudioJumpcut.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LBRYMigrateYouTubePlaylist.sh" beforeDir="false" afterPath="$PROJECT_DIR$/LBRYMigrateYouTubePlaylist.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LBRYUploadVideoFolder.sh" beforeDir="false" afterPath="$PROJECT_DIR$/LBRYUploadVideoFolder.sh" afterDir="false" />
     </list>
@@ -884,6 +882,9 @@
       <item itemvalue="Shell Script.Generate Video Subtitles" />
       <item itemvalue="Shell Script.Plot Sound Frames" />
       <item itemvalue="Shell Script.Plot Video Frames" />
+      <item itemvalue="Shell Script.Download YouTube Playlist for Odysee Import" />
+      <item itemvalue="Shell Script.Migrate YouTube Playlist to Odysee" />
+      <item itemvalue="Shell Script.Upload Video Folder to Odysee" />
       <item itemvalue="Shell Script.Audio+FaceRecognition" />
       <item itemvalue="Shell Script.Audio+MatchTemplate" />
       <item itemvalue="Shell Script.AudioJumpcut" />
@@ -913,9 +914,6 @@
       <item itemvalue="Shell Script.Download YouTube Video" />
       <item itemvalue="Shell Script.Translate YouTube Description" />
       <item itemvalue="Shell Script.Translate YouTube Transcript" />
-      <item itemvalue="Shell Script.Download YouTube Playlist for Odysee Import" />
-      <item itemvalue="Shell Script.Migrate YouTube Playlist to Odysee" />
-      <item itemvalue="Shell Script.Upload Video Folder to Odysee" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="true" />
@@ -927,13 +925,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
-    </task>
-    <task id="LOCAL-00096" summary="Corrected temporary directory reference that was incorrect">
-      <created>1653577338382</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1653577338382</updated>
     </task>
     <task id="LOCAL-00097" summary="Corrected temporary directory reference that was incorrect">
       <created>1653577362166</created>
@@ -1271,7 +1262,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655156946448</updated>
     </task>
-    <option name="localTasksCounter" value="145" />
+    <task id="LOCAL-00145" summary="Added script to download YouTube data for Odysee import, and made minor script updates.">
+      <created>1655300701116</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1655300701117</updated>
+    </task>
+    <option name="localTasksCounter" value="146" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1287,7 +1285,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Updated ignore list" />
     <MESSAGE value="Updated workspace.xml" />
     <MESSAGE value="Numerous corrections to prevent filenames that might cause scripts to break and an update to allow hypen to be passed to TranslateYouTubeTranscript.py from TranslateYouTubeTranscript.sh, since some video IDs have hyphens." />
     <MESSAGE value="Minor script changes" />
@@ -1312,6 +1309,7 @@
     <MESSAGE value="Added minimum version for lbry-batch-uploader" />
     <MESSAGE value="Added script to upload a folder for videos, thumbnails, and descriptions to LBRY" />
     <MESSAGE value="Minor updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor updates" />
+    <MESSAGE value="Added script to download YouTube data for Odysee import, and made minor script updates." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added script to download YouTube data for Odysee import, and made minor script updates." />
   </component>
 </project>
