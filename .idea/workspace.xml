@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="remove unreferenced variables">
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Updated screenshot.png and Readme.md">
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/checkpoint" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.data-00000-of-00001" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.index" afterDir="false" />
@@ -926,13 +926,6 @@
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
     </task>
-    <task id="LOCAL-00099" summary="Added ReverseVideo.sh to create reversed video/audio">
-      <created>1653688514488</created>
-      <option name="number" value="00099" />
-      <option name="presentableId" value="LOCAL-00099" />
-      <option name="project" value="LOCAL" />
-      <updated>1653688514489</updated>
-    </task>
     <task id="LOCAL-00100" summary="Added DownloadYouTubeVideo.sh script to automate downloading videos using yt-dlp">
       <created>1653688572050</created>
       <option name="number" value="00100" />
@@ -1269,7 +1262,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655328558748</updated>
     </task>
-    <option name="localTasksCounter" value="148" />
+    <task id="LOCAL-00148" summary="Updated screenshot.png and Readme.md">
+      <created>1655329260334</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1655329260335</updated>
+    </task>
+    <option name="localTasksCounter" value="149" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1285,7 +1285,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Minor script changes" />
     <MESSAGE value="Updated audio volume selection to calculate max RMS for audio then compare to frame RMS, rather than use audioop.max since RMS is more like the ear hears audio." />
     <MESSAGE value="Added del(engine) after runAndWait() to help cleanup after the execution.  This appears to have fixed the issue with longer (30+ minute) speech to text conversions failing." />
     <MESSAGE value="Updated Readme.md to indicate issue with spleeter on M1 causing issues with TTS if the spleeter environment is active when attempting to generate speech from text." />
@@ -1310,6 +1309,7 @@
     <MESSAGE value="Added script to download YouTube data for Odysee import, and made minor script updates." />
     <MESSAGE value="Added comments to LBRY scripts" />
     <MESSAGE value="remove unreferenced variables" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove unreferenced variables" />
+    <MESSAGE value="Updated screenshot.png and Readme.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated screenshot.png and Readme.md" />
   </component>
 </project>

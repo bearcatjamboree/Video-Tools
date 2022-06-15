@@ -152,7 +152,7 @@ For M1 installations, to use the RemoveVocals.sh or RemoveBackgroundMusic.sh you
 
 Note, this is only if you called the separate environment "spleeter."
 
-If you attempt to use PyTTSx3 while the spleeter environment is active then you will have issues with translating text to speech through Mac OS NSS.
+If you attempt to use PyTTSx3 (text-to-speech) while the spleeter environment is active then you may have issues translating text-to-speech with MacOS NSS.  This was observed to be an issue with MacOS on M1 though occurences was somewhat random.
 
 If you found these tools helpful then please consider subscribing to one of my YouTube channels:
 
