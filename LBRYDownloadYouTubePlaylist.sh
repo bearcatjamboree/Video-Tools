@@ -31,11 +31,6 @@ echo "${machine}"
 video_url="$1"
 output_folder="$2"
 
-channel="BearcatJamboree"
-language="en"
-license="Copyrighted (All rights reserved)"
-tags=("Minecraft" "Gaming")  # 5 max
-
 ##############################################################################
 # Prompt for URL
 ###############################################################################
