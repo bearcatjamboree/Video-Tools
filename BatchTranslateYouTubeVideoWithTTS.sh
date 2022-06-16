@@ -46,7 +46,7 @@ esac
 echo ${machine}
 
 # make this the full list of languages (codes) you want to convert (other than your language)
-languages=( "ar" "es" "hi" "id" "zh-Hans" )
+languages=( "ar" "es" "hi" "zh-Hans" )
 
 # These language codes must correspond with LanguageCodes.md.
 # Labels must match GenerateSpeechFromText otherwise system voice will not be found.

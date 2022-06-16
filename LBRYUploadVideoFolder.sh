@@ -48,7 +48,7 @@ language="en"
 license="Copyrighted (All rights reserved)"
 
 # Up to 5 total tags, quoted, and space separated
-tags=("Minecraft" "Gaming" "Survival" "BedWars" "PVP")
+tags=("Random")
 
 # --- Stop updating here
 
