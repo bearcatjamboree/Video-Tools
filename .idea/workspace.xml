@@ -4,15 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Minor updates">
-      <change afterPath="$PROJECT_DIR$/BatchMergeImageAndAudio.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MergeImageAndAudio.sh" afterDir="false" />
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Add script to merge image and audio into a video with a single repeating frame.  Also other minor updates">
+      <change afterPath="$PROJECT_DIR$/BatchChangeVideoResolutionWithBlur.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BatchTranslateYouTubePlaylistWithTTS.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChangeVideoResolutionWithBlur.sh" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/checkpoint" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.data-00000-of-00001" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.index" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LBRYUploadVideoFolder.sh" beforeDir="false" afterPath="$PROJECT_DIR$/LBRYUploadVideoFolder.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BatchTranslateYouTubeVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/BatchTranslateYouTubeVideo.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BatchTranslateYouTubeVideoWithTTS.sh" beforeDir="false" afterPath="$PROJECT_DIR$/BatchTranslateYouTubeVideoWithTTS.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +83,7 @@
       <recent name="$PROJECT_DIR$/_backups" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.Batch Merge Image And Audio">
+  <component name="RunManager" selected="Shell Script.Batch Change Video Resolution With Blur">
     <configuration name="AudioJumpcut" type="ShConfigurationType" folderName="Videos">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -142,6 +144,21 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="Batch Change Video Resolution With Blur" type="ShConfigurationType" folderName="Videos">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/BatchChangeVideoResolutionWithBlur.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="Batch Convert Video Format" type="ShConfigurationType" folderName="Batch">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -191,6 +208,21 @@
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
       <option name="SCRIPT_PATH" value="$PROJECT_DIR$/BatchMergeVideoAndAudio.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="Batch Translate YouTube Playlist With TTS" type="ShConfigurationType" folderName="Batch">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/BatchTranslateYouTubePlaylistWithTTS.sh" />
       <option name="SCRIPT_OPTIONS" value="" />
       <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
       <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -266,6 +298,21 @@
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
       <option name="SCRIPT_PATH" value="$PROJECT_DIR$/ChangeVideoAspectRatio.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="Change Video Resolution With Blur" type="ShConfigurationType" folderName="Videos">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/ChangeVideoResolutionWithBlur.sh" />
       <option name="SCRIPT_OPTIONS" value="" />
       <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
       <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -907,6 +954,7 @@
       <item itemvalue="Shell Script.Batch Merge Video And Audio" />
       <item itemvalue="Shell Script.Batch Merge Image And Audio" />
       <item itemvalue="Shell Script.Batch Translate YouTube Playlist " />
+      <item itemvalue="Shell Script.Batch Translate YouTube Playlist With TTS" />
       <item itemvalue="Shell Script.Batch Translate YouTube Video" />
       <item itemvalue="Shell Script.Batch Translate YouTube Video With TTS" />
       <item itemvalue="Shell Script.Create Animated GIF" />
@@ -920,8 +968,10 @@
       <item itemvalue="Shell Script.Audio+FaceRecognition" />
       <item itemvalue="Shell Script.Audio+MatchTemplate" />
       <item itemvalue="Shell Script.AudioJumpcut" />
+      <item itemvalue="Shell Script.Batch Change Video Resolution With Blur" />
       <item itemvalue="Shell Script.Burn Subtitles From SRT" />
       <item itemvalue="Shell Script.Change Video Aspect Ratio" />
+      <item itemvalue="Shell Script.Change Video Resolution With Blur" />
       <item itemvalue="Shell Script.Convert Video Format" />
       <item itemvalue="Shell Script.Create Mobile Crossclip" />
       <item itemvalue="Shell Script.Create Pencil Sketch Video" />
@@ -934,8 +984,8 @@
       <item itemvalue="Shell Script.Flip Video Vertically" />
       <item itemvalue="Shell Script.Generate Game Highlights" />
       <item itemvalue="Shell Script.MatchTemplate" />
-      <item itemvalue="Shell Script.Merge Video And Audio" />
       <item itemvalue="Shell Script.Merge Image And Audio" />
+      <item itemvalue="Shell Script.Merge Video And Audio" />
       <item itemvalue="Shell Script.Mirror Video Horizontally" />
       <item itemvalue="Shell Script.Mirror Video Vertically" />
       <item itemvalue="Shell Script.Remove Video Background" />
@@ -958,13 +1008,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
-    </task>
-    <task id="LOCAL-00101" summary="Updated workspace.xml to include new scripts">
-      <created>1653688591200</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1653688591200</updated>
     </task>
     <task id="LOCAL-00102" summary="Replaced youtube-dl with yt-dlp">
       <created>1653688614087</created>
@@ -1302,7 +1345,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655329661069</updated>
     </task>
-    <option name="localTasksCounter" value="150" />
+    <task id="LOCAL-00150" summary="Add script to merge image and audio into a video with a single repeating frame.  Also other minor updates">
+      <created>1655402451268</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1655402451269</updated>
+    </task>
+    <option name="localTasksCounter" value="151" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1318,7 +1368,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Updated audio volume selection to calculate max RMS for audio then compare to frame RMS, rather than use audioop.max since RMS is more like the ear hears audio." />
     <MESSAGE value="Added del(engine) after runAndWait() to help cleanup after the execution.  This appears to have fixed the issue with longer (30+ minute) speech to text conversions failing." />
     <MESSAGE value="Updated Readme.md to indicate issue with spleeter on M1 causing issues with TTS if the spleeter environment is active when attempting to generate speech from text." />
     <MESSAGE value="Changes to engine init so it's only initialized once and global engine references are maintained for all later calls" />
@@ -1343,6 +1392,7 @@
     <MESSAGE value="remove unreferenced variables" />
     <MESSAGE value="Updated screenshot.png and Readme.md" />
     <MESSAGE value="Minor updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor updates" />
+    <MESSAGE value="Add script to merge image and audio into a video with a single repeating frame.  Also other minor updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add script to merge image and audio into a video with a single repeating frame.  Also other minor updates" />
   </component>
 </project>

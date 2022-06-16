@@ -55,7 +55,6 @@ declare -A language_names=(
   ["es"]="Spanish"
 	["en"]="English"
 	["hi"]="Hindi"
-	["id"]="Indonesian"
 	["zh-Hans"]="Mandarin"
 )
 
@@ -131,6 +130,7 @@ fi
 #title=$( yt-dlp --flat-playlist --print "%(title)s" "ytsearch:$url")
 title=$( yt-dlp --flat-playlist --print "%(title)s" "$url")
 title=$(echo $title | sed 's/\"//g')
+title=$(echo $title | sed "s/\'//g")
 title=$(echo $title | sed 's/\#/\_/g')
 title=$(echo $title | sed 's/\!//g')
 echo "Title: $title"
@@ -147,11 +147,11 @@ ext="${video##*.}"
 name="${video%.*}"
 name="${name##*/}"
 
-novocals_file="${name}_novocals.${ext}"
+video_file="${name}_novocals.${ext}"
 srt_file="${name}_novocals.srt"
 wav_file="${name}_novocals.wav"
 
-echo "$novocals_file"
+echo "$video_file"
 echo "$srt_file"
 echo "$wav_file"
 
@@ -165,7 +165,7 @@ do
     mkdir $new_output
 
     # copy vocal only file to language specific folder
-    cp "$output_folder$novocals_file" "$new_output"
+    cp "$output_folder$video_file" "$new_output"
 
     new_novocals_file="$new_output/${name}_novocals.${ext}"
     subtitled_file="$new_output/${name}_novocals_subtitled.${ext}"
