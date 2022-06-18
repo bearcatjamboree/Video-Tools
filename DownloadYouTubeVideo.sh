@@ -53,6 +53,7 @@ fi
 url="${url##*v=}"
 url="${url##*/}"
 video_id="${url%&*}"
+video_id=$(echo $video_id | sed 's/^-/\\-/g')
 
 echo "video_id = $video_id"
 

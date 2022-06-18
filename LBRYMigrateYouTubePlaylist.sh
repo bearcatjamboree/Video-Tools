@@ -50,7 +50,7 @@ language="en"
 license="Copyrighted (All rights reserved)"
 
 # Up to 5 total tags, quoted, and space separated
-tags=("Minecraft" "Gaming" "Survival" "BedWars" "PVP")
+tags=("Minecraft" "Gaming" "Survival" "BedWars" "Shorts")
 
 # --- Stop updating here
 
@@ -114,6 +114,7 @@ do
 
   IFS="," read -r title id <<< "$line"
   id=$(echo $id | sed 's/\"//g')
+  id=$(echo $id | sed 's/^-/\\-/g')
 
   url="https://www.youtube.com/watch?v=$id"
 

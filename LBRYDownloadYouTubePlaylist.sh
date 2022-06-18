@@ -91,6 +91,7 @@ do
 
   IFS="," read -r title id <<< "$line"
   id=$(echo $id | sed 's/\"//g')
+  id=$(echo $id | sed 's/^-/\\-/g')
 
   url="https://www.youtube.com/watch?v=$id"
 
