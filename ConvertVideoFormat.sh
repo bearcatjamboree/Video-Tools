@@ -89,4 +89,12 @@ name="${file%.*}"
 ############################
 outfile=$name.$format
 
-ffmpeg -i "$input_file" "$outfile"
+if [[ "$format" == "mp4" ]]; then
+    ffmpeg -i "$input_file" -vcodec libx264 -acodec aac -pix_fmt yuv420p "$outfile"
+elif [[ "$format" == "webm" ]]; then
+    ffmpeg -i "$input_file" -c:v libvpx -crf 10 -b:v 1M -c:a libvorbis "$outfile"
+elif [[ "$format" == "ogg" ]]; then
+    ffmpeg -i "$input_file" -codec:v libtheora -qscale:v 7 -codec:a libvorbis -qscale:a 5 "$outfile"
+else
+    ffmpeg -i "$input_file" "$outfile"
+fi
