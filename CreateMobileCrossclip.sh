@@ -77,7 +77,7 @@ echo "$new_height"
 ###############################################################################
 if [[ "$out_w" == "" ]]; then
     if [[ "$machine" == "Mac" ]]; then
-        out_w=$(osascript -e 'set T to text returned of (display dialog "Enter the width of the _output rectangle: " buttons {"Cancel", "OK"} default button "OK" default answer "400")')
+        out_w=$(osascript -e 'set T to text returned of (display dialog "Enter the width of the _output rectangle: " buttons {"Cancel", "OK"} default button "OK" default answer "720")')
     elif [[ "$machine" == "Linux" ]]; then
         out_w=$(dialog --title "Enter the width of the output rectangle: " --inputbox "out_w:" 8 60)
     elif [[ "$machine" == "Cygwin" ]]; then

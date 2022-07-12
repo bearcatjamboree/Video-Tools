@@ -4,14 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Add SED to put backslash on leading hypens in video IDs to keep yt-dlp from breaking.">
-      <change afterPath="$PROJECT_DIR$/GetYouTubeVideoList.sh" afterDir="false" />
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Updated ConvertVideoFormat.sh to not lose audio coverting to MP4">
+      <change afterPath="$PROJECT_DIR$/ChangeVideoResolutionWithBlackBorders.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResizeVideoByWidth.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TikTokTextToSpeech.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TikTokTextToSpeech.sh" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/checkpoint" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.data-00000-of-00001" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.index" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConvertVideoFormat.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ConvertVideoFormat.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioJumpcut.sh" beforeDir="false" afterPath="$PROJECT_DIR$/AudioJumpcut.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CreateMobileCrossclip.sh" beforeDir="false" afterPath="$PROJECT_DIR$/CreateMobileCrossclip.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GenerateGameHighlights.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateGameHighlights.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ResizeVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ResizeVideoByHeight.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +65,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/cboxgo/PycharmProjects/Video-Tools&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;
   }
 }</component>
   <component name="PyConsoleOptionsProvider">
@@ -80,7 +86,7 @@
       <recent name="$PROJECT_DIR$/_backups" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.Rotate Video Clockwise">
+  <component name="RunManager" selected="Shell Script.Generate Game Highlights">
     <configuration name="AudioJumpcut" type="ShConfigurationType" folderName="Videos">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -295,6 +301,21 @@
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
       <option name="SCRIPT_PATH" value="$PROJECT_DIR$/ChangeVideoAspectRatio.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="Change Video Resolution With Black Borders" type="ShConfigurationType" folderName="Videos">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/ChangeVideoResolutionWithBlackBorders.sh" />
       <option name="SCRIPT_OPTIONS" value="" />
       <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
       <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -831,10 +852,25 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="Resize Video" type="ShConfigurationType" folderName="Videos">
+    <configuration name="Resize Video By Height" type="ShConfigurationType" folderName="Videos">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
-      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/ResizeVideo.sh" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/ResizeVideoByHeight.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="Resize Video By Width" type="ShConfigurationType" folderName="Videos">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/ResizeVideoByWidth.sh" />
       <option name="SCRIPT_OPTIONS" value="" />
       <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
       <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -880,6 +916,21 @@
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
       <option name="SCRIPT_PATH" value="$PROJECT_DIR$/RotateVideoCounterclockwise.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="TikTok Text To Speech" type="ShConfigurationType" folderName="Audio">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/TikTokTextToSpeech.sh" />
       <option name="SCRIPT_OPTIONS" value="" />
       <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
       <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -956,6 +1007,7 @@
       <item itemvalue="Shell Script.Compress Audio File" />
       <item itemvalue="Shell Script.Extract Audio From Video" />
       <item itemvalue="Shell Script.Generate Speech From Text" />
+      <item itemvalue="Shell Script.TikTok Text To Speech" />
       <item itemvalue="Shell Script.Normalize Audio" />
       <item itemvalue="Shell Script.Remove Audio From Video" />
       <item itemvalue="Shell Script.Remove Background Music" />
@@ -966,10 +1018,10 @@
       <item itemvalue="Shell Script.Batch Generate Speech From Text" />
       <item itemvalue="Shell Script.Batch Merge Image And Audio" />
       <item itemvalue="Shell Script.Batch Merge Video And Audio" />
-      <item itemvalue="Shell Script.Batch Translate YouTube Playlist " />
       <item itemvalue="Shell Script.Batch Translate YouTube Playlist With TTS" />
-      <item itemvalue="Shell Script.Batch Translate YouTube Video" />
+      <item itemvalue="Shell Script.Batch Translate YouTube Playlist " />
       <item itemvalue="Shell Script.Batch Translate YouTube Video With TTS" />
+      <item itemvalue="Shell Script.Batch Translate YouTube Video" />
       <item itemvalue="Shell Script.Create Animated GIF" />
       <item itemvalue="Shell Script.Extract Images From Video" />
       <item itemvalue="Shell Script.Generate Video Subtitles" />
@@ -978,11 +1030,12 @@
       <item itemvalue="Shell Script.Download YouTube Playlist for Odysee Import" />
       <item itemvalue="Shell Script.Migrate YouTube Playlist to Odysee" />
       <item itemvalue="Shell Script.Upload Video Folder to Odysee" />
+      <item itemvalue="Shell Script.AudioJumpcut" />
       <item itemvalue="Shell Script.Audio+FaceRecognition" />
       <item itemvalue="Shell Script.Audio+MatchTemplate" />
-      <item itemvalue="Shell Script.AudioJumpcut" />
       <item itemvalue="Shell Script.Burn Subtitles From SRT" />
       <item itemvalue="Shell Script.Change Video Aspect Ratio" />
+      <item itemvalue="Shell Script.Change Video Resolution With Black Borders" />
       <item itemvalue="Shell Script.Change Video Resolution With Blur" />
       <item itemvalue="Shell Script.Convert Video Format" />
       <item itemvalue="Shell Script.Create Mobile Crossclip" />
@@ -1001,7 +1054,8 @@
       <item itemvalue="Shell Script.Mirror Video Horizontally" />
       <item itemvalue="Shell Script.Mirror Video Vertically" />
       <item itemvalue="Shell Script.Remove Video Background" />
-      <item itemvalue="Shell Script.Resize Video" />
+      <item itemvalue="Shell Script.Resize Video By Height" />
+      <item itemvalue="Shell Script.Resize Video By Width" />
       <item itemvalue="Shell Script.Reverse Video" />
       <item itemvalue="Shell Script.Rotate Video Clockwise" />
       <item itemvalue="Shell Script.Rotate Video Counterclockwise" />
@@ -1021,13 +1075,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
-    </task>
-    <task id="LOCAL-00104" summary="Add comments">
-      <created>1653704941837</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1653704941837</updated>
     </task>
     <task id="LOCAL-00105" summary="Add comments">
       <created>1653704960322</created>
@@ -1365,7 +1412,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655580968330</updated>
     </task>
-    <option name="localTasksCounter" value="153" />
+    <task id="LOCAL-00153" summary="Updated ConvertVideoFormat.sh to not lose audio coverting to MP4">
+      <created>1655733756470</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1655733756470</updated>
+    </task>
+    <option name="localTasksCounter" value="154" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1381,7 +1435,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Changes to engine init so it's only initialized once and global engine references are maintained for all later calls" />
     <MESSAGE value="Miscellaneous script changes and addition of a few batch scripts to demonstrate recursively scanning to: burn subittiles, generate TTS, and merge video and audio files.  these files can be modified to suite use needs and help in cases where another conversion might have been unsuccessful" />
     <MESSAGE value="Updated script references in configuration" />
     <MESSAGE value="Added condition to cancel if user input is canceled." />
@@ -1406,6 +1459,7 @@
     <MESSAGE value="Add script to merge image and audio into a video with a single repeating frame.  Also other minor updates" />
     <MESSAGE value="Added script to change resolution and add blur effect." />
     <MESSAGE value="Add SED to put backslash on leading hypens in video IDs to keep yt-dlp from breaking." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add SED to put backslash on leading hypens in video IDs to keep yt-dlp from breaking." />
+    <MESSAGE value="Updated ConvertVideoFormat.sh to not lose audio coverting to MP4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated ConvertVideoFormat.sh to not lose audio coverting to MP4" />
   </component>
 </project>

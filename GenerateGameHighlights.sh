@@ -96,23 +96,26 @@ for filename in $input_folder/*.*; do
     # Construct output file name
     output_name="$output_folder/$name.$ext"
 
-    python3 VideoJumpcutter.py --input_file "$filename" --output_file "$output_name" --audio_method 1 --volume_selection "max" --audio_threshold 0.9 --frame_margin 1800
+    python3 VideoJumpcutter.py --input_file "$filename" --output_file "$output_name" --audio_method 1 --volume_selection "max" --audio_threshold 0.92 --frame_margin 450
 
 done
 
 # Make temp directory
 tmp_dir=$(mktemp -d -t ci-$(date +%Y-%m-%d-%H-%M-%S)-XXXXXXXXXX)
 
-####################################
-# Build list of videos to combine
-####################################
+###########################################################################
+# Standardize the audio frequence and then build list of videos to combine
+###########################################################################
 for filename in $output_folder/*_highlights.*; do
-  echo "file '$filename'" >> $tmp_dir/file_list.txt;
+  file="${filename##*/}"
+  ffmpeg -i $filename -af "aformat=sample_rates=48000" -c:v copy $output_folder/fix_$file
+  mv $output_folder/fix_$file $output_folder/$file
+  echo "file '$output_folder/$file'" >> $tmp_dir/file_list.txt;
 done
 
-######################################
+###########################################################################
 # Combine output files into one video
-######################################
+###########################################################################
 ffmpeg -loglevel error -f concat -safe 0 -i $tmp_dir/file_list.txt -c copy "$output_folder/Highlights.$ext"
 
 # Cleanup
