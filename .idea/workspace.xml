@@ -4,20 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Updated ConvertVideoFormat.sh to not lose audio coverting to MP4">
-      <change afterPath="$PROJECT_DIR$/ChangeVideoResolutionWithBlackBorders.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResizeVideoByWidth.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TikTokTextToSpeech.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TikTokTextToSpeech.sh" afterDir="false" />
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Added a few scripts including a better TTS using TikTok">
+      <change afterPath="$PROJECT_DIR$/MergeAudioFiles.sh" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/checkpoint" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.data-00000-of-00001" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.index" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AudioJumpcut.sh" beforeDir="false" afterPath="$PROJECT_DIR$/AudioJumpcut.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CreateMobileCrossclip.sh" beforeDir="false" afterPath="$PROJECT_DIR$/CreateMobileCrossclip.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GenerateGameHighlights.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateGameHighlights.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ResizeVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ResizeVideoByHeight.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TikTokTextToSpeech.py" beforeDir="false" afterPath="$PROJECT_DIR$/TikTokTextToSpeech.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TikTokTextToSpeech.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TikTokTextToSpeech.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +82,7 @@
       <recent name="$PROJECT_DIR$/_backups" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.Generate Game Highlights">
+  <component name="RunManager" selected="Shell Script.Merge Video And Audio">
     <configuration name="AudioJumpcut" type="ShConfigurationType" folderName="Videos">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -672,6 +668,21 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="Merge Audio Files" type="ShConfigurationType" folderName="Audio">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/MergeAudioFiles.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="Merge Image And Audio" type="ShConfigurationType" folderName="Videos">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -1007,11 +1018,12 @@
       <item itemvalue="Shell Script.Compress Audio File" />
       <item itemvalue="Shell Script.Extract Audio From Video" />
       <item itemvalue="Shell Script.Generate Speech From Text" />
-      <item itemvalue="Shell Script.TikTok Text To Speech" />
+      <item itemvalue="Shell Script.Merge Audio Files" />
       <item itemvalue="Shell Script.Normalize Audio" />
       <item itemvalue="Shell Script.Remove Audio From Video" />
       <item itemvalue="Shell Script.Remove Background Music" />
       <item itemvalue="Shell Script.Remove Vocals" />
+      <item itemvalue="Shell Script.TikTok Text To Speech" />
       <item itemvalue="Shell Script.Batch Burn Subtitles From SRT" />
       <item itemvalue="Shell Script.Batch Change Video Resolution With Blur" />
       <item itemvalue="Shell Script.Batch Convert Video Format" />
@@ -1075,13 +1087,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
-    </task>
-    <task id="LOCAL-00105" summary="Add comments">
-      <created>1653704960322</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1653704960322</updated>
     </task>
     <task id="LOCAL-00106" summary="Updated function list">
       <created>1653704975324</created>
@@ -1419,7 +1424,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655733756470</updated>
     </task>
-    <option name="localTasksCounter" value="154" />
+    <task id="LOCAL-00154" summary="Added a few scripts including a better TTS using TikTok">
+      <created>1657661977780</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1657661977781</updated>
+    </task>
+    <option name="localTasksCounter" value="155" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1435,7 +1447,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Miscellaneous script changes and addition of a few batch scripts to demonstrate recursively scanning to: burn subittiles, generate TTS, and merge video and audio files.  these files can be modified to suite use needs and help in cases where another conversion might have been unsuccessful" />
     <MESSAGE value="Updated script references in configuration" />
     <MESSAGE value="Added condition to cancel if user input is canceled." />
     <MESSAGE value="Added more extensive comments to each script to make easier for end-users to understand script usage." />
@@ -1460,6 +1471,7 @@
     <MESSAGE value="Added script to change resolution and add blur effect." />
     <MESSAGE value="Add SED to put backslash on leading hypens in video IDs to keep yt-dlp from breaking." />
     <MESSAGE value="Updated ConvertVideoFormat.sh to not lose audio coverting to MP4" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated ConvertVideoFormat.sh to not lose audio coverting to MP4" />
+    <MESSAGE value="Added a few scripts including a better TTS using TikTok" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a few scripts including a better TTS using TikTok" />
   </component>
 </project>

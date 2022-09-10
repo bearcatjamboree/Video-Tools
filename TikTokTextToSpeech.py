@@ -62,8 +62,9 @@ def tts(text_speaker: str = "en_us_002", req_text: str = "TikTok Text To Speech"
     req_text = req_text.replace(" ", "+")
     req_text = req_text.replace("&", "and")
 
-    url = f"https://api16-normal-useast5.us.tiktokv.com/media/api/text/speech/invoke/?text_speaker={text_speaker}&req_text={req_text}&speaker_map_type=0"
+    url = f"https://api22-normal-c-useast1a.tiktokv.com/media/api/text/speech/invoke/?text_speaker={text_speaker}&req_text={req_text}&speaker_map_type=0"
 
+    print("url={}".format(url))
     r = requests.post(url)
 
     vstr = [r.json()["data"]["v_str"]][0]
@@ -87,7 +88,9 @@ def tts_batch(text_speaker: str = 'en_us_002', req_text: str = 'TikTok Text to S
     req_text = req_text.replace(" ", "+")
     req_text = req_text.replace("&", "and")
 
-    url = f"https://api16-normal-useast5.us.tiktokv.com/media/api/text/speech/invoke/?text_speaker={text_speaker}&req_text={req_text}&speaker_map_type=0"
+    url = f"https://api22-normal-c-useast1a.tiktokv.com/media/api/text/speech/invoke/?text_speaker={text_speaker}&req_text={req_text}&speaker_map_type=0"
+
+    print("url={}".format(url))
 
     r = requests.post(url)
 

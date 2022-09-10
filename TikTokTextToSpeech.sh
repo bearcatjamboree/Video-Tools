@@ -44,7 +44,7 @@ joined=$(printf ", \"%s\"" $(echo "${voices}" | tr " " "\n" | sort | tr "\n" " "
 if ! [ -f "$input_file" ]; then
     if [[ "$machine" == "Mac" ]]; then
         input_file=$(osascript -e 'tell application (path to frontmost application as text)
-        set input_file to choose file with prompt "Please select an SRT file"
+        set input_file to choose file with prompt "Please select an text file"
         POSIX path of input_file
         end')
     elif [[ "$machine" == "Linux" ]]; then
