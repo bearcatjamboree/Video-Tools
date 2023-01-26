@@ -1,5 +1,7 @@
 # Video Tools
-Python code and shell scripts to help make video editing faster and easier
+Python code and shell scripts to help make video editing faster and easier...
+
+Before using this code please read the project [Disclaimer](Disclaimer.md)
 
 <img src="media/screenshot.png" width="900">
 
