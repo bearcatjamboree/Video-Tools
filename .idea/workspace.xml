@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Updated Readme.md with more functions">
-      <change afterPath="$PROJECT_DIR$/Disclaimer.md" afterDir="false" />
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="updated Readme.md and added Disclamer.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Disclaimer.md" beforeDir="false" afterPath="$PROJECT_DIR$/Disclaimer.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1117,13 +1116,6 @@
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
     </task>
-    <task id="LOCAL-00114" summary="Updated ignore list">
-      <created>1653751629880</created>
-      <option name="number" value="00114" />
-      <option name="presentableId" value="LOCAL-00114" />
-      <option name="project" value="LOCAL" />
-      <updated>1653751629881</updated>
-    </task>
     <task id="LOCAL-00115" summary="Updated workspace.xml">
       <created>1653751646863</created>
       <option name="number" value="00115" />
@@ -1460,7 +1452,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674768877785</updated>
     </task>
-    <option name="localTasksCounter" value="163" />
+    <task id="LOCAL-00163" summary="updated Readme.md and added Disclamer.md">
+      <created>1674770996840</created>
+      <option name="number" value="00163" />
+      <option name="presentableId" value="LOCAL-00163" />
+      <option name="project" value="LOCAL" />
+      <updated>1674770996840</updated>
+    </task>
+    <option name="localTasksCounter" value="164" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1476,7 +1475,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added script to convert folder of audio or video files to a specific new format, and output the translated files to a user specified output folder." />
     <MESSAGE value="Added script to plot audio frames" />
     <MESSAGE value="Updated VideoJumpcutter.py to include option for volume selection.  The supported options are max (default) and rms, which will allow one method or the other for determining what the max and frame volume values are based on.  For some videos, it might be desirable to use rms where high pitches like gun sounds might be better detected using max value instead." />
     <MESSAGE value="Updated Readme.md features list" />
@@ -1501,6 +1499,7 @@
     <MESSAGE value="removed unused imports" />
     <MESSAGE value="removed unused routines" />
     <MESSAGE value="Updated Readme.md with more functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Readme.md with more functions" />
+    <MESSAGE value="updated Readme.md and added Disclamer.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated Readme.md and added Disclamer.md" />
   </component>
 </project>

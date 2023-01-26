@@ -10,7 +10,7 @@ The source code forked from other open source projects will inherit its license.
 
 Any use of external websites (i.e. YouTube, Odysee, TikTok) is simply for demonstration
 purposes and does not imply that such use is in accordance with the terms of use outlined
-by such websites.  It is up to the user to insure that they are using such websites in
-accordance with their terms of use.
+by such websites.  It is up to the end user to insure that they are using such websites 
+in accordance with the terms of use of such websites.
 
 The author of this GitHub project does not offer any warranty to users of this source code.
