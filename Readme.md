@@ -11,56 +11,69 @@ If you find these tools useful then consider watching my other content and subsc
 
 ## Features
 
-1. Audio-level and facial recognition based jump-cutting
-2. Audio-level based jump-cutting
-3. Audio-level and template match based jump-cutting
-4. Burn subtitles from SRT file
-5. Batch convert video format
-6. Batch generate speech from text
-7. Batch merge video and audio
-8. Burn subtitles from SRT
-9. Change video aspect ratio
-10. Change volume amount
-11. Compress audio file
-12. Convert video format
-13. Create animated GIF
-14. Create mobile crossclip
-15. Create pencil sketch video
-16. Create vintage video
-17. Crop video
-18. Cut video start to duration
-19. Cut video start to endTime
-20. Download YouTube video
-21. Extract audio from video
-22. Extract images from video
-23. Facial recognition base jump-cutting
-24. Flip video horizontally
-25. Flip video vertically
-26. Generate game highlights
-27. Generate speech from text
-28. Generate video subtitles
-29. Jump-cutting based on template matching
-30. Merge video and audio
-31. Mirror video horizontally
-32. Mirror video vertically
-33. Plot sound frames
-34. Plot video frames
-35. Remove audio from video
-36. Remove background music
-37. Remove video background
-38. Remove vocals
-39. Resize video
-40. Reverse video
-41. Rotate video clockwise
-42. Rotate video counterclockwise
-43. Translate YouTube description
-44. Translate YouTube playlist
-45. Translate YouTube transcript
-46. Translate YouTube video
-47. Zoom-pan cut video
-48. Download YouTube Playlist for Odysee Import
-49. Migrate YouTube Playlist to Odysee
-50. Upload Video Folder to Odysee
+  1. Audio Face Recognition
+  2. Audio Jumpcut
+  3. Audio Match Template
+  4. Batch Burn Subtitles From SRT
+  5. Batch Change Video Resolution With Blur
+  6. Batch Convert Video Format
+  7. Batch Generate Speech From Text
+  8. Batch Merge Image And Audio
+  9. Batch Merge Video And Audio
+ 10. Batch Translate YouTube Playlist
+ 11. Batch Translate YouTube Playlist With TTS
+ 12. Batch Translate YouTube Video
+ 13. Batch Translate YouTube Video With TTS
+ 14. Burn Subtitles From SRT
+ 15. Change Video Aspect Ratio
+ 16. Change Video Resolution With Black Borders
+ 17. Change Video Resolution With Blur
+ 18. Change Volume Amount
+ 19. Compress Audio File
+ 20. Convert Video Format
+ 21. Create Animated G I F
+ 22. Create Mobile Crossclip
+ 23. Create Pencil Sketch Video
+ 24. Create Vintage Video
+ 25. Crop Video
+ 26. Cut Video Start To Duration
+ 27. Cut Video Start To End Time
+ 28. Download You Tube Video
+ 29. Extract Audio From Video
+ 30. Extract Images From Video
+ 31. Face Recognition
+ 32. Face Swap
+ 33. Fix YouTube Subtitles
+ 34. Flip Video Horizontally
+ 35. Flip Video Vertically
+ 36. Generate Game Highlights
+ 37. Generate Speech From Text
+ 38. Generate Video Subtitles
+ 39. Get YouTube Video List
+ 40. LBRY Download YouTube Playlist
+ 41. LBRY Migrate YouTube Playlist
+ 42. LBRY Upload Video Folder
+ 43. Match Template
+ 44. Merge Audio Files
+ 45. Merge Image And Audio
+ 46. Merge Multiple Videos
+ 47. Merge Video And Audio
+ 48. Mirror Video Horizontally
+ 49. Mirror Video Vertically
+ 50. Normalize Audio
+ 51. Plot Sound Frames
+ 52. Plot Video Frames
+ 53. Remove Audio From Video
+ 54. Remove Video Background
+ 55. Resize Video By Height
+ 56. Resize Video By Width
+ 57. Reverse Video
+ 58. Rotate Video Clockwise
+ 59. Rotate Video Counterclockwise
+ 60. TikTok Text To Speech (from text file)
+ 61. Translate You Tube Description
+ 62. Translate You Tube Transcript
+ 63. Zoompan Cut Video
  
 ## Operating Systems
 
@@ -81,7 +94,7 @@ However, PowerShell (powershell) & Command Prompt (cmd.exe) do not support the s
 
 1. Python 3+ - Python is an interpreted, object-oriented, high-level programming language with dynamic semantics.
 
-2. Imutils - A series of convenience functions to make basic image processing functions such as translation, rotation, resizing, skeletonization, displaying Matplotlib images, sorting contours, detecting edges, and much more easier with OpenCV and both Python 2.7 and Python 3.
+2. Imutils - A series of convenience functions to make basic image processing functions such as translation, rotation, resizing, skeletonization, displaying Matplotlib images, sorting contours, detecting edges, and much easier with OpenCV and both Python 2.7 and Python 3.
 
 3. Numpy - the fundamental package for array computing with Python.
 
@@ -152,7 +165,7 @@ For M1 installations, to use the RemoveVocals.sh or RemoveBackgroundMusic.sh you
 
 Note, this is only if you called the separate environment "spleeter."
 
-If you attempt to use PyTTSx3 (text-to-speech) while the spleeter environment is active then you may have issues translating text-to-speech with MacOS NSS.  This was observed to be an issue with MacOS on M1 though occurences was somewhat random.
+If you attempt to use PyTTSx3 (text-to-speech) while the spleeter environment is active then you may have issues translating text-to-speech with macOS NSS.  This was observed to be an issue with macOS on M1 though occurrences was somewhat random.
 
 If you found these tools helpful then please consider subscribing to one of my YouTube channels:
 
