@@ -48,7 +48,8 @@ language="en"
 license="Copyrighted (All rights reserved)"
 
 # Up to 5 total tags, quoted, and space separated
-tags=("Minecraft" "Gaming" "Survival" "BedWars" "Shorts")
+#tags=("Minecraft" "Gaming" "Survival" "BedWars" "Games")
+tags=("Minecraft" "Gaming" "Survival" "Racing" "Shooter")
 
 # --- Stop updating here
 
@@ -79,12 +80,12 @@ fi
 #
 # Batch to load the exported videos and descriptions
 # full option list:
-# python3 -m lbry_batch_uploader file_directory channel_name
+# python -m lbry_batch_uploader file_directory channel_name
 #     [--optimize-file] [--port PORT] [--bid BID] [--fee-amount FEE_AMOUNT]
 #     [--tags TAGS [TAGS ...]] [--languages L [L ...]] [--license LICENSE]
 #     [--license-url LICENSE_URL]
 #
-python3 -m lbry_batch_uploader \
+python -m lbry_batch_uploader \
     "$output_folder" \
     "@${channel}" \
     --tags ${tags} \

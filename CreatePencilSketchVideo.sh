@@ -68,4 +68,4 @@ name="${file%.*}"
 outfile="$name"_pencilsketch
 newoutfile=$outfile.$ext
 
-python3 CreatePencilSketchVideo.py --input_file "$input_file" --output_file "$newoutfile"
+python CreatePencilSketchVideo.py --input_file "$input_file" --output_file "$newoutfile"

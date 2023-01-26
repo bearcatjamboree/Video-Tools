@@ -96,7 +96,7 @@ for filename in $input_folder/*.*; do
     # Construct output file name
     output_name="$output_folder/$name.$ext"
 
-    python3 VideoJumpcutter.py --input_file "$filename" --output_file "$output_name" --audio_method 1 --volume_selection "max" --audio_threshold 0.92 --frame_margin 450
+    python VideoJumpcutter.py --input_file "$filename" --output_file "$output_name" --audio_method 1 --volume_selection "max" --audio_threshold 0.90 --frame_margin 600
 
 done
 

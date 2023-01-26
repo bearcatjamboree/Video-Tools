@@ -61,7 +61,7 @@ parser = argparse.ArgumentParser(
 parser.add_argument('--input_file', type=str, help='The video file you want to generate subtitles for')
 parser.add_argument('--output_srt', type=str, help="the _output location to write the subtitle file")
 parser.add_argument('--output_video', type=str, help="the _output location to write video with the subtitles added")
-parser.add_argument('--subtitle_seconds', type=int, default=2, help="the number of seconds of audio to transcribe and display at a time")
+parser.add_argument('--subtitle_seconds', type=int, default=1, help="the number of seconds of audio to transcribe and display at a time")
 parser.add_argument('--subtitle_font', type=str, default="Bangers", help="Default font name to use in generated subtitles")
 parser.add_argument('--subtitle_fontsize', type=int, default=48, help="Default font size to use in generated subtitles")
 parser.add_argument('--subtitle_fontcolor', type=str, default="ffffff", help="Default color for generated subtitles")
@@ -117,6 +117,7 @@ with tempfile.TemporaryDirectory() as tmpdirname:
             try:
                 subtitle_number += 1
                 rec = r.recognize_google(audio, language=args.language)
+                #rec = r.recognize_sphinx(audio, language=args.language)
                 #fh.write(rec + ".\n")
                 fh.write("{}\n".format(subtitle_number))
                 start_time = time.strftime('%H:%M:%S', time.gmtime(i*args.subtitle_seconds))

@@ -60,14 +60,14 @@ input_folder="${input_folder%/}"
 ###################################
 IFS=$'\n'
 
-for input_video in $(find $input_folder -name '*_novocals_subtitled.mp4'); do
+for input_video in $(find $input_folder -name '*.mp4'); do
 
     echo "input video: ${input_video}"
 
     folder_path="${input_video%/*}"
     #echo "folder path: $folder_path"
 
-    input_audio=$(find "${folder_path}" -name '*.wav')
+    input_audio=$(find "${folder_path}" -name '*.mp3')
     echo "input audio: ${input_audio}"
 
     if ! [[ $input_audio == "" ]]; then
@@ -75,7 +75,7 @@ for input_video in $(find $input_folder -name '*_novocals_subtitled.mp4'); do
         #echo "$input_audio"
 
         # Construct output file name
-        output_video="${input_video%.*}_merged.mp4"
+        output_video="${input_video%.*}_short .mp4"
         echo "output video $output_video"
 
         if ! [ -f "$output_video" ]; then

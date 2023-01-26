@@ -62,4 +62,4 @@ file=$(echo "$input_file"|tr -d '\\')
 outfile="${file%.*}"
 pngfile=$outfile.png
 
-python3 PlotSoundFrames.py --input_file="$input_file" --output_file "$pngfile"
+python PlotSoundFrames.py --input_file="$input_file" --output_file "$pngfile"

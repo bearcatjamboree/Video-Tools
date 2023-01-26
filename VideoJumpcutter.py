@@ -473,7 +473,7 @@ def main():
         # Copy the video and audio to separate temporary files.  Re-encode the video in case there are any frame issues.
         # This can help prevent keyframe video/audio sync issues.
         #################################################################################################################
-        command = "ffmpeg -i '{}' -c:a copy -c:v libx264 -an {}/video.mp4 -vn {}/audio.wav".format(args.input_file, tmpdirname, tmpdirname)
+        command = "ffmpeg -i \"{}\" -c:a copy -c:v libx264 -an {}/video.mp4 -vn {}/audio.wav".format(args.input_file, tmpdirname, tmpdirname)
         #print(command)
         subprocess.call(command, shell=True)
 
@@ -647,7 +647,7 @@ def main():
 
             print("Producing Final Edited Video...")
 
-            command = "ffmpeg -r {} -i {}/videoNew.mp4 -i {}/audioNew.wav -strict -2 '{}'".format(str(fvs.fps), tmpdirname, tmpdirname, args.output_file)
+            command = "ffmpeg -r {} -i {}/videoNew.mp4 -i {}/audioNew.wav -strict -2 \"{}\"".format(str(fvs.fps), tmpdirname, tmpdirname, args.output_file)
             print(command)
             subprocess.call(command, shell=True)
 

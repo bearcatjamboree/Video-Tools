@@ -56,7 +56,7 @@ counter = 1
 translator = Translator()
 excludes = ['[Music]', '[Laughter]', '[Applause]']
 
-# map for cases wehre youtube_transcript_api and googletrans language don't match
+# map for cases where youtube_transcript_api and googletrans language don't match
 lang_map = {'zh-Hans': 'zh-cn', 'zh-Hant': 'zh-tw', 'fil': 'tl'}
 
 if args.language in lang_map:
@@ -94,7 +94,7 @@ for i in range(len(desired_transcript)):
     start_time = getDateString(transcript['start'])
     end_time = getDateString(transcript['duration']+transcript['start'])
 
-    # Set end time to the start of the next record if: one exists and its not an excluded subtitle
+    # Set end time to the start of the next record if: one exists and it's not an excluded subtitle
     for j in range(i + 1, len(desired_transcript)):
         if desired_transcript[j]['text'] in trans_excludes:
             continue

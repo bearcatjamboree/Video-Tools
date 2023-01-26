@@ -68,4 +68,4 @@ name="${file%.*}"
 outfile="$name"_nobackground
 output_file=$outfile.mp4
 
-python3 RemoveVideoBackground.py --input_file "$input_file" --output_file "$output_file"
+python RemoveVideoBackground.py --input_file "$input_file" --output_file "$output_file"

@@ -71,4 +71,4 @@ outfile="$name"_subtitled
 output_video=$outfile.mp4
 
 
-python3 GenerateVideoSubtitles.py --input_file "$input_file" --output_srt "$output_srt" --output_video "$output_video"
+python GenerateVideoSubtitles.py --input_file "$input_file" --output_srt "$output_srt" --output_video "$output_video"

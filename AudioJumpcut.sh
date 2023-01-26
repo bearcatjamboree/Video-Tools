@@ -67,6 +67,13 @@ name="${file%.*}"
 outfile="$name"_highlights
 newoutfile=$outfile.$ext
 
-#python3 VideoJumpcutter.py --input_file "$input_file" --output_file "$newoutfile" --audio_method 1 --volume_selection "rms" --audio_threshold 0.5 --frame_margin 600
-#python3 VideoJumpcutter.py --input_file "$input_file" --output_file "$newoutfile" --audio_method 1 --volume_selection "max" --audio_threshold 0.90 --frame_margin 600
-python3 VideoJumpcutter.py --input_file "$input_file" --output_file "$newoutfile" --audio_method 1 --volume_selection "max" --audio_threshold 0.01 --frame_margin 60
+#python VideoJumpcutter.py --input_file "$input_file" --output_file "$newoutfile" --audio_method 1 --volume_selection "rms" --audio_threshold 0.1 --frame_margin 60
+python VideoJumpcutter.py --input_file "$input_file" --output_file "$newoutfile" --audio_method 1 --volume_selection "rms" --audio_threshold 0.2 --frame_margin 60
+
+
+#python VideoJumpcutter.py --input_file "$input_file" --output_file "$newoutfile" --audio_method 1 --volume_selection "max" --audio_threshold 0.01 --frame_margin 60
+#python VideoJumpcutter.py --input_file "$input_file" --output_file "$newoutfile" --audio_method 1 --volume_selection "max" --audio_threshold 0.75 --frame_margin 600
+#python VideoJumpcutter.py --input_file "$input_file" --output_file "$newoutfile" --audio_method 1 --volume_selection "rms" --audio_threshold 0.2 --frame_margin 600
+
+#python VideoJumpcutter.py --input_file "$input_file" --output_file "$newoutfile" --audio_method 1 --volume_selection "rms" --audio_threshold 0.40 --frame_margin 150
+#python VideoJumpcutter.py --input_file "$input_file" --output_file "$newoutfile" --audio_method 1 --volume_selection "rms" --audio_threshold 0.7 --frame_margin 60

@@ -91,8 +91,8 @@ for filename in $(find $input_folder -name '*.srt'); do
     voice=${voices[$language]}
 
   if ! [ -f "$output_file" ]; then
-    echo python3 GenerateSpeechFromText.py --input_file "$filename" --output_file "$output_file" --voice "$voice"
-    python3 GenerateSpeechFromText.py --input_file "$filename" --output_file "$output_file" --voice "$voice"
+    echo python GenerateSpeechFromText.py --input_file "$filename" --output_file "$output_file" --voice "$voice"
+    python GenerateSpeechFromText.py --input_file "$filename" --output_file "$output_file" --voice "$voice"
     # Kill to prevent hangs from mullitple calls
     killall com.apple.speech.speechsynthesisd
   else

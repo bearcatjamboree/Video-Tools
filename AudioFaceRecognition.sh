@@ -24,36 +24,61 @@ case "${unameOut}" in
 esac
 
 echo "${machine}"
-input_file="$1"
+input_video="$1"
+input_image="$2"
 
 ##############################################################################
 # Check for file was passed.  Show open file dialog if no argument and on Mac
 ###############################################################################
-if ! [ -f "$input_file" ]; then
+if ! [ -f "$input_video" ]; then
     if [[ "$machine" == "Mac" ]]; then
-        input_file=$(osascript -e 'tell application (path to frontmost application as text)
-        set input_file to choose file with prompt "Please choose a file to process"
-        POSIX path of input_file
+        input_video=$(osascript -e 'tell application (path to frontmost application as text)
+        set input_video to choose file with prompt "Please choose a file to process"
+        POSIX path of input_video
         end')
     elif [[ "$machine" == "Linux" ]]; then
-        input_file=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
+        input_video=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
     elif [[ "$machine" == "Cygwin" ]]; then
-        input_file=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
-    elif [ "$#" -ne 1 ] || ! [ -f "$input_file" ]; then
-        echo "Usage: $0 input_file"
+        input_video=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
+    elif [ "$#" -ne 1 ] || ! [ -f "$input_video" ]; then
+        echo "Usage: $0 input_video"
         exit 1
     fi
 fi
 
-if ! [ -f "$input_file" ]; then
-  echo "Usage: $0 input_file"
+if ! [ -f "$input_video" ]; then
+  echo "Usage: $0 input_video"
+  exit 1
+fi
+
+##############################################################################
+# Check for file was passed.  Show open file dialog if no argument and on Mac
+###############################################################################
+if ! [ -f "$input_image" ]; then
+    if [[ "$machine" == "Mac" ]]; then
+        input_image=$(osascript -e 'tell application (path to frontmost application as text)
+        set input_image to choose file with prompt "Please choose a file to process"
+        POSIX path of input_image
+        end')
+    elif [[ "$machine" == "Linux" ]]; then
+        input_image=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
+    elif [[ "$machine" == "Cygwin" ]]; then
+        input_image=$(dialog --title "Choose a file" --stdout --title "Please choose a file to process" --fselect /tmp/ 14 48)
+    elif [ "$#" -ne 1 ] || ! [ -f "$input_image" ]; then
+        echo "Usage: $0 input_image"
+        exit 1
+    fi
+fi
+
+if ! [ -f "$input_image" ]; then
+  echo "Usage: $0 input_image"
   exit 1
 fi
 
 ####################################
 # Remove backlashes from filepaths
 ####################################
-file=$(echo "$input_file"|tr -d '\\')
+file=$(echo "$input_video"|tr -d '\\')
 
 ####################################
 # Separate file name from extension
@@ -64,7 +89,7 @@ name="${file%.*}"
 ############################
 # Get file path information
 ############################
-outfile="$name"_highlights
+outfile="$name"_faceswap
 newoutfile=$outfile.$ext
 
-python3 VideoJumpcutter.py --input_file "$input_file" --output_file "$newoutfile" --audio_method 1 --video_method 2
+python VideoJumpcutter.py --input_video "$input_video" --input_image "$input_image" --output_file "$newoutfile"

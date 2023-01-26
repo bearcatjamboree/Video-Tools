@@ -67,4 +67,4 @@ name="${file%.*}"
 outfile="$name"_highlights
 newoutfile=$outfile.$ext
 
-python3 VideoJumpcutter.py --input_file "$input_file" --output_file "$newoutfile" --video_method 2
+python VideoJumpcutter.py --input_file "$input_file" --output_file "$newoutfile" --video_method 2

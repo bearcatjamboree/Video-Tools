@@ -17,8 +17,8 @@
 #   NOTE
 #     change strings below to your default: font, font size, and font color
 #================================================================================
-subtitle_font="Bangers"
-subtitle_fontsize=30 #48
+subtitle_font="Komika Axis"
+subtitle_fontsize=48
 subtitle_fontcolor="ffffff"
 
 unameOut="$(uname -s)"
@@ -99,5 +99,5 @@ name="${file%.*}"
 outfile="$name"_subtitled
 output_video=$outfile.$ext
 
-
-ffmpeg -i "$video_file" -vf "subtitles=\'$srt_file\':force_style='FontName=$subtitle_font,Fontsize=$subtitle_fontsize,PrimaryColour=&H$subtitle_fontcolor&'" "$output_video"
+#ffmpeg -i "$video_file" -vf "subtitles=\'$srt_file\':force_style='FontName=$subtitle_font,Fontsize=$subtitle_fontsize,PrimaryColour=&H$subtitle_fontcolor&'" "$output_video"
+ffmpeg -i "$video_file" -filter_complex "subtitles=\'$srt_file\':force_style='FontName=$subtitle_font,Fontsize=$subtitle_fontsize,PrimaryColour=&H$subtitle_fontcolor&'" "$output_video"

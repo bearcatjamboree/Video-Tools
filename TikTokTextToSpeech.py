@@ -1,6 +1,7 @@
-import requests, base64, random, argparse, os, playsound, time
+import requests, base64, random, argparse, os, json, playsound
 
 # This source for this python script can be found at: https://github.com/oscie57/tiktok-voice
+tiktok_api = "https://tiktok-tts.weilnet.workers.dev/api/generation"
 
 voices = [
     # DISNEY VOICES
@@ -58,25 +59,19 @@ voices = [
 
 def tts(text_speaker: str = "en_us_002", req_text: str = "TikTok Text To Speech", filename: str = 'voice.mp3',
         play: bool = False):
-    req_text = req_text.replace("+", "plus")
-    req_text = req_text.replace(" ", "+")
-    req_text = req_text.replace("&", "and")
+    req_text = req_text.replace("+", " plus ")
+    req_text = req_text.replace("&", " and ")
+    req_text = req_text.replace("%", " percent ")
 
-    url = f"https://api22-normal-c-useast1a.tiktokv.com/media/api/text/speech/invoke/?text_speaker={text_speaker}&req_text={req_text}&speaker_map_type=0"
+    payload = {"text": req_text, "voice": text_speaker}
+    r = requests.post(tiktok_api, json=payload)
 
-    print("url={}".format(url))
-    r = requests.post(url)
-
-    vstr = [r.json()["data"]["v_str"]][0]
-    msg = [r.json()["message"]][0]
-
-    b64d = base64.b64decode(vstr)
+    b64 = json.loads(r.text)['data']
+    b64d = base64.b64decode(b64)
 
     out = open(filename, "wb")
     out.write(b64d)
     out.close()
-
-    print(f"\n{msg.capitalize()}")
 
     if play is True:
         playsound.playsound(filename)
@@ -84,26 +79,19 @@ def tts(text_speaker: str = "en_us_002", req_text: str = "TikTok Text To Speech"
 
 
 def tts_batch(text_speaker: str = 'en_us_002', req_text: str = 'TikTok Text to Speech', filename: str = 'voice.mp3'):
-    req_text = req_text.replace("+", "plus")
-    req_text = req_text.replace(" ", "+")
-    req_text = req_text.replace("&", "and")
+    req_text = req_text.replace("+", " plus ")
+    req_text = req_text.replace("&", " and ")
+    req_text = req_text.replace("%", " percent ")
 
-    url = f"https://api22-normal-c-useast1a.tiktokv.com/media/api/text/speech/invoke/?text_speaker={text_speaker}&req_text={req_text}&speaker_map_type=0"
+    payload = {"text": req_text, "voice": text_speaker}
+    r = requests.post(tiktok_api, json=payload)
 
-    print("url={}".format(url))
-
-    r = requests.post(url)
-
-    vstr = [r.json()["data"]["v_str"]][0]
-    msg = [r.json()["message"]][0]
-
-    b64d = base64.b64decode(vstr)
+    b64 = json.loads(r.text)['data']
+    b64d = base64.b64decode(b64)
 
     out = open(filename, "wb")
     out.write(b64d)
     out.close()
-
-    print(f"\n{msg.capitalize()}")
 
 
 def batch_create(filename: str = 'voice.mp3'):

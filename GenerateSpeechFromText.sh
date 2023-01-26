@@ -108,4 +108,4 @@ name="${file%.*}"
 ############################
 output_file=$name.wav
 
-python3 GenerateSpeechFromText.py --input_file "$input_file" --output_file "$output_file" --voice "$voice" --handle_length 2
+python GenerateSpeechFromText.py --input_file "$input_file" --output_file "$output_file" --voice "$voice" --handle_length 2
