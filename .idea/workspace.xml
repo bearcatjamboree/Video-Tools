@@ -4,43 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Added a few scripts including a better TTS using TikTok">
-      <change afterPath="$PROJECT_DIR$/FaceSwap.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FaceSwap.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FixYouTubeSubtitles.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FixYouTubeSubtitles.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MergeMultipleVideos.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/green_screen_1080.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/checkpoint" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.data-00000-of-00001" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.index" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pretrained_models/2stems/model.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Video-Tools.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Video-Tools.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Add a few script corrections and created a python/shell script combination for fixing YouTube generated subtitles.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AudioFaceRecognition.sh" beforeDir="false" afterPath="$PROJECT_DIR$/AudioFaceRecognition.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AudioJumpcut.sh" beforeDir="false" afterPath="$PROJECT_DIR$/AudioJumpcut.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AudioMatchTemplate.sh" beforeDir="false" afterPath="$PROJECT_DIR$/AudioMatchTemplate.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BatchGenerateSpeechFromText.sh" beforeDir="false" afterPath="$PROJECT_DIR$/BatchGenerateSpeechFromText.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BatchMergeVideoAndAudio.sh" beforeDir="false" afterPath="$PROJECT_DIR$/BatchMergeVideoAndAudio.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BurnSubtitlesFromSRT.sh" beforeDir="false" afterPath="$PROJECT_DIR$/BurnSubtitlesFromSRT.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CreatePencilSketchVideo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/CreatePencilSketchVideo.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FaceRecognition.sh" beforeDir="false" afterPath="$PROJECT_DIR$/FaceRecognition.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GenerateGameHighlights.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateGameHighlights.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GenerateSpeechFromText.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateSpeechFromText.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GenerateVideoSubtitles.py" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateVideoSubtitles.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GenerateVideoSubtitles.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateVideoSubtitles.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LBRYMigrateYouTubePlaylist.sh" beforeDir="false" afterPath="$PROJECT_DIR$/LBRYMigrateYouTubePlaylist.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LBRYUploadVideoFolder.sh" beforeDir="false" afterPath="$PROJECT_DIR$/LBRYUploadVideoFolder.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MatchTemplate.sh" beforeDir="false" afterPath="$PROJECT_DIR$/MatchTemplate.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlotSoundFrames.sh" beforeDir="false" afterPath="$PROJECT_DIR$/PlotSoundFrames.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RemoveVideoBackground.sh" beforeDir="false" afterPath="$PROJECT_DIR$/RemoveVideoBackground.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TikTokTextToSpeech.py" beforeDir="false" afterPath="$PROJECT_DIR$/TikTokTextToSpeech.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TranslateYouTubeTranscript.py" beforeDir="false" afterPath="$PROJECT_DIR$/TranslateYouTubeTranscript.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TranslateYouTubeTranscript.sh" beforeDir="false" afterPath="$PROJECT_DIR$/TranslateYouTubeTranscript.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VideoJumpcutter.py" beforeDir="false" afterPath="$PROJECT_DIR$/VideoJumpcutter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FixYouTubeSubtitles.py" beforeDir="false" afterPath="$PROJECT_DIR$/FixYouTubeSubtitles.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1150,13 +1116,6 @@
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
     </task>
-    <task id="LOCAL-00107" summary="Updated function list">
-      <created>1653705016766</created>
-      <option name="number" value="00107" />
-      <option name="presentableId" value="LOCAL-00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1653705016766</updated>
-    </task>
     <task id="LOCAL-00108" summary="updated ignore list">
       <created>1653705034600</created>
       <option name="number" value="00108" />
@@ -1493,7 +1452,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662835232779</updated>
     </task>
-    <option name="localTasksCounter" value="156" />
+    <task id="LOCAL-00156" summary="Add a few script corrections and created a python/shell script combination for fixing YouTube generated subtitles.">
+      <created>1674754559919</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1674754559919</updated>
+    </task>
+    <option name="localTasksCounter" value="157" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1509,7 +1475,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Updated script references in configuration" />
     <MESSAGE value="Added condition to cancel if user input is canceled." />
     <MESSAGE value="Added more extensive comments to each script to make easier for end-users to understand script usage." />
     <MESSAGE value="Updated readme" />
@@ -1534,6 +1499,7 @@
     <MESSAGE value="Add SED to put backslash on leading hypens in video IDs to keep yt-dlp from breaking." />
     <MESSAGE value="Updated ConvertVideoFormat.sh to not lose audio coverting to MP4" />
     <MESSAGE value="Added a few scripts including a better TTS using TikTok" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a few scripts including a better TTS using TikTok" />
+    <MESSAGE value="Add a few script corrections and created a python/shell script combination for fixing YouTube generated subtitles." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a few script corrections and created a python/shell script combination for fixing YouTube generated subtitles." />
   </component>
 </project>

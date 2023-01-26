@@ -4,11 +4,7 @@
 import argparse
 import os
 from shutil import rmtree
-import speech_recognition as sr
 
-import subprocess
-import time
-import tempfile
 
 #################################################################################################
 #  Create folder routine
