@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="updated Readme.md">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -1116,13 +1115,6 @@
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
     </task>
-    <task id="LOCAL-00118" summary="Updated audio volume selection to calculate max RMS for audio then compare to frame RMS, rather than use audioop.max since RMS is more like the ear hears audio.">
-      <created>1653832275605</created>
-      <option name="number" value="00118" />
-      <option name="presentableId" value="LOCAL-00118" />
-      <option name="project" value="LOCAL" />
-      <updated>1653832275605</updated>
-    </task>
     <task id="LOCAL-00119" summary="Added del(engine) after runAndWait() to help cleanup after the execution.  This appears to have fixed the issue with longer (30+ minute) speech to text conversions failing.">
       <created>1653850037433</created>
       <option name="number" value="00119" />
@@ -1459,7 +1451,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674771947143</updated>
     </task>
-    <option name="localTasksCounter" value="167" />
+    <task id="LOCAL-00167" summary="updated Readme.md">
+      <created>1674772018727</created>
+      <option name="number" value="00167" />
+      <option name="presentableId" value="LOCAL-00167" />
+      <option name="project" value="LOCAL" />
+      <updated>1674772018727</updated>
+    </task>
+    <option name="localTasksCounter" value="168" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
