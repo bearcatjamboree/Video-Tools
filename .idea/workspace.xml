@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Add a few script corrections and created a python/shell script combination for fixing YouTube generated subtitles.">
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="removed unused imports">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FixYouTubeSubtitles.py" beforeDir="false" afterPath="$PROJECT_DIR$/FixYouTubeSubtitles.py" afterDir="false" />
     </list>
@@ -1116,13 +1116,6 @@
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
     </task>
-    <task id="LOCAL-00108" summary="updated ignore list">
-      <created>1653705034600</created>
-      <option name="number" value="00108" />
-      <option name="presentableId" value="LOCAL-00108" />
-      <option name="project" value="LOCAL" />
-      <updated>1653705034600</updated>
-    </task>
     <task id="LOCAL-00109" summary="minor spelling changes">
       <created>1653705066686</created>
       <option name="number" value="00109" />
@@ -1459,7 +1452,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674754559919</updated>
     </task>
-    <option name="localTasksCounter" value="157" />
+    <task id="LOCAL-00157" summary="removed unused imports">
+      <created>1674755827379</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1674755827380</updated>
+    </task>
+    <option name="localTasksCounter" value="158" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1475,7 +1475,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added condition to cancel if user input is canceled." />
     <MESSAGE value="Added more extensive comments to each script to make easier for end-users to understand script usage." />
     <MESSAGE value="Updated readme" />
     <MESSAGE value="Added script to convert folder of audio or video files to a specific new format, and output the translated files to a user specified output folder." />
@@ -1500,6 +1499,7 @@
     <MESSAGE value="Updated ConvertVideoFormat.sh to not lose audio coverting to MP4" />
     <MESSAGE value="Added a few scripts including a better TTS using TikTok" />
     <MESSAGE value="Add a few script corrections and created a python/shell script combination for fixing YouTube generated subtitles." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a few script corrections and created a python/shell script combination for fixing YouTube generated subtitles." />
+    <MESSAGE value="removed unused imports" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed unused imports" />
   </component>
 </project>
