@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="updated Readme.md">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -1115,13 +1116,6 @@
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
     </task>
-    <task id="LOCAL-00119" summary="Added del(engine) after runAndWait() to help cleanup after the execution.  This appears to have fixed the issue with longer (30+ minute) speech to text conversions failing.">
-      <created>1653850037433</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1653850037434</updated>
-    </task>
     <task id="LOCAL-00120" summary="Updated Readme.md to indicate issue with spleeter on M1 causing issues with TTS if the spleeter environment is active when attempting to generate speech from text.">
       <created>1654189222310</created>
       <option name="number" value="00120" />
@@ -1458,7 +1452,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674772018727</updated>
     </task>
-    <option name="localTasksCounter" value="168" />
+    <task id="LOCAL-00168" summary="updated Readme.md">
+      <created>1674772032994</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
+      <option name="project" value="LOCAL" />
+      <updated>1674772032994</updated>
+    </task>
+    <option name="localTasksCounter" value="169" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
