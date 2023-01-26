@@ -13,4 +13,4 @@ purposes and does not imply that such use is in accordance with the terms of use
 by such websites.  It is up to the end user to insure that they are using such websites 
 in accordance with the terms of use of such websites.
 
-The author of this GitHub project does not offer any warranty to users of this source code.
+The author of this GitHub project does not offer any warranty to end users of this source code.
