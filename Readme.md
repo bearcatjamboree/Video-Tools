@@ -185,5 +185,5 @@ If you attempt to use PyTTSx3 (text-to-speech) while the spleeter environment is
 
 If you found these tools helpful then please consider subscribing to my YouTube channels:
 
-https://www.youtube.com/@Bearcatjamboree
-https://www.youtube.com/@BearcatjamboreeShorts
+[Bearcat Jamboree](https://www.youtube.com/@Bearcatjamboree)
+[Bearcat Jamboree Shorts](https://www.youtube.com/@BearcatjamboreeShorts)
