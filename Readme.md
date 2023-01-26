@@ -96,19 +96,33 @@ However, PowerShell (powershell) & Command Prompt (cmd.exe) do not support the s
 
 1. Python 3+ - Python is an interpreted, object-oriented, high-level programming language with dynamic semantics.
 
-2. Imutils - A series of convenience functions to make basic image processing functions such as translation, rotation, resizing, skeletonization, displaying Matplotlib images, sorting contours, detecting edges, and much easier with OpenCV and both Python 2.7 and Python 3.
+2. Googletrans - a free and unlimited python library that implemented Google Translate API
 
-3. Numpy - the fundamental package for array computing with Python.
+3. Imutils - A series of convenience functions to make basic image processing functions such as translation, rotation, resizing, skeletonization, displaying Matplotlib images, sorting contours, detecting edges, and much easier with OpenCV and both Python 2.7 and Python 3.
 
-4. OpenCV - OpenCV (Open Source Computer Vision Library) is an open source computer vision and machine learning software library.
+4. Matplotlib - a comprehensive library for creating static, animated, and interactive visualizations in Python.
 
-5. SpeechRecognition - Library for performing speech recognition, with support for several engines and APIs, online and offline.
+5. Numpy - the fundamental package for array computing with Python.
 
-    To test for setup errors, simple type the following command and talk into your microphone to see if it translates your voice to text:
+6. OpenCV - OpenCV (Open Source Computer Vision Library) is an open source computer vision and machine learning software library. 
+
+7. playsound - a pure Python, cross-platform, single function module with no dependencies for playing sounds.
+
+8. pydub - a library for manipulating audio with a simple and easy high level interface.
+
+9. pyttsx3 - a text-to-speech conversion library in Python. Unlike alternative libraries, it works offline, and is compatible with both Python 2 and 3.
+
+10. Requests - a simple, yet elegant, HTTP library.
+
+11. SpeechRecognition - Library for performing speech recognition, with support for several engines and APIs, online and offline.
+
+   To test for setup errors, simple type the following command and talk into your microphone to see if it translates your voice to text:
 
     ```python -m speech_recognition```
 
-6. Spleeter
+12. YouTube Transcript/Subtitle API - a python API which allows you to get the transcript/subtitles for a given YouTube video. It also works for automatically generated subtitles, supports translating subtitles, and it does not require a headless browser, like other selenium based solutions do!
+
+13. Spleeter
 
 ## Installation
 
