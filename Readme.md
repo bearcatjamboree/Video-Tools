@@ -11,9 +11,9 @@ If you find these tools useful then consider watching my other content and subsc
 
 ## Features
 
-  1. Audio Face Recognition
+  1. Audio + Face Recognition Jumpcut
   2. Audio Jumpcut
-  3. Audio Match Template
+  3. Audio + Template Matching Jumpcut
   4. Batch Burn Subtitles From SRT
   5. Batch Change Video Resolution With Blur
   6. Batch Convert Video Format
@@ -31,7 +31,7 @@ If you find these tools useful then consider watching my other content and subsc
  18. Change Volume Amount
  19. Compress Audio File
  20. Convert Video Format
- 21. Create Animated G I F
+ 21. Create Animated GIF
  22. Create Mobile Crossclip
  23. Create Pencil Sketch Video
  24. Create Vintage Video
@@ -42,7 +42,7 @@ If you find these tools useful then consider watching my other content and subsc
  29. Extract Audio From Video
  30. Extract Images From Video
  31. Face Recognition
- 32. Face Swap
+ 32. Face Swap (untested)
  33. Fix YouTube Subtitles
  34. Flip Video Horizontally
  35. Flip Video Vertically
@@ -71,8 +71,8 @@ If you find these tools useful then consider watching my other content and subsc
  58. Rotate Video Clockwise
  59. Rotate Video Counterclockwise
  60. TikTok Text To Speech (from txt file)
- 61. Translate You Tube Description
- 62. Translate You Tube Transcript
+ 61. Translate YouTube Description
+ 62. Translate YouTube Transcript
  63. Zoompan Cut Video
  
 ## Operating Systems

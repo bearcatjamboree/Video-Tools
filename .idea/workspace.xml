@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="removed unused routines">
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Updated Readme.md with more functions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
     </list>
@@ -1116,13 +1116,6 @@
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
     </task>
-    <task id="LOCAL-00111" summary="Renamed translation scripts to have similiar naming to make them easier to identify">
-      <created>1653751459125</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1653751459125</updated>
-    </task>
     <task id="LOCAL-00112" summary="Updated workspace.xml to include correct script references and uncheck &quot;execute in terminal&quot; so dialog command displays correctly for non-Mac systems.">
       <created>1653751533960</created>
       <option name="number" value="00112" />
@@ -1459,7 +1452,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674768699130</updated>
     </task>
-    <option name="localTasksCounter" value="160" />
+    <task id="LOCAL-00160" summary="Updated Readme.md with more functions">
+      <created>1674768735667</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1674768735667</updated>
+    </task>
+    <option name="localTasksCounter" value="161" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1475,7 +1475,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Updated readme" />
     <MESSAGE value="Added script to convert folder of audio or video files to a specific new format, and output the translated files to a user specified output folder." />
     <MESSAGE value="Added script to plot audio frames" />
     <MESSAGE value="Updated VideoJumpcutter.py to include option for volume selection.  The supported options are max (default) and rms, which will allow one method or the other for determining what the max and frame volume values are based on.  For some videos, it might be desirable to use rms where high pitches like gun sounds might be better detected using max value instead." />
@@ -1500,6 +1499,7 @@
     <MESSAGE value="Add a few script corrections and created a python/shell script combination for fixing YouTube generated subtitles." />
     <MESSAGE value="removed unused imports" />
     <MESSAGE value="removed unused routines" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed unused routines" />
+    <MESSAGE value="Updated Readme.md with more functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated Readme.md with more functions" />
   </component>
 </project>
