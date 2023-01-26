@@ -70,7 +70,7 @@ If you find these tools useful then consider watching my other content and subsc
  57. Reverse Video
  58. Rotate Video Clockwise
  59. Rotate Video Counterclockwise
- 60. TikTok Text To Speech (from text file)
+ 60. TikTok Text To Speech (from txt file)
  61. Translate You Tube Description
  62. Translate You Tube Transcript
  63. Zoompan Cut Video

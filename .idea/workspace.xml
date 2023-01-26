@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="removed unused routines">
-      <change afterPath="$PROJECT_DIR$/functions.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions_num.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
     </list>
@@ -1118,13 +1116,6 @@
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
     </task>
-    <task id="LOCAL-00110" summary="Change default path to user home directory for non-Mac dialogs">
-      <created>1653750945011</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1653750945012</updated>
-    </task>
     <task id="LOCAL-00111" summary="Renamed translation scripts to have similiar naming to make them easier to identify">
       <created>1653751459125</created>
       <option name="number" value="00111" />
@@ -1461,7 +1452,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674755890380</updated>
     </task>
-    <option name="localTasksCounter" value="159" />
+    <task id="LOCAL-00159" summary="removed unused routines">
+      <created>1674768699129</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1674768699130</updated>
+    </task>
+    <option name="localTasksCounter" value="160" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
