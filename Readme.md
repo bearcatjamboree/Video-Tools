@@ -41,7 +41,7 @@ If you find these tools useful then consider watching my other content and subsc
  28. Download You Tube Video
  29. Extract Audio From Video
  30. Extract Images From Video
- 31. Face Recognition
+ 31. Face Recognition Jumpcut
  32. Face Swap (untested)
  33. Fix YouTube Subtitles
  34. Flip Video Horizontally
@@ -53,7 +53,7 @@ If you find these tools useful then consider watching my other content and subsc
  40. LBRY Download YouTube Playlist
  41. LBRY Migrate YouTube Playlist
  42. LBRY Upload Video Folder
- 43. Match Template
+ 43. Match Template Jumpcut
  44. Merge Audio Files
  45. Merge Image And Audio
  46. Merge Multiple Videos

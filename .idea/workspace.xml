@@ -1116,13 +1116,6 @@
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
     </task>
-    <task id="LOCAL-00112" summary="Updated workspace.xml to include correct script references and uncheck &quot;execute in terminal&quot; so dialog command displays correctly for non-Mac systems.">
-      <created>1653751533960</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1653751533960</updated>
-    </task>
     <task id="LOCAL-00113" summary="Updated function list">
       <created>1653751557413</created>
       <option name="number" value="00113" />
@@ -1459,7 +1452,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674768735667</updated>
     </task>
-    <option name="localTasksCounter" value="161" />
+    <task id="LOCAL-00161" summary="Updated Readme.md with more functions">
+      <created>1674768854183</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1674768854183</updated>
+    </task>
+    <option name="localTasksCounter" value="162" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
