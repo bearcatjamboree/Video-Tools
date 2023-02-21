@@ -67,8 +67,8 @@ name="${file%.*}"
 outfile="$name"_highlights
 newoutfile=$outfile.$ext
 
-#python VideoJumpcutter.py --input_file "$input_file" --output_file "$newoutfile" --audio_method 1 --volume_selection "rms" --audio_threshold 0.1 --frame_margin 60
-python VideoJumpcutter.py --input_file "$input_file" --output_file "$newoutfile" --audio_method 1 --volume_selection "rms" --audio_threshold 0.2 --frame_margin 60
+python VideoJumpcutter.py --input_file "$input_file" --output_file "$newoutfile" --audio_method 1 --volume_selection "rms" --audio_threshold 0.1 --frame_margin 120
+#python VideoJumpcutter.py --input_file "$input_file" --output_file "$newoutfile" --audio_method 1 --volume_selection "rms" --audio_threshold 0.2 --frame_margin 60
 
 
 #python VideoJumpcutter.py --input_file "$input_file" --output_file "$newoutfile" --audio_method 1 --volume_selection "max" --audio_threshold 0.01 --frame_margin 60

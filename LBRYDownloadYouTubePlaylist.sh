@@ -15,7 +15,7 @@
 #     accessible to Odysee since Odysee using LBRY as a decentralized storage.
 #
 #   USAGE
-#     ${SCRIPT_NAME} "<video_url>" "<input folder>"
+#     ${SCRIPT_NAME} "<url>" "<input folder>"
 #================================================================================
 unameOut="$(uname -s)"
 case "${unameOut}" in
@@ -28,27 +28,27 @@ esac
 
 echo "${machine}"
 
-video_url="$1"
+url="$1"
 output_folder="$2"
 
 ##############################################################################
 # Prompt for URL
 ###############################################################################
-if [[ "$video_url" == "" ]]; then
+if [[ "$url" == "" ]]; then
     if [[ "$machine" == "Mac" ]]; then
-        video_url=$(osascript -e 'set T to text returned of (display dialog "Enter video or playlist URL" buttons {"Cancel", "OK"} default button "OK" default answer "")')
+        url=$(osascript -e 'set T to text returned of (display dialog "Enter video or playlist URL" buttons {"Cancel", "OK"} default button "OK" default answer "")')
     elif [[ "$machine" == "Linux" ]]; then
-        video_url=$(dialog --title "Enter playlist location" --inputbox "URL:" 8 60)
+        url=$(dialog --title "Enter playlist location" --inputbox "URL:" 8 60)
     elif [[ "$machine" == "Cygwin" ]]; then
-        video_url=$(dialog --title "Enter playlist location" --inputbox "URL:" 8 60)
+        url=$(dialog --title "Enter playlist location" --inputbox "URL:" 8 60)
     else
-        echo "Usage: $0 video_url output_folder"
+        echo "Usage: $0 url output_folder"
         exit 1
     fi
 fi
 
-if [[ "$video_url" == "" ]]; then
-    echo "Usage: $0 video_url output_folder"
+if [[ "$url" == "" ]]; then
+    echo "Usage: $0 url output_folder"
     exit 1
 fi
 
@@ -66,18 +66,18 @@ if ! [ -d "$output_folder" ]; then
     elif [[ "$machine" == "Cygwin" ]]; then
         output_folder=$(dialog --title "Choose a folder" --stdout --title "Please choose an output folder" --fselect ~/ 14 48)
     else
-        echo "Usage: $0 video_url output_folder"
+        echo "Usage: $0 url output_folder"
         exit 1
     fi
 fi
 
 if ! [ -d "$output_folder" ]; then
-  echo "Usage: $0 video_url output_folder"
+  echo "Usage: $0 url output_folder"
   exit 1
 fi
 
 # Download video URL metadata
-youtube_data=$(yt-dlp --dump-json "$video_url" | jq -r '[.title,.id]|@csv')
+youtube_data=$(yt-dlp --dump-json "$url" | jq -r '[.title,.id]|@csv')
 
 # Read playlist info to array (lines)
 i=0; lines=()
@@ -91,7 +91,9 @@ do
 
   IFS="," read -r title id <<< "$line"
   id=$(echo $id | sed 's/\"//g')
-  id=$(echo $id | sed 's/^-/\\-/g')
+  #id=$(echo $id | sed 's/^-/\\-/g')
+
+  echo "video id = $id"
 
   url="https://www.youtube.com/watch?v=$id"
 

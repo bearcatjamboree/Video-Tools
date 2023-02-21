@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="updated Readme.md">
-      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CutVideoUsingTimecodes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CutVideoUsingTimecodes.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudioJumpcut.sh" beforeDir="false" afterPath="$PROJECT_DIR$/AudioJumpcut.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LBRYDownloadYouTubePlaylist.sh" beforeDir="false" afterPath="$PROJECT_DIR$/LBRYDownloadYouTubePlaylist.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +81,7 @@
       <recent name="$PROJECT_DIR$/_backups" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.Fix YouTube Subtitles">
+  <component name="RunManager" selected="Shell Script.Cut Video Using Timecodes">
     <configuration name="AudioJumpcut" type="ShConfigurationType" folderName="Videos">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -472,6 +476,21 @@
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
       <option name="SCRIPT_PATH" value="$PROJECT_DIR$/CutVideoStartToEndTime.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="Cut Video Using Timecodes" type="ShConfigurationType" folderName="Videos">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/CutVideoUsingTimecodes.sh" />
       <option name="SCRIPT_OPTIONS" value="" />
       <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
       <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -1081,6 +1100,7 @@
       <item itemvalue="Shell Script.Crop Video" />
       <item itemvalue="Shell Script.Cut Video Start To Duration" />
       <item itemvalue="Shell Script.Cut Video Start To End Time" />
+      <item itemvalue="Shell Script.Cut Video Using Timecodes" />
       <item itemvalue="Shell Script.FaceRecognition" />
       <item itemvalue="Shell Script.Flip Video Horizontally" />
       <item itemvalue="Shell Script.Flip Video Vertically" />
@@ -1098,8 +1118,8 @@
       <item itemvalue="Shell Script.Rotate Video Clockwise" />
       <item itemvalue="Shell Script.Rotate Video Counterclockwise" />
       <item itemvalue="Shell Script.Zoompan Cut Video" />
-      <item itemvalue="Shell Script.Fix YouTube Subtitles" />
       <item itemvalue="Shell Script.Download YouTube Video" />
+      <item itemvalue="Shell Script.Fix YouTube Subtitles" />
       <item itemvalue="Shell Script.Get YouTube Video List Info" />
       <item itemvalue="Shell Script.Translate YouTube Description" />
       <item itemvalue="Shell Script.Translate YouTube Transcript" />
@@ -1114,13 +1134,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
-    </task>
-    <task id="LOCAL-00126" summary="Updated readme">
-      <created>1654287416561</created>
-      <option name="number" value="00126" />
-      <option name="presentableId" value="LOCAL-00126" />
-      <option name="project" value="LOCAL" />
-      <updated>1654287416561</updated>
     </task>
     <task id="LOCAL-00127" summary="Updated readme">
       <created>1654287589114</created>
@@ -1458,7 +1471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674772326142</updated>
     </task>
-    <option name="localTasksCounter" value="175" />
+    <task id="LOCAL-00175" summary="updated Readme.md">
+      <created>1674772357052</created>
+      <option name="number" value="00175" />
+      <option name="presentableId" value="LOCAL-00175" />
+      <option name="project" value="LOCAL" />
+      <updated>1674772357052</updated>
+    </task>
+    <option name="localTasksCounter" value="176" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
