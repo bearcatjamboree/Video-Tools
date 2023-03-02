@@ -4,18 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="updated Readme.md">
-      <change afterPath="$PROJECT_DIR$/GenerateSpeechFromSRT.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GenerateSpeechFromSRT.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GenerateTextFromSpeech.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GenerateTextFromSpeech.sh" afterDir="false" />
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="New code for creating clips from subtitle file.  Updated a few TTS code pieces.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CutVideoUsingTimecodes.py" beforeDir="false" afterPath="$PROJECT_DIR$/CutVideoUsingTimecodes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CutVideoUsingTimecodes.sh" beforeDir="false" afterPath="$PROJECT_DIR$/CutVideoUsingTimecodes.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GenerateSpeechFromText.py" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateSpeechFromText.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GenerateSpeechFromText.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateSpeechFromText.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GenerateVideoSubtitles.py" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateVideoSubtitles.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GenerateSpeechFromSRT.py" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateSpeechFromSRT.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +81,7 @@
       <recent name="$PROJECT_DIR$/_backups" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.Generate Speech From Text">
+  <component name="RunManager" selected="Shell Script.Cut Video Start To Duration">
     <configuration name="AudioJumpcut" type="ShConfigurationType" folderName="Videos">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -1176,13 +1167,6 @@
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
     </task>
-    <task id="LOCAL-00128" summary="Updated readme">
-      <created>1654287698156</created>
-      <option name="number" value="00128" />
-      <option name="presentableId" value="LOCAL-00128" />
-      <option name="project" value="LOCAL" />
-      <updated>1654287698156</updated>
-    </task>
     <task id="LOCAL-00129" summary="Added script to convert folder of audio or video files to a specific new format, and output the translated files to a user specified output folder.">
       <created>1654287988959</created>
       <option name="number" value="00129" />
@@ -1519,7 +1503,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676997852849</updated>
     </task>
-    <option name="localTasksCounter" value="177" />
+    <task id="LOCAL-00177" summary="New code for creating clips from subtitle file.  Updated a few TTS code pieces.">
+      <created>1677765950265</created>
+      <option name="number" value="00177" />
+      <option name="presentableId" value="LOCAL-00177" />
+      <option name="project" value="LOCAL" />
+      <updated>1677765950266</updated>
+    </task>
+    <option name="localTasksCounter" value="178" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1535,7 +1526,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Updated Readme.md features list" />
     <MESSAGE value="Updated scripts list in workspace.xml" />
     <MESSAGE value="Updated gitignore" />
     <MESSAGE value="Organized a few scripts into the &quot;Batch&quot; category.  Also, separated TranslateYouTubeVideo.sh into two scripts, making one that does TTS and one that does not." />
@@ -1560,6 +1550,7 @@
     <MESSAGE value="updated Readme.md and added Disclamer.md" />
     <MESSAGE value="updated Disclamer.md" />
     <MESSAGE value="updated Readme.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated Readme.md" />
+    <MESSAGE value="New code for creating clips from subtitle file.  Updated a few TTS code pieces." />
+    <option name="LAST_COMMIT_MESSAGE" value="New code for creating clips from subtitle file.  Updated a few TTS code pieces." />
   </component>
 </project>

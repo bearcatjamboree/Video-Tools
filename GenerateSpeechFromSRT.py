@@ -135,7 +135,6 @@ def tts_generator(dict):
 
     # call nsss and write AIFF to file
     engine.save_to_file(dict['text'], "{}/tmp{:05d}.aiff".format(tmpdirname, int(dict['counter'].strip())))
-    engine.runAndWait()
 
     try:
         source = AudioSegment.from_wav("{}/tmp{:05d}.aiff".format(tmpdirname, int(dict['counter'].strip())))
@@ -206,6 +205,8 @@ def main():
                     first_frame_start_time = start_time
 
                 time_limiter_from_stuck_function(tts_generator, dict)
+
+        engine.runAndWait()
 
         project_first_frame = AudioSegment.from_wav("{}/tmp{:05d}.aiff".format(tmpdirname, 1))
         base_frame_rate = project_first_frame.frame_rate
