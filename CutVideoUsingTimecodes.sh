@@ -92,4 +92,6 @@ name="${file%.*}"
 outfile="$name"_timecut
 newoutfile=$outfile.$ext
 
-python CutVideoUsingTimecodes.py --input_file "$input_file" --srt_file "$srt_file"  --output_file "$newoutfile"
+frame_rate=$(ffmpeg -i "$input_file" 2>&1 | sed -n "s/.*, \(.*\) fp.*/\1/p")
+
+python CutVideoUsingTimecodes.py --frame_rate "$frame_rate" --input_file "$input_file" --srt_file "$srt_file"  --output_file "$newoutfile"

@@ -5,11 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="updated Readme.md">
-      <change afterPath="$PROJECT_DIR$/CutVideoUsingTimecodes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CutVideoUsingTimecodes.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GenerateSpeechFromSRT.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GenerateSpeechFromSRT.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GenerateTextFromSpeech.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GenerateTextFromSpeech.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AudioJumpcut.sh" beforeDir="false" afterPath="$PROJECT_DIR$/AudioJumpcut.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LBRYDownloadYouTubePlaylist.sh" beforeDir="false" afterPath="$PROJECT_DIR$/LBRYDownloadYouTubePlaylist.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CutVideoUsingTimecodes.py" beforeDir="false" afterPath="$PROJECT_DIR$/CutVideoUsingTimecodes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CutVideoUsingTimecodes.sh" beforeDir="false" afterPath="$PROJECT_DIR$/CutVideoUsingTimecodes.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GenerateSpeechFromText.py" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateSpeechFromText.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GenerateSpeechFromText.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateSpeechFromText.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GenerateVideoSubtitles.py" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateVideoSubtitles.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +50,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="28Awx7KbGblXvaNM7kl4yBBXiev" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -60,7 +69,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/cboxgo/PycharmProjects/Video-Tools&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="PyConsoleOptionsProvider">
@@ -81,7 +90,7 @@
       <recent name="$PROJECT_DIR$/_backups" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.Cut Video Using Timecodes">
+  <component name="RunManager" selected="Shell Script.Generate Speech From Text">
     <configuration name="AudioJumpcut" type="ShConfigurationType" folderName="Videos">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -637,10 +646,40 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="Generate Speech From SRT" type="ShConfigurationType" folderName="Audio">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/GenerateSpeechFromSRT.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="Generate Speech From Text" type="ShConfigurationType" folderName="Audio">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
       <option name="SCRIPT_PATH" value="$PROJECT_DIR$/GenerateSpeechFromText.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="Generate Text From Speech" type="ShConfigurationType" folderName="Audio">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/GenerateTextFromSpeech.sh" />
       <option name="SCRIPT_OPTIONS" value="" />
       <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
       <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -1061,7 +1100,9 @@
       <item itemvalue="Shell Script.Change Volume Amount" />
       <item itemvalue="Shell Script.Compress Audio File" />
       <item itemvalue="Shell Script.Extract Audio From Video" />
+      <item itemvalue="Shell Script.Generate Speech From SRT" />
       <item itemvalue="Shell Script.Generate Speech From Text" />
+      <item itemvalue="Shell Script.Generate Text From Speech" />
       <item itemvalue="Shell Script.Merge Audio Files" />
       <item itemvalue="Shell Script.Normalize Audio" />
       <item itemvalue="Shell Script.Remove Audio From Video" />
@@ -1134,13 +1175,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
-    </task>
-    <task id="LOCAL-00127" summary="Updated readme">
-      <created>1654287589114</created>
-      <option name="number" value="00127" />
-      <option name="presentableId" value="LOCAL-00127" />
-      <option name="project" value="LOCAL" />
-      <updated>1654287589114</updated>
     </task>
     <task id="LOCAL-00128" summary="Updated readme">
       <created>1654287698156</created>
@@ -1478,7 +1512,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674772357052</updated>
     </task>
-    <option name="localTasksCounter" value="176" />
+    <task id="LOCAL-00176" summary="updated Readme.md">
+      <created>1676997852849</created>
+      <option name="number" value="00176" />
+      <option name="presentableId" value="LOCAL-00176" />
+      <option name="project" value="LOCAL" />
+      <updated>1676997852849</updated>
+    </task>
+    <option name="localTasksCounter" value="177" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

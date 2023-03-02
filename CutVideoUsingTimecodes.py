@@ -24,6 +24,7 @@ import tempfile
 #################################################################################################
 parser = argparse.ArgumentParser(
     description='Search the audio/video/both for frames to retain and remove the rest')
+parser.add_argument('--frame_rate', type=str, help="The video frame rate aka fps")
 parser.add_argument('--input_file', type=str, help='The video file you want to extract frames from')
 parser.add_argument('--output_file', type=str, help="The location where you want to write the output video")
 parser.add_argument('--srt_file', type=str, help="The file containing the time codes in the format [start, end, "
@@ -181,17 +182,21 @@ def main():
         for clip_time in times:
 
             count += 1
+            print("count = {}".format(count))
 
             start_time_arr = clip_time[0].split(',')
             end_time_arr = clip_time[1].split(',')
 
+            #start_time="{}.{}".format(start_time_arr[0],start_time_arr[1])
+            #end_time = "{}.{}".format(end_time_arr[0],start_time_arr[1])
+
             start_time="{}.{}".format(start_time_arr[0],start_time_arr[1])
-            end_time = "{}.{}".format(end_time_arr[0],start_time_arr[1])
+            end_time = "{}.{}".format(end_time_arr[0],end_time_arr[1])
 
             #start_time = clip_time[0].replace(',', '.')
             #end_time = clip_time[1].replace(',', '.')
 
-            command = "ffmpeg -i \"{}\" -ss {} -to {} -af \"aformat=sample_rates=48000\" -c:v copy {}/video_{:06d}.mp4".format(args.input_file,
+            command = "ffmpeg -i \"{}\" -ss {} -to {} -af \"aformat=sample_rates=44100\" -c:v copy {}/video_{:06d}.mp4".format(args.input_file,
                                                                                                                                start_time,
                                                                                                                                end_time,
                                                                                                                                tmpdirname,
@@ -199,7 +204,7 @@ def main():
             print(command)
             subprocess.call(command, shell=True)
 
-        for x in range(1, count):
+        for x in range(1, count+1):
             command = "echo \"file 'video_{:06d}.mp4'\" >> {}/file_list.txt".format(x, tmpdirname)
             print(command)
             subprocess.call(command, shell=True)
@@ -210,7 +215,7 @@ def main():
 
         #name = input("What is your name? ")
 
-        command = "ffmpeg -r 60.0 -loglevel error -f concat -safe 0 -i {}/file_list.txt -c copy '{}'".format(tmpdirname, args.output_file)
+        command = "ffmpeg -r {} -loglevel error -f concat -safe 0 -i {}/file_list.txt -c copy '{}'".format(args.frame_rate, tmpdirname, args.output_file)
         print(command)
         subprocess.call(command, shell=True)
 

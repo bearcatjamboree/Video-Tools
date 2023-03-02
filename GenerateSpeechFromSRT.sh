@@ -32,7 +32,7 @@ language="$2"
 
 declare -A voices=(
 	["Arabic"]="maged"
-	["English"]="Alex"
+	["English"]="alex"
 	["Hindi"]="neel"
 	["Indonesian"]="damayanti"
 	["Mandarin"]="tingting"
@@ -50,7 +50,7 @@ echo "${joined:2}"
 if ! [ -f "$input_file" ]; then
     if [[ "$machine" == "Mac" ]]; then
         input_file=$(osascript -e 'tell application (path to frontmost application as text)
-        set input_file to choose file with prompt "Please select an text file"
+        set input_file to choose file with prompt "Please select an SRT file"
         POSIX path of input_file
         end')
     elif [[ "$machine" == "Linux" ]]; then
@@ -106,6 +106,6 @@ name="${file%.*}"
 ############################
 # Get file path information
 ############################
-output_file=$name.mp3
+output_file=$name.wav
 
-python GenerateSpeechFromText.py --input_file "$input_file" --output_file "$output_file" --voice "$voice" --handle_length 2
+python GenerateSpeechFromSRT.py --input_file "$input_file" --output_file "$output_file" --voice "$voice" --handle_length 2
