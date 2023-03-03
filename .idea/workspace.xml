@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="New code for creating clips from subtitle file.  Updated a few TTS code pieces.">
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Minor updates to try to get TTS for Mac working... still has issues after Ventura.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GenerateSpeechFromSRT.py" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateSpeechFromSRT.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GenerateVideoSubtitles.py" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateVideoSubtitles.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GenerateVideoSubtitles.sh" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateVideoSubtitles.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +82,7 @@
       <recent name="$PROJECT_DIR$/_backups" />
     </key>
   </component>
-  <component name="RunManager" selected="Shell Script.Cut Video Start To Duration">
+  <component name="RunManager" selected="Shell Script.Generate Video Subtitles">
     <configuration name="AudioJumpcut" type="ShConfigurationType" folderName="Videos">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -1167,13 +1168,6 @@
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
     </task>
-    <task id="LOCAL-00129" summary="Added script to convert folder of audio or video files to a specific new format, and output the translated files to a user specified output folder.">
-      <created>1654287988959</created>
-      <option name="number" value="00129" />
-      <option name="presentableId" value="LOCAL-00129" />
-      <option name="project" value="LOCAL" />
-      <updated>1654287988959</updated>
-    </task>
     <task id="LOCAL-00130" summary="Added script to convert folder of audio or video files to a specific new format, and output the translated files to a user specified output folder.">
       <created>1654288179854</created>
       <option name="number" value="00130" />
@@ -1510,7 +1504,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677765950266</updated>
     </task>
-    <option name="localTasksCounter" value="178" />
+    <task id="LOCAL-00178" summary="Minor updates to try to get TTS for Mac working... still has issues after Ventura.">
+      <created>1677781834262</created>
+      <option name="number" value="00178" />
+      <option name="presentableId" value="LOCAL-00178" />
+      <option name="project" value="LOCAL" />
+      <updated>1677781834262</updated>
+    </task>
+    <option name="localTasksCounter" value="179" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1526,7 +1527,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Updated scripts list in workspace.xml" />
     <MESSAGE value="Updated gitignore" />
     <MESSAGE value="Organized a few scripts into the &quot;Batch&quot; category.  Also, separated TranslateYouTubeVideo.sh into two scripts, making one that does TTS and one that does not." />
     <MESSAGE value="Fixed but in VideoJumpcutter.py preventing margin frames from being added after the highlighted frame.  This was due to AddMarginFrames not knowing the video max frames value." />
@@ -1551,6 +1551,7 @@
     <MESSAGE value="updated Disclamer.md" />
     <MESSAGE value="updated Readme.md" />
     <MESSAGE value="New code for creating clips from subtitle file.  Updated a few TTS code pieces." />
-    <option name="LAST_COMMIT_MESSAGE" value="New code for creating clips from subtitle file.  Updated a few TTS code pieces." />
+    <MESSAGE value="Minor updates to try to get TTS for Mac working... still has issues after Ventura." />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor updates to try to get TTS for Mac working... still has issues after Ventura." />
   </component>
 </project>

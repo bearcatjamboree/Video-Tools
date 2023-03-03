@@ -66,9 +66,6 @@ name="${file%.*}"
 ############################
 # Get file path information
 ############################
-output_srt=$name.srt
-outfile="$name"_subtitled
-output_video=$outfile.mp4
+output_file=$name.srt
 
-
-python GenerateVideoSubtitles.py --input_file "$input_file" --output_srt "$output_srt" --output_video "$output_video"
+python GenerateVideoSubtitles.py --input_file "$input_file" --output_file "$output_file"
