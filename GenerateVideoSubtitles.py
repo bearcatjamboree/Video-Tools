@@ -79,7 +79,16 @@ def main():
     model = whisper.load_model(args.model)
     print("Loading model: {}".format(args.model))
 
-    transcribe = model.transcribe(args.input_file, fp16=False, language=args.language)
+    #transcribe = model.transcribe(args.input_file, fp16=False, language=args.language)
+
+    #
+    #   added parameters to try to make timestamp calculations more accurate per discussion:
+    #       https://github.com/openai/whisper/discussions/435
+    #
+    transcribe = model.transcribe(args.input_file, fp16=False, language=args.language,
+                                  suppress_silence=True, ts_num=16, lower_quantile=0.05,
+                                  lower_threshold=0.1)
+
     segments = transcribe['segments']
 
     print("Creating segments for file: {}".format(args.input_file))

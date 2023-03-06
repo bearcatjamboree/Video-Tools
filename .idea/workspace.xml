@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="Rewrote GenerateVideoSubtitles.py to use whipser.ai to get better speech recognition and also more reliable timestamps for subtitle file generation.">
-      <change afterPath="$PROJECT_DIR$/test.mp4.srt" afterDir="false" />
+    <list default="true" id="dd4f1d99-92b2-4bdc-a93a-e585af31fe2c" name="Changes" comment="minor code updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GenerateVideoSubtitles.py" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateVideoSubtitles.py" afterDir="false" />
     </list>
@@ -1168,13 +1167,6 @@
       <option name="presentableId" value="Default" />
       <updated>1650672942073</updated>
     </task>
-    <task id="LOCAL-00131" summary="Added script to plot audio frames">
-      <created>1654366687071</created>
-      <option name="number" value="00131" />
-      <option name="presentableId" value="LOCAL-00131" />
-      <option name="project" value="LOCAL" />
-      <updated>1654366687072</updated>
-    </task>
     <task id="LOCAL-00132" summary="Updated VideoJumpcutter.py to include option for volume selection.  The supported options are max (default) and rms, which will allow one method or the other for determining what the max and frame volume values are based on.  For some videos, it might be desirable to use rms where high pitches like gun sounds might be better detected using max value instead.">
       <created>1654366805617</created>
       <option name="number" value="00132" />
@@ -1511,7 +1503,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677869619442</updated>
     </task>
-    <option name="localTasksCounter" value="180" />
+    <task id="LOCAL-00180" summary="minor code updates">
+      <created>1677875403985</created>
+      <option name="number" value="00180" />
+      <option name="presentableId" value="LOCAL-00180" />
+      <option name="project" value="LOCAL" />
+      <updated>1677875403985</updated>
+    </task>
+    <option name="localTasksCounter" value="181" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1527,7 +1526,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Organized a few scripts into the &quot;Batch&quot; category.  Also, separated TranslateYouTubeVideo.sh into two scripts, making one that does TTS and one that does not." />
     <MESSAGE value="Fixed but in VideoJumpcutter.py preventing margin frames from being added after the highlighted frame.  This was due to AddMarginFrames not knowing the video max frames value." />
     <MESSAGE value="Added LBRYUploadVideo.sh to extract videos, descriptions, and thumbnails from YouTube (yt-dlp requied), and use the lbry_batch_uploader Python module to load into LBRY for populating Odysee with videos that aren't loaded with the YouTubeSync on Odysee.  Also, added NormalizeAudio.sh, and updated GenerateSpeechFromText.py to allow three methods for handling long-spoken TTS (0=truncate, 1=speed up, or 2=skip TTS for that subtitle)" />
     <MESSAGE value="Added minimum version for lbry-batch-uploader" />
@@ -1552,6 +1550,7 @@
     <MESSAGE value="New code for creating clips from subtitle file.  Updated a few TTS code pieces." />
     <MESSAGE value="Minor updates to try to get TTS for Mac working... still has issues after Ventura." />
     <MESSAGE value="Rewrote GenerateVideoSubtitles.py to use whipser.ai to get better speech recognition and also more reliable timestamps for subtitle file generation." />
-    <option name="LAST_COMMIT_MESSAGE" value="Rewrote GenerateVideoSubtitles.py to use whipser.ai to get better speech recognition and also more reliable timestamps for subtitle file generation." />
+    <MESSAGE value="minor code updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor code updates" />
   </component>
 </project>
