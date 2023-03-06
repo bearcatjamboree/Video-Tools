@@ -7,7 +7,7 @@ from datetime import timedelta
 from shutil import rmtree
 
 import whisper
-
+from stable_whisper import modify_model
 
 #################################################################################################
 #  Create folder routine
@@ -77,6 +77,8 @@ def printProgressBar(iteration, total, prefix='', suffix='', decimals=1, length=
 def main():
 
     model = whisper.load_model(args.model)
+    modify_model(model)
+
     print("Loading model: {}".format(args.model))
 
     #transcribe = model.transcribe(args.input_file, fp16=False, language=args.language)
@@ -89,7 +91,9 @@ def main():
                                   suppress_silence=True, ts_num=16, lower_quantile=0.05,
                                   lower_threshold=0.1)
 
-    segments = transcribe['segments']
+    # or to get token timestamps that adhere more to the top prediction
+    from stable_whisper import stabilize_timestamps
+    segments = stabilize_timestamps(transcribe, top_focus=True)
 
     print("Creating segments for file: {}".format(args.input_file))
 
